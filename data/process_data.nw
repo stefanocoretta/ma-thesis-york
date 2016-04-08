@@ -1,0 +1,50 @@
+
+Let's add the hashbang.
+This is a bash script.
+
+<<*>>=
+#!/bin/bash
+@
+
+We want to extract all the characters in the dictionary to know how to operate searching.
+
+<<*>>=
+gawk 'BEGIN {
+    FS = ""
+}
+
+{
+    for(i = 1; i <= NF; i++)
+        {chars[$(i)] = $(i);}
+}
+
+END {
+    for(c in chars)
+        {print c;}
+}' is.dic > is_alphabet.txt
+@
+
+Let's change the extension of is.dic to a .txt file.
+Than let's extract words starting with lower case only.
+(Or should I change everything to lower case?)
+
+<<*>>=
+cat is.dic > is.txt
+gawk '/^[[:lower:]]/' is.txt > is_lower.txt
+@
+
+The following commands use gawk for finding CVCC and CVCC words containing stops.
+
+<<*>>=
+# CVCC (stops only)
+gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt]$/ is.txt > is_cvcc_stops.txt
+# CVCCV (stops only)
+gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt][aeiouyö]$/ is.txt > is_cvccv_stops.txt
+@
+
+These lines reverse each line in the files, sort them, and re-reverse to get the order right.
+
+<<*>>=
+cat is_cvcc_stops.txt | rev | sort | rev > is_cvcc_rev_sort.txt
+cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
+@
