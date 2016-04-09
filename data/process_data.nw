@@ -6,6 +6,12 @@ This is a bash script.
 #!/bin/bash
 @
 
+Let's change the extension of is.dic to a .txt file.
+
+<<*>>=
+cat is.dic > is.txt
+@
+
 We want to extract all the characters in the dictionary to know how to operate searching.
 
 <<*>>=
@@ -24,12 +30,10 @@ END {
 }' is.dic > is_alphabet.txt
 @
 
-Let's change the extension of is.dic to a .txt file.
 Than let's extract words starting with lower case only.
 (Or should I change everything to lower case?)
 
 <<*>>=
-cat is.dic > is.txt
 gawk '/^[[:lower:]]/' is.txt > is_lower.txt
 @
 
@@ -37,9 +41,11 @@ The following commands use gawk for finding CVCC and CVCC words containing stops
 
 <<*>>=
 # CVCC (stops only)
-gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt]$/ is.txt > is_cvcc_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))$/' \
+    is_lower.txt > is_cvcc_stops.txt
 # CVCCV (stops only)
-gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt][aeiouyö]$/ is.txt > is_cvccv_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))[aeiouyö]$/' \
+    is_lower.txt > is_cvccv_stops.txt
 @
 
 These lines reverse each line in the files, sort them, and re-reverse to get the order right.
