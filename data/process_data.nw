@@ -37,9 +37,11 @@ The following commands use gawk for finding CVCC and CVCC words containing stops
 
 <<*>>=
 # CVCC (stops only)
-gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt]$/ is.txt > is_cvcc_stops.txt
+gawk -f /^[bcdgkpt][aeiouyö][b{2}|c{2}|d{2}|g{2}|k{2}|p{2}|t{2}]$/ \
+    is.txt > is_cvcc_stops.txt
 # CVCCV (stops only)
-gawk -f /^[bcdgkpt][aeiouyö][bcdgkpt][bcdgkpt][aeiouyö]$/ is.txt > is_cvccv_stops.txt
+gawk -f /^[bcdgkpt][aeiouyö][b{2}|c{2}|d{2}|g{2}|k{2}|p{2}|t{2}][aeiouyö]$/ \
+    is.txt > is_cvccv_stops.txt
 @
 
 These lines reverse each line in the files, sort them, and re-reverse to get the order right.
