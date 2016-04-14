@@ -17,6 +17,9 @@ cat is.dic > is.txt
 We want to extract all the characters in the dictionary to know how to operate searching.
 
 <<*>>=
+mkdir processed
+cd processed
+
 gawk 'BEGIN {
     FS = ""
 }
@@ -29,14 +32,14 @@ gawk 'BEGIN {
 END {
     for(c in chars)
         {print c;}
-}' is.dic > is_alphabet.txt
+}' ../is.txt > is_alphabet.txt
 @
 
 Than let's extract words starting with lower case only.
 (Or should I change everything to lower case?)
 
 <<*>>=
-gawk '/^[[:lower:]]/' is.txt > is_lower.txt
+gawk '/^[[:lower:]]/' ../is.txt > is_lower.txt
 
 @
 

@@ -2,6 +2,9 @@
 
 cat is.dic > is.txt
 
+mkdir processed
+cd processed
+
 gawk 'BEGIN {
     FS = ""
 }
@@ -14,8 +17,8 @@ gawk 'BEGIN {
 END {
     for(c in chars)
         {print c;}
-}' is.dic > is_alphabet.txt
-gawk '/^[[:lower:]]/' is.txt > is_lower.txt
+}' ../is.txt > is_alphabet.txt
+gawk '/^[[:lower:]]/' ../is.txt > is_lower.txt
 
 # CVCC (stops only)
 gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))$/' \
@@ -33,4 +36,7 @@ gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > is_cvnc_stops
 
 # CVNCV
 gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvncv_stops.txt
+
+# sort --key=1.2,1.2 is_cvcc_stops.txt
+# sort --key=1.2,1.2 is_cvccv_stops.txt
 
