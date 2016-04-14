@@ -1,22 +1,7 @@
-
-Let's add the hashbang.
-This is a bash script.
-
-<<*>>=
 #!/bin/bash
 
-@
-
-Let's change the extension of is.dic to a .txt file.
-
-<<*>>=
 cat is.dic > is.txt
 
-@
-
-We want to extract all the characters in the dictionary to know how to operate searching.
-
-<<*>>=
 gawk 'BEGIN {
     FS = ""
 }
@@ -30,19 +15,8 @@ END {
     for(c in chars)
         {print c;}
 }' is.dic > is_alphabet.txt
-@
-
-Than let's extract words starting with lower case only.
-(Or should I change everything to lower case?)
-
-<<*>>=
 gawk '/^[[:lower:]]/' is.txt > is_lower.txt
 
-@
-
-The following commands use gawk for finding CVCC and CVCC words containing stops.
-
-<<*>>=
 # CVCC (stops only)
 gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))$/' \
     is_lower.txt > is_cvcc_stops.txt
@@ -51,29 +25,12 @@ gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t
 gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))[aeiouyö]$/' \
     is_lower.txt > is_cvccv_stops.txt
 
-@
-
-These lines reverse each line in the files, sort them, and re-reverse to get the order right.
-
-<<*>>=
 cat is_cvcc_stops.txt | rev | sort | rev > is_cvcc_rev_sort.txt
 cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
 
-@
-
-<<*>>=
 # CVNC
 gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > is_cvnc_stops.txt
 
 # CVNCV
 gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvncv_stops.txt
 
-@
-
-Sort by vowel.
-
-<<*>>=
-# sort --key=1.2,1.2 is_cvcc_stops.txt
-# sort --key=1.2,1.2 is_cvccv_stops.txt
-
-@
