@@ -1,0 +1,25 @@
+id,lex,pos,eng,syl
+1,kokk,n,cook,cvcc
+2,gogg,n,beak,cvcc
+3,dökk,agg,dark,cvcc
+4,dögg,n,dew,cvcc
+5,kopp,n,chamber pot,cvcc
+6,kubb,n,block of wood,cvcc
+7,takka,n,key,cvccv
+8,kagga,n,barrel,cvccv
+9,detta,v,fall,cvccv
+10,gedda,n,pike,cvccv
+11,kamp,n,moustache,cvnc
+12,kamb,n,comb,cvnc
+13,punt,n,decoration,cvnc
+14,pund,n,pound,cvnc
+15,kampa,n,moustache,cvncv
+16,kamba,n,comb,cvncv
+17,kempa,n,hero,cvncv
+18,kemba,v,comb,cvncv
+19,punta,n,decoration,cvncv
+20,punda,n,pound,cvncv
+21,duld,agg,complex,cvlc
+22,dult,agg,reticent,cvlc
+23,gelta,v,bark,cvlcv
+24,gelda,v,castrate,cvlcv

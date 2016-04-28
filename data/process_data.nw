@@ -71,6 +71,18 @@ gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > is_cvnc_stops
 # CVNCV
 gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvncv_stops.txt
 
+# CVRC
+gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt]$/' is_lower.txt > is_cvrc_stops.txt
+
+# CVRCV
+gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvrcv_stops.txt
+
+# CVLC
+gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt]$/' is_lower.txt > is_cvlc_stops.txt
+
+# CVLCV
+gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvlcv_stops.txt
+
 @
 
 Sort by vowel.
