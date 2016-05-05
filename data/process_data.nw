@@ -47,12 +47,12 @@ The following commands use gawk for finding CVCC and CVCC words containing stops
 
 <<*>>=
 # CVCC (stops only)
-gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))$/' \
-    is_lower.txt > is_cvcc_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
+    (t{2}))$/' is_lower.txt > is_cvcc_stops.txt
 
 # CVCCV (stops only)
-gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})|(t{2}))[aeiouyö]$/' \
-    is_lower.txt > is_cvccv_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
+    (t{2}))[aeiouyö]$/' is_lower.txt > is_cvccv_stops.txt
 
 @
 
@@ -66,22 +66,37 @@ cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
 
 <<*>>=
 # CVNC
-gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > is_cvnc_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > \
+    is_cvnc_stops.txt
 
 # CVNCV
-gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvncv_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt][aeiouyö]$/' is_lower.txt > \
+    is_cvncv_stops.txt
 
 # CVRC
-gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt]$/' is_lower.txt > is_cvrc_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt]$/' is_lower.txt > \
+    is_cvrc_stops.txt
 
 # CVRCV
-gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvrcv_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][r][bcdgkpt][aeiouyö]$/' is_lower.txt > \
+    is_cvrcv_stops.txt
 
 # CVLC
-gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt]$/' is_lower.txt > is_cvlc_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt]$/' is_lower.txt > \
+    is_cvlc_stops.txt
 
 # CVLCV
-gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt][aeiouyö]$/' is_lower.txt > is_cvlcv_stops.txt
+gawk --posix '/^[bcdgkpt][aeiouyö][l][bcdgkpt][aeiouyö]$/' is_lower.txt > \
+    is_cvlcv_stops.txt
+
+
+# VCC
+gawk --posix '/^[aáeéiíoóuúyýöæ(au)(ei)]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))$/' is_lower.txt > is_vcc_stops.txt
+
+# VNC
+gawk --posix '/^[aáeéiíoóuúyýöæ(au)(ei)][mn][bcdgkpt]$/' is_lower.txt > \
+    is_vnc_stops.txt
 
 @
 
