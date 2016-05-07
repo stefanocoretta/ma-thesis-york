@@ -107,3 +107,10 @@ Sort by vowel.
 # sort --key=1.2,1.2 is_cvccv_stops.txt
 
 @
+
+
+Let's extract all monosyllabic words. Some words end in ``/`` followed by digits, we need to take this in consideration in the search pattern.
+
+<<*>>=
+gawk --posix '/^[^aáeéiíoóuúyýöæ]+[aáeéiíoóuúyýöæ]+[^aáeéiíoóuúyýöæ]+($|\/)/' is_lower.txt > monosyl.txt
+@
