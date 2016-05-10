@@ -43,28 +43,21 @@ gawk '/^[[:lower:]]/' ../is.txt > is_lower.txt
 
 @
 
-The following commands use gawk for finding CVCC and CVCC words containing stops.
+The following is a collection of commands for getting lists of words with a specified structure.
+The structure is given between /.../.
+`gawk` is used to allow Unicode strings and `--posix` enables Unicode use.
+
+The following code block is for words beginning with stops.
 
 <<*>>=
-# CVCC (stops only)
+# CVCC
 gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
     (t{2}))$/' is_lower.txt > is_cvcc_stops.txt
 
-# CVCCV (stops only)
+# CVCCV
 gawk --posix '/^[bcdgkpt][aeiouyö]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
     (t{2}))[aeiouyö]$/' is_lower.txt > is_cvccv_stops.txt
 
-@
-
-These lines reverse each line in the files, sort them, and re-reverse to get the order right.
-
-<<*>>=
-cat is_cvcc_stops.txt | rev | sort | rev > is_cvcc_rev_sort.txt
-cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
-
-@
-
-<<*>>=
 # CVNC
 gawk --posix '/^[bcdgkpt][aeiouyö][mn][bcdgkpt]$/' is_lower.txt > \
     is_cvnc_stops.txt
@@ -97,6 +90,27 @@ gawk --posix '/^[aáeéiíoóuúyýöæ(au)(ei)]((b{2})|(c{2})|(d{2})|(g{2})|(k{
 # VNC
 gawk --posix '/^[aáeéiíoóuúyýöæ(au)(ei)][mn][bcdgkpt]$/' is_lower.txt > \
     is_vnc_stops.txt
+
+@
+
+This blocks extracts words starting with [+cont] consonants.
+
+<<*>>=
+# FVCC
+gawk --posix '/^[fsvjþ][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))$/' is_lower.txt > is_cvcc_cont.txt
+
+# FVCCV
+gawk --posix '/^[fsvjþ][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))[aeiouyö]$/' is_lower.txt > is_cvccv_cont.txt
+
+@
+
+These lines reverse each line in the files, sort them, and re-reverse to get the order right.
+
+<<*>>=
+# cat is_cvcc_stops.txt | rev | sort | rev > is_cvcc_rev_sort.txt
+# cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
 
 @
 

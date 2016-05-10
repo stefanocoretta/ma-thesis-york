@@ -1,11 +1,8 @@
 babb
 bakk
-batt
 bekk
 bygg
-datt
 dekk
-dett
 dogg
 dugg
 dögg
@@ -13,7 +10,6 @@ dökk
 gakk
 gikk
 gogg
-gott
 kapp
 kepp
 kipp
@@ -22,13 +18,8 @@ kopp
 kubb
 kökk
 köpp
-kött
 pakk
-pitt
-pytt
 pöbb
 takk
 tikk
-titt
 topp
-tott
