@@ -9,6 +9,7 @@ bibba
 bibbi
 bigga
 bobba
+boddí
 boggu
 bokku
 bubba
@@ -16,6 +17,8 @@ bubbi
 bödda
 böddi
 bögga
+búdda
+búkka
 dabba
 dabbi
 dagga
@@ -24,6 +27,7 @@ dekki
 didda
 diddi
 diddu
+diddú
 doppa
 doppu
 dugga
@@ -31,7 +35,11 @@ duggu
 dökka
 dökki
 dökku
+dúddu
+dúkka
+dúkku
 gagga
+gaggó
 gedda
 geddu
 gekki
@@ -43,6 +51,9 @@ gudda
 guddu
 gugga
 guggi
+gædda
+gæddi
+gæddu
 göggu
 kagga
 kaggi
@@ -70,6 +81,7 @@ pekka
 pikka
 poppa
 pöddu
+púkka
 takka
 takki
 tappa
@@ -92,3 +104,4 @@ tudda
 tuddi
 tugga
 tuggu
+tékki

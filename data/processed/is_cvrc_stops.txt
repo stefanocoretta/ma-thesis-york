@@ -4,6 +4,7 @@ birg
 birt
 burt
 byrg
+bært
 börk
 dorg
 garg
@@ -14,5 +15,8 @@ karp
 kork
 kurt
 kyrt
+kúrt
 part
 port
+pírt
+tórt
