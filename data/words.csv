@@ -15,13 +15,13 @@ id,lex,ph,vow,cons,context,syl,class,asp,pos,eng
 14,ydd,ɪtt,ɪ,tt,c#,vcc,stop,no,v,sharpen
 15,ótt,ouʰt,ou,ʰt,c#,vvcc,stop,yes,n,point
 16,odd,ott,o,tt,c#,vcc,stop,no,adv,fast
-17,sæts,saits,ai,t,c#,cvvcc,stop,no,adj,sweet
+17,sæts,saiss,ai,s,c#,cvvcc,stop,no,adj,sweet
 18,sætt,saiʰt,ai,ʰt,c#,cvvcc,stop,yes,adj,sweet
-19,sets,sets,e,t,c#,cvcc,stop,no,n,sediment
+19,sets,sess,e,s,c#,cvcc,stop,no,n,sediment
 20,sett,seʰt,e,ʰt,c#,cvcc,stop,yes,v,put
-21,feits,feits,ei,t,c#,cvvcc,stop,no,adj,fat
+21,feits,feiss,ei,s,c#,cvvcc,stop,no,adj,fat
 22,feitt,feiʰt,ei,ʰt,c#,cvvcc,stop,yes,adj,fat
-23,vots,vots,o,t,c#,cvvcc,stop,no,adj,wet
+23,vots,voss,o,s,c#,cvvcc,stop,no,adj,wet
 24,vott,voʰt,o,ʰt,c#,cvvcc,stop,yes,adj,wet
 25,takka,tʰaʰka,a,ʰk,cv,cvccv,stop,yes,n,key
 26,kagga,kʰakka,a,kk,cv,cvccv,stop,no,n,barrel
