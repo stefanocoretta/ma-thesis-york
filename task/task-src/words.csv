@@ -13,8 +13,6 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,eng
 14,ydd,ɪtt,ɪ,tt,cc,vcc,stop,coronal,no,v,sharpen
 15,ótt,ouʰt,ou,ʰt,cc,vvcc,stop,coronal,yes,n,point
 16,odd,ott,o,tt,cc,vcc,stop,coronal,no,adv,fast
-17,sæts,saiss,ai,s,cc,cvvcc,stop,coronal,no,adj,sweet
-18,sætt,saiʰt,ai,ʰt,cc,cvvcc,stop,coronal,yes,adj,sweet
 19,sets,sess,e,s,cc,cvcc,stop,coronal,no,n,sediment
 20,sett,seʰt,e,ʰt,cc,cvcc,stop,coronal,yes,v,put
 21,feits,feiss,ei,s,cc,cvvcc,stop,coronal,no,adj,fat
@@ -26,13 +24,13 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,eng
 31,punt,pʰʏn̥t,ʏ,n̥,cc,cvnc,nasal,coronal,yes,n,decoration
 32,pund,pʰʏnt,ʏ,n,cc,cvnc,nasal,coronal,no,n,pound
 33,kembt,kem̥t,e,m̥,cc,cvcc,nasal,labial,yes,v,comb
-34,kembdi,kemti,e,m,cc,cvccv,nasal,labial,no,v,comb
+34,kembdi,kemtɪ,e,m,cc,cvccv,nasal,labial,no,v,comb
 43,fínn,fitn̥,i,t,cc,cvcc,stop,coronal,yes,adj,smart
 44,kinn,kʰɪnn,i,nn,cc,cvcc,nasal,coronal,no,n,cheek
 45,duld,tʏlt,ʏ,l,cc,cvlc,lateral,coronal,no,agg,complex
 46,dult,tʏl̥t,ʏ,l̥,cc,cvlc,lateral,coronal,yes,agg,reticent
-10,þíddi,θitti,i,tt,ccv,cvccv,stop,coronal,no,v,thaw
-12,fæddi,faitti,ai,tt,ccv,cvccv,stop,coronal,no,v,feed
+10,þíddi,θittɪ,i,tt,ccv,cvccv,stop,coronal,no,v,thaw
+12,fæddi,faittɪ,ai,tt,ccv,cvccv,stop,coronal,no,v,feed
 25,takka,tʰaʰka,a,ʰk,ccv,cvccv,stop,velar,yes,n,key
 26,kagga,kʰakka,a,kk,ccv,cvccv,stop,velar,no,n,barrel
 27,detta,teʰta,e,ʰt,ccv,cvccv,stop,coronal,yes,v,fall
@@ -54,8 +52,8 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,eng
 54,vopna,voʰpna,o,ʰp,ccv,cvccv,stop,labial,yes,v,arm
 55,nafla,napla,a,p,ccv,cvccv,stop,labial,no,n,navel
 56,japla,jaʰpla,a,ʰp,ccv,cvccv,stop,labial,yes,v,munch
-57,kafli,kapli,a,p,ccv,cvccv,stop,labial,no,n,part
-58,kapli,kaʰpli,a,ʰp,ccv,cvccv,stop,labial,yes,n,cable
+57,kafli,kaplɪ,a,p,ccv,cvccv,stop,labial,no,n,part
+58,kapli,kaʰplɪ,a,ʰp,ccv,cvccv,stop,labial,yes,n,cable
 59,tefla,tepla,e,p,ccv,cvccv,stop,labial,no,v,play chess
 60,tipla,tɪʰpla,ɪ,ʰp,ccv,cvccv,stop,labial,yes,v,tiptoe
 47,gelta,kel̥ta,e,l̥,ccv,cvlcv,lateral,coronal,yes,v,bark
