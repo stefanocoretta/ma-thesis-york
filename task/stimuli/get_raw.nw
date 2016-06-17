@@ -2,9 +2,15 @@
 We neet to get the Hunspell files for Icelandic.
 
 <<*>>=
+#!/bin/bash
+
 wget http://extensions.libreoffice.org/extension-center/hunspell-is-the-icelandic-spelling-dictionary-project/releases/2013.05.11/hunspell-is-2013-05-11.oxt
 
 mv hunspell-is-2013-05-11.oxt hunspell-is-2013-05-11.zip
 
 unzip hunspell-is-2013-05-11.zip -d hunspell-is-2013-05-11
+
+rm -r hunspell-is-2013-05-11.zip
+
+mv ./hunspell-is-2013-05-11/dicts/is.dic ./
 @

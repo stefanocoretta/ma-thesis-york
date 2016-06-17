@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="1.83.04">
+  <Settings>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="Experiment info" updates="None" val="{u'session': u'001', u'participant': u''}" valType="code"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="expName" updates="None" val="icelandic" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Save log file" updates="None" val="False" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+  </Settings>
+  <Routines>
+    <Routine name="Instruction_3">
+      <TextComponent name="text_4">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="text_4" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="Be sure to read in the most natural way. Try to speak at a normal pace and with a normal intonation, as if you were talking to someone. After you have read aloud one sentence, press the spacebar to see the next sentence.&amp;#10;&amp;#10;When you are ready to start the task, press the spacebar. You will see a &quot;+&quot; sign for a few seconds and then the task will start." valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="FreeSans" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_5">
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_5" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <StaticComponent name="ISI_4">
+        <Param name="code" updates="None" val="" valType="code"/>
+        <Param name="name" updates="None" val="ISI_4" valType="code"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+      </StaticComponent>
+    </Routine>
+    <Routine name="fixation">
+      <TextComponent name="text_6">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="text_6" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="stopVal" updates="constant" val="3" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="instruction">
+      <TextComponent name="text_2">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="text_2" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="Hi! Thanks for participating in this study on Icelandic.&amp;#10;&amp;#10;The task consists of reading aloud sentences you will see on the screen. Your voice will be recorded while you are reading.&amp;#10;&amp;#10;The task will not start yet. Press the spacebar now to go to the next page." valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="FreeSans" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_2">
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <StaticComponent name="ISI_2">
+        <Param name="code" updates="None" val="" valType="code"/>
+        <Param name="name" updates="None" val="ISI_2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+      </StaticComponent>
+    </Routine>
+    <Routine name="trial">
+      <StaticComponent name="ISI">
+        <Param name="code" updates="None" val="" valType="code"/>
+        <Param name="name" updates="None" val="ISI" valType="code"/>
+        <Param name="stopVal" updates="constant" val="0.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+      </StaticComponent>
+      <TextComponent name="text">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="text" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="set every repeat" val="u'Segðu ' + $lex + ' aftur.'" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="font" updates="constant" val="FreeSans" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.15" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_4">
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_4" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="thanks">
+      <TextComponent name="text_7">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="text_7" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="You have now completed the task.&amp;#10;&amp;#10;Thanks for your time!&amp;#10;&amp;#10;Press the spacebar to end." valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="FreeSans" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_7">
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_7" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="instruction"/>
+    <Routine name="Instruction_3"/>
+    <Routine name="fixation"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="conditionsFile" updates="None" val="words.csv" valType="str"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="conditions" updates="None" val="[{'cond_no': 1, 'cons': u'\u02b0k', 'pos': u'n', 'syl': u'cvcc', 'vow': u'o', 'manner': u'stop', 'lex': u'kokk', 'eng': u'cook', 'place': u'velar', 'context': u'cc', 'ph': u'k\u02b0o\u02b0k', 'asp': u'yes'}, {'cond_no': 2, 'cons': u'kk', 'pos': u'n', 'syl': u'cvcc', 'vow': u'o', 'manner': u'stop', 'lex': u'gogg', 'eng': u'beak', 'place': u'velar', 'context': u'cc', 'ph': u'kokk', 'asp': u'no'}, {'cond_no': 3, 'cons': u'\u02b0k', 'pos': u'agg', 'syl': u'cvcc', 'vow': u'\u0153', 'manner': u'stop', 'lex': u'd\xf6kk', 'eng': u'dark', 'place': u'velar', 'context': u'cc', 'ph': u't\u0153\u02b0k', 'asp': u'yes'}, {'cond_no': 4, 'cons': u'kk', 'pos': u'n', 'syl': u'cvcc', 'vow': u'\u0153', 'manner': u'stop', 'lex': u'd\xf6gg', 'eng': u'dew', 'place': u'velar', 'context': u'cc', 'ph': u't\u0153kk', 'asp': u'no'}, {'cond_no': 5, 'cons': u'\u02b0p', 'pos': u'n', 'syl': u'cvcc', 'vow': u'o', 'manner': u'stop', 'lex': u'kopp', 'eng': u'chamber pot', 'place': u'labial', 'context': u'cc', 'ph': u'k\u02b0o\u02b0p', 'asp': u'yes'}, {'cond_no': 6, 'cons': u'pp', 'pos': u'n', 'syl': u'cvcc', 'vow': u'\u028f', 'manner': u'stop', 'lex': u'kubb', 'eng': u'block of wood', 'place': u'labial', 'context': u'cc', 'ph': u'k\u02b0\u028fpp', 'asp': u'no'}, {'cond_no': 7, 'cons': u'\u02b0t', 'pos': u'adv', 'syl': u'cvcc', 'vow': u'i', 'manner': u'stop', 'lex': u'v\xedtt', 'eng': u'far and wide', 'place': u'coronal', 'context': u'cc', 'ph': u'vi\u02b0t', 'asp': u'yes'}, {'cond_no': 8, 'cons': u'tt', 'pos': u'n', 'syl': u'cvcc', 'vow': u'i', 'manner': u'stop', 'lex': u'v\xeddd', 'eng': u'width', 'place': u'coronal', 'context': u'cc', 'ph': u'vitt', 'asp': u'no'}, {'cond_no': 9, 'cons': u'\u02b0t', 'pos': u'v', 'syl': u'cvcc', 'vow': u'i', 'manner': u'stop', 'lex': u'\xfe\xedtt', 'eng': u'thaw', 'place': u'coronal', 'context': u'cc', 'ph': u'\u03b8i\u02b0t', 'asp': u'yes'}, {'cond_no': 10, 'cons': u'tt', 'pos': u'v', 'syl': u'cvccv', 'vow': u'i', 'manner': u'stop', 'lex': u'\xfe\xedddi', 'eng': u'thaw', 'place': u'coronal', 'context': u'ccv', 'ph': u'\u03b8itt', 'asp': u'no'}, {'cond_no': 11, 'cons': u'\u02b0t', 'pos': u'v', 'syl': u'cvcc', 'vow': u'ai', 'manner': u'stop', 'lex': u'f\xe6tt', 'eng': u'feed', 'place': u'coronal', 'context': u'cc', 'ph': u'fai\u02b0t', 'asp': u'yes'}, {'cond_no': 12, 'cons': u'tt', 'pos': u'v', 'syl': u'cvccv', 'vow': u'ai', 'manner': u'stop', 'lex': u'f\xe6ddi', 'eng': u'feed', 'place': u'coronal', 'context': u'ccv', 'ph': u'faitti', 'asp': u'no'}, {'cond_no': 13, 'cons': u'\u02b0t', 'pos': u'v', 'syl': u'vcc', 'vow': u'i', 'manner': u'stop', 'lex': u'\xfdtt', 'eng': u'push', 'place': u'coronal', 'context': u'cc', 'ph': u'i\u02b0t', 'asp': u'yes'}, {'cond_no': 14, 'cons': u'tt', 'pos': u'v', 'syl': u'vcc', 'vow': u'\u026a', 'manner': u'stop', 'lex': u'ydd', 'eng': u'sharpen', 'place': u'coronal', 'context': u'cc', 'ph': u'\u026att', 'asp': u'no'}, {'cond_no': 15, 'cons': u'\u02b0t', 'pos': u'n', 'syl': u'vvcc', 'vow': u'ou', 'manner': u'stop', 'lex': u'\xf3tt', 'eng': u'point', 'place': u'coronal', 'context': u'cc', 'ph': u'ou\u02b0t', 'asp': u'yes'}, {'cond_no': 16, 'cons': u'tt', 'pos': u'adv', 'syl': u'vcc', 'vow': u'o', 'manner': u'stop', 'lex': u'odd', 'eng': u'fast', 'place': u'coronal', 'context': u'cc', 'ph': u'ott', 'asp': u'no'}, {'cond_no': 17, 'cons': u's', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'ai', 'manner': u'stop', 'lex': u's\xe6ts', 'eng': u'sweet', 'place': u'coronal', 'context': u'cc', 'ph': u'saiss', 'asp': u'no'}, {'cond_no': 18, 'cons': u'\u02b0t', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'ai', 'manner': u'stop', 'lex': u's\xe6tt', 'eng': u'sweet', 'place': u'coronal', 'context': u'cc', 'ph': u'sai\u02b0t', 'asp': u'yes'}, {'cond_no': 19, 'cons': u's', 'pos': u'n', 'syl': u'cvcc', 'vow': u'e', 'manner': u'stop', 'lex': u'sets', 'eng': u'sediment', 'place': u'coronal', 'context': u'cc', 'ph': u'sess', 'asp': u'no'}, {'cond_no': 20, 'cons': u'\u02b0t', 'pos': u'v', 'syl': u'cvcc', 'vow': u'e', 'manner': u'stop', 'lex': u'sett', 'eng': u'put', 'place': u'coronal', 'context': u'cc', 'ph': u'se\u02b0t', 'asp': u'yes'}, {'cond_no': 21, 'cons': u's', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'ei', 'manner': u'stop', 'lex': u'feits', 'eng': u'fat', 'place': u'coronal', 'context': u'cc', 'ph': u'feiss', 'asp': u'no'}, {'cond_no': 22, 'cons': u'\u02b0t', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'ei', 'manner': u'stop', 'lex': u'feitt', 'eng': u'fat', 'place': u'coronal', 'context': u'cc', 'ph': u'fei\u02b0t', 'asp': u'yes'}, {'cond_no': 23, 'cons': u's', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'o', 'manner': u'stop', 'lex': u'vots', 'eng': u'wet', 'place': u'coronal', 'context': u'cc', 'ph': u'voss', 'asp': u'no'}, {'cond_no': 24, 'cons': u'\u02b0t', 'pos': u'adj', 'syl': u'cvvcc', 'vow': u'o', 'manner': u'stop', 'lex': u'vott', 'eng': u'wet', 'place': u'coronal', 'context': u'cc', 'ph': u'vo\u02b0t', 'asp': u'yes'}, {'cond_no': 25, 'cons': u'\u02b0k', 'pos': u'n', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'takka', 'eng': u'key', 'place': u'velar', 'context': u'ccv', 'ph': u't\u02b0a\u02b0ka', 'asp': u'yes'}, {'cond_no': 26, 'cons': u'kk', 'pos': u'n', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'kagga', 'eng': u'barrel', 'place': u'velar', 'context': u'ccv', 'ph': u'k\u02b0akka', 'asp': u'no'}, {'cond_no': 27, 'cons': u'\u02b0t', 'pos': u'v', 'syl': u'cvccv', 'vow': u'e', 'manner': u'stop', 'lex': u'detta', 'eng': u'fall', 'place': u'coronal', 'context': u'ccv', 'ph': u'te\u02b0ta', 'asp': u'yes'}, {'cond_no': 28, 'cons': u'tt', 'pos': u'n', 'syl': u'cvccv', 'vow': u'e', 'manner': u'stop', 'lex': u'gedda', 'eng': u'pike', 'place': u'coronal', 'context': u'ccv', 'ph': u'ketta', 'asp': u'no'}, {'cond_no': 29, 'cons': u'm\u0325', 'pos': u'n', 'syl': u'cvnc', 'vow': u'a', 'manner': u'nasal', 'lex': u'kamp', 'eng': u'moustache', 'place': u'labial', 'context': u'cc', 'ph': u'k\u02b0am\u0325p', 'asp': u'yes'}, {'cond_no': 30, 'cons': u'm', 'pos': u'n', 'syl': u'cvnc', 'vow': u'a', 'manner': u'nasal', 'lex': u'kamb', 'eng': u'comb', 'place': u'labial', 'context': u'cc', 'ph': u'k\u02b0amp', 'asp': u'no'}, {'cond_no': 31, 'cons': u'n\u0325', 'pos': u'n', 'syl': u'cvnc', 'vow': u'\u028f', 'manner': u'nasal', 'lex': u'punt', 'eng': u'decoration', 'place': u'coronal', 'context': u'cc', 'ph': u'p\u02b0\u028fn\u0325t', 'asp': u'yes'}, {'cond_no': 32, 'cons': u'n', 'pos': u'n', 'syl': u'cvnc', 'vow': u'\u028f', 'manner': u'nasal', 'lex': u'pund', 'eng': u'pound', 'place': u'coronal', 'context': u'cc', 'ph': u'p\u02b0\u028fnt', 'asp': u'no'}, {'cond_no': 33, 'cons': u'm\u0325', 'pos': u'v', 'syl': u'cvcc', 'vow': u'e', 'manner': u'nasal', 'lex': u'kembt', 'eng': u'comb', 'place': u'labial', 'context': u'cc', 'ph': u'kem\u0325t', 'asp': u'yes'}, {'cond_no': 34, 'cons': u'm', 'pos': u'v', 'syl': u'cvccv', 'vow': u'e', 'manner': u'nasal', 'lex': u'kembdi', 'eng': u'comb', 'place': u'labial', 'context': u'cc', 'ph': u'kemti', 'asp': u'no'}, {'cond_no': 35, 'cons': u'm\u0325', 'pos': u'n', 'syl': u'cvncv', 'vow': u'a', 'manner': u'nasal', 'lex': u'kampa', 'eng': u'moustache', 'place': u'labial', 'context': u'ccv', 'ph': u'k\u02b0am\u0325pa', 'asp': u'yes'}, {'cond_no': 36, 'cons': u'm', 'pos': u'n', 'syl': u'cvncv', 'vow': u'a', 'manner': u'nasal', 'lex': u'kamba', 'eng': u'comb', 'place': u'labial', 'context': u'ccv', 'ph': u'k\u02b0ampa', 'asp': u'no'}, {'cond_no': 37, 'cons': u'm\u0325', 'pos': u'n', 'syl': u'cvncv', 'vow': u'e', 'manner': u'nasal', 'lex': u'kempa', 'eng': u'hero', 'place': u'labial', 'context': u'ccv', 'ph': u'k\u02b0em\u0325pa', 'asp': u'yes'}, {'cond_no': 38, 'cons': u'm', 'pos': u'v', 'syl': u'cvncv', 'vow': u'e', 'manner': u'nasal', 'lex': u'kemba', 'eng': u'comb', 'place': u'labial', 'context': u'ccv', 'ph': u'k\u02b0empa', 'asp': u'no'}, {'cond_no': 39, 'cons': u'n\u0325', 'pos': u'n', 'syl': u'cvncv', 'vow': u'\u028f', 'manner': u'nasal', 'lex': u'punta', 'eng': u'decoration', 'place': u'coronal', 'context': u'ccv', 'ph': u'p\u02b0\u028fn\u0325ta', 'asp': u'yes'}, {'cond_no': 40, 'cons': u'n', 'pos': u'n', 'syl': u'cvncv', 'vow': u'\u028f', 'manner': u'nasal', 'lex': u'punda', 'eng': u'pound', 'place': u'coronal', 'context': u'ccv', 'ph': u'p\u02b0\u028fnta', 'asp': u'no'}, {'cond_no': 41, 'cons': u'n\u0325', 'pos': u'v', 'syl': u'cvccv', 'vow': u'a', 'manner': u'nasal', 'lex': u'vanta', 'eng': u'want', 'place': u'coronal', 'context': u'ccv', 'ph': u'van\u0325ta', 'asp': u'yes'}, {'cond_no': 42, 'cons': u'n', 'pos': u'v', 'syl': u'cvncv', 'vow': u'a', 'manner': u'nasal', 'lex': u'vanda', 'eng': u'do st carefully', 'place': u'coronal', 'context': u'ccv', 'ph': u'vanta', 'asp': u'no'}, {'cond_no': 43, 'cons': u't', 'pos': u'adj', 'syl': u'cvcc', 'vow': u'i', 'manner': u'stop', 'lex': u'f\xednn', 'eng': u'smart', 'place': u'coronal', 'context': u'cc', 'ph': u'fitn\u0325', 'asp': u'yes'}, {'cond_no': 44, 'cons': u'nn', 'pos': u'n', 'syl': u'cvcc', 'vow': u'i', 'manner': u'nasal', 'lex': u'kinn', 'eng': u'cheek', 'place': u'coronal', 'context': u'cc', 'ph': u'k\u02b0\u026ann', 'asp': u'no'}, {'cond_no': 45, 'cons': u'l', 'pos': u'agg', 'syl': u'cvlc', 'vow': u'\u028f', 'manner': u'lateral', 'lex': u'duld', 'eng': u'complex', 'place': u'coronal', 'context': u'cc', 'ph': u't\u028flt', 'asp': u'no'}, {'cond_no': 46, 'cons': u'l\u0325', 'pos': u'agg', 'syl': u'cvlc', 'vow': u'\u028f', 'manner': u'lateral', 'lex': u'dult', 'eng': u'reticent', 'place': u'coronal', 'context': u'cc', 'ph': u't\u028fl\u0325t', 'asp': u'yes'}, {'cond_no': 47, 'cons': u'l\u0325', 'pos': u'v', 'syl': u'cvlcv', 'vow': u'e', 'manner': u'lateral', 'lex': u'gelta', 'eng': u'bark', 'place': u'coronal', 'context': u'cv', 'ph': u'kel\u0325ta', 'asp': u'yes'}, {'cond_no': 48, 'cons': u'l', 'pos': u'v', 'syl': u'cvlcv', 'vow': u'e', 'manner': u'lateral', 'lex': u'gelda', 'eng': u'castrate', 'place': u'coronal', 'context': u'ccv', 'ph': u'kelta', 'asp': u'no'}, {'cond_no': 49, 'cons': u'r\u0325', 'pos': u'n', 'syl': u'vrcv', 'vow': u'o', 'manner': u'rhotic', 'lex': u'orka', 'eng': u'energy', 'place': u'coronal', 'context': u'ccv', 'ph': u'or\u0325ka', 'asp': u'yes'}, {'cond_no': 50, 'cons': u'r', 'pos': u'n', 'syl': u'vrcv', 'vow': u'o', 'manner': u'rhotic', 'lex': u'orga', 'eng': u'scream', 'place': u'coronal', 'context': u'ccv', 'ph': u'orka', 'asp': u'no'}, {'cond_no': 51, 'cons': u'l\u0325', 'pos': u'v', 'syl': u'ccvvccv', 'vow': u'ou', 'manner': u'lateral', 'lex': u'mj\xf3lka', 'eng': u'milk', 'place': u'coronal', 'context': u'ccv', 'ph': u'mjoul\u0325ka', 'asp': u'yes'}, {'cond_no': 52, 'cons': u'l', 'pos': u'v', 'syl': u'vvccv', 'vow': u'iu', 'manner': u'lateral', 'lex': u'\xf3lga', 'eng': u'foam', 'place': u'coronal', 'context': u'ccv', 'ph': u'oulka', 'asp': u'no'}, {'cond_no': 53, 'cons': u'p', 'pos': u'v', 'syl': u'cvccv', 'vow': u'e', 'manner': u'stop', 'lex': u'hefna', 'eng': u'avenge', 'place': u'labial', 'context': u'ccv', 'ph': u'hepna', 'asp': u'no'}, {'cond_no': 54, 'cons': u'\u02b0p', 'pos': u'v', 'syl': u'cvccv', 'vow': u'o', 'manner': u'stop', 'lex': u'vopna', 'eng': u'arm', 'place': u'labial', 'context': u'ccv', 'ph': u'vo\u02b0pna', 'asp': u'yes'}, {'cond_no': 55, 'cons': u'p', 'pos': u'n', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'nafla', 'eng': u'navel', 'place': u'labial', 'context': u'ccv', 'ph': u'napla', 'asp': u'no'}, {'cond_no': 56, 'cons': u'\u02b0p', 'pos': u'v', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'japla', 'eng': u'munch', 'place': u'labial', 'context': u'ccv', 'ph': u'ja\u02b0pla', 'asp': u'yes'}, {'cond_no': 57, 'cons': u'p', 'pos': u'n', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'kafli', 'eng': u'part', 'place': u'labial', 'context': u'ccv', 'ph': u'kapli', 'asp': u'no'}, {'cond_no': 58, 'cons': u'\u02b0p', 'pos': u'n', 'syl': u'cvccv', 'vow': u'a', 'manner': u'stop', 'lex': u'kapli', 'eng': u'cable', 'place': u'labial', 'context': u'ccv', 'ph': u'ka\u02b0pli', 'asp': u'yes'}, {'cond_no': 59, 'cons': u'p', 'pos': u'v', 'syl': u'cvccv', 'vow': u'e', 'manner': u'stop', 'lex': u'tefla', 'eng': u'play chess', 'place': u'labial', 'context': u'ccv', 'ph': u'tepla', 'asp': u'no'}, {'cond_no': 60, 'cons': u'\u02b0p', 'pos': u'v', 'syl': u'cvccv', 'vow': u'\u026a', 'manner': u'stop', 'lex': u'tipla', 'eng': u'tiptoe', 'place': u'labial', 'context': u'ccv', 'ph': u't\u026a\u02b0pla', 'asp': u'yes'}]" valType="str"/>
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+    </LoopInitiator>
+    <Routine name="trial"/>
+    <LoopTerminator name="trials"/>
+    <Routine name="thanks"/>
+  </Flow>
+</PsychoPy2experiment>

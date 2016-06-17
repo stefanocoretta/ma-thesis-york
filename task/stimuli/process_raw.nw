@@ -1,0 +1,153 @@
+
+Let's add the hashbang.
+This is a bash script.
+
+<<*>>=
+#!/bin/bash
+
+@
+
+Let's change the extension of is.dic to a .txt file.
+
+<<*>>=
+cat is.dic > is.txt
+
+@
+
+We want to extract all the characters in the dictionary to know how to operate searching.
+
+<<*>>=
+mkdir processed
+cd processed
+
+gawk 'BEGIN {
+    FS = ""
+}
+
+{
+    for(i = 1; i <= NF; i++)
+        {chars[$(i)] = $(i);}
+}
+
+END {
+    for(c in chars)
+        {print c;}
+}' ../is.txt > is_alphabet.txt
+@
+
+Than let's extract words starting with lower case only.
+(Or should I change everything to lower case?)
+
+<<*>>=
+gawk '/^[[:lower:]]/' ../is.txt > is_lower.txt
+
+@
+
+The following is a collection of commands for getting lists of words with a specified structure.
+The structure is given between /.../.
+`gawk` is used to allow Unicode strings and `--posix` enables Unicode use.
+
+The following code block is for words beginning with stops.
+
+<<*>>=
+# CVCC
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
+    (t{2}))$/' is_lower.txt > is_cvcc_stops.txt
+
+# CVCCV
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})|(p{2})| \
+    (t{2}))[aáeéiíoóuúyýöæ]$/' is_lower.txt > is_cvccv_stops.txt
+
+# CVNC
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][mn][bcdgkpt]$/' is_lower.txt > \
+    is_cvnc_stops.txt
+
+# CVNCV
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][mn][bcdgkpt][aáeéiíoóuúyýöæ]$/' is_lower.txt > \
+    is_cvncv_stops.txt
+
+# CVRC
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][r][bcdgkpt]$/' is_lower.txt > \
+    is_cvrc_stops.txt
+
+# CVRCV
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][r][bcdgkpt][aáeéiíoóuúyýöæ]$/' is_lower.txt > \
+    is_cvrcv_stops.txt
+
+# CVLC
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][l][bcdgkpt]$/' is_lower.txt > \
+    is_cvlc_stops.txt
+
+# CVLCV
+gawk --posix '/^[bcdgkpt][aáeéiíoóuúyýöæ][l][bcdgkpt][aáeéiíoóuúyýöæ]$/' is_lower.txt > \
+    is_cvlcv_stops.txt
+
+# VCC
+gawk --posix '/^[aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))$/' is_lower.txt > is_vcc_stops.txt
+
+# VNC
+gawk --posix '/^[aáeéiíoóuúyýöæ][mn][bcdgkpt]$/' is_lower.txt > \
+    is_vnc_stops.txt
+
+@
+
+This blocks extracts words starting with [+cont] consonants.
+
+<<*>>=
+# FVCC
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))$/' is_lower.txt > is_cvcc_cont.txt
+
+# FVCCV
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ]((b{2})|(c{2})|(d{2})|(g{2})|(k{2})| \
+    (p{2})|(t{2}))[aáeéiíoóuúyýöæ]$/' is_lower.txt > is_cvccv_cont.txt
+
+# FVNC
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][mn][bcdgkpt]$/' is_lower.txt > \
+    is_cvnc_cont.txt
+
+# FVNCV
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][mn][bcdgkpt][aáeéiíoóuúyýöæ]$/' \
+    is_lower.txt > is_cvncv_cont.txt
+
+# FVRC
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][r][bcdgkpt]$/' is_lower.txt > \
+    is_cvrc_cont.txt
+
+# FVRCV
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][r][bcdgkpt][aáeéiíoóuúyýöæ]$/' \
+    is_lower.txt > is_cvrcv_cont.txt
+
+# FVLC
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][l][bcdgkpt]$/' is_lower.txt > \
+    is_cvlc_cont.txt
+
+# FVLCV
+gawk --posix '/^[fsvjþð][aáeéiíoóuúyýöæ][l][bcdgkpt][aáeéiíoóuúyýöæ]$/' \
+    is_lower.txt > is_cvlcv_cont.txt
+
+@
+
+These lines reverse each line in the files, sort them, and re-reverse to get the order right.
+
+<<*>>=
+# cat is_cvcc_stops.txt | rev | sort | rev > is_cvcc_rev_sort.txt
+# cat is_cvccv_stops.txt | rev | sort | rev > is_cvccv_rev_sort.txt
+
+@
+
+Sort by vowel.
+
+<<*>>=
+# sort --key=1.2,1.2 is_cvcc_stops.txt
+# sort --key=1.2,1.2 is_cvccv_stops.txt
+
+@
+
+
+Let's extract all monosyllabic words. Some words end in ``/`` followed by digits, we need to take this in consideration in the search pattern.
+
+<<*>>=
+gawk --posix '/^[^aáeéiíoóuúyýöæ]+[aáeéiíoóuúyýöæ]+[^aáeéiíoóuúyýöæ]+($|\/)/' is_lower.txt > monosyl.txt
+@
