@@ -30,7 +30,8 @@ endform
 
 # Create a list of all the TextGrid files in the Directory
 Create Strings as file list: "list", "'textgrid_directory$'*'textgrid_extension$'"
-files_no = Get number of strings # _no = _number
+# _no = _number
+files_no = Get number of strings
 
 # Check if the result file exists:
 if fileReadable (result_file$)
@@ -39,22 +40,45 @@ if fileReadable (result_file$)
 endif
 
 # Create a header row for the result file: (remember to edit this if you add or change the analyses!)
-header$ = "file_name,word,begin_int,end_int'newline$'"
+header$ = "file_name,word,label,begin_int,end_int,dur_int'newline$'"
 fileappend "'result_file$'" 'header$'
+
+# Give the indexes of the tiers
+word = 2
+voice = 3
+fric = 4
 
 #
 for file to files_no
     file_name$ = Get string: file
     Read from file: "'textgrid_directory$''file_name$'"
-    tiers_no = Get number of tiers
-    for tier to tiers_no
-        intervals_no = Get number of intervals: tier
-        for interval to intervals_no
-            label$ = Get label of interval: tier, interval
-            if label$ <> ""
-                begin = Get starting point: tier, interval
-                end = Get end point: tier, interval
-                duration = end - begin
 
-                result_line$ = "'file_name$',"
-                fileappend "'result_file$'" 'result_line$'
+    intervals_no = Get number of intervals: voice
+    for interval to intervals_no
+        label$ = Get label of interval: voice, interval
+        if label$ <> ""
+            begin = Get starting point: voice, interval
+            end = Get end point: voice, interval
+            duration = end - begin
+            word_int = Get interval at time: word, end - 0.05
+            word_label$ = Get label of interval: word, word_int
+            result_line$ = "'file_name$','word_label$','label$','begin','end','duration''newline$'"
+            fileappend "'result_file$'" 'result_line$'
+        endif
+    endfor
+
+    intervals_no = Get number of intervals: fric
+    for interval to intervals_no
+        label$ = Get label of interval: fric, interval
+        if label$ <> ""
+            begin = Get starting point: fric, interval
+            end = Get end point: fric, interval
+            duration = end - begin
+            word_int = Get interval at time: word, end
+            word_label$ = Get label of interval: word, word_int
+            result_line$ = "'file_name$','word_label$','label$','begin','end','duration''newline$'"
+            fileappend "'result_file$'" 'result_line$'
+        endif
+    endfor
+
+endfor
