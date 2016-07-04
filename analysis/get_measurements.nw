@@ -39,7 +39,9 @@ endform
 
 @
 
-Now we can create a list of the TextGrid files and create the result file. The extension "_no" in variable names means "_number". Then we check if the result file already exists and if it does, we prompt the user if she wants to overwrite it.
+Now we can create a list of the TextGrid files and create the result file.
+The extension \texttt{\textunderscore{}no} in variable names means \texttt{\textunderscore{}number}.
+Then we check if the result file already exists and if it does, we prompt the user if she wants to overwrite it.
 
 <<*>>=
 Create Strings as file list: "list", "'textgrid_directory$'*'textgrid_extension$'"
@@ -52,11 +54,12 @@ endif
 
 @
 
-We prepare the header of the result file and append it to it. The result file is created in the same folder where the script is.
+We prepare the header of the result file and append it to it.
+The result file is created in the same folder where the script is.
 
 <<*>>=
-header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,beg_mann,
-...end_mann, dur_mann,rels'newline$'"
+header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+...beg_mann,end_mann, dur_mann,rels'newline$'"
 fileappend "'result_file$'" 'header$'
 
 @
@@ -85,7 +88,8 @@ for file to files_no
 
 @
 
-Than we can loop through those and check which are non-empty. The variable "int_word" contains the index (numeric) of the current interval on the word tier.
+Than we can loop through those and check which are non-empty.
+The variable "int\textunderscore{}word" contains the index (numeric) of the current interval on the word tier.
 
 <<*>>=
     for int_word to intervals_no
@@ -93,7 +97,7 @@ Than we can loop through those and check which are non-empty. The variable "int_
         if lab_word$ <> ""
 @
 
-If they are non-empty get label, beginning and end. Calculate duration.
+If they are non-empty get label, beginning and end, and calculate the duration.
 
 <<*>>=
             begin_word = Get starting point: word, int_word
@@ -110,7 +114,7 @@ Get index and label of interval on voic.
 @
 
 
-If the interval on voic its non-empty, get begin and end, and calculate duration. Can I override the label variable?
+If the interval on voic its non-empty, get begin and end, and calculate duration.
 
 <<*>>=
             if label$ <> ""
@@ -120,16 +124,18 @@ If the interval on voic its non-empty, get begin and end, and calculate duration
 @
 
 
-Otherwise, get label of the next interval (int_voic + 1) on voic tier. Do I really need the label?
+Otherwise, get label of the next interval (int\textunderscore{}voic + 1) on voic tier.
 
 <<*>>=
             else
                 int_voic = int_voic +1
-                lab_voic = Get label of interval: voic, int_voic
+#                lab_voic = Get label of interval: voic, int_voic
 @
 
 
-If the first interval on voic is empty, then the next will always be non-empty. We can just get begin and end, and calculate duration. Terminate if.
+If the first interval on voic is empty, then the next will always be non-empty.
+We can just get begin and end, and calculate duration.
+Terminate if.
 
 <<*>>=
                 begin_voic = Get starting point: voic, int_voic
@@ -139,14 +145,15 @@ If the first interval on voic is empty, then the next will always be non-empty. 
 
 @
 
-Get interval index and label on the mann tier at time = end - 0.00001 of the interval on the voic tier. Do I really need label here?
+Get interval index and label on the mann tier at time = end - 0.00001 of the interval on the voic tier.
 
 <<*>>=
             int_mann = Get interval at time: mann, end_voic - 0.00001
             label$ = Get label of interval: mann, int_mann
 @
 
-If the interval is non-empty, get begin and end, and calculate duration. If it's empty, record nulls.
+If the interval is non-empty, get begin and end, and calculate duration.
+If it's empty, record nulls.
 
 <<*>>=
             if  label$ <> ""
@@ -169,7 +176,9 @@ Get nearest boundary on tier 5 to end of word.
 
 @
 
-Write output. If the label on the mann tier is empty, then input empty data. If the release time is not within the time boundaries of the word, input empty data.
+Write output.
+If the label on the mann tier is empty, then input empty data.
+If the release time is not within the time boundaries of the word, input empty data.
 
 <<*>>=
             if label$ <> ""

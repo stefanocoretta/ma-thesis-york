@@ -36,8 +36,8 @@ if fileReadable (result_file$)
         filedelete 'result_file$'
 endif
 
-header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,beg_mann,
-...end_mann, dur_mann,rels'newline$'"
+header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+...beg_mann,end_mann, dur_mann,rels'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -67,7 +67,7 @@ for file to files_no
                 duration_voic = end_voic - begin_voic
             else
                 int_voic = int_voic +1
-                lab_voic = Get label of interval: voic, int_voic
+#                lab_voic = Get label of interval: voic, int_voic
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
                 duration_voic = end_voic - begin_voic
