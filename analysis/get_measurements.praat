@@ -37,7 +37,7 @@ if fileReadable (result_file$)
 endif
 
 header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-...beg_mann,end_mann, dur_mann,rels'newline$'"
+...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -66,8 +66,7 @@ for file to files_no
                 end_voic = Get end point: voic, int_voic
                 duration_voic = end_voic - begin_voic
             else
-                int_voic = int_voic +1
-#                lab_voic = Get label of interval: voic, int_voic
+                int_voic = int_voic + 1
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
                 duration_voic = end_voic - begin_voic
@@ -89,17 +88,25 @@ for file to files_no
             time_rels = Get time of point: rels, int_rels
 
             if label$ <> ""
+                duration_v_to_m = begin_mann - begin_voic
+                duration_closure = time_rels - end_mann
+            else
+                duration_closure = time_rels - end_voic
+            endif
+
+            if label$ <> ""
                 if time_rels > begin_word and time_rels < end_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann',
-                    ...'time_rels''newline$'"
+                    ...'time_rels','duration_v_to_m','duration_closure',
+                    ...'duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann',
-                    ...'newline$'"
+                    ...,'duration_v_to_m',,'duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
@@ -107,13 +114,13 @@ for file to files_no
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','time_rels''newline$'"
+                    ...'duration_mann$','time_rels',,'duration_closure','duration_voic''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','newline$'"
+                    ...'duration_mann$',,,'duration_closure','duration_voic''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif

@@ -5,8 +5,8 @@ words <- read.csv("~/Documents/Projects/mathesis-is/task/task-src/words.csv")
 
 # need to check what can be compared with what
 
-results$asp <- words[match(results$word, words$lex),"asp"]
-results$manner <- words[match(results$word, words$lex),"manner"]
+#results$asp <- words[match(results$word, words$lex),"asp"]
+#results$manner <- words[match(results$word, words$lex),"manner"]
 results_try <- merge(results, words, by.x = "word", by.y = "lex")
 
 # results_voi <- subset(results_try, label == "voi")
@@ -39,8 +39,13 @@ boxplot(results_try$dur_voic~results_try$cons1)
 #wilcox.test(results_try$dur_int[results_try$cons1 == "asp"], 
 #            results_try$dur_int[results_try$cons1 == "nasp"])
 
+boxplot(results_stop_asp$dur_v_to_m[results_stop_asp$asp == "yes"],
+        results_stop_asp$dur_voic[results_stop_asp$asp == "no"])
 
+boxplot(results_stop_asp$abs_voic~results_stop_asp$asp)
 
+wilcox.test(results_stop_asp$abs_voic~results_stop_asp$asp)
 
+plot(density(results_stop_asp$dur_v_to_m[results_stop_nasp$asp == "yes"]))
 
 

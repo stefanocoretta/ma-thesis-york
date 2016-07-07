@@ -59,7 +59,7 @@ The result file is created in the same folder where the script is.
 
 <<*>>=
 header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-...beg_mann,end_mann, dur_mann,rels'newline$'"
+...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic'newline$'"
 fileappend "'result_file$'" 'header$'
 
 @
@@ -114,7 +114,7 @@ Get index and label of interval on voic.
 @
 
 
-If the interval on voic its non-empty, get begin and end, and calculate duration.
+If the interval on voic it's non-empty, get begin and end, and calculate duration.
 
 <<*>>=
             if label$ <> ""
@@ -124,12 +124,11 @@ If the interval on voic its non-empty, get begin and end, and calculate duration
 @
 
 
-Otherwise, get label of the next interval (int\textunderscore{}voic + 1) on voic tier.
+Otherwise, get index of the next interval (int\textunderscore{}voic + 1) on voic tier.
 
 <<*>>=
             else
-                int_voic = int_voic +1
-#                lab_voic = Get label of interval: voic, int_voic
+                int_voic = int_voic + 1
 @
 
 
@@ -176,6 +175,18 @@ Get nearest boundary on tier 5 to end of word.
 
 @
 
+Calculate voice-onset to manner-onset and closure duration (manner-offset to release). Need closure for non mann as well!
+
+<<*>>=
+            if label$ <> ""
+                duration_v_to_m = begin_mann - begin_voic
+                duration_closure = time_rels - end_mann
+            else
+                duration_closure = time_rels - end_voic
+            endif
+
+@
+
 Write output.
 If the label on the mann tier is empty, then input empty data.
 If the release time is not within the time boundaries of the word, input empty data.
@@ -186,13 +197,14 @@ If the release time is not within the time boundaries of the word, input empty d
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann',
-                    ...'time_rels''newline$'"
+                    ...'time_rels','duration_v_to_m','duration_closure',
+                    ...'duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann',
-                    ...'newline$'"
+                    ...,'duration_v_to_m',,'duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
@@ -200,20 +212,20 @@ If the release time is not within the time boundaries of the word, input empty d
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','time_rels''newline$'"
+                    ...'duration_mann$','time_rels',,'duration_closure','duration_voic''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','newline$'"
+                    ...'duration_mann$',,,'duration_closure','duration_voic''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif
 
 @
 
-Terminate for (0) if (2) and for (1).
+Terminate if (2),for (1) and for (0).
 
 <<*>>=
         endif
