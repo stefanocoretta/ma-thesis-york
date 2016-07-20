@@ -11,5 +11,5 @@ results_mono_stop <- subset(results_mono, manner == "stop")
 results_mono_stop_asp <- subset(results_mono_stop, cons1 == "asp")
 results_mono_stop_nasp <- subset(results_mono_stop, cons1 == "nasp")
 
-boxplot(results_mono_stop_asp$norm_voic~results_mono_stop_asp$asp)
-
+boxplot(results_mono_stop_asp$norm_abs_voic~results_mono_stop_asp$asp)
+wilcox.test(results_mono_stop_asp$norm_abs_voic~results_mono_stop_asp$asp)

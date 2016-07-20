@@ -37,7 +37,8 @@ if fileReadable (result_file$)
 endif
 
 header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,norm_voic,norm_mann'newline$'"
+...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,norm_voic,
+...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -97,34 +98,43 @@ for file to files_no
             if label$ <> ""
                 norm_duration_voice = duration_voic / duration_word
                 norm_duration_mann = duration_mann / duration_word
+                norm_duration_v_to_m = duration_v_to_m / duration_word
                 if time_rels > begin_word and time_rels < end_word
+                    norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann',
                     ...'time_rels','duration_v_to_m','duration_closure',
-                    ...'duration_v_to_m','norm_duration_voice','norm_duration_mann''newline$'"
+                    ...'duration_v_to_m','norm_duration_voice',
+                    ...'norm_duration_mann','norm_duration_v_to_m',
+                    ...'norm_duration_closure','norm_duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann','end_mann','duration_mann'
                     ...,,'duration_v_to_m',,'duration_v_to_m',
-                    ...'norm_duration_voice','norm_duration_mann''newline$'"
+                    ...'norm_duration_voice','norm_duration_mann',
+                    ...'norm_duration_v_to_m',,'norm_duration_v_to_m''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
                 norm_duration_voice = duration_voic / duration_word
                 if time_rels > begin_word and time_rels < end_word
+                    norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','time_rels',,'duration_closure','duration_voic','norm_duration_voice','newline$'"
+                    ...'duration_mann$','time_rels',,'duration_closure',
+                    ...'duration_voic','norm_duration_voice',,,
+                    ...'norm_duration_closure','norm_duration_voice''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$',,,'duration_closure','duration_voic','norm_duration_voice','newline$'"
+                    ...'duration_mann$',,,'duration_closure','duration_voic',
+                    ...'norm_duration_voice',,,,'norm_duration_voice''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif
