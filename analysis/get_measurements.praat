@@ -23,7 +23,7 @@
 
 form Select folder with TextGrid files
     comment Directory of TextGrid files. Include final '/'
-    text textgrid_directory /Users/Stefano/Google Drive/Icelandic/data/
+    text textgrid_directory /Users/Stefano/Google Drive/Icelandic/audio/
     sentence textgrid_extension .TextGrid
     sentence result_file results.csv
 endform

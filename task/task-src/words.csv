@@ -40,7 +40,7 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,cons1,syl_no,eng
 41,vanta,van̥ta,a,n̥,ccv,cvccv,nasal,coronal,yes,v,voi,2,want
 42,vanda,vanta,a,n,ccv,cvncv,nasal,coronal,no,v,voi,2,do st carefully
 43,fínn,fitn̥,i,t,cc,cvcc,stop,coronal,yes,adj,vls,1,smart
-44,kinn,kʰɪnn,i,nn,cc,cvcc,nasal,coronal,no,n,asp,1,cheek
+44,kinn,kʰɪnn,i,nn,cc,cvcc,geminate,coronal,no,n,asp,1,cheek
 45,duld,tʏlt,ʏ,l,cc,cvlc,lateral,coronal,no,agg,nasp,1,complex
 46,dult,tʏl̥t,ʏ,l̥,cc,cvlc,lateral,coronal,yes,agg,nasp,1,reticent
 47,gelta,kel̥ta,e,l̥,ccv,cvlcv,lateral,coronal,yes,v,nasp,2,bark
