@@ -26,7 +26,8 @@ plot(density(results_mono_asp_stop$norm_abs_voic))
 boxplot(results_mono_asp_stop$norm_abs_voic~results_mono_asp_stop$asp)
 shapiro.test(results_mono_asp_stop$norm_abs_voic)
 
-wilcox.test(results_mono_asp_stop$norm_abs_voic~results_mono_asp_stop$asp)
+t.test(results_mono_asp_stop$norm_abs_voic~results_mono_asp_stop$asp)
+
 
 #### Mono non-aspirated C1, stops ####
 plot(density(results_mono_nasp_stop$norm_abs_voic))
@@ -61,30 +62,38 @@ wilcox.test(results_mono_no_stop$norm_abs_voic~results_mono_no_stop$asp)
 
 results_mono_nasal <- subset(results_mono, manner == "nasal")
 
-plot(density(results_mono_nasal$norm_abs_voic))
-boxplot(results_mono_nasal$norm_abs_voic~results_mono_nasal$asp)
-shapiro.test(results_mono_nasal$norm_abs_voic)
+plot(density(results_mono_nasal$norm_mann))
+boxplot(results_mono_nasal$norm_mann~results_mono_nasal$asp)
+shapiro.test(results_mono_nasal$norm_mann)
 
-t.test(results_mono_nasal$norm_abs_voic~results_mono_nasal$asp)
+t.test(results_mono_nasal$norm_mann~results_mono_nasal$asp)
 
 #### Mono laterals ####
 
 results_mono_lateral <- subset(results_mono, manner == "lateral")
 
-plot(density(results_mono_lateral$norm_abs_voic))
-boxplot(results_mono_lateral$norm_abs_voic~results_mono_lateral$asp)
-shapiro.test(results_mono_lateral$norm_abs_voic)
+plot(density(results_mono_lateral$norm_mann))
+boxplot(results_mono_lateral$norm_mann~results_mono_lateral$asp)
+shapiro.test(results_mono_lateral$norm_mann)
 
-t.test(results_mono_lateral$norm_abs_voic~results_mono_lateral$asp)
+t.test(results_mono_lateral$norm_mann~results_mono_lateral$asp)
 
 #### Bi rhotics ####
 
 results_bi_rhotic <- subset(results_bi, manner == "rhotic")
 
-plot(density(results_bi_rhotic$norm_abs_voic))
-boxplot(results_bi_rhotic$norm_abs_voic~results_bi_rhotic$asp)
-shapiro.test(results_bi_rhotic$norm_abs_voic)
+plot(density(results_bi_rhotic$norm_mann))
+boxplot(results_bi_rhotic$norm_mann~results_bi_rhotic$asp)
+shapiro.test(results_bi_rhotic$norm_mann)
 
-wilcox.test(results_bi_rhotic$norm_abs_voic~results_bi_rhotic$asp)
+t.test(results_bi_rhotic$norm_mann~results_bi_rhotic$asp)
+
+#### Word length ####
+
+plot(density(results_mono_stop$dur_word))
+boxplot(results_mono_stop$dur_word~results_mono_stop$asp)
+shapiro.test(results_mono_stop$dur_word)
+
+wilcox.test(results_mono_stop$dur_word)
 
 

@@ -15,12 +15,12 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,cons1,syl_no,eng
 14,ydd,ɪtt,ɪ,tt,cc,vcc,stop,coronal,no,v,no,1,sharpen
 15,ótt,ouʰt,ou,ʰt,cc,vvcc,stop,coronal,yes,n,no,1,point
 16,odd,ott,o,tt,cc,vcc,stop,coronal,no,adv,no,1,fast
-19,sets,sess,e,s,cc,cvcc,stop,coronal,no,n,vls,1,sediment
+19,sets,sess,e,s,cc,cvcc,stop,coronal,no,n,voi,1,sediment
 20,sett,seʰt,e,ʰt,cc,cvcc,stop,coronal,yes,v,vls,1,put
-21,feits,feiss,ei,s,cc,cvvcc,stop,coronal,no,adj,vls,1,fat
+21,feits,feiss,ei,s,cc,cvvcc,stop,coronal,no,adj,voi,1,fat
 22,feitt,feiʰt,ei,ʰt,cc,cvvcc,stop,coronal,yes,adj,vls,1,fat
 23,vots,voss,o,s,cc,cvvcc,stop,coronal,no,adj,voi,1,wet
-24,vott,voʰt,o,ʰt,cc,cvvcc,stop,coronal,yes,adj,voi,1,wet
+24,vott,voʰt,o,ʰt,cc,cvvcc,stop,coronal,yes,adj,vls,1,wet
 25,takka,tʰaʰka,a,ʰk,ccv,cvccv,stop,velar,yes,n,asp,2,key
 26,kagga,kʰakka,a,kk,ccv,cvccv,stop,velar,no,n,asp,2,barrel
 27,detta,teʰta,e,ʰt,ccv,cvccv,stop,coronal,yes,v,nasp,2,fall
