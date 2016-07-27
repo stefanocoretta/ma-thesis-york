@@ -78,6 +78,21 @@ shapiro.test(results_mono_lateral$norm_mann)
 
 t.test(results_mono_lateral$norm_mann~results_mono_lateral$asp)
 
+#### Bi aspirated C1, stops ####
+plot(density(results_bi_asp_stop$norm_abs_voic))
+boxplot(results_bi_asp_stop$norm_abs_voic~results_bi_asp_stop$asp)
+shapiro.test(results_bi_asp_stop$norm_abs_voic)
+
+t.test(results_bi_asp_stop$norm_abs_voic~results_bi_asp_stop$asp)
+
+#### Bi non-aspirated C1, stops ####
+plot(density(results_bi_nasp_stop$norm_abs_voic))
+boxplot(results_bi_nasp_stop$norm_abs_voic~results_bi_nasp_stop$asp)
+shapiro.test(results_bi_nasp_stop$norm_abs_voic)
+
+t.test(results_bi_nasp_stop$norm_abs_voic~results_bi_nasp_stop$asp)
+
+
 #### Bi rhotics ####
 
 results_bi_rhotic <- subset(results_bi, manner == "rhotic")
@@ -95,5 +110,28 @@ boxplot(results_mono_stop$dur_word~results_mono_stop$asp)
 shapiro.test(results_mono_stop$dur_word)
 
 wilcox.test(results_mono_stop$dur_word)
+wilcox.test(results_mono_asp_stop$dur_word)
+
+wilcox.test(results_mono_stop$dur_word~results_mono_stop$asp)
+kruskal.test(results_mono_stop$dur_word~results_mono_stop$cons1)
+
+#### Multiple regression
+
+results_stop <- subset(results, manner == "stop")
+results_son <- subset(results, manner != "stop")
+
+
+model_stop <- lm(results_stop$norm_abs_voic ~ results_stop$asp +
+                results_stop$syl_no + results_stop$cons1)
+summary(model_stop)
+
+model_son <- lm(results_son$norm_mann ~ results_son$asp +
+                    results_son$syl_no + results_son$cons1 +
+                    results_son$manner)
+model_son <- lm(results_son$norm_mann ~ results_son$asp:results_son$manner)
+summary(model_son)
+
+
+
 
 
