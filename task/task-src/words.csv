@@ -15,9 +15,9 @@ cond_no,lex,ph,vow,cons,context,syl,manner,place,asp,pos,cons1,syl_no,eng
 14,ydd,ɪtt,ɪ,tt,cc,vcc,stop,coronal,no,v,no,mono,sharpen
 15,ótt,ouʰt,ou,ʰt,cc,vvcc,stop,coronal,yes,n,no,mono,point
 16,odd,ott,o,tt,cc,vcc,stop,coronal,no,adv,no,mono,fast
-19,sets,sess,e,s,cc,cvcc,stop,coronal,no,n,voi,mono,sediment
+19,sets,sess,e,s,cc,cvcc,stop,coronal,no,n,vls,mono,sediment
 20,sett,seʰt,e,ʰt,cc,cvcc,stop,coronal,yes,v,vls,mono,put
-21,feits,feiss,ei,s,cc,cvvcc,stop,coronal,no,adj,voi,mono,fat
+21,feits,feiss,ei,s,cc,cvvcc,stop,coronal,no,adj,vls,mono,fat
 22,feitt,feiʰt,ei,ʰt,cc,cvvcc,stop,coronal,yes,adj,vls,mono,fat
 23,vots,voss,o,s,cc,cvvcc,stop,coronal,no,adj,voi,mono,wet
 24,vott,voʰt,o,ʰt,cc,cvvcc,stop,coronal,yes,adj,vls,mono,wet
