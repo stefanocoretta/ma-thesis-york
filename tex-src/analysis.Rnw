@@ -1,0 +1,168 @@
+\documentclass{article}
+
+
+\usepackage{Sweave}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+The following code loads the result file and the file containing the words of the task.
+
+<<>>=
+results_raw <- read.csv("~/Documents/Projects/mathesis-is/analysis/results.csv")
+words <- read.csv("~/Documents/Projects/mathesis-is/task/task-src/words.csv")
+@
+
+Now we can merge the result and words files into one single data frame.
+
+<<>>=
+results <- merge(results_raw, words, by.x = "word", by.y = "lex")
+@
+
+To check that the duration of each word token as spoken by the participants, we first need to split the data into two subsets: one with monosyllabic words and one with bisyllabic words.
+
+<<>>=
+results_mono <- subset(results, syl_no == "mono")
+results_bi <- subset(results, syl_no == "bi")
+@
+
+We can now separately check the duration of monosyllabic and bisyllabic words.
+
+<<fig=T>>=
+plot(
+    c(), c(),
+    xlim = c(0.1,0.9),
+    ylim = c(0,150),
+    xlab = "duration (s)", ylab = "frequency"
+)
+
+hist(
+    results_mono$dur_word, add = TRUE, col = "darkgrey"
+)
+
+hist(
+    results_bi$dur_word, add = TRUE, col = "lightgrey"
+)
+@
+
+The mean length of monosyllabic words is \Sexpr{round(mean(results_mono$dur_word), 2)}s, while that of bisyllabic words is \Sexpr{round(mean(results_bi$dur_word), 2)}s.
+
+Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono- and bisyllabic words.
+
+<<>>=
+norm_abs_voic_density <- density(results$norm_abs_voic)
+
+x.limits <- range(norm_abs_voic_density$x)
+y.limits <- range(norm_abs_voic_density$y)
+
+plot(
+c(), c(),
+xlim = x.limits,
+ylim = y.limits,
+xlab = "duration (s)", ylab = "density"
+)
+
+lines(density(results_mono$norm_abs_voic), lw = 1, col = "blue")
+lines(density(results_bi$norm_abs_voic), lw = 1, col = "red")
+@
+
+A two-sample unpaired \textit{t}-test shows that the length of modal voicing in words starting with an aspirated stop and ending in a stop is significantly longer in monosyllabic words than in bisyllabic words. Thus, subsequent tests will be performed for monosyllabic and bisyllabic words separately.
+
+<<>>=
+results_mono_stop <- subset(results_mono, manner == "stop")
+results_mono_asp_stop <- subset(results_mono_stop, cons1 == "asp")
+
+results_bi_stop <- subset(results_bi, manner == "stop")
+results_bi_asp_stop <- subset(results_bi_stop, cons1 == "asp")
+
+t.test(results_mono_asp_stop$norm_abs_voic, results_bi_asp_stop$norm_abs_voic)
+@
+
+<<>>=
+results_mono_nasp_stop <- subset(results_mono_stop, cons1 == "nasp")
+results_mono_voi_stop <- subset(results_mono_stop, cons1 == "voi")
+results_mono_vls_stop <- subset(results_mono_stop, cons1 == "vls")
+results_mono_no_stop <- subset(results_mono_stop, cons1 == "no")
+
+results_bi_nasp_stop <- subset(results_bi_stop, cons1 == "nasp")
+@
+
+The following checks on CVCC words, starting with an aspirated consonant and ending with a geminate stop (non aspirated or pre-aspirated).
+
+<<fig=T>>=
+norm_abs_voic_density <- density(c(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "yes"],results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "no"]))
+
+x.limits <- range(norm_abs_voic_density$x)
+y.limits <- range(norm_abs_voic_density$y)
+
+plot(
+c(), c(),
+xlim = x.limits,
+ylim = y.limits,
+xlab = "duration (s)", ylab = "density"
+)
+
+lines(density(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "yes"]), lw = 1, col = "blue")
+lines(density(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "no"]), lw = 1, col = "red")
+@
+
+<<>>=
+shapiro.test(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "yes"])
+shapiro.test(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "no"])
+@
+
+Since the distributions of the duration of modal voicing in the two conditions (non-aspirated and pre-aspirated stops) are not significantely different from the normal distribution, I can perform a \textit{t}-test.
+
+<<fig=T>>=
+boxplot(results_mono_stop$norm_abs_voic~results_mono_stop$asp)
+t.test(results_mono_stop$norm_abs_voic~results_mono_stop$asp)
+@
+
+<<fig=T>>=
+norm_abs_voic_density <- density(c(results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "yes"],results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "no"]))
+
+x.limits <- range(norm_abs_voic_density$x)
+y.limits <- range(norm_abs_voic_density$y)
+
+plot(
+c(), c(),
+xlim = x.limits,
+ylim = y.limits,
+xlab = "duration (s)", ylab = "density"
+)
+
+lines(density(results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "yes"]), lw = 1, col = "blue")
+lines(density(results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "no"]), lw = 1, col = "red")
+@
+
+<<>>=
+shapiro.test(results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "yes"])
+shapiro.test(results_mono_nasp_stop$norm_abs_voic[results_mono_nasp_stop$asp == "no"])
+@
+
+<<fig=T>>=
+norm_abs_voic_density <- c(density(results_mono_stop$norm_abs_voic[results_mono_stop$asp == "yes"]),density(results_mono_stop$norm_abs_voic[results_mono_stop$asp == "no"]))
+
+# ok THIS IS WRONG :D
+
+x.limits <- range(norm_abs_voic_density$x)
+y.limits <- range(norm_abs_voic_density$y)
+
+plot(
+c(), c(),
+xlim = x.limits,
+ylim = y.limits,
+xlab = "duration (s)", ylab = "density"
+)
+
+lines(density(results_mono_stop$norm_abs_voic[results_mono_stop$asp == "yes"]), lw = 1, col = "blue")
+lines(density(results_mono_stop$norm_abs_voic[results_mono_stop$asp == "no"]), lw = 1, col = "red")
+@
+
+
+
+
+
+
+
+\end{document}

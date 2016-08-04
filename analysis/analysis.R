@@ -4,8 +4,8 @@ words <- read.csv("~/Documents/Projects/mathesis-is/task/task-src/words.csv")
 
 results <- merge(results_raw, words, by.x = "word", by.y = "lex")
 
-results_mono <- subset(results, syl_no == 1)
-results_bi <- subset(results, syl_no == 2)
+results_mono <- subset(results, syl_no == "mono")
+results_bi <- subset(results, syl_no == "bi")
 
 #### Stops ####
 
@@ -115,14 +115,17 @@ wilcox.test(results_mono_asp_stop$dur_word)
 wilcox.test(results_mono_stop$dur_word~results_mono_stop$asp)
 kruskal.test(results_mono_stop$dur_word~results_mono_stop$cons1)
 
+
 #### Multiple regression
 
 results_stop <- subset(results, manner == "stop")
 results_son <- subset(results, manner != "stop")
 
 
+model_stop <- lm(results_stop$norm_abs_voic ~ results_stop$asp)
 model_stop <- lm(results_stop$norm_abs_voic ~ results_stop$asp +
                 results_stop$syl_no + results_stop$cons1)
+model_stop <- lm(results_stop$norm_abs_voic ~ results_stop$asp:results_stop$syl_no)
 summary(model_stop)
 
 model_son <- lm(results_son$norm_mann ~ results_son$asp +
@@ -131,6 +134,44 @@ model_son <- lm(results_son$norm_mann ~ results_son$asp +
 model_son <- lm(results_son$norm_mann ~ results_son$asp:results_son$manner)
 summary(model_son)
 
+plot(density(log(results_stop$norm_abs_voic)))
+plot(density(results_stop$norm_abs_voic))
+
+boxplot(results$norm_abs_voic ~ results$syl_no)
+plot(density(results$norm_abs_voic[results$syl_no == "mono"]))
+plot(density(results$norm_abs_voic[results$syl_no == "bi"]))
+shapiro.test(results$norm_abs_voic[results$syl_no == "mono"])
+shapiro.test(results$norm_abs_voic[results$syl_no == "bi"])
+
+wilcox.test(results_stop$norm_abs_voic ~ results_stop$syl_no)
+
+model_abs_voic <- lm(results$norm_abs_voic ~ results$syl_no)
+summary(model_abs_voic)
+
+anova(lm(results_stop$norm_abs_voic ~ results_stop$asp +
+             results_stop$syl_no + results_stop$cons1))
+
+polr(norm_abs_voic ~ asp + syl_no + cons1, data = results_stop)
+
+model <- glm(results_stop$norm_abs_voic ~ results_stop$asp +
+       results_stop$syl_no + results_stop$place)
+summary(model)
+
+# Is place of articulation of the target consonant affecting the lenght of the target vowel?
+
+boxplot(results_stop$norm_abs_voic~results_stop$place)
+kruskal.test(results_stop$norm_abs_voic, results_stop$place)
+
+# Seems so...
+
+model <- glm(results_stop$norm_abs_voic ~ results_stop$asp + results_stop$place)
+summary(model)
+plot(density(results_mono_stop$norm_abs_voic[results_mono_stop$asp == "yes"]))
+plot(density(log(results_mono_asp_stop$norm_abs_voic[results_mono_asp_stop$asp == "yes"])))
+shapiro.test(results_mono_asp_stop$norm_abs_voic)
+
+
+t.test(results_mono_asp_stop$norm_abs_voic, results_bi_asp_stop$norm_abs_voic)
 
 
 
