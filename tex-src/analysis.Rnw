@@ -1,7 +1,5 @@
 \documentclass[a4paper,11pt]{article}
 
-\usepackage{Sweave}
-
 \usepackage{polyglossia}
     \setmainlanguage{english}
 
@@ -16,7 +14,13 @@
 
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(highlight)
+opts_chunk$set(fig.path='img/', fig.align='center', fig.show='hold')
+@
+
+
 \maketitle
 
 
@@ -42,7 +46,7 @@ bi <- subset(results, syl_no == "bi")
 
 We can now separately check the duration of monosyllabic and bisyllabic words.
 
-<<fig=T>>=
+<<ciao, fig=T>>=
 plot(
     c(), c(),
     xlim = c(0.1,0.9),
