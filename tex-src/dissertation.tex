@@ -6,22 +6,46 @@
 
 \usepackage{polyglossia}
     \setmainlanguage{english}
+
 \usepackage{fontspec}
     \setmainfont{FreeSerif}
     \frenchspacing
 
-\title{Bla}
+\usepackage{ctable,multirow,multicol}
+
+\usepackage{natbib}
+
+\usepackage{mycleveref}
+
+\title{Vowel duration and aspiration effects in Icelandic}
 \author{Stefano Coretta}
 
+
+
+
 \begin{document}
+
+\frontmatter
 
 \begin{titlingpage}
 \maketitle
 \end{titlingpage}
 
 
-Ciao
+\mainmatter
 
+\input{./tex/intro.tex}
+\input{./tex/review.tex}
+\input{./tex/method.tex}
+\input{./tex/results.tex}
+\input{./tex/discussion.tex}
+\input{./tex/conclusion.tex}
 
+\appendix
+
+\input{./tex/appendix.tex}
+
+\bibliographystyle{york-harvard}
+\bibliography{linguistics}
 
 \end{document}
