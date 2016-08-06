@@ -1,0 +1,1142 @@
+\documentclass[a4paper,11pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+\usepackage{polyglossia}
+    \setmainlanguage{english}
+
+\usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text}
+    \setmainfont{Charis SIL}
+    \frenchspacing
+
+
+
+\title{Preliminary analysis}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+
+\maketitle
+
+
+The following code loads the csv file with the word list used in the task and the result file.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{results_raw} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"analysis/results.csv"}\hlstd{)}
+\hlstd{words} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"task/task-src/words.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Now we can merge the word list and result files into one single data frame.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{results} \hlkwb{<-} \hlkwd{merge}\hlstd{(results_raw, words,} \hlkwc{by.x} \hlstd{=} \hlstr{"word"}\hlstd{,} \hlkwc{by.y} \hlstd{=} \hlstr{"lex"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+To check the duration of each word token as spoken by the participants, we first split the data into two subsets: one with monosyllabic words and one with bisyllabic words.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"mono"}\hlstd{)}
+\hlstd{bi} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"bi"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+We can now separately check the duration of monosyllabic and bisyllabic words.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plot}\hlstd{(}
+    \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+    \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlnum{0.9}\hlstd{),}
+    \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{150}\hlstd{),}
+    \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"frequency"}
+\hlstd{)}
+
+\hlkwd{hist}\hlstd{(}
+    \hlstd{mono}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"darkgrey"}
+\hlstd{)}
+
+\hlkwd{hist}\hlstd{(}
+    \hlstd{bi}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"lightgrey"}
+\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/word-duration-1} 
+
+}
+
+
+
+\end{knitrout}
+
+The mean length of monosyllabic words is 0.44 seconds, while that of bisyllabic words is 0.48 seconds.
+
+Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{norm_abs_voic_mono_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic)}
+\hlstd{norm_abs_voic_bi_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi}\hlopt{$}\hlstd{norm_abs_voic)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_mono_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_bi_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_mono_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_bi_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_mono_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_bi_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-bi-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono$norm_abs_voic
+## W = 0.89899, p-value = 9.358e-16
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{norm_abs_voic)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi$norm_abs_voic
+## W = 0.93052, p-value = 6.755e-13
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (0.22) than in bisyllabic words (0.18).
+Subsequent tests will be performed for monosyllabic and bisyllabic words separately.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic, bi}\hlopt{$}\hlstd{norm_abs_voic)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  mono$norm_abs_voic and bi$norm_abs_voic
+## W = 115180, p-value < 2.2e-16
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\section{Monosyllabic words}
+
+\subsection{Stops}
+
+We can now have a look at monosyllabic words, starting from CVCC words (ending in a geminate stop).
+These words start with either an aspirated, a non-aspirated or a sonorant consonant.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono_stop} \hlkwb{<-} \hlkwd{subset}\hlstd{(mono, manner} \hlopt{==} \hlstr{"stop"}\hlstd{)}
+
+\hlstd{bi_stop} \hlkwb{<-} \hlkwd{subset}\hlstd{(bi, manner} \hlopt{==} \hlstr{"stop"}\hlstd{)}
+
+\hlstd{mono_stop_asp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_abs_voic[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_stop_nasp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_abs_voic[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-stop-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_stop_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_stop_asp
+## W = 0.89359, p-value = 1.067e-09
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_stop_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_stop_nasp
+## W = 0.95864, p-value = 0.0007395
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Since the distributions of the duration of modal voicing in the two conditions (pre-aspirated and non-aspirated) are significantly different from the normal distribution, we should perform a Wilcoxon test.
+According to the test, the mean duration of modal voicing in words ending with a pre-aspirated stop is significantly shorter (0.2 seconds) than in words ending with a non-aspirated stop (0.26 seconds).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= mono_stop,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVCC words"}
+        \hlstd{)}
+\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  norm_abs_voic by asp
+## W = 15374, p-value = 5.426e-11
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-stop-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\subsection{Nasals}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono_nas} \hlkwb{<-} \hlkwd{subset}\hlstd{(mono, manner} \hlopt{==} \hlstr{"nasal"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono_nas_asp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_abs_voic[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_nas_nasp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_abs_voic[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-nas-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= mono_nas,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVNC words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-nas-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_nas_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_nas_asp
+## W = 0.96651, p-value = 0.2776
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_nas_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_nas_nasp
+## W = 0.98409, p-value = 0.9277
+\end{verbatim}
+\begin{alltt}
+\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_nas)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  norm_abs_voic by asp
+## t = 4.4883, df = 50.272, p-value = 4.202e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.01693745 0.04436910
+## sample estimates:
+##  mean in group no mean in group yes 
+##         0.2010632         0.1704099
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+According to a two-sample \textit{t}-test, the duration of modal voicing in words ending with an N̥C cluster (0.17 seconds) is shorter than in words ending with an NC cluster (0.2 seconds).
+
+\subsection{Laterals}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono_lat} \hlkwb{<-} \hlkwd{subset}\hlstd{(mono, manner} \hlopt{==} \hlstr{"lateral"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mono_lat_asp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_abs_voic[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_lat_nasp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_abs_voic[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-lat-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= mono_lat,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVLC words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-lat-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_lat_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_lat_asp
+## W = 0.96233, p-value = 0.7329
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono_lat_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono_lat_nasp
+## W = 0.8995, p-value = 0.1563
+\end{verbatim}
+\begin{alltt}
+\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_lat)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  norm_abs_voic by asp
+## t = 3.6588, df = 24.907, p-value = 0.001188
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.01609712 0.05757378
+## sample estimates:
+##  mean in group no mean in group yes 
+##         0.2154738         0.1786384
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+It is good to check whether the duration of monosyllabic words is affected by the presence vs. absence of preaspiration.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= mono,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Word duration (in seconds) depending on aspiration"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/mono-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{dur_word[mono}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono$dur_word[mono$asp == "yes"]
+## W = 0.98839, p-value = 0.06551
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{dur_word[mono}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  mono$dur_word[mono$asp == "no"]
+## W = 0.98788, p-value = 0.1235
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{t.test}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  dur_word by asp
+## t = -0.33834, df = 358.51, p-value = 0.7353
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.02081099  0.01470130
+## sample estimates:
+##  mean in group no mean in group yes 
+##         0.4336616         0.4367164
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+According to a \textit{t}-test, the duration of monosyllabic words is not affected by the presence vs. absence of preaspiration.
+Thus, the difference in the mean duration of modal voicing can't be attributed to the differences in word duration.
+
+\section{Bisyllabic words}
+
+\subsection{Stops}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_stop_asp} \hlkwb{<-} \hlstd{bi_stop}\hlopt{$}\hlstd{norm_abs_voic[bi_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{bi_stop_nasp} \hlkwb{<-} \hlstd{bi_stop}\hlopt{$}\hlstd{norm_abs_voic[bi_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_stop_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_stop_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-stop-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_stop_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_stop_asp
+## W = 0.97478, p-value = 0.09047
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_stop_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_stop_nasp
+## W = 0.8552, p-value = 3.971e-09
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= bi_stop,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVCCV words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-stop-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  norm_abs_voic by asp
+## W = 15374, p-value = 5.426e-11
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\subsection{Nasals}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_nas} \hlkwb{<-} \hlkwd{subset}\hlstd{(bi, manner} \hlopt{==} \hlstr{"nasal"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_nas_asp} \hlkwb{<-} \hlstd{bi_nas}\hlopt{$}\hlstd{norm_abs_voic[bi_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{bi_nas_nasp} \hlkwb{<-} \hlstd{bi_nas}\hlopt{$}\hlstd{norm_abs_voic[bi_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_nas_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_nas_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-nas-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= bi_nas,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVNCV words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-nas-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_nas_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_nas_asp
+## W = 0.93297, p-value = 0.003567
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_nas_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_nas_nasp
+## W = 0.77579, p-value = 8.149e-09
+\end{verbatim}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_nas)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  norm_abs_voic by asp
+## W = 3077, p-value = 1.667e-08
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\subsection{Laterals}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_lat} \hlkwb{<-} \hlkwd{subset}\hlstd{(bi, manner} \hlopt{==} \hlstr{"lateral"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_lat_asp} \hlkwb{<-} \hlstd{bi_lat}\hlopt{$}\hlstd{norm_abs_voic[bi_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{bi_lat_nasp} \hlkwb{<-} \hlstd{bi_lat}\hlopt{$}\hlstd{norm_abs_voic[bi_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_lat_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_lat_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-lat-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= bi_lat,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVLCV words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-lat-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_lat_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_lat_asp
+## W = 0.89515, p-value = 0.01037
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_lat_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_lat_nasp
+## W = 0.88907, p-value = 0.004586
+\end{verbatim}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_lat)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test
+## 
+## data:  norm_abs_voic by asp
+## W = 747, p-value = 1.416e-09
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\subsection{Rhotics}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_rho} \hlkwb{<-} \hlkwd{subset}\hlstd{(bi, manner} \hlopt{==} \hlstr{"rhotic"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{bi_rho_asp} \hlkwb{<-} \hlstd{bi_rho}\hlopt{$}\hlstd{norm_abs_voic[bi_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{bi_rho_nasp} \hlkwb{<-} \hlstd{bi_rho}\hlopt{$}\hlstd{norm_abs_voic[bi_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+
+\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_rho_asp)}
+\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi_rho_nasp)}
+
+\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-rho-dens-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+        \hlkwc{data} \hlstd{= bi_rho,}
+        \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVRCV words"}
+        \hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-rho-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_rho_asp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_rho_asp
+## W = 0.9483, p-value = 0.4982
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi_rho_nasp)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi_rho_nasp
+## W = 0.93249, p-value = 0.2972
+\end{verbatim}
+\begin{alltt}
+\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_rho)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  norm_abs_voic by asp
+## t = 2.2691, df = 27.797, p-value = 0.03122
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.003433211 0.067391206
+## sample estimates:
+##  mean in group no mean in group yes 
+##         0.2808275         0.2454153
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+As with monosyllabic words, we should check if the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/bi-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{dur_word[bi}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi$dur_word[bi$asp == "yes"]
+## W = 0.99244, p-value = 0.4518
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{dur_word[bi}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  bi$dur_word[bi$asp == "no"]
+## W = 0.98318, p-value = 0.008744
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  dur_word by asp
+## W = 17288, p-value = 0.00254
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+According to a Wilcoxon-test, the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{boxplot}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{img/results-box-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{dur_word[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  results$dur_word[results$asp == "yes"]
+## W = 0.996, p-value = 0.3891
+\end{verbatim}
+\begin{alltt}
+\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{dur_word[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Shapiro-Wilk normality test
+## 
+## data:  results$dur_word[results$asp == "no"]
+## W = 0.99214, p-value = 0.03035
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{wilcox.test}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Wilcoxon rank sum test with continuity correction
+## 
+## data:  dur_word by asp
+## W = 79777, p-value = 0.2782
+## alternative hypothesis: true location shift is not equal to 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\end{document}

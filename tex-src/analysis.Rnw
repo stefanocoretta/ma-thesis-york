@@ -3,20 +3,23 @@
 \usepackage{polyglossia}
     \setmainlanguage{english}
 
+
 \usepackage{fontspec}
     \defaultfontfeatures{Mapping=tex-text}
     \setmainfont{Charis SIL}
     \frenchspacing
 
 
-
 \title{Preliminary analysis}
 
 
+
 \begin{document}
+
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 library(highlight)
+opts_knit$set(root.dir=normalizePath('../'))
 opts_chunk$set(fig.path='img/', fig.align='center', fig.show='hold')
 @
 
@@ -24,29 +27,29 @@ opts_chunk$set(fig.path='img/', fig.align='center', fig.show='hold')
 \maketitle
 
 
-The following code loads the result file and the file containing the words of the task.
+The following code loads the csv file with the word list used in the task and the result file.
 
-<<>>=
-results_raw <- read.csv("~/Documents/Projects/mathesis-is/analysis/results.csv")
-words <- read.csv("~/Documents/Projects/mathesis-is/task/task-src/words.csv")
+<<start>>=
+results_raw <- read.csv("analysis/results.csv")
+words <- read.csv("task/task-src/words.csv")
 @
 
-Now we can merge the result and words files into one single data frame.
+Now we can merge the word list and result files into one single data frame.
 
-<<>>=
+<<merge>>=
 results <- merge(results_raw, words, by.x = "word", by.y = "lex")
 @
 
-To check that the duration of each word token as spoken by the participants, we first need to split the data into two subsets: one with monosyllabic words and one with bisyllabic words.
+To check the duration of each word token as spoken by the participants, we first split the data into two subsets: one with monosyllabic words and one with bisyllabic words.
 
-<<>>=
+<<split>>=
 mono <- subset(results, syl_no == "mono")
 bi <- subset(results, syl_no == "bi")
 @
 
 We can now separately check the duration of monosyllabic and bisyllabic words.
 
-<<ciao, fig=T>>=
+<<word-duration, fig=T>>=
 plot(
     c(), c(),
     xlim = c(0.1,0.9),
@@ -63,11 +66,11 @@ hist(
 )
 @
 
-The mean length of monosyllabic words is \Sexpr{round(mean(mono$dur_word), 2)}s, while that of bisyllabic words is \Sexpr{round(mean(bi$dur_word), 2)}s.
+The mean length of monosyllabic words is \Sexpr{round(mean(mono$dur_word), 2)} seconds, while that of bisyllabic words is \Sexpr{round(mean(bi$dur_word), 2)} seconds.
 
-Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono- and bisyllabic words.
+Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
 
-<<fig=T>>=
+<<mono-bi-dens,fig=T>>=
 norm_abs_voic_mono_density <- density(mono$norm_abs_voic)
 norm_abs_voic_bi_density <- density(bi$norm_abs_voic)
 
@@ -90,15 +93,16 @@ lines(norm_abs_voic_mono_density, lw = 1, col = "blue")
 lines(norm_abs_voic_bi_density, lw = 1, col = "red")
 @
 
-A two-sample unpaired \textit{t}-test shows that the length of modal voicing in words starting with an aspirated stop and ending in a stop is significantly longer in monosyllabic words than in bisyllabic words.
+<<>>=
+shapiro.test(mono$norm_abs_voic)
+shapiro.test(bi$norm_abs_voic)
+@
+
+A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (\Sexpr{round(mean(mono$norm_abs_voic), 2)}) than in bisyllabic words (\Sexpr{round(mean(bi$norm_abs_voic), 2)}).
 Subsequent tests will be performed for monosyllabic and bisyllabic words separately.
 
 <<>>=
-mono_stop <- subset(mono, manner == "stop")
-
-bi_stop <- subset(bi, manner == "stop")
-
-t.test(mono_stop$norm_abs_voic, bi_stop$norm_abs_voic)
+wilcox.test(mono$norm_abs_voic, bi$norm_abs_voic)
 @
 
 \section{Monosyllabic words}
@@ -107,10 +111,12 @@ t.test(mono_stop$norm_abs_voic, bi_stop$norm_abs_voic)
 
 We can now have a look at monosyllabic words, starting from CVCC words (ending in a geminate stop).
 These words start with either an aspirated, a non-aspirated or a sonorant consonant.
-Words starting with a voiced fricative are treated separately?
-Maybe I should not treat them separately.
 
-<<fig=T>>=
+<<mono-stop-dens,fig=T>>=
+mono_stop <- subset(mono, manner == "stop")
+
+bi_stop <- subset(bi, manner == "stop")
+
 mono_stop_asp <- mono_stop$norm_abs_voic[mono_stop$asp == "yes"]
 mono_stop_nasp <- mono_stop$norm_abs_voic[mono_stop$asp == "no"]
 
@@ -144,7 +150,7 @@ shapiro.test(mono_stop_nasp)
 Since the distributions of the duration of modal voicing in the two conditions (pre-aspirated and non-aspirated) are significantly different from the normal distribution, we should perform a Wilcoxon test.
 According to the test, the mean duration of modal voicing in words ending with a pre-aspirated stop is significantly shorter (\Sexpr{round(mean(mono_stop_asp), 2)} seconds) than in words ending with a non-aspirated stop (\Sexpr{round(mean(mono_stop_nasp), 2)} seconds).
 
-<<fig=T>>=
+<<mono-stop-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_stop,
         names = c("non-asp", "asp"),
@@ -160,7 +166,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 mono_nas <- subset(mono, manner == "nasal")
 @
 
-<<fig=T>>=
+<<mono-nas-dens,fig=T>>=
 mono_nas_asp <- mono_nas$norm_abs_voic[mono_nas$asp == "yes"]
 mono_nas_nasp <- mono_nas$norm_abs_voic[mono_nas$asp == "no"]
 
@@ -186,7 +192,7 @@ lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
 lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
 @
 
-<<fig=T>>=
+<<mono-nas-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
@@ -209,7 +215,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 mono_lat <- subset(mono, manner == "lateral")
 @
 
-<<fig=T>>=
+<<mono-lat-dens,fig=T>>=
 mono_lat_asp <- mono_lat$norm_abs_voic[mono_lat$asp == "yes"]
 mono_lat_nasp <- mono_lat$norm_abs_voic[mono_lat$asp == "no"]
 
@@ -235,7 +241,7 @@ lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
 lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
 @
 
-<<fig=T>>=
+<<mono-lat-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
@@ -252,8 +258,16 @@ t.test(norm_abs_voic ~ asp, data = mono_lat)
 
 It is good to check whether the duration of monosyllabic words is affected by the presence vs. absence of preaspiration.
 
-<<fig=T>>=
-boxplot(dur_word ~ asp, data = mono)
+<<mono-box, fig=T>>=
+boxplot(dur_word ~ asp,
+        data = mono,
+        names = c("non-asp", "asp"),
+        ylab = "duration (s)",
+        main = "Word duration (in seconds) depending on aspiration"
+        )
+@
+
+<<>>=
 shapiro.test(mono$dur_word[mono$asp == "yes"])
 shapiro.test(mono$dur_word[mono$asp == "no"])
 @
@@ -263,13 +277,13 @@ t.test(dur_word ~ asp, data = mono)
 @
 
 According to a \textit{t}-test, the duration of monosyllabic words is not affected by the presence vs. absence of preaspiration.
-Thus, difference in the mean duration of modal voicing can't be attributed to differences in word duration. 
+Thus, the difference in the mean duration of modal voicing can't be attributed to the differences in word duration.
 
 \section{Bisyllabic words}
 
 \subsection{Stops}
 
-<<fig=T>>=
+<<bi-stop-dens,fig=T>>=
 bi_stop_asp <- bi_stop$norm_abs_voic[bi_stop$asp == "yes"]
 bi_stop_nasp <- bi_stop$norm_abs_voic[bi_stop$asp == "no"]
 
@@ -300,13 +314,16 @@ shapiro.test(bi_stop_asp)
 shapiro.test(bi_stop_nasp)
 @
 
-<<fig=T>>=
+<<bi-stop-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = bi_stop,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
         main = "Duration (in seconds) of modal voicing in CVCCV words"
         )
+@
+
+<<>>=
 wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 @
 
@@ -316,7 +333,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 bi_nas <- subset(bi, manner == "nasal")
 @
 
-<<fig=T>>=
+<<bi-nas-dens,fig=T>>=
 bi_nas_asp <- bi_nas$norm_abs_voic[bi_nas$asp == "yes"]
 bi_nas_nasp <- bi_nas$norm_abs_voic[bi_nas$asp == "no"]
 
@@ -342,7 +359,7 @@ lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
 lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
 @
 
-<<fig=T>>=
+<<bi-nas-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = bi_nas,
         names = c("non-asp", "asp"),
@@ -363,7 +380,7 @@ wilcox.test(norm_abs_voic ~ asp, data = bi_nas)
 bi_lat <- subset(bi, manner == "lateral")
 @
 
-<<fig=T>>=
+<<bi-lat-dens,fig=T>>=
 bi_lat_asp <- bi_lat$norm_abs_voic[bi_lat$asp == "yes"]
 bi_lat_nasp <- bi_lat$norm_abs_voic[bi_lat$asp == "no"]
 
@@ -389,7 +406,7 @@ lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
 lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
 @
 
-<<fig=T>>=
+<<bi-lat-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = bi_lat,
         names = c("non-asp", "asp"),
@@ -410,7 +427,7 @@ wilcox.test(norm_abs_voic ~ asp, data = bi_lat)
 bi_rho <- subset(bi, manner == "rhotic")
 @
 
-<<fig=T>>=
+<<bi-rho-dens,fig=T>>=
 bi_rho_asp <- bi_rho$norm_abs_voic[bi_rho$asp == "yes"]
 bi_rho_nasp <- bi_rho$norm_abs_voic[bi_rho$asp == "no"]
 
@@ -436,7 +453,7 @@ lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
 lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
 @
 
-<<fig=T>>=
+<<bi-rho-box,fig=T>>=
 boxplot(norm_abs_voic ~ asp,
         data = bi_rho,
         names = c("non-asp", "asp"),
@@ -453,8 +470,11 @@ t.test(norm_abs_voic ~ asp, data = bi_rho)
 
 As with monosyllabic words, we should check if the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
 
-<<fig=T>>=
+<<bi-box,fig=T>>=
 boxplot(dur_word ~ asp, data = bi)
+@
+
+<<>>=
 shapiro.test(bi$dur_word[bi$asp == "yes"])
 shapiro.test(bi$dur_word[bi$asp == "no"])
 @
@@ -466,10 +486,13 @@ wilcox.test(dur_word ~ asp, data = bi)
 According to a Wilcoxon-test, the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
 
 
-<<fig=T>>=
+<<results-box,fig=T>>=
 boxplot(dur_word ~ asp, data = results)
-shapiro.test(results$dur_word[bi$asp == "yes"])
-shapiro.test(results$dur_word[bi$asp == "no"])
+@
+
+<<>>=
+shapiro.test(results$dur_word[results$asp == "yes"])
+shapiro.test(results$dur_word[results$asp == "no"])
 @
 
 <<>>=
