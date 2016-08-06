@@ -158,3 +158,6 @@ pythontex-files-*/
 # Latexian
 TSWLatexianTemp*
 .Rproj.user
+
+# OpenOffice lock files
+.~lock*
