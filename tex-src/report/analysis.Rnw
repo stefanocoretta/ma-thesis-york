@@ -19,8 +19,9 @@
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 library(highlight)
-opts_knit$set(root.dir=normalizePath('../'))
+opts_knit$set(root.dir=normalizePath('../../'))
 opts_chunk$set(fig.path='img/', fig.align='center', fig.show='hold')
+setwd('../../')
 @
 
 

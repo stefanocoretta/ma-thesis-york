@@ -1,7 +1,9 @@
-\documentclass[11pt,a4paper]{memoir}
+\documentclass[11pt,a4paper,openany]{memoir}
 
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage{graphicx}
 
 
 \usepackage{polyglossia}
@@ -11,16 +13,18 @@
     \setmainfont{FreeSerif}
     \frenchspacing
 
-\usepackage{ctable,multirow,multicol}
+\usepackage{ctable,multirow,multicol,paralist}
 
 \usepackage{natbib}
 
+
 \usepackage{mycleveref}
+
 
 \title{Vowel duration and aspiration effects in Icelandic}
 \author{Stefano Coretta}
 
-
+\graphicspath{{./img/}}
 
 
 \begin{document}
@@ -43,7 +47,8 @@
 
 \appendix
 
-\input{./tex/appendix.tex}
+\input{./tex/wordlist.tex}
+\input{./tex/getmeasure.tex}
 
 \bibliographystyle{york-harvard}
 \bibliography{linguistics}
