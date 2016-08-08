@@ -66,8 +66,8 @@ Even if the recording conditions differed between participants, the quality of t
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{textgrid}
-\caption{Example of the tier structure of the annotation files (PRAAT TextGrids).}
+\includegraphics[width=0.7\linewidth]{textgrid}
+\caption{TextGrid.}
 \label{f:textgrid}
 \end{figure}
 
@@ -79,67 +79,48 @@ The analysis of the audio file consisted of three phases:
 \end{inparaenum}
 I first converted the audio files from stereo to mono, but I did not apply any filter.
 During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
-The annotation files have four tiers.
+The annotation files will had four tiers.
 The tiers contain, respectively: 
 \begin{inparaenum}[(1)]
 	\item the graphemic transcriptions of the target words,
-	\item the voiced intervals within the relevant portion of the words, 
+	\item the intervals within the words where there is voicing, 
 	\item the intervals within the words where laryngeal spread, nasality, laterality or rhoticity is present, and
 	\item the release of stops.
 \end{inparaenum}
 \Cref{f:textgrid} shows an example of the TextGrid set-up.
 
-\subsection{Tier 1: words}
+%CHANGE how you tell what and how you measured (use subheadings?)
 
 The first tier was segmented by target words.
 The left boundary of the word was considered to be the off-set of voicing of the final vowel of \textit{segðu}, which preceded the target word.
 The right boundary differed between consonant-final and vowel-final words.
 In consonant-final words, the right boundary coincided with the end of the friction following the burst of the release, as visible in the waveform and spectrogram.
 In vowel-final words, the right boundary was placed at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}).
-
-\subsection{Tier 2: voicing}
-
-The second tier was reserved for the portions of vocal folds vibration (voicing).
-The boundaries of the intervals in this tier were placed at the on-set and off-set of voicing around the target vowel.
-In words starting with one or more voiced continuant consonants, the portion of voicing of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
-
-\subsection{Tier 3: glottal spreading}
+The boundaries of the intervals in the second tier were placed at the on-set and off-set of voicing within the word.
+If the word started with one or more voiced continuant consonants, the portion of voicing of those consonants was excluded from the interval and the left boundary was placed at the beginning of the following vowel.
 
 The third tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
 Marking the beginning of glottal spread proved to be particularly difficult.
-The common realisation of the combination vowel + pre-aspiration is structured as follows: the first portion of the vocalic is accompanied by modal voicing; the glottis starts an abduction gesture while still vibrating the vocal folds (breathy voice); vocal fold vibration stops and voiceless friction remains (at the glottis or at the oral cavity, depending on the vowel).
-%ADD picture
-As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
+%TODO explain how the words were structured prosodically
+The common realisation of the vowel + pre-aspiration combination was structured as follows: 
+As in \citet{khan2012}, I expected breathy voice to produce more round-shaped periodic waves.
 I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of spreading.
-However, at times the interpretation of the waveform was not straightforward.
-In these cases, I relied on the visual make-up of the spectrogram.
-According to \citet{jones2006} (cited in \citet[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
-This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
-The right boundary was assumed to fall at the end of visible frication noise.
-
-\subsection{Tier 3: nasals, laterals and rhotics}
-
-Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
+The right boundary was assumed to match the end of visible frication noise.
+Following standard practice, I marked the beginning of nasality where a change in the shape of the wave and the amplitude in the spectrogram were visible.
 I applied the same principle to laterals and rhotics.
-I placed the right boundary of these intervals (nasal, lateral, rhotic) depending on the voicing of the segment.
+I placed the right boundary of these intervals (nasal, lateral, rhotic) depending on the nature of the segment.
 The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively).
 The end of friction in these consonants was used as the end of the interval.
 In the voiced counterparts of these, the end of voicing coincided with the right boundary.
 %ADD pictures
+%AD what you measured
 
-\subsection{Tier 4: consonant release}
-In tier 4, the release of the stop consonant following the target vowel was marked at the onset of the burst.
-If the burst was not visible in the waveform, no release was marked.
-
-\subsection{Statistical analysis}
-%ADD put what you measured
 In the third phase, I extracted the durational properties of the annotated intervals through an automated routine.
 The routine was run with a PRAAT script, specifically written for this study.
 The script with its documentation can be found in \Cref{a:getmeasure}.
 The output is a \texttt{.csv} file with the relevant measurements.
-After running the script, I performed a statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
+After running the script, I performed the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 
-Several durations were measured from the TextGrid files.
 
 
 
