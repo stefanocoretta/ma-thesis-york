@@ -174,6 +174,6 @@ shapiro.test(results_mono_asp_stop$norm_abs_voic)
 t.test(results_mono_asp_stop$norm_abs_voic, results_bi_asp_stop$norm_abs_voic)
 
 #### Closure measure ####
-
+boxplot(norm_clos ~ asp, data = mono_stop)
 
 
