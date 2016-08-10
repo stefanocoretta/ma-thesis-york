@@ -179,7 +179,7 @@ Since I am looking at the duration of the normalised modal voicing of the vocali
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono$norm_abs_voic
-## W = 0.89899, p-value = 9.358e-16
+## W = 0.88286, p-value < 2.2e-16
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{norm_abs_voic)}
@@ -189,12 +189,12 @@ Since I am looking at the duration of the normalised modal voicing of the vocali
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi$norm_abs_voic
-## W = 0.93052, p-value = 6.755e-13
+## W = 0.99834, p-value = 0.9647
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (0.22) than in bisyllabic words (0.18).
+A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (0.32) than in bisyllabic words (0.31).
 Subsequent tests will be performed for monosyllabic and bisyllabic words separately.
 
 \begin{knitrout}
@@ -207,7 +207,7 @@ Subsequent tests will be performed for monosyllabic and bisyllabic words separat
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  mono$norm_abs_voic and bi$norm_abs_voic
-## W = 115180, p-value < 2.2e-16
+## W = 83416, p-value = 0.9555
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -271,7 +271,7 @@ These words start with either an aspirated, a non-aspirated or a sonorant conson
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_stop_asp
-## W = 0.89359, p-value = 1.067e-09
+## W = 0.94276, p-value = 2.565e-06
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono_stop_nasp)}
@@ -281,13 +281,13 @@ These words start with either an aspirated, a non-aspirated or a sonorant conson
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_stop_nasp
-## W = 0.95864, p-value = 0.0007395
+## W = 0.90257, p-value = 1.673e-07
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 Since the distributions of the duration of modal voicing in the two conditions (pre-aspirated and non-aspirated) are significantly different from the normal distribution, we should perform a Wilcoxon test.
-According to the test, the mean duration of modal voicing in words ending with a pre-aspirated stop is significantly shorter (0.2 seconds) than in words ending with a non-aspirated stop (0.26 seconds).
+According to the test, the mean duration of modal voicing in words ending with a pre-aspirated stop is significantly shorter (0.29 seconds) than in words ending with a non-aspirated stop (0.43 seconds).
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -305,7 +305,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  norm_abs_voic by asp
-## W = 15374, p-value = 5.426e-11
+## W = 18010, p-value < 2.2e-16
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -395,7 +395,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_nas_asp
-## W = 0.96651, p-value = 0.2776
+## W = 0.97229, p-value = 0.4241
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono_nas_nasp)}
@@ -405,7 +405,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_nas_nasp
-## W = 0.98409, p-value = 0.9277
+## W = 0.94149, p-value = 0.1097
 \end{verbatim}
 \begin{alltt}
 \hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_nas)}
@@ -415,18 +415,18 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## 	Welch Two Sample t-test
 ## 
 ## data:  norm_abs_voic by asp
-## t = 4.4883, df = 50.272, p-value = 4.202e-05
+## t = 4.6522, df = 50.092, p-value = 2.433e-05
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.01693745 0.04436910
+##  0.02829407 0.07128385
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.2010632         0.1704099
+##         0.3098634         0.2600745
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-According to a two-sample \textit{t}-test, the duration of modal voicing in words ending with an N̥C cluster (0.17 seconds) is shorter than in words ending with an NC cluster (0.2 seconds).
+According to a two-sample \textit{t}-test, the duration of modal voicing in words ending with an N̥C cluster (0.26 seconds) is shorter than in words ending with an NC cluster (0.31 seconds).
 
 \subsection{Laterals}
 
@@ -505,7 +505,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_lat_asp
-## W = 0.96233, p-value = 0.7329
+## W = 0.94973, p-value = 0.5202
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono_lat_nasp)}
@@ -515,7 +515,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_lat_nasp
-## W = 0.8995, p-value = 0.1563
+## W = 0.89635, p-value = 0.1423
 \end{verbatim}
 \begin{alltt}
 \hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_lat)}
@@ -525,13 +525,13 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 ## 	Welch Two Sample t-test
 ## 
 ## data:  norm_abs_voic by asp
-## t = 3.6588, df = 24.907, p-value = 0.001188
+## t = 4.1099, df = 20.43, p-value = 0.0005241
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.01609712 0.05757378
+##  0.02324930 0.07104155
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.2154738         0.1786384
+##         0.2969002         0.2497548
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -568,7 +568,7 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono$dur_word[mono$asp == "yes"]
-## W = 0.98839, p-value = 0.06551
+## W = 0.98811, p-value = 0.05986
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{dur_word[mono}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
@@ -578,7 +578,7 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono$dur_word[mono$asp == "no"]
-## W = 0.98788, p-value = 0.1235
+## W = 0.98869, p-value = 0.159
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -593,13 +593,13 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## 	Welch Two Sample t-test
 ## 
 ## data:  dur_word by asp
-## t = -0.33834, df = 358.51, p-value = 0.7353
+## t = -0.36443, df = 358.23, p-value = 0.7158
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.02081099  0.01470130
+##  -0.02116269  0.01454560
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.4336616         0.4367164
+##         0.4333422         0.4366508
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -658,7 +658,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_stop_asp
-## W = 0.97478, p-value = 0.09047
+## W = 0.98478, p-value = 0.41
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi_stop_nasp)}
@@ -668,7 +668,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_stop_nasp
-## W = 0.8552, p-value = 3.971e-09
+## W = 0.99166, p-value = 0.727
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -703,7 +703,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  norm_abs_voic by asp
-## W = 15374, p-value = 5.426e-11
+## W = 18010, p-value < 2.2e-16
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -786,7 +786,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_nas_asp
-## W = 0.93297, p-value = 0.003567
+## W = 0.94884, p-value = 0.01743
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi_nas_nasp)}
@@ -796,7 +796,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_nas_nasp
-## W = 0.77579, p-value = 8.149e-09
+## W = 0.94685, p-value = 0.005831
 \end{verbatim}
 \begin{alltt}
 \hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_nas)}
@@ -806,7 +806,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  norm_abs_voic by asp
-## W = 3077, p-value = 1.667e-08
+## W = 3220, p-value = 2.121e-10
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -889,7 +889,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_lat_asp
-## W = 0.89515, p-value = 0.01037
+## W = 0.95378, p-value = 0.2644
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi_lat_nasp)}
@@ -899,7 +899,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_lat_nasp
-## W = 0.88907, p-value = 0.004586
+## W = 0.91062, p-value = 0.01543
 \end{verbatim}
 \begin{alltt}
 \hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_lat)}
@@ -909,7 +909,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Wilcoxon rank sum test
 ## 
 ## data:  norm_abs_voic by asp
-## W = 747, p-value = 1.416e-09
+## W = 771, p-value = 2.525e-11
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -992,7 +992,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_rho_asp
-## W = 0.9483, p-value = 0.4982
+## W = 0.96487, p-value = 0.7762
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi_rho_nasp)}
@@ -1002,7 +1002,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi_rho_nasp
-## W = 0.93249, p-value = 0.2972
+## W = 0.97208, p-value = 0.8876
 \end{verbatim}
 \begin{alltt}
 \hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi_rho)}
@@ -1012,13 +1012,13 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Welch Two Sample t-test
 ## 
 ## data:  norm_abs_voic by asp
-## t = 2.2691, df = 27.797, p-value = 0.03122
+## t = 3.4013, df = 27.988, p-value = 0.002036
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.003433211 0.067391206
+##  0.02544551 0.10250100
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.2808275         0.2454153
+##         0.3982628         0.3342896
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -1109,7 +1109,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  results$dur_word[results$asp == "yes"]
-## W = 0.996, p-value = 0.3891
+## W = 0.99577, p-value = 0.3404
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{dur_word[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
@@ -1119,7 +1119,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  results$dur_word[results$asp == "no"]
-## W = 0.99214, p-value = 0.03035
+## W = 0.99183, p-value = 0.02449
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -1134,7 +1134,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  dur_word by asp
-## W = 79777, p-value = 0.2782
+## W = 79534, p-value = 0.2721
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}

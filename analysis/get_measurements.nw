@@ -169,14 +169,17 @@ If it's empty, record nulls.
 @
 
 Get nearest boundary on tier 5 to end of word.
+Calculate the interval Vonset-to-release for normalisation.
 
 <<*>>=
-            int_rels = Get nearest index from time: rels, end_word
-            time_rels = Get time of point: rels, int_rels
+            ind_rels = Get nearest index from time: rels, end_word
+            time_rels = Get time of point: rels, ind_rels
+            v_to_rel = time_rels - begin_voic
 
 @
 
-Calculate voice-onset to manner-onset and closure duration (manner-offset to release). Need closure for non mann as well!
+Calculate voice-onset to manner-onset and closure duration (manner-offset to release).
+Need closure for non mann as well!
 
 <<*>>=
             if label$ <> ""
@@ -195,10 +198,10 @@ If the release time is not within the time boundaries of the word, input empty d
 
 <<*>>=
             if label$ <> ""
-                norm_duration_voice = duration_voic / duration_word
-                norm_duration_mann = duration_mann / duration_word
-                norm_duration_v_to_m = duration_v_to_m / duration_word
-                norm_abs_clos = duration_abs_closure / duration_word
+                norm_duration_voice = duration_voic / v_to_rel
+                norm_duration_mann = duration_mann / v_to_rel
+                norm_duration_v_to_m = duration_v_to_m / v_to_rel
+                norm_abs_clos = duration_abs_closure / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
@@ -219,7 +222,7 @@ If the release time is not within the time boundaries of the word, input empty d
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
-                norm_duration_voice = duration_voic / duration_word
+                norm_duration_voice = duration_voic / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',

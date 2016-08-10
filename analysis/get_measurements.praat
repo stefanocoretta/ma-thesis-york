@@ -85,8 +85,9 @@ for file to files_no
                 duration_mann$ = ""
             endif
 
-            int_rels = Get nearest index from time: rels, end_word
-            time_rels = Get time of point: rels, int_rels
+            ind_rels = Get nearest index from time: rels, end_word
+            time_rels = Get time of point: rels, ind_rels
+            v_to_rel = time_rels - begin_voic
 
             if label$ <> ""
                 duration_v_to_m = begin_mann - begin_voic
@@ -97,10 +98,10 @@ for file to files_no
             endif
 
             if label$ <> ""
-                norm_duration_voice = duration_voic / duration_word
-                norm_duration_mann = duration_mann / duration_word
-                norm_duration_v_to_m = duration_v_to_m / duration_word
-                norm_abs_clos = duration_abs_closure / duration_word
+                norm_duration_voice = duration_voic / v_to_rel
+                norm_duration_mann = duration_mann / v_to_rel
+                norm_duration_v_to_m = duration_v_to_m / v_to_rel
+                norm_abs_clos = duration_abs_closure / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
@@ -121,7 +122,7 @@ for file to files_no
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
-                norm_duration_voice = duration_voic / duration_word
+                norm_duration_voice = duration_voic / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
                     result_line$ = "'file_name$','lab_word$','begin_word',
