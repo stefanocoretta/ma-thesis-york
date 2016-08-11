@@ -1,4 +1,53 @@
-\documentclass[11pt,a4paper,openany]{memoir}
+\documentclass[11pt,a4paper,openany]{memoir}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 
 \setsecnumdepth{subsection}
 \raggedbottom
@@ -31,9 +80,12 @@
 \author{Stefano Coretta}
 
 \graphicspath{{./img/}}
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
+
+
+
+
 
 \frontmatter
 
@@ -45,17 +97,437 @@
 
 \mainmatter
 
-%\input{./tex/intro.tex}
-\input{./tex/review.tex}
-\input{./tex/method.tex}
-%\input{./tex/results.tex}
+
+
+%<<intro, child='rnw/intro.Rnw'>>=
+%@
+
+
+\chapter{Literature review}
+\label{c:review}
+
+\section{Laryngeal}
+
+
+
+\section{The effect of aspiration on vowel duration}
+\label{s:aspiration}
+
+Vowel duration has been reported in the literature to correlate with the presence vs. absence of aspiration in the following consonant.
+In particular, \citet{maddieson1976} and \citet{durvasula2012} found that vowels followed by aspirated consonants in Hindi are longer than vowels followed by non-aspirated consonants.
+In the following paragraphs, I will briefly introduce the system of laryngeal oppositions of Hindi.
+I will then review some of the findings concerning the aspiration effect and the major theories regarding the cause of this phenomenon.
+
+%TODO citation for Hindi!
+The consonantal system of Hindi is based on a four-way opposition of laryngeal contrasts.
+For each place of articulation, there are a voiceless unaspirated, a voiced unaspirated, a voiceless aspirated and (breathy) voiced aspirated stop: for example, [t], [d], [tʰ], [dʱ].
+The voiceless aspirated stops (like [tʰ]) are similar to the aspirated stops of English: a relatively long VOT follows the release of the occlusion.
+The voiced counterpart (like [dʱ]) is normally voiced throughout the closure and the aspiration is characterised by breathy voicing.
+\citet{maddieson1976} found that vowels followed by voiced and voiceless aspirated stops (like in [kaːd] `embroider' and [kaːtʰ] `wood') were of equal length but longer than vowels followed by voiceless stops (like in [kaːt] `cut').
+Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance') were even longer than voiced and voiceless aspirated stops.
+\Cref{t:hindi} shows the mean duration of vowels before the four alveolar stops as reported by \citet[47]{maddieson1976}.
+
+%ADD in note that phonemic is different
+%ADD that no sd was given
+\ctable[caption = Mean duration of vowels in Hindi before stops.,
+label = t:hindi
+]{ll}{}{
+\FL
+consonant & vowel duration (msec) \ML
+/t/       & 160 \NN 
+/d/       & 184.5 \NN
+/tʰ/      & 184.75 \NN
+/dʰ/      & 196 \LL
+}
+
+%TODO should I talk about voicing effect as well? Maybe yes, something like "Vocing and aspiration effects" and say something about the eplanations, so you MUST talk about voicing!!!
+%ADD Should I state the methods in detail?
+%ADD others found not clear results
+
+\citet{durvasula2012} performed a more controlled task and found clear evidence that aspiration lengthens the preceding vowel.
+He also noted that %ADD about closure duration
+
+\section{Icelandic}
+
+%ADD glottocode
+Icelandic [\textsc{glotto}: \texttt{icel1247}\footnote{Entry for ``Icelandic'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/icel1247}.}] is nowadays spoken by the inhabitants of the Republic of Iceland(about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}\footnote{Entry for ``Faroese'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/faro1244}.}], constitutes the Insular branch of the North Germanic group.
+Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
+%ADD say more about this
+
+The modern phonological inventory of Icelandic has been subject to different analyses and it is still a matter of controversy \citep{thraisson1978,jessen1998,arnason2011}.
+\Cref{t:consonants} reports the major consonantal segments of Icelandic, as normally employed in the literature \citep[98]{arnason2011}.
+They do not represent necessarily the phonemic consonants of Icelandic and are rather surface allophones.
+The vocalic phonemes are given in \Cref{t:vowels} \citep[60]{arnason2011}.
+
+\ctable[caption = Major consonantal allophones of Icelandic.,
+label = t:consonants
+]{c}{}{
+\FL
+
+}
+
+Relevant to this study is the exploitation of phonation types in stop and sonorant consonants in Icelandic.
+As mentioned in \Cref{s:aspiration}, the contrastive system of Hindi consonants is built on the cross-cutting interaction between aspiration and voicing.
+Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceless aspirated stops.
+Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
+The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Methodology}
+
+\section{Participants}
+%ADD participant are from southern so soft speech
+For this study, I recruited six Icelandic speakers who were living in York (UK) at the time the recordings were made.
+The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
+Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
+All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
+The information on each participant is given in \Cref{t:participants}.
+The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
+The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
+Participant JR had to be excluded from the analysis since he misunderstood the task, while part of participant SHG's task was lost due to a technical fault in the recording equipment.
+
+
+\ctable[caption = Information on participants,
+label = t:participants,
+]{cccclc}{}{
+\FL
+\textbf{participant} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
+TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
+BRS & female & 25 & Hofn      & Danish, English, Spanish & Yes \NN
+BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
+JJ & female & 46 & Reykjavik (Kopavogur) & English, Danish          & Yes \NN
+SHG & male   & 25 & Selfoss   & English                  & No  \NN
+JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
+}
+
+\section{Materials}
+
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
+The list of target words is given in \Cref{a:list}.
+The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
+Control over these parameters was prioritised according to the order in which they were presented here.
+Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
+%CITE holes and humps papers!
+
+The wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
+These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
+The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words.
+Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
+Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
+
+
+
+\section{Procedure}
+
+The target words were embedded in the frame sentence \textit{Segðu \_\_ aftur}, `Say \_\_ again.'
+This sentence was chosen with the aid of one of the participants so as to control for naturalness, number of syllables and phonetic contexts preceding and following the target word, and phrase stress.
+To decision to use a single frame sentence for all the test words was justified by the will of keeping the task as simple as possible.
+The participants were asked to read aloud the sentences with the target words shown on a computer screen.
+They were advised to speak as naturally as possible, while keeping the same volume and pace.
+They did not familiarised themselves with the word list before starting the task.
+The decision of not showing the words beforehand was made to reduce the speakers' control over their speech.
+
+The task was presented through the software PyschoPy \citep{peirce2009}, on a Apple MacBook Pro.
+Each sentences was shown three times consecutively and the order of appearance was randomised across subjects.
+The reading task was self-paced; the participant read a sentence shown on the screen and moved to the next sentence when ready by pressing the space bar.
+Four speakers were recorded in a meeting room at a travel agency, while one was recorded at the University of York and the last in his living room, at his house in York.
+The only subject who performed the task at the University of York was recorded in a sound-proof studio, using a Beyerdynamic OPUS 54 headset microphone (condenser, cardioid), plugged into a recording station.
+The software used for the recording was Adobe Audition, running on a Windows computer.
+The other speakers were recorded using the same headset microphone plugged into a Zoom H4n Handy Recorder.
+The audio files were encoded using the \texttt{.wav} format at a sampling rate of 44 kHz (16-bit).
+Even if the recording conditions differed between participants, the quality of the audio is comparable across files.
+
+\section{Annotation}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{textgrid}
+\caption{Example of the tier structure of the annotation files (PRAAT TextGrids).}
+\label{f:textgrid}
+\end{figure}
+
+The analysis of the audio file consisted of three phases:
+\begin{inparaenum}[(1)]
+	\item conversion from stereo to mono,
+	\item annotation, and
+	\item extraction of measurements.
+\end{inparaenum}
+I first converted the audio files from stereo to mono, but I did not apply any filter.
+During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
+The annotation files have four tiers.
+The tiers contain, respectively: 
+\begin{inparaenum}[(1)]
+	\item the graphemic transcriptions of the target words,
+	\item the voiced intervals within the relevant portion of the words, 
+	\item the intervals within the words where laryngeal spread, nasality, laterality or rhoticity is present, and
+	\item the release of stops.
+\end{inparaenum}
+\Cref{f:textgrid} shows an example of the TextGrid set-up.
+
+\subsection{Tier 1: words}
+
+The first tier was segmented by target words.
+The left boundary of the word was considered to be the off-set of voicing of the final vowel of \textit{segðu}, which preceded the target word.
+The right boundary differed between consonant-final and vowel-final words.
+In consonant-final words, the right boundary coincided with the end of the friction following the burst of the release, as visible in the waveform and spectrogram.
+In vowel-final words, I used different criteria depending on the phonetic realisation.
+The right boundary was placed at the off-set of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the on-set of the glottal stop.
+In some cases, instead of a glottal stop, creaky voice was visible and the criterion of the transition mid-point was applied.
+
+\subsection{Tier 2: voicing}
+
+The second tier was reserved for the portions of vocal folds vibration (voicing).
+The boundaries of the intervals in this tier were placed at the on-set and off-set of voicing around the target vowel.
+In words starting with one or more voiced continuant consonants, the portion of voicing of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
+
+\subsection{Tier 3: glottal spreading}
+
+The third tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
+Marking the beginning of glottal spread proved to be particularly difficult.
+The common realisation of the combination vowel + pre-aspiration is structured as follows: the first portion of the vocalic is accompanied by modal voicing; the glottis starts an abduction gesture while still vibrating the vocal folds (breathy voice); vocal fold vibration stops and voiceless friction remains (at the glottis or at the oral cavity, depending on the vowel).
+%ADD glottal picture
+As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
+I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of spreading.
+However, at times the interpretation of the waveform was not straightforward.
+In these cases, I relied on the visual make-up of the spectrogram.
+According to \citet{jones2006} (cited in \citet[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
+This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
+The right boundary was assumed to fall at the end of visible frication noise.
+
+\subsection{Tier 3: nasals, laterals and rhotics}
+
+Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
+I applied the same principle to laterals and rhotics.
+I placed the right boundary of these intervals (nasal, lateral, rhotic) depending on the voicing of the segment.
+The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively).
+The end of friction in these consonants was used as the end of the interval.
+In the voiced counterparts of these, the end of voicing coincided with the right boundary.
+%ADD manner pictures
+
+\subsection{Tier 4: consonant release}
+In tier 4, the release of the stop consonant following the target vowel was marked at the onset of the burst.
+If the burst was not visible in the waveform, no release was marked.
+
+\section{Measurements}
+%ADD put what you measured
+In the third phase, I extracted the durational properties of the annotated intervals through an automated routine.
+The routine was run with a PRAAT script, specifically written for this study.
+The script with its documentation can be found in \Cref{a:getmeasure}.
+The output is a \texttt{.csv} file with the relevant measurements.
+The following measures were taken (all measures are in seconds):
+
+\begin{itemize}
+\item \textit{Word duration}: the duration of the whole word as annotated on tier 1
+\item \textit{Duration of voicing}: the duration of the voicing interval on tier 2
+\item \textit{Duration of manner}: the duration of the manner interval on tier 3 (this can be glottal spreading, nasality, laterality or the rhoticity)
+\item \textit{Duration of absolute voicing}: this was measured as the duration of the interval between the onset of voicing and the onset of the manner interval, in words containing a pre-aspirated geminate or a sonorant (nasal or liquid); in words with non-aspirated geminates, the duration of absolute voicing is the same as the duration of voicing
+\item \textit{Closure duration}: the duration of the stop closure, calculated as the duration of the interval between the off-set of voicing or, if present, manner and the release
+\item \textit{Absolute closure duration}: the duration of the interval between the on-set of the manner and the release; in words with non-aspirated geminates, it is the same as the closure duration
+\end{itemize}
+
+
+\section{Statistical analysis}
+
+I performed the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Results}
+
+
+\section{Word duration}
+
+
+The word list used in the reading task contains both mono- and disyllabic words.
+Both classes are further divided between consonant- and vowel-initial words.
+It is thus sensible to report some of the measures for each class separately.
+The mean duration of CVCC words is 439.31 msec (SD = 78.66), while for VCC is 338.71 msec (SD = 54.86).
+CVCCV words have a mean duration of 488.55 msec (SD = 60.93), while VCCV are on average 424.99 msec long (SD = 53.42).
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/word-duration-1} 
+
+\end{knitrout}
+\caption{Duration (in msec) of CVCC, VCC, CVCCV, and VCCV words.}
+\label{f:worddur}
+\end{figure}
+
+
+
+% normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
+The duration of the voiced vocalic portion was not affected by the the number of syllables of the word.
+The boxplot in \Cref{f:vvpsyll} shows the duration of the vocalic portion in milliseconds.
+According to a two-sample Wilcoxon test, the mean duration of the voiced portion in monosyllabic words () does not different significantly from the mean duration in disyllabic words () [V = ].
+However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
+% kembt behave strange, in bte
+Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
+
+\section{Monosyllabic words}
+
+\subsection{Geminate stops}
+
+
+
+The mean duration of the voiced portion in milliseconds was 98 in words ending in a non-aspirated geminate stop, while it was 84.97 if followed by a pre-aspirated geminate stop.
+\Cref{f:monostop} shows the normalised ratio of the voiced portion.
+The difference in the mean of the normalised voiced ratio between the non-aspirated and the aspirated class of words was significant [].
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/mono-stop-box-1} 
+
+\end{knitrout}
+\caption{Duration (in ratios) of the voiced vocalic portion in geminate-final words.}
+\label{f:monostop}
+\end{figure}
+
+\subsection{Nasals}
+
+
+
+Words of the form (C)VNC showed a mean voiced portion duration of 98 msec if the nasal is voiced and 84.97 msec if voiceless.
+The normalised duration was, respectively, 0.37 and 0.3.
+
+\subsection{Laterals}
+
+
+
+In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 89.96 and 77.73 msec when followed, respectively by a voiced and voiceless lateral.
+These correspond to the 30.99\% and the 26.44\% of the VOR.
+A Wilcoxon test shows that the difference is significant [].
+
+\section{Disyllabic words}
+
+\subsection{Geminate stops}
+
+
+
+
+In disyllabic words, the voiced vocalic portion is 86.97 msec long if followed by a non-aspirated geminate, and 78.04 msec long if followed by a pre-aspirated geminate.
+In ratio terms, the voiced part makes up the 33.61\% of the VOR in word with plain geminates, and the 28.27\% in words with pre-aspirated geminates.
+According to a independent two-sample \textit{t}-test, the difference in ratio is significant.
+
+\subsection{Nasals}
+
+
+
+
+CVNCV words have a mean voiced vocalic portion duration of 86.97 msec if the nasal is voiced and 78.04 msec if it is voiceless.
+As percentages, the vocalic portion is 33.61\% of the VOR if followed by a voiced nasal, and 28.27\% when the nasal is voiceless.
+A \textit{t}-test showed that this difference is significant.
+
+\subsection{Laterals}
+
+
+
+The voiced vocalic portion in CVLCV words is on average 86.97 msec long when the lateral is voiced and 78.04 msec when it is voiceless.
+The voiced portion takes the 33.61\% of the VOR if followed by a voiced lateral, and 28.27\% when the lateral is voiceless.
+
+
+\subsection{Rhotics}
+
+
+
+With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 86.97 msec long when the rhotic is voiced and 78.04 msec when it is voiceless.
+The voiced portion takes the 33.61\% of the VOR if followed by a voiced rhotic, and 28.27\% when the rhotic is voiceless.
+
+
+
+
+
+
+
 %\input{./tex/discussion.tex}
 %\input{./tex/conclusion.tex}
 
 \appendix
 
-\input{./tex/wordlist.tex}
-\input{./tex/getmeasure.tex}
+
+\chapter{Word list}
+\label{a:list}
+
+
+\ctable[caption = List of target words,
+label = t:target
+]{cccc}{}{
+\FL
+word  & IPA    & word   & IPA     \ML
+kokk  & kʰoʰk  & kembt  & kem̥t    \NN
+gogg  & kokk   & kembdi & kemtɪ    \NN
+dökk  & tœʰk   & kampa  & kʰam̥pa  \NN
+dögg  & tœkk   & kamba  & kʰampa   \NN
+kopp  & kʰoʰp  & kempa  & kʰem̥pa  \NN
+kubb  & kʰʏpp  & kemba  & kʰempa   \NN
+vítt  & viʰt   & punta  & pʰʏn̥ta  \NN
+vídd  & vitt   & punda  & pʰʏnta   \NN
+þítt  & θiʰt   & vanta  & van̥ta   \NN
+þíddi & θittɪ  & vanda  & vanta    \NN
+fætt  & faiʰt  & fínn   & fitn̥    \NN
+fæddi & faittɪ & kinn   & kʰɪnn    \NN
+ýtt   & iʰt    & duld   & tʏlt     \NN
+ydd   & ɪtt    & dult   & tʏl̥t    \NN
+ótt   & ouʰt   & gelta  & kel̥ta   \NN
+odd   & ott    & gelda  & kelta    \NN
+sets  & sess   & orka   & or̥ka    \NN
+sett  & seʰt   & orga   & orka     \NN
+feits & feiss  & mjólka & mjoul̥ka \NN
+feitt & feiʰt  & ólga   & oulka    \NN
+vots  & voss   & hefna  & hepna    \NN
+vott  & voʰt   & vopna  & voʰpna   \NN
+takka & tʰaʰka & nafla  & napla    \NN
+kagga & kʰakka & japla  & jaʰpla   \NN
+detta & teʰta  & kafli  & kaplɪ    \NN
+gedda & ketta  & kapli  & kaʰplɪ   \NN
+kamp  & kʰam̥p & tefla  & tepla    \NN
+kamb  & kʰamp  & tipla  & tɪʰpla   \NN
+punt  & pʰʏn̥t &        &          \NN
+pund  & pʰʏnt  &        &         \LL
+}
+
+
+
+
+
+\chapter{PRAAT script}
+\label{a:getmeasure}
+
+
+
+
+
+
+
 
 \bibliographystyle{york-harvard}
 \bibliography{linguistics}

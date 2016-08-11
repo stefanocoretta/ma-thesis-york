@@ -96,78 +96,35 @@ To check the duration of each word token as spoken by the participants, we first
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{mono} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"mono"}\hlstd{)}
-\hlstd{bi} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"bi"}\hlstd{)}
+\hlstd{bi} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"di"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 We can now separately check the duration of monosyllabic and bisyllabic words.
 
+\begin{figure}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{plot}\hlstd{(}
-    \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
-    \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlnum{0.9}\hlstd{),}
-    \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{150}\hlstd{),}
-    \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"frequency"}
-\hlstd{)}
-
-\hlkwd{hist}\hlstd{(}
-    \hlstd{mono}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"darkgrey"}
-\hlstd{)}
-
-\hlkwd{hist}\hlstd{(}
-    \hlstd{bi}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"lightgrey"}
-\hlstd{)}
-\end{alltt}
-\end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/word-duration-1} 
-
-}
-
-
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{img/word-duration-1} 
 
 \end{knitrout}
+\caption{Duration of mono- \textit{vs.} bisyllabic words.}
+\end{figure}
 
-The mean length of monosyllabic words is 0.44 seconds, while that of bisyllabic words is 0.48 seconds.
+The mean length of monosyllabic words is 435.17 msec [\textit{sd} = 89.37], while that of bisyllabic words is 479.41 msec [\textit{sd} = 63.93].
 
 Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
 
+\begin{figure}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{norm_abs_voic_mono_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic)}
-\hlstd{norm_abs_voic_bi_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi}\hlopt{$}\hlstd{norm_abs_voic)}
-
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_mono_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_bi_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_mono_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_bi_density}\hlopt{$}\hlstd{y)}
-
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
-
-\hlkwd{plot}\hlstd{(}
-\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
-\hlkwc{xlim} \hlstd{= x.limits,}
-\hlkwc{ylim} \hlstd{= y.limits,}
-\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
-\hlstd{)}
-
-\hlkwd{lines}\hlstd{(norm_abs_voic_mono_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_bi_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-bi-dens-1} 
-
-}
-
-
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{img/mono-bi-dens-1} 
 
 \end{knitrout}
+\caption{Density plot of the duration of the voiced vocalic portion in mono- and disyllabic words.}
+\end{figure}
+
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -252,12 +209,7 @@ These words start with either an aspirated, a non-aspirated or a sonorant conson
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-stop-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-stop-dens-1} 
 
 \end{knitrout}
 
@@ -295,9 +247,13 @@ According to the test, the mean duration of modal voicing in words ending with a
 \hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= mono_stop,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
-        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
+        \hlkwc{ylab} \hlstd{=} \hlstr{"duration (msec)"}\hlstd{,}
         \hlkwc{main} \hlstd{=} \hlstr{"Duration (in seconds) of modal voicing in CVCC words"}
         \hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{img/mono-stop-box-1} 
+\begin{kframe}\begin{alltt}
 \hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
 \end{alltt}
 \begin{verbatim}
@@ -309,13 +265,6 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-stop-box-1} 
-
-}
-
-
-
 \end{knitrout}
 
 \subsection{Nasals}
@@ -356,12 +305,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-nas-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-nas-dens-1} 
 
 \end{knitrout}
 
@@ -376,12 +320,7 @@ According to the test, the mean duration of modal voicing in words ending with a
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-nas-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-nas-box-1} 
 
 \end{knitrout}
 
@@ -466,12 +405,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-lat-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-lat-dens-1} 
 
 \end{knitrout}
 
@@ -486,12 +420,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-lat-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-lat-box-1} 
 
 \end{knitrout}
 
@@ -549,12 +478,7 @@ It is good to check whether the duration of monosyllabic words is affected by th
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/mono-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/mono-box-1} 
 
 \end{knitrout}
 
@@ -596,10 +520,10 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## t = -0.36443, df = 358.23, p-value = 0.7158
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.02116269  0.01454560
+##  -21.16269  14.54560
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.4333422         0.4366508
+##          433.3422          436.6508
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -639,12 +563,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-stop-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-stop-dens-1} 
 
 \end{knitrout}
 
@@ -684,12 +603,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-stop-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-stop-box-1} 
 
 \end{knitrout}
 
@@ -747,12 +661,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-nas-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-nas-dens-1} 
 
 \end{knitrout}
 
@@ -767,12 +676,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-nas-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-nas-box-1} 
 
 \end{knitrout}
 
@@ -850,12 +754,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-lat-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-lat-dens-1} 
 
 \end{knitrout}
 
@@ -870,12 +769,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-lat-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-lat-box-1} 
 
 \end{knitrout}
 
@@ -953,12 +847,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-rho-dens-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-rho-dens-1} 
 
 \end{knitrout}
 
@@ -973,12 +862,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
         \hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-rho-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-rho-box-1} 
 
 \end{knitrout}
 
@@ -1031,12 +915,7 @@ As with monosyllabic words, we should check if the duration of bisyllabic words 
 \hlkwd{boxplot}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= bi)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/bi-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/bi-box-1} 
 
 \end{knitrout}
 
@@ -1090,12 +969,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 \hlkwd{boxplot}\hlstd{(dur_word} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=\maxwidth]{img/results-box-1} 
-
-}
-
-
+\includegraphics[width=\maxwidth]{img/results-box-1} 
 
 \end{knitrout}
 

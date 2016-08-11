@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper,openany]{memoir}
+
+\setsecnumdepth{subsection}
+\raggedbottom
+\setulmarginsandblock{1.5cm}{1.5cm}{*}
+\setlrmarginsandblock{4cm}{2cm}{*}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+
+\usepackage{polyglossia}
+    \setmainlanguage{english}
+
+\usepackage{fontspec}
+    \setmainfont{FreeSerif}
+    \frenchspacing
+    \OnehalfSpacing
+
+\usepackage{ctable,multirow,multicol,paralist}
+
+\usepackage{natbib}
+
+
+\usepackage{mycleveref}
+
+
+\title{Vowel duration and aspiration effects in Icelandic}
+\author{Stefano Coretta}
+
+\graphicspath{{./img/}}
+
+
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(highlight)
+opts_knit$set(root.dir=normalizePath('../'))
+opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.6\\textwidth", echo=FALSE)
+@
+
+<<start>>=
+results_raw <- read.csv("analysis/results.csv")
+words <- read.csv("task/task-src/words.csv")
+results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
+results <- subset(results_all, comp == "c")
+@
+
+\frontmatter
+
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
+
+\tableofcontents*
+
+\mainmatter
+
+
+
+%<<intro, child='rnw/intro.Rnw'>>=
+%@
+
+<<review, child='rnw/review.Rnw'>>=
+@
+
+<<method, child='rnw/method.Rnw'>>=
+@
+
+<<results, child='rnw/results.Rnw'>>=
+@
+
+%\input{./tex/discussion.tex}
+%\input{./tex/conclusion.tex}
+
+\appendix
+
+<<wordlist, child='rnw/wordlist.Rnw'>>=
+@
+
+<<getmeasure, child='rnw/getmeasure.Rnw'>>=
+@
+
+
+
+
+
+
+
+
+\bibliographystyle{york-harvard}
+\bibliography{linguistics}
+
+\end{document}

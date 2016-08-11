@@ -38,7 +38,7 @@ endif
 
 header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
 ...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,abs_clos,norm_voic,
-...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos'newline$'"
+...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos,v_to_rel'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -58,19 +58,19 @@ for file to files_no
         if lab_word$ <> ""
             begin_word = Get starting point: word, int_word
             end_word = Get end point: word, int_word
-            duration_word = end_word - begin_word
+            duration_word = (end_word - begin_word) * 1000
 
             int_voic = Get interval at time: voic, begin_word
             label$ = Get label of interval: voic, int_voic
             if label$ <> ""
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
-                duration_voic = end_voic - begin_voic
+                duration_voic = (end_voic - begin_voic) * 1000
             else
                 int_voic = int_voic + 1
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
-                duration_voic = end_voic - begin_voic
+                duration_voic = (end_voic - begin_voic) * 1000
             endif
 
             int_mann = Get interval at time: mann, end_voic - 0.00001
@@ -78,7 +78,7 @@ for file to files_no
             if  label$ <> ""
                 begin_mann = Get starting point: mann, int_mann
                 end_mann = Get end point: mann, int_mann
-                duration_mann = end_mann - begin_mann
+                duration_mann = (end_mann - begin_mann) * 1000
             else
                 begin_mann$ = ""
                 end_mann$ = ""
@@ -87,14 +87,14 @@ for file to files_no
 
             ind_rels = Get nearest index from time: rels, end_word
             time_rels = Get time of point: rels, ind_rels
-            v_to_rel = time_rels - begin_voic
+            v_to_rel = (time_rels - begin_voic) * 1000
 
             if label$ <> ""
-                duration_v_to_m = begin_mann - begin_voic
-                duration_closure = time_rels - end_mann
-                duration_abs_closure = time_rels - begin_mann
+                duration_v_to_m = (begin_mann - begin_voic) * 1000
+                duration_closure = (time_rels - end_mann) * 1000
+                duration_abs_closure = (time_rels - begin_mann) * 1000
             else
-                duration_closure = time_rels - end_voic
+                duration_closure = (time_rels - end_voic) * 1000
             endif
 
             if label$ <> ""
@@ -110,7 +110,7 @@ for file to files_no
                     ...'time_rels','duration_v_to_m','duration_closure',
                     ...'duration_v_to_m','duration_abs_closure','norm_duration_voice',
                     ...'norm_duration_mann','norm_duration_v_to_m',
-                    ...'norm_duration_closure','norm_duration_v_to_m','norm_abs_clos''newline$'"
+                    ...'norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
@@ -118,7 +118,7 @@ for file to files_no
                     ...'duration_voic','begin_mann','end_mann','duration_mann'
                     ...,,'duration_v_to_m',,'duration_v_to_m',,
                     ...'norm_duration_voice','norm_duration_mann',
-                    ...'norm_duration_v_to_m',,'norm_duration_v_to_m','newline$'"
+                    ...'norm_duration_v_to_m',,'norm_duration_v_to_m',,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
@@ -130,14 +130,14 @@ for file to files_no
                     ...'duration_voic','begin_mann$','end_mann$',
                     ...'duration_mann$','time_rels',,'duration_closure',
                     ...'duration_voic','duration_closure','norm_duration_voice',,,
-                    ...'norm_duration_closure','norm_duration_voice','newline$'"
+                    ...'norm_duration_closure','norm_duration_voice','v_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
                     result_line$ = "'file_name$','lab_word$','begin_word',
                     ...'end_word','duration_word','begin_voic','end_voic',
                     ...'duration_voic','begin_mann$','end_mann$',
                     ...'duration_mann$',,,,'duration_voic',,
-                    ...'norm_duration_voice',,,,'norm_duration_voice','newline$'"
+                    ...'norm_duration_voice',,,,'norm_duration_voice',,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif

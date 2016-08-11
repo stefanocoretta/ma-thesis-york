@@ -20,7 +20,7 @@
 library(knitr)
 library(highlight)
 opts_knit$set(root.dir=normalizePath('../../'))
-opts_chunk$set(fig.path='img/', fig.align='center', fig.show='hold')
+opts_chunk$set(fig.path='img/')
 @
 
 
@@ -44,17 +44,18 @@ To check the duration of each word token as spoken by the participants, we first
 
 <<split>>=
 mono <- subset(results, syl_no == "mono")
-bi <- subset(results, syl_no == "bi")
+bi <- subset(results, syl_no == "di")
 @
 
 We can now separately check the duration of monosyllabic and bisyllabic words.
 
-<<word-duration, fig=T>>=
+\begin{figure}
+<<word-duration, echo=F, fig=T>>=
 plot(
     c(), c(),
-    xlim = c(0.1,0.9),
+    xlim = c(100,900),
     ylim = c(0,150),
-    xlab = "duration (s)", ylab = "frequency"
+    xlab = "duration (msec)", ylab = "frequency"
 )
 
 hist(
@@ -64,13 +65,21 @@ hist(
 hist(
     bi$dur_word, add = TRUE, col = "lightgrey"
 )
-@
 
-The mean length of monosyllabic words is \Sexpr{round(mean(mono$dur_word), 2)} seconds, while that of bisyllabic words is \Sexpr{round(mean(bi$dur_word), 2)} seconds.
+legend("topright",
+       c("mono", "di"),
+       fill = c("darkgrey","lightgrey")
+       )
+@
+\caption{Duration of mono- \textit{vs.} bisyllabic words.}
+\end{figure}
+
+The mean length of monosyllabic words is \Sexpr{round(mean(mono$dur_word), 2)} msec [\textit{sd} = \Sexpr{round(sd(mono$dur_word), 2)}], while that of bisyllabic words is \Sexpr{round(mean(bi$dur_word), 2)} msec [\textit{sd} = \Sexpr{round(sd(bi$dur_word), 2)}].
 
 Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
 
-<<mono-bi-dens,fig=T>>=
+\begin{figure}
+<<mono-bi-dens,echo=F,fig=T>>=
 norm_abs_voic_mono_density <- density(mono$norm_abs_voic)
 norm_abs_voic_bi_density <- density(bi$norm_abs_voic)
 
@@ -89,9 +98,17 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_mono_density, lw = 1, col = "blue")
-lines(norm_abs_voic_bi_density, lw = 1, col = "red")
+lines(norm_abs_voic_mono_density, lw = 1)
+lines(norm_abs_voic_bi_density, lw = 1, lty = 2)
+
+legend("topright",
+       c("mono", "di"),
+       lty = c(1,2)
+       )
 @
+\caption{Density plot of the duration of the voiced vocalic portion in mono- and disyllabic words.}
+\end{figure}
+
 
 <<>>=
 shapiro.test(mono$norm_abs_voic)
@@ -154,7 +171,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 boxplot(norm_abs_voic ~ asp,
         data = mono_stop,
         names = c("non-asp", "asp"),
-        ylab = "duration (s)",
+        ylab = "duration (msec)",
         main = "Duration (in seconds) of modal voicing in CVCC words"
         )
 wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
