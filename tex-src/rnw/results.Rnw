@@ -1,5 +1,5 @@
 \chapter{Results}
-
+\label{c:results}
 
 \section{Word duration}
 <<mono-di>>=
@@ -91,7 +91,7 @@ The normalised duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_
 \subsection{Laterals}
 
 <<mono-lateral>>=
-mono_lat <- subset(mono, manner == "nasal")
+mono_lat <- subset(mono, manner == "lateral")
 mono_lat_asp <- subset(mono_lat, asp == "yes")
 mono_lat_nasp <- subset(mono_lat, asp == "no")
 @
@@ -121,7 +121,7 @@ According to a independent two-sample \textit{t}-test, the difference in ratio i
 
 \subsection{Nasals}
 <<di-nasal>>=
-di_nas <- subset(di, manner == "stop")
+di_nas <- subset(di, manner == "nasal")
 di_nas_asp <- subset(di_nas, asp == "yes")
 di_nas_nasp <- subset(di_nas, asp == "no")
 @
@@ -138,7 +138,7 @@ A \textit{t}-test showed that this difference is significant.
 
 \subsection{Laterals}
 <<di-lateral>>=
-di_lat <- subset(di, manner == "stop")
+di_lat <- subset(di, manner == "lateral")
 di_lat_asp <- subset(di_lat, asp == "yes")
 di_lat_nasp <- subset(di_lat, asp == "no")
 @
@@ -154,7 +154,7 @@ The voiced portion takes the \Sexpr{round(mean(di_lat_nasp$norm_abs_voic)*100,2)
 
 \subsection{Rhotics}
 <<di-rhotic>>=
-di_rho <- subset(di, manner == "stop")
+di_rho <- subset(di, manner == "rhotic")
 di_rho_asp <- subset(di_rho, asp == "yes")
 di_rho_nasp <- subset(di_rho, asp == "no")
 @

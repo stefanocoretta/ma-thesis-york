@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper,openany]{memoir}
 
 \setsecnumdepth{subsection}
+\maxtocdepth{subsection}
 \raggedbottom
 \setulmarginsandblock{1.5cm}{1.5cm}{*}
 \setlrmarginsandblock{4cm}{2cm}{*}
@@ -23,6 +24,7 @@
 
 \usepackage{natbib}
 
+\usepackage{gb4e}
 
 \usepackage{mycleveref}
 
@@ -73,7 +75,9 @@ results <- subset(results_all, comp == "c")
 <<results, child='rnw/results.Rnw'>>=
 @
 
-%\input{./tex/discussion.tex}
+<<discussion, child='rnw/discussion.Rnw'>>=
+@
+
 %\input{./tex/conclusion.tex}
 
 \appendix

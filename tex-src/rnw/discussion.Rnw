@@ -1,1 +1,26 @@
 \chapter{Discussion}
+
+The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
+An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
+In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
+As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the voiced vocalic portion in words with aspirated consonants and its duration in words with non-aspirated consonants.
+This finding seems to support the timing hypothesis.
+
+\section{Geminate stops}
+%ADD many figures
+We have seen that the ratio duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+This is true even if the absolute duration of the VOR in both classes is virtually the same, as shown in .
+Thus, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
+Other things being equal, we would expect the onset of glottal abduction in words with pre-aspiration to be aligned around the same time of the offset of voicing in words with plain geminates.
+Instead, laryngeal spreading starts quite early in the word, while voicing is still active even after glottal spread is initiated.
+
+It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
+This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
+Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has reached the critical point where the abduction is enough to produce breathiness.
+This would imply that the gestured might have started even earlier, strengthening the idea proposed in this research.
+
+
+
+
+
+

@@ -516,4 +516,13 @@ shapiro.test(results$dur_word[results$asp == "no"])
 wilcox.test(dur_word ~ asp, data = results)
 @
 
+\section{VOR}
+<<>>=
+boxplot(v_to_rel ~ asp, data = results)
+shapiro.test(results$v_to_rel[results$asp == "yes"])
+shapiro.test(results$v_to_rel[results$asp == "no"])
+t.test(v_to_rel ~ asp, data = results)
+@
+
+
 \end{document}

@@ -50,6 +50,7 @@
 \usepackage{alltt}
 
 \setsecnumdepth{subsection}
+\maxtocdepth{subsection}
 \raggedbottom
 \setulmarginsandblock{1.5cm}{1.5cm}{*}
 \setlrmarginsandblock{4cm}{2cm}{*}
@@ -72,6 +73,7 @@
 
 \usepackage{natbib}
 
+\usepackage{gb4e}
 
 \usepackage{mycleveref}
 
@@ -173,11 +175,33 @@ Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceles
 Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
 
+\section{Research hypothesis}
+The studies by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
+%ADD about sonorants!
 
+The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative allingment of the glottal spreading gesture and the oral gesture.
+Depending on how the spreading of the glottis is timed in relation to the tongue gestures in the oral cavity, modal voicing can be maintained for a certain amount of time or it is terminated earlier.
+An early timing of glottal spreading (like in pre-aspiration) would prevent voicing in the last portion of the preceding vocalic gesture, making the vowel shorter.
+On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
+In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voincing.
 
+In Icelandic, the contexts where a contrast involving aspiration can be found posvocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
+As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
+If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
+Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), these two separate statements can be merged into a single hypothesis:
 
+\begin{exe}
+\ex\label{h1} \textbf{Alternative hypothesis} (H\textsubscript{1}) \\
+Vowels followed by aspirated consonants are shorter than vowels followed by unaspirated consonants.
+\end{exe}
 
+The corresponding null hypothesis is:
 
+\begin{exe}
+\ex\label{h0} \textbf{Null hypothesis} (H\textsubscript{0}) \\
+Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants
+\end{exe}
 
 
 
@@ -359,7 +383,7 @@ I performed the statistical analysis using the R programming language \citep{r-c
 
 
 \chapter{Results}
-
+\label{c:results}
 
 \section{Word duration}
 
@@ -423,8 +447,8 @@ The normalised duration was, respectively, 0.37 and 0.3.
 
 
 
-In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 89.96 and 77.73 msec when followed, respectively by a voiced and voiceless lateral.
-These correspond to the 30.99\% and the 26.44\% of the VOR.
+In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 102.05 and 80.7 msec when followed, respectively by a voiced and voiceless lateral.
+These correspond to the 29.69\% and the 24.98\% of the VOR.
 A Wilcoxon test shows that the difference is significant [].
 
 \section{Disyllabic words}
@@ -443,24 +467,24 @@ According to a independent two-sample \textit{t}-test, the difference in ratio i
 
 
 
-CVNCV words have a mean voiced vocalic portion duration of 86.97 msec if the nasal is voiced and 78.04 msec if it is voiceless.
-As percentages, the vocalic portion is 33.61\% of the VOR if followed by a voiced nasal, and 28.27\% when the nasal is voiceless.
+CVNCV words have a mean voiced vocalic portion duration of 81.72 msec if the nasal is voiced and 67.83 msec if it is voiceless.
+As percentages, the vocalic portion is 29.47\% of the VOR if followed by a voiced nasal, and 24.22\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant.
 
 \subsection{Laterals}
 
 
 
-The voiced vocalic portion in CVLCV words is on average 86.97 msec long when the lateral is voiced and 78.04 msec when it is voiceless.
-The voiced portion takes the 33.61\% of the VOR if followed by a voiced lateral, and 28.27\% when the lateral is voiceless.
+The voiced vocalic portion in CVLCV words is on average 107.68 msec long when the lateral is voiced and 66.66 msec when it is voiceless.
+The voiced portion takes the 36.2\% of the VOR if followed by a voiced lateral, and 23.26\% when the lateral is voiceless.
 
 
 \subsection{Rhotics}
 
 
 
-With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 86.97 msec long when the rhotic is voiced and 78.04 msec when it is voiceless.
-The voiced portion takes the 33.61\% of the VOR if followed by a voiced rhotic, and 28.27\% when the rhotic is voiceless.
+With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 121.07 msec long when the rhotic is voiced and 104.78 msec when it is voiceless.
+The voiced portion takes the 39.83\% of the VOR if followed by a voiced rhotic, and 33.43\% when the rhotic is voiceless.
 
 
 
@@ -468,7 +492,34 @@ The voiced portion takes the 33.61\% of the VOR if followed by a voiced rhotic, 
 
 
 
-%\input{./tex/discussion.tex}
+
+\chapter{Discussion}
+
+The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
+An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
+In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
+As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the voiced vocalic portion in words with aspirated consonants and its duration in words with non-aspirated consonants.
+This finding seems to support the timing hypothesis.
+
+\section{Geminate stops}
+%ADD many figures
+We have seen that the ratio duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+This is true even if the absolute duration of the VOR in both classes is virtually the same, as shown in .
+Thus, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
+Other things being equal, we would expect the onset of glottal abduction in words with pre-aspiration to be aligned around the same time of the offset of voicing in words with plain geminates.
+Instead, laryngeal spreading starts quite early in the word, while voicing is still active even after glottal spread is initiated.
+
+It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
+This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
+Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has reached the critical point where the abduction is enough to produce breathiness.
+This would imply that the gestured might have started even earlier, strengthening the idea proposed in this research.
+
+
+
+
+
+
+
 %\input{./tex/conclusion.tex}
 
 \appendix
