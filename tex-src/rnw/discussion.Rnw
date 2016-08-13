@@ -8,16 +8,59 @@ This finding seems to support the timing hypothesis.
 
 \section{Geminate stops}
 %ADD many figures
-We have seen that the ratio duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
-This is true even if the absolute duration of the VOR in both classes is virtually the same, as shown in .
-Thus, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
-Other things being equal, we would expect the onset of glottal abduction in words with pre-aspiration to be aligned around the same time of the offset of voicing in words with plain geminates.
+We have seen that the absolute duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+It is worth noting that the VOR of the two classes is different, as said in .
+However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
+This is because the VOR is \textit{longer} in words with aspiration while the absolute duration of the vowel is \textit{smaller}.
+Other things being equal, we would expect the interval between voice onset and the onset of glottal abduction in words with pre-aspiration to take the same ratio of the VOR as the voiced interval in words with plain geminates.
 Instead, laryngeal spreading starts quite early in the word, while voicing is still active even after glottal spread is initiated.
 
 It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
 This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
 Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has reached the critical point where the abduction is enough to produce breathiness.
-This would imply that the gestured might have started even earlier, strengthening the idea proposed in this research.
+This would imply that the gestured might start even earlier, strengthening the central idea proposed in this research.
+
+However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
+What I found, instead, points to a longer voicing portion in words with pre-aspirated stops.
+The duration of voicing is, in fact, greater in words with pre-aspirated stops than in word with plain geminates.
+This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be maintained longer.
+A plain geminate is produced by keeping the closure for a longer time and voicing during closure is more difficult to maintain.
+Thus it is natural to expect that, other things being equal, voicing duration would be greater if glottal spread is involved.
+This fact does not fit well with the idea that voicing should cease earlier due to glottal spread.
+Even if the physiological explanation seems not to hold, the relative timing on itself can be provisionally considered to be right.
+
+\begin{figure}
+\centering
+<<voic-stop>>=
+boxplot(norm_voic ~ asp,
+        data = results_stop,
+        names = c("non-asp", "pre-asp"),
+        ylab = "duration (ratio)"
+        )
+@
+\caption{Ratio duration of the voicing interval depending on presence or absence of glottal spread.}
+\label{f:voicdur}
+\end{figure}
+
+Contrary to what stated in \Cref{s:hypothesis}, glottal abduction does not prevent voicing.
+On the contrary, longer voicing can be found in words with glottal spread.
+A possible explanation of this phenomenon is that the absence of a closure at the VC transition allows for voicing to continue.
+In words without glottal spread, the closure of the plain geminate---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
+At the same time, the variance of voicing in the two classes is not the same, and voicing in the aspirated condition has greater variance.
+In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
+
+\section{Sonorants}
+The class of sonorant consonants (nasals, laterals and rhotics) seem to pattern together for what concerns durational properties.
+As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.
+Differently from geminate stops, the VOR in words containing sonorant consonants was constant in both the aspirated and non-aspirated classes, except in disyllabic words containing laterals.
+
+
+
+
+
+\section{Limitations and further studies}
+
+
 
 
 

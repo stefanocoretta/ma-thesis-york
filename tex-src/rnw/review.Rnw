@@ -69,6 +69,8 @@ Voicing is reported to be totally absent in Icelandic stops, and does not appear
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
 
 \section{Research hypothesis}
+\label{s:hypothesis}
+
 The studies by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
 These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
 %ADD about sonorants!

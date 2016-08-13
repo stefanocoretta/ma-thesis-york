@@ -103,41 +103,21 @@ for file to files_no
                 norm_duration_v_to_m = duration_v_to_m / v_to_rel
                 norm_abs_clos = duration_abs_closure / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
-                    norm_duration_closure = duration_closure / duration_word
-                    result_line$ = "'file_name$','lab_word$','begin_word',
-                    ...'end_word','duration_word','begin_voic','end_voic',
-                    ...'duration_voic','begin_mann','end_mann','duration_mann',
-                    ...'time_rels','duration_v_to_m','duration_closure',
-                    ...'duration_v_to_m','duration_abs_closure','norm_duration_voice',
-                    ...'norm_duration_mann','norm_duration_v_to_m',
-                    ...'norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel''newline$'"
+                    norm_duration_closure = duration_closure / v_to_rel
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word',
-                    ...'end_word','duration_word','begin_voic','end_voic',
-                    ...'duration_voic','begin_mann','end_mann','duration_mann'
-                    ...,,'duration_v_to_m',,'duration_v_to_m',,
-                    ...'norm_duration_voice','norm_duration_mann',
-                    ...'norm_duration_v_to_m',,'norm_duration_v_to_m',,'newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann',,'duration_v_to_m',,'duration_v_to_m',,'norm_duration_voice','norm_duration_mann','norm_duration_v_to_m',,'norm_duration_v_to_m',,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
                 norm_duration_voice = duration_voic / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
-                    result_line$ = "'file_name$','lab_word$','begin_word',
-                    ...'end_word','duration_word','begin_voic','end_voic',
-                    ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$','time_rels',,'duration_closure',
-                    ...'duration_voic','duration_closure','norm_duration_voice',,,
-                    ...'norm_duration_closure','norm_duration_voice','v_to_rel''newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word',
-                    ...'end_word','duration_word','begin_voic','end_voic',
-                    ...'duration_voic','begin_mann$','end_mann$',
-                    ...'duration_mann$',,,,'duration_voic',,
-                    ...'norm_duration_voice',,,,'norm_duration_voice',,'newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif

@@ -39,8 +39,8 @@ cond_no,lex,ph,vow,cons,contx,syl,manner,place,asp,pos,cons1,syl_no,eng,comp
 40,punda,pʰʏnta,ʏ,n,cc,cvncv,nasal,coronal,no,n,asp,di,pound,c
 41,vanta,van̥ta,a,n̥,cc,cvccv,nasal,coronal,yes,v,voi,di,want,c
 42,vanda,vanta,a,n,cc,cvncv,nasal,coronal,no,v,voi,di,do st carefully,c
-43,fínn,fitn̥,i,t,cx,cvcc,stop,coronal,yes,adj,vls,mono,smart,c
-44,kinn,cʰɪnn,i,nn,cx,cvcc,geminate,coronal,no,n,asp,mono,cheek,c
+43,fínn,fitn̥,i,t,cx,cvcc,stop,coronal,yes,adj,vls,mono,smart,x
+44,kinn,cʰɪnn,i,nn,cx,cvcc,geminate,coronal,no,n,asp,mono,cheek,x
 45,duld,tʏlt,ʏ,l,cc,cvlc,lateral,coronal,no,adj,nasp,mono,complex,c
 46,dult,tʏl̥t,ʏ,l̥,cc,cvlc,lateral,coronal,yes,adj,nasp,mono,reticent,c
 47,gelta,cel̥ta,e,l̥,cc,cvlcv,lateral,coronal,yes,v,nasp,di,bark,c
