@@ -3,11 +3,9 @@
 \setsecnumdepth{subsection}
 \maxtocdepth{subsection}
 \raggedbottom
-\setulmarginsandblock{1.5cm}{1.5cm}{*}
-\setlrmarginsandblock{4cm}{4cm}{*}
 
 \usepackage[hidelinks]{hyperref}
-\usepackage{geometry}
+\usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
 
@@ -35,6 +33,9 @@
 \graphicspath{{./img/}}
 
 
+
+
+
 \begin{document}
 
 <<setup, include=FALSE, cache=FALSE>>=
@@ -55,6 +56,10 @@ results_lat <- subset(results, manner == "lateral")
 results_rho <- subset(results, manner == "rhotic")
 @
 
+
+
+
+
 \frontmatter
 
 \begin{titlingpage}
@@ -63,9 +68,11 @@ results_rho <- subset(results, manner == "rhotic")
 
 \tableofcontents*
 
+
+
+
+
 \mainmatter
-
-
 
 %<<intro, child='rnw/intro.Rnw'>>=
 %@
@@ -84,6 +91,10 @@ results_rho <- subset(results, manner == "rhotic")
 
 %\input{./tex/conclusion.tex}
 
+
+
+
+
 \appendix
 
 <<wordlist, child='rnw/wordlist.Rnw'>>=
@@ -91,9 +102,6 @@ results_rho <- subset(results, manner == "rhotic")
 
 <<getmeasure, child='rnw/getmeasure.Rnw'>>=
 @
-
-
-
 
 
 

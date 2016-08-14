@@ -53,12 +53,66 @@ In some aspirated tokens, the duration of voicing is as short---or in a few case
 The class of sonorant consonants (nasals, laterals and rhotics) seem to pattern together for what concerns durational properties.
 As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.
 Differently from geminate stops, the VOR in words containing sonorant consonants was constant in both the aspirated and non-aspirated classes, except in disyllabic words containing laterals.
+The duration of the stop closure after the sonorant was the same in both aspirated and non-aspirated conditions, except with laterals and rhotics in disyllabic words.
+The stop consonants in words with /NC/ and /N̥C/ clusters had identical closure durations, so the difference in vowel duration cannot be attributed to closure properties.
+The presence vs. the absence of aspiration did not affect the duration of stop closure.
+
+On the contrary, the ratio duration of sonorant consonants (nasal, lateral and rhotic) varied between the aspirated and non-aspirated conditions.
+The aspirated sonorants are longer than the non-aspirated ones.
+This characteristics can be attributed to perceptual factors.
+An aspirated sonorant carries less cues for manner and place of articulation, given that most of it is produced with voiceless noise.
+One possible mechanism to enhance manner and place cues and ensure that they are salient enough to be audible is to lengthen the total duration of the sonorant consonant.
+This solution would allow more time for sustaining enough modal voicing---which carries better cues than voiceless noise---during the first portion of the sonorant.
+
+In the case of sonorants, it is reasonable to say that the possible cause of shorter vowels in words with aspirated sonorants is the longer duration of the former.
+While with stops the VOR is longer with pre-aspirated geminates, with sonorants its duration is the same with aspirated and non-aspirated consonants.
+If the speaker intention is to maintain the same VOR while warranting a longer duration of the sonorant, this can be done at detriment of the vowel.
+The vowel preceding the aspirated sonorant is thus compressed and it becomes relatively shorter than a vowel followed by a voiced sonorant.
+The timing hypothesis presented in this study, thus, seems not to be straightforwardly compatible with the data found in words containing sonorants, even if the effects predicted by it were found.
 
 
 
+\section{Individual differences}
 
 
 \section{Limitations and further studies}
+% participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
+% material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
+% procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; frame sentence, different recording equipment and conditions
+% annotation: difficulties of finding glottal spread
+% articulatory study instead
+
+Some of the limitations of this study concern the participants recruited for the reading task.
+The first difficulty was finding a sensible number of Icelandic speakers in York.
+Due to limitations of time and resources, I could not recruit people from outside York.
+This significantly restrained the number of speakers and increased the possibilities that idiosyncrasies could creep into the data.
+Moreover, the age range of the participants was quite large (24-66 years old).
+The average, though, was biased towards the younger age: 4 out of 6 were within the 24-27 range.
+This made conducting age related analyses impossible.
+The same argument can be done for sex: 4 out of 6 speakers were female.
+There was heterogeneity also in the foreign languages they were confident in.
+While Danish was quite common among the youngest speakers, two of them spoke a third language as well (German and Spanish).
+
+Another potential issue with the participants is that all of them, except one, lived in the UK for more than 6 months.
+It is reasonable to assume that this had a significant impact on their productions of Icelandic.
+Even if the informants allegedly spoke Icelandic on a regular basis, with their family, friends and colleagues, the chances that English influenced Icelandic (and---although not of a concern for the present study---vice versa) are quite high.
+The research conducted by \citet{sancier1997} studied how strong the influence was from one language to the other in a Brazilian Portuguese and English bilingual speaker who frequently travelled between Brazil and the United States of America.
+The study showed that the speaker produced a shorter voice onset time in both Portuguese and English after spending more than 6 months in Brazil than when she was in the United States.
+Thus, it is worth stressing that the results presented here should be taken with a cautionary note.
+
+Another challenge was finding words that would satisfy all of the parameters.
+The choice to use real words came at the cost of making the experiment design less balanced.
+As mentioned in \Cref{s:}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
+Such gaps in the lexicon of Icelandic show that the functional load of the aspiration contrast is somewhat constrained.
+Even if from a more restricted contextual point of view, aspiration contrasts can be found everywhere in the lexicon, true minimal pairs were harder to find.
+%TODO add holes and humps paper!
+
+
+
+
+
+
+
 
 
 

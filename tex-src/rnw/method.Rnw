@@ -26,7 +26,7 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 }
 
 \section{Materials}
-
+\label{s:materials}
 The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
 The list of target words is given in \Cref{a:list}.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
