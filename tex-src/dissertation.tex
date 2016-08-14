@@ -87,6 +87,10 @@
 
 
 
+
+
+
+
 \frontmatter
 
 \begin{titlingpage}
@@ -95,9 +99,11 @@
 
 \tableofcontents*
 
+
+
+
+
 \mainmatter
-
-
 
 %<<intro, child='rnw/intro.Rnw'>>=
 %@
@@ -275,6 +281,7 @@ The audio files were encoded using the \texttt{.wav} format at a sampling rate o
 Even if the recording conditions differed between participants, the quality of the audio is comparable across files.
 
 \section{Annotation}
+\label{s:annotation}
 
 \begin{figure}
 \centering
@@ -568,11 +575,11 @@ The timing hypothesis presented in this study, thus, seems not to be straightfor
 \section{Individual differences}
 
 
-\section{Limitations and further studies}
+\section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
 % material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
-% procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; frame sentence, different recording equipment and conditions
-% annotation: difficulties of finding glottal spread
+% procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; different recording equipment and conditions
+% annotation: difficulties of finding glottal spread, frame sentence
 % articulatory study instead
 
 Some of the limitations of this study concern the participants recruited for the reading task.
@@ -597,17 +604,37 @@ Another challenge was finding words that would satisfy all of the parameters.
 The choice to use real words came at the cost of making the experiment design less balanced.
 As mentioned in \Cref{s:}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
 Such gaps in the lexicon of Icelandic show that the functional load of the aspiration contrast is somewhat constrained.
-Even if from a more restricted contextual point of view, aspiration contrasts can be found everywhere in the lexicon, true minimal pairs are harder to find.
+Even if from a more restricted contextual point of view, aspiration contrasts can be found everywhere in the lexicon, true minimal pairs were harder to find.
+%TODO add holes and humps paper!
+
+Some design and technical problems arose in the task procedure.
+Since the participants did not have the chance to familiarise themselves with the words before starting the task, a few speakers read the first token of some words with uncertainty.
+In some cases, they said the wrong word altogether.
+One of the speakers () did not recognise most of the words which were not in the standard citation form and decided to read them as if they were English words.
+Of course, I had to exclude all of these tokens from the analysis.
+This could have been avoided, even if at the cost of less naturalistic data, by letting the speakers read the words beforehand.
+
+A recurrent problem with studies of phonetic duration is that speech tempo is not stable and it is difficult to control.
+Using ratio durations can overcome some of the shortcomings of varying tempo.
+However, the compressibility of phonetic material is not homogeneous between classes of sounds and contexts.
+%TODO add citation
+
+The sound equipment and the recording conditions varied between subjects.
+Although the quality of the audio was comparable across recordings, I expect to be minor differences in the way echoes and background noises affected them.
+This might have perturbed some speech stretches, in principle rendering visual annotation less reliable.
+However, as described in \Cref{s:annotation}, the criteria used during annotation have been devised so as to be consistently applicable.
+Such solution substantially reduced possible errors due to the presence of echoes and noises.
+
+Even so, the annotation scheme presented some challenges.
+In particular, the visual inspection of the spectrogram was, at times, not unequivocal.
+Especially with glottal abduction, I have encountered some difficult tokens where the shape of the waveform did not clearly indicate the onset of breathiness.
+In such cases I had to rely only on a change in the look of spectrogram.
 
 
 
 
 
-
-
-
-
-
+\section{Further studies}
 
 
 
@@ -616,6 +643,10 @@ Even if from a more restricted contextual point of view, aspiration contrasts ca
 
 
 %\input{./tex/conclusion.tex}
+
+
+
+
 
 \appendix
 
@@ -667,9 +698,6 @@ pund  & pʰʏnt  &        &         \LL
 
 \chapter{PRAAT script}
 \label{a:getmeasure}
-
-
-
 
 
 

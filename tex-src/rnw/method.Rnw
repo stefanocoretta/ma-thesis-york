@@ -16,7 +16,7 @@ Participant JR had to be excluded from the analysis since he misunderstood the t
 label = t:participants,
 ]{cccclc}{}{
 \FL
-\textbf{participant} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
+\textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
 TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
 BRS & female & 25 & Hofn      & Danish, English, Spanish & Yes \NN
 BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
@@ -63,6 +63,7 @@ The audio files were encoded using the \texttt{.wav} format at a sampling rate o
 Even if the recording conditions differed between participants, the quality of the audio is comparable across files.
 
 \section{Annotation}
+\label{s:annotation}
 
 \begin{figure}
 \centering
