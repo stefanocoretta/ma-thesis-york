@@ -8,6 +8,7 @@
 \usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
+\usepackage{subcaption}
 
 
 \usepackage{polyglossia}
@@ -54,6 +55,33 @@ results_stop <- subset(results, manner == "stop")
 results_nas <- subset(results, manner == "nasal")
 results_lat <- subset(results, manner == "lateral")
 results_rho <- subset(results, manner == "rhotic")
+mono <- subset(results, syl_no == "mono")
+di <- subset(results, syl_no == "di")
+mono_c <- subset(mono, cons1 != "no")
+mono_v <- subset(mono, cons1 == "no")
+di_c <- subset(di, cons1 != "no")
+di_v <- subset(di, cons1 == "no")
+mono_stop <- subset(mono, manner == "stop")
+mono_stop_asp <- subset(mono_stop, asp == "yes")
+mono_stop_nasp <- subset(mono_stop, asp == "no")
+mono_nas <- subset(mono, manner == "nasal")
+mono_nas_asp <- subset(mono_stop, asp == "yes")
+mono_nas_nasp <- subset(mono_stop, asp == "no")
+mono_lat <- subset(mono, manner == "lateral")
+mono_lat_asp <- subset(mono_lat, asp == "yes")
+mono_lat_nasp <- subset(mono_lat, asp == "no")
+di_stop <- subset(di, manner == "stop")
+di_stop_asp <- subset(di_stop, asp == "yes")
+di_stop_nasp <- subset(di_stop, asp == "no")
+di_nas <- subset(di, manner == "nasal")
+di_nas_asp <- subset(di_nas, asp == "yes")
+di_nas_nasp <- subset(di_nas, asp == "no")
+di_lat <- subset(di, manner == "lateral")
+di_lat_asp <- subset(di_lat, asp == "yes")
+di_lat_nasp <- subset(di_lat, asp == "no")
+di_rho <- subset(di, manner == "rhotic")
+di_rho_asp <- subset(di_rho, asp == "yes")
+di_rho_nasp <- subset(di_rho, asp == "no")
 @
 
 

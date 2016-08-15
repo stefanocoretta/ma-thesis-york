@@ -57,6 +57,7 @@
 \usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
+\usepackage{subcaption}
 
 
 \usepackage{polyglossia}
@@ -234,7 +235,7 @@ Participant JR had to be excluded from the analysis since he misunderstood the t
 label = t:participants,
 ]{cccclc}{}{
 \FL
-\textbf{participant} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
+\textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
 TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
 BRS & female & 25 & Hofn      & Danish, English, Spanish & Yes \NN
 BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
@@ -394,7 +395,6 @@ I performed the statistical analysis using the R programming language \citep{r-c
 
 \section{Word duration}
 
-
 The word list used in the reading task contains both mono- and disyllabic words.
 Both classes are further divided between consonant- and vowel-initial words.
 It is thus sensible to report some of the measures for each class separately.
@@ -422,15 +422,90 @@ However, the voice on-set to release was shorter in disyllabic words () than in 
 % kembt behave strange, in bte
 Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
 
-\section{Monosyllabic words}
+\section{Voice onset to release (VOR)}
+
+
+
+The Voice onset to Release (VOR) measures the interval between the voice onset of the critical syllable to the release of the next consonant.
+According to tests for the difference between means, the VOR in all classes of words, except for -VCC words, did not have a significant difference in mean duration in both the non-aspirated and aspirated condition.
+
+%TODO table with mean and sd
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/mono-stop-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/di-stop-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/mono-nas-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/di-nas-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/mono-lat-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/di-lat-vor-1} 
+
+\end{knitrout}
+\end{subfigure}
+\caption{Duration (in msec) of the Voice Onset to Release (VOR).}
+\label{f:vor}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/di-rho-vor-1} 
+
+\end{knitrout}
+\caption{Duration (in msec) of the Voice Onset to Release (VOR) of CVRC and CVRCV words.}
+\label{f:vor-rho}
+\end{figure}
+
+
+\section{Vowel duration}
+\label{s:vow-dur}
 
 \subsection{Geminate stops}
 
 
-
-The mean duration of the voiced portion in milliseconds was 98 in words ending in a non-aspirated geminate stop, while it was 84.47 if followed by a pre-aspirated geminate stop.
-\Cref{f:monostop} shows the normalised ratio of the voiced portion.
-The difference in the mean of the normalised voiced ratio between the non-aspirated and the aspirated class of words was significant [].
+The mean duration of vowels in milliseconds was 98 in monosyllabic words ending in a non-aspirated geminate stop, while it was 84.47 if followed by a pre-aspirated geminate stop.
+\Cref{f:monostop} shows the ratio duration of the vowel in the two conditions.
+The difference in the mean of the vowel ratio between the non-aspirated and the aspirated class of words was significant [].
 
 \begin{figure}
 \centering
@@ -439,29 +514,9 @@ The difference in the mean of the normalised voiced ratio between the non-aspira
 \includegraphics[width=0.6\textwidth]{img/mono-stop-box-1} 
 
 \end{knitrout}
-\caption{Duration (in ratios) of the voiced vocalic portion in geminate-final words.}
+\caption{Ratio vowel duration in -VCC words.}
 \label{f:monostop}
 \end{figure}
-
-\subsection{Nasals}
-
-
-
-Words of the form (C)VNC showed a mean voiced portion duration of 98 msec if the nasal is voiced and 84.47 msec if voiceless.
-The normalised duration was, respectively, 0.37 and 0.28.
-
-\subsection{Laterals}
-
-
-
-In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 102.05 and 80.7 msec when followed, respectively by a voiced and voiceless lateral.
-These correspond to the 29.69\% and the 24.98\% of the VOR.
-A Wilcoxon test shows that the difference is significant [].
-
-\section{Disyllabic words}
-
-\subsection{Geminate stops}
-
 
 
 
@@ -469,8 +524,33 @@ In disyllabic words, the voiced vocalic portion is 86.97 msec long if followed b
 In ratio terms, the voiced part makes up the 33.61\% of the VOR in word with plain geminates, and the 28.27\% in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant.
 
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/di-stop-box-1} 
+
+\end{knitrout}
+\caption{Ratio vowel duration in -VCCV words.}
+\label{f:distop}
+\end{figure}
+
 \subsection{Nasals}
 
+
+Words of the form (C)VNC showed a mean voiced portion duration of 98 msec if the nasal is voiced and 84.47 msec if voiceless.
+The normalised duration was, respectively, 0.37 and 0.28.
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/mono-nas-box-1} 
+
+\end{knitrout}
+\caption{Ratio vowel duration in -VNC words.}
+\label{f:mononas}
+\end{figure}
 
 
 
@@ -478,13 +558,50 @@ CVNCV words have a mean voiced vocalic portion duration of 81.72 msec if the nas
 As percentages, the vocalic portion is 29.47\% of the VOR if followed by a voiced nasal, and 24.22\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant.
 
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/di-nas-box-1} 
+
+\end{knitrout}
+\caption{Ratio vowel duration in -VNCV words.}
+\label{f:dinas}
+\end{figure}
+
 \subsection{Laterals}
+
+
+In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 102.05 and 80.7 msec when followed, respectively by a voiced and voiceless lateral.
+These correspond to the 29.69\% and the 24.98\% of the VOR.
+A Wilcoxon test shows that the difference is significant [].
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/mono-lat-box-1} 
+
+\end{knitrout}
+\caption{Ratio vowel duration in -VLC words.}
+\label{f:monolat}
+\end{figure}
 
 
 
 The voiced vocalic portion in CVLCV words is on average 107.68 msec long when the lateral is voiced and 66.66 msec when it is voiceless.
 The voiced portion takes the 36.2\% of the VOR if followed by a voiced lateral, and 23.26\% when the lateral is voiceless.
 
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/di-lat-box-1} 
+
+\end{knitrout}
+\caption{Ratio vowel duration in -VLCV words.}
+\label{f:dilat}
+\end{figure}
 
 \subsection{Rhotics}
 
@@ -493,7 +610,16 @@ The voiced portion takes the 36.2\% of the VOR if followed by a voiced lateral, 
 With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 121.07 msec long when the rhotic is voiced and 104.78 msec when it is voiceless.
 The voiced portion takes the 39.83\% of the VOR if followed by a voiced rhotic, and 33.43\% when the rhotic is voiceless.
 
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/di-rho-box-1} 
 
+\end{knitrout}
+\caption{Ratio vowel duration in VLCV words.}
+\label{f:dirho}
+\end{figure}
 
 
 
@@ -575,12 +701,15 @@ The timing hypothesis presented in this study, thus, seems not to be straightfor
 \section{Individual differences}
 
 
+\section{Diachrony and aspiration effects}
+
+
 \section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
 % material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
 % procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; different recording equipment and conditions
 % annotation: difficulties of finding glottal spread, frame sentence
-% articulatory study instead
+% articulatory and perceptual study instead
 
 Some of the limitations of this study concern the participants recruited for the reading task.
 The first difficulty was finding a sensible number of Icelandic speakers in York.

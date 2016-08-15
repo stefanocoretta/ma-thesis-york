@@ -75,12 +75,15 @@ The timing hypothesis presented in this study, thus, seems not to be straightfor
 \section{Individual differences}
 
 
+\section{Diachrony and aspiration effects}
+
+
 \section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
 % material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
 % procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; different recording equipment and conditions
 % annotation: difficulties of finding glottal spread, frame sentence
-% articulatory study instead
+% articulatory and perceptual study instead
 
 Some of the limitations of this study concern the participants recruited for the reading task.
 The first difficulty was finding a sensible number of Icelandic speakers in York.
