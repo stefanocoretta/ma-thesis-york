@@ -342,7 +342,7 @@ boxplot(norm_abs_voic ~ asp,
         main = "VRCV"
         )
 @
-\caption{Ratio vowel duration in VLCV words.}
+\caption{Ratio vowel duration in VRCV words.}
 \label{f:dirho}
 \end{figure}
 
@@ -369,15 +369,76 @@ shapiro.test(di_rho_asp$norm_clos)
 t.test(norm_clos ~ asp, data = di_rho) # p < 0.001
 @
 
-The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly difference in the non-aspirated and aspirated condition, except in disyllabic words with a /lC/ [] and /rC/ cluster [].
-Naturally, the duration of stop closure in words with geminate stops was significantly different, since closure in pre-aspirated stops 
+The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with a /lC/ [] and /rC/ cluster [].
+Unsurprisingly, the duration of stop closure in words with geminate stops was significantly different in the two conditions, since pre-aspirated stops have a later closure.
 
+\begin{figure}
+\centering
+<<di-lat-clos-box>>=
+boxplot(dur_clos ~ asp,
+        data = di_lat,
+        names = c("non-asp", "asp"),
+        ylab = "duration (msec)",
+        main = "-LCV"
+        )
+@
+\caption{Stop closure duration (msec) in -LCV words.}
+\label{f:dilatclos}
+\end{figure}
 
+\begin{figure}
+\centering
+<<di-rho-clos-box>>=
+boxplot(dur_clos ~ asp,
+        data = di_rho,
+        names = c("non-asp", "asp"),
+        ylab = "duration (msec)",
+        main = "VRCV"
+        )
+@
+\caption{Stop closure duration (msec) in VRCV words.}
+\label{f:dirhoclos}
+\end{figure}
 
+\section{Duration of glottal spread}
+\label{s:gs}
 
+\section{Duration of sonorant consonants}
 
+<<mann-dur-test>>=
+shapiro.test(mono_nas_asp$norm_mann)
+shapiro.test(mono_nas_nasp$norm_mann)
+wilcox.test(norm_mann ~ asp, data = mono_nas) # *
 
+shapiro.test(di_nas_asp$norm_mann)
+shapiro.test(di_nas_nasp$norm_mann)
+wilcox.test(norm_mann ~ asp, data = di_nas) # ***
 
+shapiro.test(mono_lat_asp$norm_mann)
+shapiro.test(mono_lat_nasp$norm_mann)
+t.test(norm_mann ~ asp, data = mono_lat) # ***
+
+shapiro.test(di_lat_asp$norm_mann)
+shapiro.test(di_lat_nasp$norm_mann)
+t.test(norm_mann ~ asp, data = di_lat) # ***
+
+shapiro.test(di_rho_asp$norm_mann)
+shapiro.test(di_rho_nasp$norm_mann)
+t.test(norm_mann ~ asp, data = di_rho) # ***
+
+@
+
+The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
+As a trend, the voiceless sonorants are longer in duration than the voiced ones.
+
+%\begin{figure}
+%\centering
+%<<mann-dur-box>>=
+%boxplot(dur_mann ~ asp + manner, data = results_son)
+%@
+%\caption{Duration of sonorant consonants (in msec).}
+%\label{f:dur_man}
+%\end{figure}
 
 
 
