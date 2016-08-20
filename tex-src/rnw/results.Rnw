@@ -29,9 +29,9 @@ shapiro.test(mono$norm_abs_voic)
 shapiro.test(di$norm_abs_voic)
 test <- wilcox.test(norm_abs_voic ~ syl_no, data = results)
 
-shapiro.test(mono$v_to_rel)
-shapiro.test(mono$v_to_rel)
-test <- wilcox.test(v_to_rel ~ syl_no, data = results)
+shapiro.test(mono$vor)
+shapiro.test(mono$vor)
+test <- wilcox.test(vor ~ syl_no, data = results)
 @
 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
@@ -45,40 +45,40 @@ Since duration normalisation was based on the voice on-set to release duration, 
 \section{Voice onset to release (VOR)}
 
 <<vor, include=FALSE>>=
-shapiro.test(mono_stop_asp$v_to_rel)
-shapiro.test(mono_stop_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = mono_stop)
-t.test(v_to_rel ~ asp, data = mono_stop)
+shapiro.test(mono_stop_asp$vor)
+shapiro.test(mono_stop_nasp$vor)
+var.test(vor ~ asp, data = mono_stop)
+t.test(vor ~ asp, data = mono_stop)
 
-shapiro.test(di_stop_asp$v_to_rel)
-shapiro.test(di_stop_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = di_stop)
-wilcox.test(v_to_rel ~ asp, data = di_stop)
+shapiro.test(di_stop_asp$vor)
+shapiro.test(di_stop_nasp$vor)
+var.test(vor ~ asp, data = di_stop)
+wilcox.test(vor ~ asp, data = di_stop)
 
-shapiro.test(mono_nas_asp$v_to_rel)
-shapiro.test(mono_nas_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = mono_nas)
-t.test(v_to_rel ~ asp, data = mono_nas)
+shapiro.test(mono_nas_asp$vor)
+shapiro.test(mono_nas_nasp$vor)
+var.test(vor ~ asp, data = mono_nas)
+t.test(vor ~ asp, data = mono_nas)
 
-shapiro.test(di_nas_asp$v_to_rel)
-shapiro.test(di_nas_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = di_nas)
-t.test(v_to_rel ~ asp, data = di_nas)
+shapiro.test(di_nas_asp$vor)
+shapiro.test(di_nas_nasp$vor)
+var.test(vor ~ asp, data = di_nas)
+t.test(vor ~ asp, data = di_nas)
 
-shapiro.test(mono_lat_asp$v_to_rel)
-shapiro.test(mono_lat_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = mono_lat)
-t.test(v_to_rel ~ asp, data = mono_lat)
+shapiro.test(mono_lat_asp$vor)
+shapiro.test(mono_lat_nasp$vor)
+var.test(vor ~ asp, data = mono_lat)
+t.test(vor ~ asp, data = mono_lat)
 
-shapiro.test(di_lat_asp$v_to_rel)
-shapiro.test(di_lat_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = di_lat)
-t.test(v_to_rel ~ asp, data = di_lat)
+shapiro.test(di_lat_asp$vor)
+shapiro.test(di_lat_nasp$vor)
+var.test(vor ~ asp, data = di_lat)
+t.test(vor ~ asp, data = di_lat)
 
-shapiro.test(di_rho_asp$v_to_rel)
-shapiro.test(di_rho_nasp$v_to_rel)
-var.test(v_to_rel ~ asp, data = di_rho)
-t.test(v_to_rel ~ asp, data = di_rho)
+shapiro.test(di_rho_asp$vor)
+shapiro.test(di_rho_nasp$vor)
+var.test(vor ~ asp, data = di_rho)
+t.test(vor ~ asp, data = di_rho)
 @
 
 The Voice onset to Release (VOR) measures the interval between the voice onset of the critical syllable to the release of the next consonant.
@@ -91,7 +91,7 @@ According to tests for the difference between means, the VOR in all classes of w
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-stop-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = mono_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (msec)",
@@ -102,7 +102,7 @@ boxplot(v_to_rel ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-stop-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = di_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (msec)",
@@ -113,7 +113,7 @@ boxplot(v_to_rel ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-nas-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
@@ -124,7 +124,7 @@ boxplot(v_to_rel ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-nas-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = di_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
@@ -135,7 +135,7 @@ boxplot(v_to_rel ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-lat-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
@@ -146,7 +146,7 @@ boxplot(v_to_rel ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-lat-vor, out.width="\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = di_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
@@ -161,7 +161,7 @@ boxplot(v_to_rel ~ asp,
 \begin{figure}
 \centering
 <<di-rho-vor, out.width="0.6\\textwidth">>=
-boxplot(v_to_rel ~ asp,
+boxplot(vor ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",

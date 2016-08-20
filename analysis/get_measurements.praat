@@ -38,7 +38,7 @@ endif
 
 header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
 ...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,abs_clos,norm_voic,
-...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos,v_to_rel'newline$'"
+...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos,vor,voffr'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -88,7 +88,7 @@ for file to files_no
             ind_rels = Get nearest index from time: rels, end_word
             time_rels = Get time of point: rels, ind_rels
             v_to_rel = (time_rels - begin_voic) * 1000
-
+            voff_to_rel = (time_rels - end_voic) * 1000
             if label$ <> ""
                 duration_v_to_m = (begin_mann - begin_voic) * 1000
                 duration_closure = (time_rels - end_mann) * 1000
@@ -104,20 +104,20 @@ for file to files_no
                 norm_abs_clos = duration_abs_closure / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / v_to_rel
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel''newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel','voff_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann',,'duration_v_to_m',,'duration_v_to_m',,'norm_duration_voice','norm_duration_mann','norm_duration_v_to_m',,'norm_duration_v_to_m',,'newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann',,'duration_v_to_m',,'duration_v_to_m',,'norm_duration_voice','norm_duration_mann','norm_duration_v_to_m',,'norm_duration_v_to_m',,,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
                 norm_duration_voice = duration_voic / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel''newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,'newline$'"
+                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif
