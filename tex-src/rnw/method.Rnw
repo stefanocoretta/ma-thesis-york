@@ -90,7 +90,7 @@ The tiers contain, respectively:
 \end{inparaenum}
 \Cref{f:textgrid} shows an example of the TextGrid set-up.
 
-\subsection{Tier 1: words}
+\subsection{Word boundaries}
 
 The first tier was segmented by target words.
 The left boundary of the word was considered to be the off-set of voicing of the final vowel of \textit{segðu}, which preceded the target word.
@@ -100,15 +100,18 @@ In vowel-final words, I used different criteria depending on the phonetic realis
 The right boundary was placed at the off-set of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the on-set of the glottal stop.
 In some cases, instead of a glottal stop, creaky voice was visible and the criterion of the transition mid-point was applied.
 
-\subsection{Tier 2: voicing}
+\subsection{Voicing}
 
-The second tier was reserved for the portions of vocal folds vibration (voicing).
-The boundaries of the intervals in this tier were placed at the on-set and off-set of voicing around the target vowel.
-In words starting with one or more voiced continuant consonants, the portion of voicing of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
+The second tier was reserved for the interval in the word where vocal folds vibration (voicing) was active.
+The boundaries of the intervals in this tier were placed at the onset and offset of voicing around the target vowel.
+The onset of voicing was marked at the onset of periodicity of the waves in the waveform and/or at the beginning of the voice bar as visible on the spectrogram.
+In words starting with a voiceless consonant or with a vowel, the voicing onset coincided with the onset of voicing of the vowel.
+In words starting with one or more voiced continuant consonants, the voiced portion of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
+The right boundary was in both cases the offset of voicing.
 
-\subsection{Tier 3: glottal spreading}
+\subsection{Glottal spreading}
 
-The third tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
+A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
 Marking the beginning of glottal spread proved to be particularly difficult.
 The common realisation of the combination vowel + pre-aspiration is structured as follows: the first portion of the vocalic is accompanied by modal voicing; the glottis starts an abduction gesture while still vibrating the vocal folds (breathy voice); vocal fold vibration stops and voiceless friction remains (at the glottis or at the oral cavity, depending on the vowel).
 %ADD glottal picture
@@ -120,7 +123,7 @@ According to \citet{jones2006} (cited in \citet[134]{nance2013}), breathy voice 
 This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
 The right boundary was assumed to fall at the end of visible frication noise.
 
-\subsection{Tier 3: nasals, laterals and rhotics}
+\subsection{Nasals, laterals and rhotics}
 
 Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
 I applied the same principle to laterals and rhotics.
@@ -130,7 +133,7 @@ The end of friction in these consonants was used as the end of the interval.
 In the voiced counterparts of these, the end of voicing coincided with the right boundary.
 %ADD manner pictures
 
-\subsection{Tier 4: consonant release}
+\subsection{Consonant release}
 In tier 4, the release of the stop consonant following the target vowel was marked at the onset of the burst.
 If the burst was not visible in the waveform, no release was marked.
 
@@ -140,7 +143,7 @@ In the third phase, I extracted the durational properties of the annotated inter
 The routine was run with a PRAAT script, specifically written for this study.
 The script with its documentation can be found in \Cref{a:getmeasure}.
 The output is a \texttt{.csv} file with the relevant measurements.
-The following measures were taken (all measures are in seconds):
+The following measures were taken:
 
 \begin{itemize}
 \item \textit{Word duration}: the duration of the whole word as annotated on tier 1
