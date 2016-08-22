@@ -403,9 +403,11 @@ boxplot(dur_clos ~ asp,
 \section{Duration of glottal spread}
 \label{s:gs}
 
+
+
 \section{Duration of sonorant consonants}
 
-<<mann-dur-test>>=
+<<mann-dur-test, include=FALSE>>=
 shapiro.test(mono_nas_asp$norm_mann)
 shapiro.test(mono_nas_nasp$norm_mann)
 wilcox.test(norm_mann ~ asp, data = mono_nas) # *
@@ -430,6 +432,8 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
+This is not surprising, since voiceless sonorants are less salient from a perceptual point of view \citep{silverman1997}. %TODO add about this in lit review (or maybe here? I should!)
+Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
 %\begin{figure}
 %\centering

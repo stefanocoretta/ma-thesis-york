@@ -1,6 +1,8 @@
 \chapter{Literature review}
 \label{c:review}
 
+%TODO prosodic approach, after hypothesis?
+
 \section{Laryngeal}
 
 
@@ -63,10 +65,64 @@ label = t:consonants
 }
 
 Relevant to this study is the exploitation of phonation types in stop and sonorant consonants in Icelandic.
+
+\subsection{Laryngeal contrasts in stops}
+
 As mentioned in \Cref{s:aspiration}, the contrastive system of Hindi consonants is built on the cross-cutting interaction between aspiration and voicing.
 Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceless aspirated stops.
 Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
+
+\subsection{Laryngeal contrasts in sonorants}
+The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological database \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
+The contrastive use of laryngeal distinctions in sonorants can thus be considered cross-linguistically rare (only 8.7\% of languages in LAPSyD have this property).
+Unsurprisingly, nasals produced with modal voicing are the most common type.
+If more than one phonation type is used in sonorants to accomplish phonological contrasts, at least one of those is always modal voicing.
+Icelandic is among those rare languages that show voicing contrasts in sonorants.
+This Nordic language has voiced and voiceless nasals, laterals and trills.
+% The following paragraphs deal with the typological and phonemic status of voiceless nasals, laterals and trills and their acoustic and gestural characteristics.
+%TODO say that I want to show why I can consider voiceless sonorants as aspirated (you need more glottal openin in sonorants than stops for aerodynamic reasons)
+
+\citet{ladefoged1996} reviews the possible combinations of laryngeal settings and oral gestures in nasal consonants.
+Apart from modal voicing, three other types of phonations are found among nasals in the languages of the world: breathy voice, creaky voice and voicelessness.
+Breathy and creaky voice will not be dealt with here, since they are not immediately relevant for this study.
+
+\citet{bhaskararao1991} states that voicelessness in nasals is implemented in two possible ways.
+The type known as the ``Burmese type,'' which is also the most common, is constituted by an initial portion of voicelessness followed by a portion characterised by modal voicing.
+In the second type of voiceless nasals, the segment is voiceless through out its duration.
+However, the release of the oral occlusion is accompanied by a lowered velum.
+Since the velum is open, air freely escapes through the nasal cavity.
+The small burst produced by releasing the occlusion mimics the auditory features of an epenthetic stop \citep[84]{bhaskararao1991}.
+
+\citep[111]{ladefoged1996} say that the nasal airflow of the voiceless nasals of Burmese is very high.
+Since air comes from the lungs and the oral cavity is closed by the tongue, the airflow rate is correlated with the amount of glottal width.
+A high nasal airflow seems thus to suggest that voiceless nasals are produced with abducted vocal folds.
+Due to this property, the researchers argue that these consonants are perhaps better described as ``aspirated.''
+\citep[82]{kehrein2002}, based on \citep{ladefoged1996}, interprets voiceless nasals as phonologically aspirated.
+
+% They are reported to be usually longer in comparison to their voiced counterparts \citep[111]{ladefoged1996sounds}.
+
+As with nasals, laterals and trills can use phonation types contrastively, included voicelessness.
+Voiceless laterals can be realised as either approximants or fricatives \citet{ladefoged1996}.
+These two way of implementing voiceleness in laterals can be distinguished according to a variety of acoustic parameters.
+Given that in approximants the vocal tract is open while in fricative it is more constricted, approximants are normally characterised by ``a lower amplitude of noise, a greater tendency to anticipate the voicing of a following vowel, and a concentration of energy lower in the spectrum than voiceless fricative laterals'' \citep[198]{ladefoged1996}.
+
+Trills are made up by a sequence of quickly repeated closures produced in the oral cavity.
+Voiced trills are characterised by the presence of voicing during the intervals between each closure.
+In voiceless trills, instead, voicing is absent between the closures that constitute the trill \citep[236]{ladefoged1996}.
+For 
+
+%TODO maybe expand on the following
+\citet{bombien2006} reports that voiceless sonorants in Icelandic have the following acoustic properties: 
+\begin{inparaenum}[(i)]
+\item voiceless sonorants are longer in duration than their voiced counterparts;
+\item they have greater H1-H2 (first and second harmonic) difference than the voiced ones (which indicates breathy phonation in the former);
+\item they show greater zero crossing rate values (which indicates higher frication compared to the voiced sonorants).\footnote{Frication has been proved to create higher frequencies compared to non-fricated sounds and hence it involves higher rate of zero crossing \citep{weigelt1990}.}
+\end{inparaenum}
+
+%\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
+
+\citet[61]{silverman1997} states that in sonorants the optimal phasing for contrastive gestures envisages the truncation of laryngeal feature in respect to supralaryngeal ones and sequencing of non-modal phonation and modal phonation. Thus, in nasals, optimal phasing is obtained with laryngeal abduction truncated before the supralaryngeal occlusion is released. If abduction is sequence before voicing, voicelessness in the first part of the nasal is followed by modal voice. If, instead, abduction follows modal voicing, breathiness is found in the last part of the nasal. Laterals show two possibilities for optimal phasing of laryngeal abduction: in the first, abduction is simultaneous with the lateral gestures, leading to voiceless lateral fricative; in the second, laryngeal abduction is truncated, as in nasals. This difference between the possible realizations of optimal phasing in nasals and laterals is, according to Silverman, due to a combination of two factors: all laterals are phonetically similar and laterals are easily distinguishable from non-laterals. The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
 
 \section{Research hypothesis}
 \label{s:hypothesis}
@@ -75,7 +131,7 @@ The studies by \citet{maddieson1976} and \citet{durvasula2012} showed that sylla
 These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
 %ADD about sonorants!
 
-The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative allingment of the glottal spreading gesture and the oral gesture.
+The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative alignment of the glottal spreading gesture and the oral gesture.
 Depending on how the spreading of the glottis is timed in relation to the tongue gestures in the oral cavity, modal voicing can be maintained for a certain amount of time or it is terminated earlier.
 An early timing of glottal spreading (like in pre-aspiration) would prevent voicing in the last portion of the preceding vocalic gesture, making the vowel shorter.
 On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.

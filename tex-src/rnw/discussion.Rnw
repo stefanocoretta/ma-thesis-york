@@ -1,5 +1,7 @@
 \chapter{Discussion}
 
+%TODO say that of course voicing does not stop, what about breathy voicing!
+
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
 An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
 In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
@@ -8,6 +10,7 @@ This finding seems to support the timing hypothesis.
 
 \section{Geminate stops}
 %ADD many figures
+%TODO compare with Ladefoged: he says glottal opening is timed the same and its same apmplitude but is it true here?
 We have seen that the absolute duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
 It is worth noting that the VOR of the two classes is different, as said in .
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
@@ -50,6 +53,8 @@ At the same time, the variance of voicing in the two classes is not the same, an
 In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
 
 \section{Sonorants}
+%TODO cite previous studies about the duration
+
 The class of sonorant consonants (nasals, laterals and rhotics) seem to pattern together for what concerns durational properties.
 As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.
 Differently from geminate stops, the VOR in words containing sonorant consonants was constant in both the aspirated and non-aspirated classes, except in disyllabic words containing laterals.
@@ -148,6 +153,7 @@ The amplitude of the impedance is known to be correlated with glottal abduction.
 This kind of data would give a better picture of the actions of the glottis and it would allow to retrieve the start of glottal spread with better accuracy.
 An ultrasound scanner would provide an account of the gestures of the tongue.
 Knowing about tongue movements could make it easier to test for hypothesis that rely on articulatory factors, such as those of ... and ...
+
 Combined with electropalatography, ultrasound scanning can also improve the accuracy of closure detection.
 As mentioned above, at times closure is not clearly visible from the spectrogram, especially in cases when voicing is maintained after it.
 Tracking the movements of the tongue through ultrasound and palatography can improve the temporal detection of the oral occlusion.
@@ -156,7 +162,7 @@ The boundary of nasal consonants are normally difficult to discern on the spectr
 Voiceless nasals are even more difficult to see, since the friction created at the nostrils is usually very low in amplitude.
 Being able to detect nasal airflow allows to clearly define at which time point the velar port has been open and when it has been closed during speech.
 
-
+%TODO say about intraoral pressure?
 
 
 
