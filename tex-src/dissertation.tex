@@ -439,9 +439,16 @@ In words containing a pre-aspirated geminate or a sonorant (nasal, lateral or tr
 In words with non-aspirated geminates, the duration of absolute voicing is equal to the duration of voicing.
 \item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the off-set of voicing, glottal spread or consonant manner, and the release.
 \item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
+\item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
+\item \textit{Voice Offset to Release} (VOffR): the duration of the interval between the offset of voicing and the release of the stop closure.
 \end{itemize}
 
 %TODO normalised
+To control for differences in speech rate, I opted to normalise the measurement.
+Normalisation was achieved by dividing the relevant measure by the VOR.
+This operation results in a transformation from durations in milliseconds to ratios in percentages.
+I chose to use the VOR as the base for normalisation since this can be measured consistently across different word forms.
+Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (VCC, VʰC, VRC, where ``R'' is any sonorant).\footnote{Pre-aspirated stops are phonologically geminates.}
 
 \section{Statistical analysis}
 
