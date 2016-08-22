@@ -115,7 +115,7 @@
 
 %TODO prosodic approach, after hypothesis?
 
-\section{Laryngeal}
+\section{Phonation types}
 
 
 
@@ -342,7 +342,7 @@ Even if the recording conditions differed between participants, the quality of t
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{textgrid}
+\includegraphics[width=.7\textwidth]{textgrid}
 \caption{Example of the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
 \label{f:textgrid}
 \end{figure}
@@ -386,10 +386,17 @@ The right boundary was in both cases the offset of voicing.
 
 \subsection{Glottal spreading}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{glottal}
+\caption{The word \textit{kokk} `cook' as an example of the annotation of glottal spread.}
+\label{f:glottal}
+\end{figure}
+
+
 A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
 Marking the beginning of glottal spread proved to be particularly difficult.
 The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows: the first portion of the vowel is accompanied by modal voicing; the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice); then, vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel).
-%ADD glottal picture
 As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
 I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
 At times, however, the interpretation of the waveform was not straightforward.
@@ -406,7 +413,13 @@ I placed the right boundary of these intervals (nasal, lateral, trill) depending
 The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively).
 The end of friction in these consonants was used as the end of the interval.
 In the voiced counterparts of these, the end of voicing coincided with the right boundary.
-%ADD manner pictures
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{mann}
+\caption{The word \textit{kempa} `hero' as an example of the annotation in the manner tier.}
+\label{f:mann}
+\end{figure}
 
 \subsection{Consonant release}
 The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without and intervening sonorant).
@@ -440,7 +453,7 @@ In words with non-aspirated geminates, the duration of absolute voicing is equal
 \item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the off-set of voicing, glottal spread or consonant manner, and the release.
 \item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
 \item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
-\item \textit{Voice Offset to Release} (VOffR): the duration of the interval between the offset of voicing and the release of the stop closure.
+\item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
 \end{itemize}
 
 %TODO normalised

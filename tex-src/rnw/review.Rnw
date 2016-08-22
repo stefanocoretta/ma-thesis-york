@@ -3,8 +3,14 @@
 
 %TODO prosodic approach, after hypothesis?
 
-\section{Laryngeal}
+\section{Phonation types}
+The periodic noise characteristic of the human voice is produced in the larynx.
+In particular, the vibration of the vocal folds generates oscillations of the air pressure which is translated as a percept of periodic noise, or voicing, by the auditory system.
+Even silence during speech is due to a particular configuration of the glottis (the empty space between the two vocal folds).
+The larynx, with the vocal folds, thus plays a major role in human communication.
 
+\citet{ladefoged1973} discusses about the four main states of the glottis, or phonation types, that are used to create meaning contrast in the languages of the world.
+These are voicelessness, modal voice, breathy voice and creaky voice.
 
 
 \section{The effect of aspiration on vowel duration}
