@@ -144,7 +144,7 @@ In the voiced counterparts of these, the end of voicing coincided with the right
 
 \begin{figure}
 \centering
-\includegraphics[\textwidth]{mann}
+\includegraphics[width=\textwidth]{mann}
 \caption{The word \textit{kempa} `hero' as an example of the annotation in the manner tier.}
 \label{f:mann}
 \end{figure}

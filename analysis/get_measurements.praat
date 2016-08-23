@@ -36,7 +36,7 @@ if fileReadable (result_file$)
         filedelete 'result_file$'
 endif
 
-header$ = "file_name,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+header$ = "file_name,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
 ...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,abs_clos,norm_voic,
 ...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos,vor,voffr'newline$'"
 fileappend "'result_file$'" 'header$'
@@ -53,9 +53,11 @@ for file to files_no
 
     intervals_no = Get number of intervals: word
 
+    index = 0
     for int_word to intervals_no
         lab_word$ = Get label of interval: word, int_word
         if lab_word$ <> ""
+        index += 1
             begin_word = Get starting point: word, int_word
             end_word = Get end point: word, int_word
             duration_word = (end_word - begin_word) * 1000
@@ -104,20 +106,20 @@ for file to files_no
                 norm_abs_clos = duration_abs_closure / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / v_to_rel
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel','voff_to_rel''newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel','voff_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,,,'norm_duration_voice',,,,,,,'newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,,,'norm_duration_voice',,,,,,,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             else
                 norm_duration_voice = duration_voic / v_to_rel
                 if time_rels > begin_word and time_rels < end_word
                     norm_duration_closure = duration_closure / duration_word
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel''newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,'newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,'newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif

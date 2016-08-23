@@ -188,6 +188,7 @@ The mean duration of vowels in milliseconds was \Sexpr{round(mean(mono_stop_nasp
 The difference in the mean of the vowel ratio between the non-aspirated and the aspirated class of words was significant [].
 
 \begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
 <<mono-stop-box>>=
 boxplot(norm_abs_voic ~ asp,
@@ -197,8 +198,74 @@ boxplot(norm_abs_voic ~ asp,
         main = "-VCC"
         )
 @
-\caption{Ratio vowel duration in -VCC words.}
 \label{f:monostop}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<di-stop-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = di_stop,
+        names = c("non-asp", "pre-asp"),
+        ylab = "duration (ratio)",
+        main = "-VCCV"
+        )
+@
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<mono-nas-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = mono_nas,
+        names = c("non-asp", "asp"),
+        ylab = "duration (ratio)",
+        main = "-VNC"
+        )
+@
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<di-nas-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = di_nas,
+        names = c("non-asp", "asp"),
+        ylab = "duration (ratio)",
+        main = "-VNCV"
+        )
+@
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<mono-lat-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = mono_lat,
+        names = c("non-asp", "asp"),
+        ylab = "duration (ratio)",
+        main = "-VLC"
+        )
+@
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<di-lat-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = di_lat,
+        names = c("non-asp", "asp"),
+        ylab = "duration (ratio)",
+        main = "-VLCV"
+        )
+@
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+\centering
+<<di-rho-box>>=
+boxplot(norm_abs_voic ~ asp,
+        data = di_rho,
+        names = c("non-asp", "asp"),
+        ylab = "duration (ratio)",
+        main = "VRCV"
+        )
+@
+\end{subfigure}
 \end{figure}
 
 <<di-stop-test,include=F>>=
@@ -211,20 +278,6 @@ In disyllabic words, the voiced vocalic portion is \Sexpr{round(mean(di_stop_nas
 In ratio terms, the voiced part makes up the \Sexpr{round(mean(di_stop_nasp$norm_abs_voic)*100,2)}\% of the VOR in word with plain geminates, and the \Sexpr{round(mean(di_stop_asp$norm_abs_voic)*100,2)}\% in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant.
 
-\begin{figure}
-\centering
-<<di-stop-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = di_stop,
-        names = c("non-asp", "pre-asp"),
-        ylab = "duration (ratio)",
-        main = "-VCCV"
-        )
-@
-\caption{Ratio vowel duration in -VCCV words.}
-\label{f:distop}
-\end{figure}
-
 \subsection{Nasals}
 <<mono-nas-test, include=F>>=
 shapiro.test(mono_nas_asp$norm_abs_voic)
@@ -235,19 +288,6 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_nas)
 Words of the form (C)VNC showed a mean voiced portion duration of \Sexpr{round(mean(mono_nas_nasp$abs_voic),2)} msec if the nasal is voiced and \Sexpr{round(mean(mono_nas_asp$abs_voic),2)} msec if voiceless.
 The normalised duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_abs_voic),2)} and \Sexpr{round(mean(mono_nas_asp$norm_abs_voic),2)}.
 
-\begin{figure}
-\centering
-<<mono-nas-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = mono_nas,
-        names = c("non-asp", "asp"),
-        ylab = "duration (ratio)",
-        main = "-VNC"
-        )
-@
-\caption{Ratio vowel duration in -VNC words.}
-\label{f:mononas}
-\end{figure}
 
 <<di-nas-test, include=F>>=
 shapiro.test(di_nas_asp$norm_abs_voic)
@@ -259,19 +299,6 @@ CVNCV words have a mean voiced vocalic portion duration of \Sexpr{round(mean(di_
 As percentages, the vocalic portion is \Sexpr{round(mean(di_nas_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced nasal, and \Sexpr{round(mean(di_nas_asp$norm_abs_voic)*100,2)}\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant.
 
-\begin{figure}
-\centering
-<<di-nas-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = di_nas,
-        names = c("non-asp", "asp"),
-        ylab = "duration (ratio)",
-        main = "-VNCV"
-        )
-@
-\caption{Ratio vowel duration in -VNCV words.}
-\label{f:dinas}
-\end{figure}
 
 \subsection{Laterals}
 <<mono-lat-test, include=F>>=
@@ -284,19 +311,6 @@ In the case of words ending in a /lC/ cluster, the mean duration of the vocalic 
 These correspond to the \Sexpr{round(mean(mono_lat_nasp$norm_abs_voic)*100,2)}\% and the \Sexpr{round(mean(mono_lat_asp$norm_abs_voic)*100,2)}\% of the VOR.
 A Wilcoxon test shows that the difference is significant [].
 
-\begin{figure}
-\centering
-<<mono-lat-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = mono_lat,
-        names = c("non-asp", "asp"),
-        ylab = "duration (ratio)",
-        main = "-VLC"
-        )
-@
-\caption{Ratio vowel duration in -VLC words.}
-\label{f:monolat}
-\end{figure}
 
 <<di-lat-test, include=F>>=
 shapiro.test(di_lat_asp$norm_abs_voic)
@@ -306,20 +320,6 @@ t.test(norm_abs_voic ~ asp, data = di_lat)
 
 The voiced vocalic portion in CVLCV words is on average \Sexpr{round(mean(di_lat_nasp$abs_voic),2)} msec long when the lateral is voiced and \Sexpr{round(mean(di_lat_asp$abs_voic),2)} msec when it is voiceless.
 The voiced portion takes the \Sexpr{round(mean(di_lat_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced lateral, and \Sexpr{round(mean(di_lat_asp$norm_abs_voic)*100,2)}\% when the lateral is voiceless.
-
-\begin{figure}
-\centering
-<<di-lat-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = di_lat,
-        names = c("non-asp", "asp"),
-        ylab = "duration (ratio)",
-        main = "-VLCV"
-        )
-@
-\caption{Ratio vowel duration in -VLCV words.}
-\label{f:dilat}
-\end{figure}
 
 \subsection{Rhotics}
 
@@ -332,19 +332,6 @@ t.test(norm_abs_voic ~ asp, data = di_rho)
 With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is \Sexpr{round(mean(di_rho_nasp$abs_voic),2)} msec long when the rhotic is voiced and \Sexpr{round(mean(di_rho_asp$abs_voic),2)} msec when it is voiceless.
 The voiced portion takes the \Sexpr{round(mean(di_rho_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced rhotic, and \Sexpr{round(mean(di_rho_asp$norm_abs_voic)*100,2)}\% when the rhotic is voiceless.
 
-\begin{figure}
-\centering
-<<di-rho-box>>=
-boxplot(norm_abs_voic ~ asp,
-        data = di_rho,
-        names = c("non-asp", "asp"),
-        ylab = "duration (ratio)",
-        main = "VRCV"
-        )
-@
-\caption{Ratio vowel duration in VRCV words.}
-\label{f:dirho}
-\end{figure}
 
 \section{Stop closure duration}
 <<closure-test, include=FALSE>>=
@@ -432,17 +419,33 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
-This is not surprising, since voiceless sonorants are less salient from a perceptual point of view \citep{silverman1997}. %TODO add about this in lit review (or maybe here? I should!)
+This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
+\citet{silverman1997} argues that, in terms of perceptual optimality, the phasing of non modal voicing in sonorants should involve what he calls truncation of the contrastive laryngeal gesture in respect to the oral ones.
+This solution involves the sequencing of non-modal phonation before modal phonation.
+According to this principle, an optimal phasing of voicelessness in nasals is achieved when the glottal abduction gesture is terminated before the oral occlusion is released.
+In the case the abduction gesture is sequenced before modal voicing, the first portion of the nasal consonant is voiceless (with nareal friction noise), then modal voicing follows.
+If, on the contrary, glottal spread follows modal voicing, the last portion of the nasal is characterised by breathy voice.
+
+With laterals, instead, there are two possible optimal phasings of glottal spreading.
+In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
+A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
+In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
+\citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
+%TODO maybe more on this?
+The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+
+%TODO why trills have less variance
+
 Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+\begin{figure}
+\centering
+<<mann-dur-box>>=
+boxplot(dur_mann ~ asp + manner, data = results_son)
+@
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur_man}
+\end{figure}
 
 
 

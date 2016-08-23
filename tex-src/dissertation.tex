@@ -116,7 +116,13 @@
 %TODO prosodic approach, after hypothesis?
 
 \section{Phonation types}
+The periodic noise characteristic of the human voice is produced in the larynx.
+In particular, the vibration of the vocal folds generates oscillations of the air pressure which is translated as a percept of periodic noise, or voicing, by the auditory system.
+Even silence during speech is due to a particular configuration of the glottis (the empty space between the two vocal folds).
+The larynx, with the vocal folds, thus plays a major role in human communication.
 
+\citet{ladefoged1973} discusses about the four main states of the glottis, or phonation types, that are used to create meaning contrast in the languages of the world.
+These are voicelessness, modal voice, breathy voice and creaky voice.
 
 
 \section{The effect of aspiration on vowel duration}
@@ -281,13 +287,16 @@ For this study, I recruited six Icelandic speakers who were living in York (UK) 
 The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
+
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
-Participant JR had to be excluded from the analysis since he misunderstood the task, while part of participant SHG's task was lost due to a technical fault in the recording equipment.
+The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
+All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic.
 
 
-\ctable[caption = Information on participants,
+
+\ctable[caption = Information on participants.,
 label = t:participants,
 ]{cccclc}{}{
 \FL
@@ -388,7 +397,7 @@ The right boundary was in both cases the offset of voicing.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{glottal}
+\includegraphics[width=\textwidth]{glottal}
 \caption{The word \textit{kokk} `cook' as an example of the annotation of glottal spread.}
 \label{f:glottal}
 \end{figure}
@@ -416,7 +425,7 @@ In the voiced counterparts of these, the end of voicing coincided with the right
 
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{mann}
+\includegraphics[width=\textwidth]{mann}
 \caption{The word \textit{kempa} `hero' as an example of the annotation in the manner tier.}
 \label{f:mann}
 \end{figure}
@@ -755,14 +764,16 @@ As a trend, the voiceless sonorants are longer in duration than the voiced ones.
 This is not surprising, since voiceless sonorants are less salient from a perceptual point of view \citep{silverman1997}. %TODO add about this in lit review (or maybe here? I should!)
 Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/mann-dur-box-1} 
+
+\end{knitrout}
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur_man}
+\end{figure}
 
 
 

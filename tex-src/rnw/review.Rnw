@@ -128,8 +128,6 @@ For
 
 %\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 
-\citet[61]{silverman1997} states that in sonorants the optimal phasing for contrastive gestures envisages the truncation of laryngeal feature in respect to supralaryngeal ones and sequencing of non-modal phonation and modal phonation. Thus, in nasals, optimal phasing is obtained with laryngeal abduction truncated before the supralaryngeal occlusion is released. If abduction is sequence before voicing, voicelessness in the first part of the nasal is followed by modal voice. If, instead, abduction follows modal voicing, breathiness is found in the last part of the nasal. Laterals show two possibilities for optimal phasing of laryngeal abduction: in the first, abduction is simultaneous with the lateral gestures, leading to voiceless lateral fricative; in the second, laryngeal abduction is truncated, as in nasals. This difference between the possible realizations of optimal phasing in nasals and laterals is, according to Silverman, due to a combination of two factors: all laterals are phonetically similar and laterals are easily distinguishable from non-laterals. The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
-
 \section{Research hypothesis}
 \label{s:hypothesis}
 
