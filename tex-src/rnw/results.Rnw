@@ -181,7 +181,7 @@ boxplot(vor ~ asp,
         main = "-VRCV"
         )
 @
-\caption{Duration (in msec) of the Voice Onset to Release (VOR) of CVRC and CVRCV words.}
+\caption{Duration (in msec) of the Voice Onset to Release (VOR) of VRCV words.}
 \label{f:vor-rho}
 \end{figure}
 
@@ -408,8 +408,8 @@ boxplot(dur_clos ~ asp,
 \section{Duration of glottal spread}
 \label{s:gs}
 The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
-According to a Kruskal-Wallis runk sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [].
-A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ withing the sonorant classes, the duration of glottal abduction in stops was significantly different from that one in lateral and nasals (but not from the one in trills).
+According to a Kruskal-Wallis rank sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [].
+A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ within the sonorant classes, the duration of glottal abduction in stops was significantly different from that one in lateral and nasals (but not from the one in trills).
 
 \begin{figure}
 \centering
@@ -448,14 +448,14 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 
 @
 
-\begin{figure}
-\centering
-<<mann-dur-box>>=
-boxplot(dur_mann ~ asp + manner, data = results_son)
-@
-\caption{Duration of sonorant consonants (in msec).}
-\label{f:dur_man}
-\end{figure}
+%\begin{figure}
+%\centering
+%<<mann-dur-box>>=
+%boxplot(dur_mann ~ asp + manner, data = results_son)
+%@
+%\caption{Duration of sonorant consonants (in msec).}
+%\label{f:dur_man}
+%\end{figure}
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.

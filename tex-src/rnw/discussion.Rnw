@@ -20,12 +20,12 @@ Instead, laryngeal spreading starts quite early in the word, while voicing is st
 
 It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
 This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
-Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has reached the critical point where the abduction is enough to produce breathiness.
-This would imply that the gestured might start even earlier, strengthening the central idea proposed in this research.
+Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
+This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
 
 However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
 What I found, instead, points to a longer voicing portion in words with pre-aspirated stops.
-The duration of voicing is, in fact, greater in words with pre-aspirated stops than in word with plain geminates.
+The duration of voicing is, in fact, greater in words with pre-aspirated stops than in words with plain geminates.
 This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be maintained longer.
 A plain geminate is produced by keeping the closure for a longer time and voicing during closure is more difficult to maintain.
 Thus it is natural to expect that, other things being equal, voicing duration would be greater if glottal spread is involved.
@@ -64,7 +64,7 @@ The presence vs. the absence of aspiration did not affect the duration of stop c
 
 On the contrary, the ratio duration of sonorant consonants (nasal, lateral and rhotic) varied between the aspirated and non-aspirated conditions.
 The aspirated sonorants are longer than the non-aspirated ones.
-This characteristics can be attributed to perceptual factors.
+This characteristic can be attributed to perceptual factors.
 An aspirated sonorant carries less cues for manner and place of articulation, given that most of it is produced with voiceless noise.
 One possible mechanism to enhance manner and place cues and ensure that they are salient enough to be audible is to lengthen the total duration of the sonorant consonant.
 This solution would allow more time for sustaining enough modal voicing---which carries better cues than voiceless noise---during the first portion of the sonorant.
@@ -100,7 +100,7 @@ Moreover, the age range of the participants was quite large (24-66 years old).
 The average, though, was biased towards the younger age: 4 out of 6 were within the 24-27 range.
 This made conducting age related analyses impossible.
 The same argument can be done for sex: 4 out of 6 speakers were female.
-There was heterogeneity also in the foreign languages they were confident in.
+There was heterogeneity also in the foreign languages they were confident with.
 While Danish was quite common among the youngest speakers, two of them spoke a third language as well (German and Spanish).
 
 Another potential issue with the participants is that all of them, except one, lived in the UK for more than 6 months.
@@ -112,7 +112,7 @@ Thus, it is worth stressing that the results presented here should be taken with
 
 A further challenge was finding words that would satisfy all of the parameters.
 The choice to use real words came at the cost of making the experiment design less balanced.
-As mentioned in \Cref{s:}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
+As mentioned in \Cref{s:materials}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
 Such gaps in the lexicon of Icelandic show that the functional load of the aspiration contrast is somewhat constrained.
 Even if from a more restricted contextual point of view, aspiration contrasts can be found everywhere in the lexicon, true minimal pairs were harder to find.
 %TODO add holes and humps paper!
@@ -120,7 +120,7 @@ Even if from a more restricted contextual point of view, aspiration contrasts ca
 Some design and technical problems arose in the task procedure.
 Since the participants did not have the chance to familiarise themselves with the words before starting the task, a few speakers read the first token of some words with uncertainty.
 In some cases, they said the wrong word altogether.
-One of the speakers () did not recognise most of the words which were not in the standard citation form and decided to read them as if they were English words.
+One of the speakers (JR) did not recognise most of the inflected words which were not in the standard citation form and decided to read them as if they were English words.
 Of course, I had to exclude all of these tokens from the analysis.
 This could have been avoided, even if at the cost of less naturalistic data, by letting the speakers read the words beforehand.
 
@@ -148,7 +148,7 @@ If one includes such hypothetical part to the duration of spreading, we can expe
 A second aspect of the annotation procedure that presented some difficulties was marking the left and right word boundaries.
 Since the frame sentence was kept the same in every trial, words starting and/or ending in a vowel posed problems in identifying the word boundaries.
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
-However, using the VOR instead of the word duration as the base for normalisation 
+However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
 
 
 

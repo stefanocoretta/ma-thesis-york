@@ -1,4 +1,5 @@
 \chapter{Methodology}
+\label{s:methodology}
 %TODO prosodic approach
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
@@ -196,7 +197,7 @@ In words with non-aspirated geminates, the duration of absolute voicing is equal
 \item \textit{Duration of glottal spread}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
 \end{itemize}
 
-To control for differences in speech rate, I opted to normalise the measurement.
+To control for differences in speech rate, I opted to normalise the measurements.
 Normalisation was achieved by dividing the relevant measure by the VOR.
 This operation results in a transformation from durations in milliseconds to ratios in percentages.
 I chose to use the VOR as the base for normalisation since this can be measured consistently across different word forms.
@@ -204,10 +205,10 @@ Since the word list contained monosyllabic and disyllabic words, and both classe
 
 \section{Statistical analysis}
 \label{s:stats}
-I performed the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
-Indicatively, I performed independent sample two-tailed \textit{t}-tests on parametric data and Wilcoxon tests on non-parametric data.
+I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
+I performed independent sample two-tailed \textit{t}-tests on parametric data and Wilcoxon tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address.
+The R code used in the analysis is available at this address [...].
 %TODO add address!
 
 
