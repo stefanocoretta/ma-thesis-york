@@ -351,7 +351,7 @@ With words containing an /rC/ cluster, the mean duration of the voiced vocalic p
 The voiced portion takes the \Sexpr{round(mean(di_rho_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced rhotic, and \Sexpr{round(mean(di_rho_asp$norm_abs_voic)*100,2)}\% when the rhotic is voiceless.
 
 
-\section{Stop closure duration}
+\section{Duration of stop closure}
 <<closure-test, include=FALSE>>=
 shapiro.test(mono_nas_asp$norm_clos)
 shapiro.test(mono_nas_asp$norm_clos)
@@ -407,8 +407,21 @@ boxplot(dur_clos ~ asp,
 
 \section{Duration of glottal spread}
 \label{s:gs}
+The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
+According to a Kruskal-Wallis runk sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [].
+A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ withing the sonorant classes, the duration of glottal abduction in stops was significantly different from that one in lateral and nasals (but not from the one in trills).
 
-
+\begin{figure}
+\centering
+<<gs-box, out.width="\\textwidth">>=
+boxplot(spread ~ manner,
+        data = results,
+        ylab = "duration (msec)"
+        )
+@
+\caption{Duration (in msec) of the glottal spread gesture in sonorants and stops.}
+\label{}
+\end{figure}
 
 \section{Duration of sonorant consonants}
 
@@ -435,6 +448,15 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 
 @
 
+\begin{figure}
+\centering
+<<mann-dur-box>>=
+boxplot(dur_mann ~ asp + manner, data = results_son)
+@
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur_man}
+\end{figure}
+
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
 This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
@@ -456,14 +478,7 @@ The first factor explains why laryngeal distinctions in laterals are cross-lingu
 
 Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+
 
 
 

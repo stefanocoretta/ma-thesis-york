@@ -5,7 +5,7 @@
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
 An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
 In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
-As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the voiced vocalic portion in words with aspirated consonants and its duration in words with non-aspirated consonants.
+As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the vowel in words with aspirated consonants and its duration in words with non-aspirated consonants.
 This finding seems to support the timing hypothesis.
 
 \section{Geminate stops}
@@ -90,6 +90,7 @@ The timing hypothesis presented in this study, thus, seems not to be straightfor
 % annotation: difficulties of finding glottal spread, frame sentence
 % articulatory and perceptual study instead
 % boundary study, maybe continuos data is better
+%TODO limitation of calculating glottal spread
 
 Some of the limitations of this study concern the participants recruited for the reading task.
 The first difficulty was finding a sensible number of Icelandic speakers in York.
@@ -109,7 +110,7 @@ The research conducted by \citet{sancier1997} studied how strong the influence w
 The study showed that the speaker produced a shorter voice onset time in both Portuguese and English after spending more than 6 months in Brazil than when she was in the United States.
 Thus, it is worth stressing that the results presented here should be taken with a cautionary note.
 
-Another challenge was finding words that would satisfy all of the parameters.
+A further challenge was finding words that would satisfy all of the parameters.
 The choice to use real words came at the cost of making the experiment design less balanced.
 As mentioned in \Cref{s:}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
 Such gaps in the lexicon of Icelandic show that the functional load of the aspiration contrast is somewhat constrained.
@@ -137,9 +138,17 @@ Such solution substantially reduced possible errors due to the presence of echoe
 Even so, the annotation scheme presented some challenges.
 In particular, the visual inspection of the spectrogram was, at times, not unequivocal.
 Especially with glottal abduction, I have encountered some difficult tokens where the shape of the waveform did not clearly indicate the onset of breathiness.
-In such cases I had to rely only on a change in the look of spectrogram.
+In such cases I had to rely only on a change in the look of the spectrogram.
+In particular, the results concerning the duration of the spreading gestures are to be taken with caution.
+In fact, it is possible that the difference found between stops and sonorants (where the duration of glottal abduction was higher in the former) could be due to the way the measurement was taken.
+With sonorants, identifying the beginning of glottal spread by inspecting the waveform or the spectrogram is not straightforward.
+Relying on the voiceless portion of the sonorant could potentially leave out the initial part of the spreading gesture.
+If one includes such hypothetical part to the duration of spreading, we can expect that the total duration would not be much different in sonorants and stops.
 
-
+A second aspect of the annotation procedure that presented some difficulties was marking the left and right word boundaries.
+Since the frame sentence was kept the same in every trial, words starting and/or ending in a vowel posed problems in identifying the word boundaries.
+In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
+However, using the VOR instead of the word duration as the base for normalisation 
 
 
 

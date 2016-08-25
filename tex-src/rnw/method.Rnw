@@ -1,8 +1,8 @@
 \chapter{Methodology}
 %TODO prosodic approach
-In this chapter I will describe in details the methodology employed for this study.
+In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
-In \Cref{s:materials}, I detail  of the materials used in the task, which is outlined in \Cref{s:procedure}.
+In \Cref{s:materials}, I detail the materials used in the task, which is outlined in \Cref{s:procedure}.
 \Cref{s:annotation} discusses the annotation scheme, and the criteria employed in the annotation.
 Separate subsections deal with the labelling parameters for the detection of, respectively, word boundaries, voicing, glottal spread, nasality, laterality, rhoticity, and stop release.
 \Cref{s:measurements} defines the measurements that I extracted from the annotated files and describes the procedure used for data normalisation.
@@ -59,7 +59,7 @@ Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-a
 \label{s:procedure}
 The target words were embedded in the frame sentence \textit{Segðu \_\_ aftur}, `Say \_\_ again.'
 This sentence was chosen with the aid of one of the participants so as to control for naturalness, number of syllables and phonetic contexts preceding and following the target word, and phrase stress.
-To decision to use a single frame sentence for all the test words was justified by the will of keeping the task as simple as possible.
+The decision to use a single frame sentence for all the test words was justified by the will of keeping the task as simple as possible.
 The participants were asked to read aloud the sentences with the target words shown on a computer screen.
 They were advised to speak as naturally as possible, while keeping the same volume and pace.
 They did not familiarised themselves with the word list before starting the task.
@@ -68,7 +68,8 @@ The decision of not showing the words beforehand was made to reduce the speakers
 The task was presented through the software PyschoPy \citep{peirce2009}, on a Apple MacBook Pro.
 Each sentences was shown three times consecutively and the order of appearance was randomised across subjects.
 The reading task was self-paced; the participant read a sentence shown on the screen and moved to the next sentence when ready by pressing the space bar.
-Four speakers were recorded in a meeting room at a travel agency, while one was recorded at the University of York and the last in his living room, at his house in York.
+Four speakers were recorded in York in a meeting room at the travel agency they worked for, while one was recorded at the University of York.
+One speaker did not agree at coming to the University Campus, so he was recorder in his living room, at his house in York.
 The only subject who performed the task at the University of York was recorded in a sound-proof studio, using a Beyerdynamic OPUS 54 headset microphone (condenser, cardioid), plugged into a recording station.
 The software used for the recording was Adobe Audition, running on a Windows computer.
 The other speakers were recorded using the same headset microphone plugged into a Zoom H4n Handy Recorder.
@@ -80,7 +81,7 @@ Even if the recording conditions differed between participants, the quality of t
 
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{textgrid}
+\includegraphics[width=\textwidth]{textgrid}
 \caption{Example of the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
 \label{f:textgrid}
 \end{figure}
@@ -89,7 +90,7 @@ The analysis of the audio file consisted of three phases:
 \begin{inparaenum}[(1)]
 	\item conversion from stereo to mono,
 	\item annotation, and
-	\item extraction of measurements.
+	\item extraction of the relevant measurements.
 \end{inparaenum}
 I first converted the audio files from stereo to mono, but I did not apply any filter.
 During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
@@ -139,7 +140,7 @@ As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected t
 I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
 At times, however, the interpretation of the waveform was not straightforward.
 In these cases, I relied on the visual make-up of the spectrogram.
-According to \citet{jones2006} (cited in \citet[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
+According to \citealt{jones2006} (cited in \citealt[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
 This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
 The right boundary was assumed to fall at the end of visible frication noise.
 
@@ -160,7 +161,7 @@ In the voiced counterparts of these, the end of voicing coincided with the right
 \end{figure}
 
 \subsection{Stop release}
-The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without and intervening sonorant).
+The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without an intervening sonorant).
 The release of the stop consonant was marked at the onset of the burst.
 This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction.
 If the burst was not identifiable from the waveform nor from the spectrogram, no release was marked.
@@ -192,6 +193,7 @@ In words with non-aspirated geminates, the duration of absolute voicing is equal
 \item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
 \item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
 \item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
+\item \textit{Duration of glottal spread}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
 \end{itemize}
 
 To control for differences in speech rate, I opted to normalise the measurement.

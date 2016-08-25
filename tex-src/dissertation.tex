@@ -217,9 +217,25 @@ The vocalic phonemes are given in \Cref{t:vowels} \citep[60]{arnason2011}.
 
 \ctable[caption = Major consonantal allophones of Icelandic.,
 label = t:consonants
-]{c}{}{
+]{lccccc}{}{
 \FL
+& labial  & coronal & palatal & velar & glottal   \ML
+stops      & p pʰ    & t tʰ    & c cʰ  & k kʰ    & ʔ \NN
+fricatives & f v     & θ ð     & ç ʝ   & x ɣ     & h \NN
+nasals     & m m̥    & n n̥    & ɲ ɲ̥  & ŋ ŋ̥    &   \NN
+laterals   &         & l l̥    &       &         &   \NN
+trills     &         & r r̥    &       &         &  \LL
+}
 
+\ctable[caption = Vowels of Icelandic.,
+label = t:vowels
+]{ccc}{}{
+\FL
+& front    & back   \ML
+high     & i    & u \NN
+high-mid & ɪ ʏ  &   \NN
+low-mid  & ɛ œ  & ɔ \NN
+low      &      & a \LL
 }
 
 Relevant to this study is the exploitation of phonation types in stop and sonorant consonants in Icelandic.
@@ -511,6 +527,7 @@ In words with non-aspirated geminates, the duration of absolute voicing is equal
 \item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
 \item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
 \item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
+\item \textit{Duration of glottal spread}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
 \end{itemize}
 
 To control for differences in speech rate, I opted to normalise the measurement.
@@ -548,7 +565,7 @@ The word list used in the reading task contains both mono- and disyllabic words.
 Both classes are further divided between consonant- and vowel-initial words.
 It is thus sensible to report some of the measures for each class separately.
 The mean duration of CVCC words is 441.36 msec (SD = 78.24), while for VCC is 338.71 msec (SD = 54.86).
-CVCCV words have a mean duration of 488.55 msec (SD = 60.93), while VCCV are on average 424.99 msec long (SD = 53.42).
+CVCCV words have a mean duration of 487.25 msec (SD = 59.94), while VCCV are on average 424.99 msec long (SD = 53.42).
 
 \begin{figure}
 \centering
@@ -747,8 +764,8 @@ The normalised duration was, respectively, 0.31 and 0.26.
 
 
 
-CVNCV words have a mean voiced vocalic portion duration of 81.72 msec if the nasal is voiced and 67.83 msec if it is voiceless.
-As percentages, the vocalic portion is 29.47\% of the VOR if followed by a voiced nasal, and 24.22\% when the nasal is voiceless.
+CVNCV words have a mean voiced vocalic portion duration of 81.72 msec if the nasal is voiced and 67.48 msec if it is voiceless.
+As percentages, the vocalic portion is 29.47\% of the VOR if followed by a voiced nasal, and 24.16\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant.
 
 
@@ -773,7 +790,7 @@ With words containing an /rC/ cluster, the mean duration of the voiced vocalic p
 The voiced portion takes the 39.83\% of the VOR if followed by a voiced rhotic, and 33.43\% when the rhotic is voiceless.
 
 
-\section{Stop closure duration}
+\section{Duration of stop closure}
 
 
 The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with an /lC/ [] and /rC/ cluster [].
@@ -803,12 +820,35 @@ Unsurprisingly, the duration of stop closure in words with geminate stops was si
 
 \section{Duration of glottal spread}
 \label{s:gs}
+The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
+According to a Kruskal-Wallis runk sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [].
+A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ withing the sonorant classes, the duration of glottal abduction in stops was significantly different from that one in lateral and nasals (but not from the one in trills).
 
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\textwidth]{img/gs-box-1} 
 
+\end{knitrout}
+\caption{Duration (in msec) of the glottal spread gesture in sonorants and stops.}
+\label{}
+\end{figure}
 
 \section{Duration of sonorant consonants}
 
 
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.6\textwidth]{img/mann-dur-box-1} 
+
+\end{knitrout}
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur_man}
+\end{figure}
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
@@ -831,14 +871,7 @@ The first factor explains why laryngeal distinctions in laterals are cross-lingu
 
 Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+
 
 
 
@@ -851,7 +884,7 @@ Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
 An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
 In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
-As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the voiced vocalic portion in words with aspirated consonants and its duration in words with non-aspirated consonants.
+As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the vowel in words with aspirated consonants and its duration in words with non-aspirated consonants.
 This finding seems to support the timing hypothesis.
 
 \section{Geminate stops}
@@ -934,6 +967,7 @@ The timing hypothesis presented in this study, thus, seems not to be straightfor
 % annotation: difficulties of finding glottal spread, frame sentence
 % articulatory and perceptual study instead
 % boundary study, maybe continuos data is better
+%TODO limitation of calculating glottal spread
 
 Some of the limitations of this study concern the participants recruited for the reading task.
 The first difficulty was finding a sensible number of Icelandic speakers in York.
@@ -953,7 +987,7 @@ The research conducted by \citet{sancier1997} studied how strong the influence w
 The study showed that the speaker produced a shorter voice onset time in both Portuguese and English after spending more than 6 months in Brazil than when she was in the United States.
 Thus, it is worth stressing that the results presented here should be taken with a cautionary note.
 
-Another challenge was finding words that would satisfy all of the parameters.
+A further challenge was finding words that would satisfy all of the parameters.
 The choice to use real words came at the cost of making the experiment design less balanced.
 As mentioned in \Cref{s:}, building the word list and controlling for all the criteria while avoiding nonce-words was impossible.
 Such gaps in the lexicon of Icelandic show that the functional load of the aspiration contrast is somewhat constrained.
@@ -981,9 +1015,17 @@ Such solution substantially reduced possible errors due to the presence of echoe
 Even so, the annotation scheme presented some challenges.
 In particular, the visual inspection of the spectrogram was, at times, not unequivocal.
 Especially with glottal abduction, I have encountered some difficult tokens where the shape of the waveform did not clearly indicate the onset of breathiness.
-In such cases I had to rely only on a change in the look of spectrogram.
+In such cases I had to rely only on a change in the look of the spectrogram.
+In particular, the results concerning the duration of the spreading gestures are to be taken with caution.
+In fact, it is possible that the difference found between stops and sonorants (where the duration of glottal abduction was higher in the former) could be due to the way the measurement was taken.
+With sonorants, identifying the beginning of glottal spread by inspecting the waveform or the spectrogram is not straightforward.
+Relying on the voiceless portion of the sonorant could potentially leave out the initial part of the spreading gesture.
+If one includes such hypothetical part to the duration of spreading, we can expect that the total duration would not be much different in sonorants and stops.
 
-
+A second aspect of the annotation procedure that presented some difficulties was marking the left and right word boundaries.
+Since the frame sentence was kept the same in every trial, words starting and/or ending in a vowel posed problems in identifying the word boundaries.
+In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
+However, using the VOR instead of the word duration as the base for normalisation 
 
 
 
