@@ -52,6 +52,14 @@ In words without glottal spread, the closure of the plain geminate---which is pr
 At the same time, the variance of voicing in the two classes is not the same, and voicing in the aspirated condition has greater variance.
 In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
 
+\citet[70--71]{ladefoged1996} state that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argue that the timing of glottal spread is the same.
+Glottal spread, according to their description, starts at the beginning of the geminate and ends at its release, independently of the presence of pre-aspiration. 
+This remark does not fit with the results found in this study.
+Although I could not measure glottal width in a direct way, if the description given in \citet{ladefoged1996} is correct, glottal width in non-aspirated geminates can be inferred from the duration of the interval between the offset of voicing of the preceding vowel and the release of the geminate.
+Since normalisation was done with the VOR as a base, the portion of VOR subtracted by the modal vocalic portion would correspond to the geminate
+Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
+However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+
 \section{Sonorants}
 %TODO cite previous studies about the duration
 
@@ -150,8 +158,6 @@ Since the frame sentence was kept the same in every trial, words starting and/or
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
 However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
 
-
-
 \section{Further studies}
 
 Some of the limitations presented in the previous sections could be overcome with articulatory data.
@@ -169,9 +175,9 @@ Tracking the movements of the tongue through ultrasound and palatography can imp
 Finally, measuring the oral and the nasal airflows could allow better measurements related to nasals.
 The boundary of nasal consonants are normally difficult to discern on the spectrogram.
 Voiceless nasals are even more difficult to see, since the friction created at the nostrils is usually very low in amplitude.
-Being able to detect nasal airflow allows to clearly define at which time point the velar port has been open and when it has been closed during speech.
+Being able to detect nasal airflow allows to clearly define at which time point the velar port has been opened and when it has been closed during speech.
 
-%TODO say about intraoral pressure?
+%TODO say about intraoral pressure? for what i dont remember?
 
 
 
