@@ -1,18 +1,27 @@
 \chapter{Methodology}
+%TODO prosodic approach
+In this chapter I will describe in details the methodology employed for this study.
+\Cref{s:participants} contains information about the speakers that participated in the study.
+In \Cref{s:materials}, I detail  of the materials used in the task, which is outlined in \Cref{s:procedure}.
+\Cref{s:annotation} discusses the annotation scheme, and the criteria employed in the annotation.
+Separate subsections deal with the labelling parameters for the detection of, respectively, word boundaries, voicing, glottal spread, nasality, laterality, rhoticity, and stop release.
+\Cref{s:measurements} defines the measurements that I extracted from the annotated files and describes the procedure used for data normalisation.
+Finally, \Cref{s:stats} briefly mentions the features of the statistical analysis applied to the measurements and the software I used to implement it.
 
 \section{Participants}
-%TODO add participant are from southern so soft speech
+\label{s:participants}
+
 For this study, I recruited six Icelandic speakers who were living in York (UK) at the time the recordings were made.
 The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
+The informants received a compensation for their time in the form of Amazon vouchers or chocolates for the value of £5 pounds.
 
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
 The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
 All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic.
-
 
 
 \ctable[caption = Information on participants.,
@@ -43,10 +52,11 @@ The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words
 Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
+%TODO tokens! I talk about types but should talk about tokens as well
 
 
 \section{Procedure}
-
+\label{s:procedure}
 The target words were embedded in the frame sentence \textit{Segðu \_\_ aftur}, `Say \_\_ again.'
 This sentence was chosen with the aid of one of the participants so as to control for naturalness, number of syllables and phonetic contexts preceding and following the target word, and phrase stress.
 To decision to use a single frame sentence for all the test words was justified by the will of keeping the task as simple as possible.
@@ -149,7 +159,7 @@ In the voiced counterparts of these, the end of voicing coincided with the right
 \label{f:mann}
 \end{figure}
 
-\subsection{Consonant release}
+\subsection{Stop release}
 The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without and intervening sonorant).
 The release of the stop consonant was marked at the onset of the burst.
 This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction.
@@ -163,7 +173,7 @@ If the burst was not identifiable from the waveform nor from the spectrogram, no
 \end{figure}
 
 \section{Measurements}
-
+\label{s:measurements}
 After the annotation was complete, I extracted the durational properties of the annotated intervals using an automated routine.
 The routine was performed in PRAAT with a script, specifically written for this study.
 The script with its documentation can be found in \Cref{a:getmeasure}.
@@ -184,7 +194,6 @@ In words with non-aspirated geminates, the duration of absolute voicing is equal
 \item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
 \end{itemize}
 
-%TODO normalised
 To control for differences in speech rate, I opted to normalise the measurement.
 Normalisation was achieved by dividing the relevant measure by the VOR.
 This operation results in a transformation from durations in milliseconds to ratios in percentages.
@@ -192,11 +201,12 @@ I chose to use the VOR as the base for normalisation since this can be measured 
 Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (VCC, VʰC, VRC, where ``R'' is any sonorant).\footnote{Pre-aspirated stops are phonologically geminates.}
 
 \section{Statistical analysis}
-
+\label{s:stats}
 I performed the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
-
-
-
+Indicatively, I performed independent sample two-tailed \textit{t}-tests on parametric data and Wilcoxon tests on non-parametric data.
+Normality was checked through Shapiro tests for normality.
+The R code used in the analysis is available at this address.
+%TODO add address!
 
 
 

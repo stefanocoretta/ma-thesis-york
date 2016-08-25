@@ -35,12 +35,25 @@ test <- wilcox.test(vor ~ syl_no, data = results)
 @
 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
-The duration of the voiced vocalic portion was not affected by the the number of syllables of the word.
-The boxplot in \Cref{f:vvpsyll} shows the duration of the vocalic portion in milliseconds.
-According to a two-sample Wilcoxon test, the mean duration of the voiced portion in monosyllabic words () does not different significantly from the mean duration in disyllabic words () [V = ].
-However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
-% kembt behave strange, in bte
-Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
+The ratio duration of the vowel was not affected by the the number of syllables of the word.
+The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
+According to a two-sample Wilcoxon test, the mean duration of the vowel in monosyllabic words () does not differ significantly from the mean duration in disyllabic words () [V = ].
+%However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
+%% kembt behave strange, in bte
+%Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
+
+\begin{figure}
+\centering
+<<voic-syll-box, out.width="\\textwidth">>=
+boxplot(norm_abs_voic ~ syl_no,
+        data = results,
+        names = c("disyllabic", "monosyllabic"),
+        ylab = "duration (msec)"
+        )
+@
+\caption{Vowel duration in monosyllabic vs. disyllabic words.}
+\label{f:vvpsyll}
+\end{figure}
 
 \section{Voice onset to release (VOR)}
 
@@ -190,7 +203,7 @@ The difference in the mean of the vowel ratio between the non-aspirated and the 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<mono-stop-box>>=
+<<mono-stop-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_stop,
         names = c("non-asp", "pre-asp"),
@@ -202,7 +215,7 @@ boxplot(norm_abs_voic ~ asp,
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<di-stop-box>>=
+<<di-stop-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = di_stop,
         names = c("non-asp", "pre-asp"),
@@ -213,7 +226,7 @@ boxplot(norm_abs_voic ~ asp,
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<mono-nas-box>>=
+<<mono-nas-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
@@ -224,7 +237,7 @@ boxplot(norm_abs_voic ~ asp,
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<di-nas-box>>=
+<<di-nas-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = di_nas,
         names = c("non-asp", "asp"),
@@ -235,7 +248,7 @@ boxplot(norm_abs_voic ~ asp,
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<mono-lat-box>>=
+<<mono-lat-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
@@ -246,7 +259,7 @@ boxplot(norm_abs_voic ~ asp,
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-<<di-lat-box>>=
+<<di-lat-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = di_lat,
         names = c("non-asp", "asp"),
@@ -255,9 +268,13 @@ boxplot(norm_abs_voic ~ asp,
         )
 @
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
+\caption{Vowel duration (ratio) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant}
+\label{f:vowelduration}
+\end{figure}
+
+\begin{figure}
 \centering
-<<di-rho-box>>=
+<<di-rho-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -265,7 +282,8 @@ boxplot(norm_abs_voic ~ asp,
         main = "VRCV"
         )
 @
-\end{subfigure}
+\caption{Ratio vowel duration in words with an /rC/ cluster.}
+\label{f:voweldurrho}
 \end{figure}
 
 <<di-stop-test,include=F>>=
@@ -356,7 +374,7 @@ shapiro.test(di_rho_asp$norm_clos)
 t.test(norm_clos ~ asp, data = di_rho) # p < 0.001
 @
 
-The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with a /lC/ [] and /rC/ cluster [].
+The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with an /lC/ [] and /rC/ cluster [].
 Unsurprisingly, the duration of stop closure in words with geminate stops was significantly different in the two conditions, since pre-aspirated stops have a later closure.
 
 \begin{figure}
@@ -438,14 +456,14 @@ The first factor explains why laryngeal distinctions in laterals are cross-lingu
 
 Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
-\begin{figure}
-\centering
-<<mann-dur-box>>=
-boxplot(dur_mann ~ asp + manner, data = results_son)
-@
-\caption{Duration of sonorant consonants (in msec).}
-\label{f:dur_man}
-\end{figure}
+%\begin{figure}
+%\centering
+%<<mann-dur-box>>=
+%boxplot(dur_mann ~ asp + manner, data = results_son)
+%@
+%\caption{Duration of sonorant consonants (in msec).}
+%\label{f:dur_man}
+%\end{figure}
 
 
 

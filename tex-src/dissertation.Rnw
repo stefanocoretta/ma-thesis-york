@@ -51,6 +51,7 @@ results_raw <- read.csv("analysis/results.csv")
 words <- read.csv("task/task-src/words.csv")
 results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
 results <- subset(results_all, comp == "c")
+results <- droplevels(results)
 results_stop <- subset(results, manner == "stop")
 results_nas <- subset(results, manner == "nasal")
 results_lat <- subset(results, manner == "lateral")
@@ -129,11 +130,11 @@ asp <- droplevels(asp)
 
 \appendix
 
-<<wordlist, child='rnw/wordlist.Rnw'>>=
-@
+%<<wordlist, child='rnw/wordlist.Rnw'>>=
+%@
 
-<<getmeasure, child='rnw/getmeasure.Rnw'>>=
-@
+%<<getmeasure, child='rnw/getmeasure.Rnw'>>=
+%@
 
 
 
