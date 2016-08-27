@@ -19,7 +19,7 @@
     \frenchspacing
     \OnehalfSpacing
 
-\usepackage{ctable,multirow,multicol,paralist}
+\usepackage{ctable,multirow,multicol,paralist,supertabular}
 
 \usepackage{natbib}
 
@@ -130,9 +130,6 @@ asp <- droplevels(asp)
 
 
 \appendix
-
-%<<wordlist, child='rnw/wordlist.Rnw'>>=
-%@
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@

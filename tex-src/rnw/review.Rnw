@@ -197,7 +197,7 @@ An early timing of glottal spreading (like in pre-aspiration) would prevent voic
 On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
 In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voincing.
 
-In Icelandic, the contexts where a contrast involving aspiration can be found posvocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
+In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
 As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
 If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
 Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), these two separate statements can be merged into a single hypothesis:

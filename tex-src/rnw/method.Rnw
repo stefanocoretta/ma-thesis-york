@@ -41,7 +41,7 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
-The list of target words is given in \Cref{a:list}.
+The list of target words is given in \Cref{t:wordlist}.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
 Control over these parameters was prioritised according to the order in which they were presented here.
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
@@ -54,6 +54,75 @@ Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
 %TODO tokens! I talk about types but should talk about tokens as well
+
+
+\tablefirsthead{
+    \hline
+	word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+	\hline}
+\tablehead{
+    \hline
+    word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+    \hline}
+\tablecaption{List of target words.}
+\label{t:wordlist}
+
+\begin{supertabular}[t]{llll}
+\multicolumn{4}{l}{stops}				   \\ \hline
+kokk  & kʰoʰk  & noun      & cook          \\
+gogg  & kokk   & noun      & beak          \\
+dökk  & tœʰk   & adjective & dark          \\
+dögg  & tœkk   & noun      & dew           \\
+kopp  & kʰoʰp  & noun      & chamber pot   \\
+kubb  & cʰʏpp  & noun      & block of wood \\
+vítt  & viʰt   & adverb    & far and wide  \\
+vídd  & vitt   & noun      & width         \\
+þítt  & θiʰt   & verb      & thaw          \\
+þíddi & θittɪ  & verb      & thaw          \\
+fætt  & faiʰt  & verb      & feed          \\
+fæddi & faittɪ & verb      & feed          \\
+ýtt   & iʰt    & verb      & push          \\
+ydd   & ɪtt    & verb      & sharpen       \\
+ótt   & ouʰt   & noun      & point         \\
+odd   & ott    & adverb    & fast          \\
+sets  & sess   & noun      & sediment      \\
+sett  & seʰt   & verb      & put           \\
+feits & feiss  & adjective & fat           \\
+feitt & feiʰt  & adjective & fat           \\
+vots  & voss   & adjective & wet           \\
+vott  & voʰt   & adjective & wet           \\
+takka & tʰaʰka & noun      & key           \\
+kagga & kʰakka & noun      & barrel        \\
+detta & teʰta  & verb      & fall          \\
+gedda & cetta  & noun      & pike          \\ \hline
+\multicolumn{4}{l}{nasals}				   \\ \hline
+kamp   & kʰam̥p  & noun      & moustache       \\
+kamb   & kʰamp   & noun      & comb            \\
+punt   & pʰʏn̥t  & noun      & decoration      \\
+pund   & pʰʏnt   & noun      & pound           \\
+kembt  & cʰem̥t  & verb      & comb            \\
+kembdi & cʰemtɪ  & verb      & comb            \\
+kampa  & kʰam̥pa & noun      & moustache       \\
+kamba  & kʰampa  & noun      & comb            \\
+kempa  & cʰem̥pa & noun      & hero            \\
+kemba  & cʰempa  & verb      & comb            \\
+punta  & pʰʏn̥ta & noun      & decoration      \\
+punda  & pʰʏnta  & noun      & pound           \\
+vanta  & van̥ta  & verb      & want            \\
+vanda  & vanta   & verb      & do st carefully \\
+fínn   & fitn̥   & adjective & smart           \\
+kinn   & kʰɪnn   & noun      & cheek          \\ \hline
+\multicolumn{4}{l}{laterals}				   \\ \hline
+duld   & tʏlt     & adjective & complex  \\
+dult   & tʏl̥t    & adjective & reticent \\
+gelta  & cel̥ta   & verb      & bark     \\
+gelda  & celta    & verb      & castrate \\
+mjólka & mjoul̥ka & verb      & milk     \\
+ólga   & oulka    & verb      & foam    \\ \hline
+\multicolumn{4}{l}{trills}				   \\ \hline
+orka   & or̥ka    & noun      & energy   \\
+orga   & orka     & noun      & scream   \\ \hline
+\end{supertabular}
 
 
 \section{Procedure}

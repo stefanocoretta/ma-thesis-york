@@ -83,9 +83,28 @@ If the speaker intention is to maintain the same VOR while warranting a longer d
 The vowel preceding the aspirated sonorant is thus compressed and it becomes relatively shorter than a vowel followed by a voiced sonorant.
 The timing hypothesis presented in this study, thus, seems not to be straightforwardly compatible with the data found in words containing sonorants, even if the effects predicted by it were found.
 
+\section{Linguistic aspects}
+This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
+Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
+However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.
+\citet[423]{kingston1994} point out that ``speakers and listeners employ extensive and subtle phonetic knowledge.''
+
+In classical models of phonological competence, the articulatory output of the speech stream can be predicted on phonetic grounds from the form of the phonological representation.
+This kind of conceptualisation gives the phonetic constraints predictive power.
+Knowing which phonological representation underlies a linguistic unit allows us to anticipate the phonetic realisation of that unit. 
+\citeauthor{kingston1994}, however, argue that the phonetic constraints normally called for in the literature as the cause of most phonological behaviours do not have predictive power, but rather they limit the possible phonetic outcomes of a phonological abstract unit.
+This approach leaves space for the idea that speakers can operate an implicit control over they productions.
+The authors call ``phonetic knowledge'' the knowledge underlying such ability.
+
+There are two classes of phonetic knowledge.
+The speaker-oriented knowledge deals with the possibilities speakers have to minimise the articulatory effort necessary to produce a particular sequence of gestures (and sounds).
+The other type of knowledge, the listener-oriented knowledge, 
 
 
-\section{Individual differences}
+
+
+
+%\section{Individual differences}
 
 
 \section{Diachrony and aspiration effects}

@@ -68,7 +68,7 @@
     \frenchspacing
     \OnehalfSpacing
 
-\usepackage{ctable,multirow,multicol,paralist}
+\usepackage{ctable,multirow,multicol,paralist,supertabular}
 
 \usepackage{natbib}
 
@@ -309,7 +309,7 @@ An early timing of glottal spreading (like in pre-aspiration) would prevent voic
 On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
 In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voincing.
 
-In Icelandic, the contexts where a contrast involving aspiration can be found posvocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
+In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
 As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
 If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
 Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), these two separate statements can be merged into a single hypothesis:
@@ -376,7 +376,7 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
-The list of target words is given in \Cref{a:list}.
+The list of target words is given in \Cref{t:wordlist}.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
 Control over these parameters was prioritised according to the order in which they were presented here.
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
@@ -389,6 +389,75 @@ Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
 %TODO tokens! I talk about types but should talk about tokens as well
+
+
+\tablefirsthead{
+    \hline
+	word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+	\hline}
+\tablehead{
+    \hline
+    word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+    \hline}
+\tablecaption{List of target words.}
+\label{t:wordlist}
+
+\begin{supertabular}[t]{llll}
+\multicolumn{4}{l}{stops}				   \\ \hline
+kokk  & kʰoʰk  & noun      & cook          \\
+gogg  & kokk   & noun      & beak          \\
+dökk  & tœʰk   & adjective & dark          \\
+dögg  & tœkk   & noun      & dew           \\
+kopp  & kʰoʰp  & noun      & chamber pot   \\
+kubb  & cʰʏpp  & noun      & block of wood \\
+vítt  & viʰt   & adverb    & far and wide  \\
+vídd  & vitt   & noun      & width         \\
+þítt  & θiʰt   & verb      & thaw          \\
+þíddi & θittɪ  & verb      & thaw          \\
+fætt  & faiʰt  & verb      & feed          \\
+fæddi & faittɪ & verb      & feed          \\
+ýtt   & iʰt    & verb      & push          \\
+ydd   & ɪtt    & verb      & sharpen       \\
+ótt   & ouʰt   & noun      & point         \\
+odd   & ott    & adverb    & fast          \\
+sets  & sess   & noun      & sediment      \\
+sett  & seʰt   & verb      & put           \\
+feits & feiss  & adjective & fat           \\
+feitt & feiʰt  & adjective & fat           \\
+vots  & voss   & adjective & wet           \\
+vott  & voʰt   & adjective & wet           \\
+takka & tʰaʰka & noun      & key           \\
+kagga & kʰakka & noun      & barrel        \\
+detta & teʰta  & verb      & fall          \\
+gedda & cetta  & noun      & pike          \\ \hline
+\multicolumn{4}{l}{nasals}				   \\ \hline
+kamp   & kʰam̥p  & noun      & moustache       \\
+kamb   & kʰamp   & noun      & comb            \\
+punt   & pʰʏn̥t  & noun      & decoration      \\
+pund   & pʰʏnt   & noun      & pound           \\
+kembt  & cʰem̥t  & verb      & comb            \\
+kembdi & cʰemtɪ  & verb      & comb            \\
+kampa  & kʰam̥pa & noun      & moustache       \\
+kamba  & kʰampa  & noun      & comb            \\
+kempa  & cʰem̥pa & noun      & hero            \\
+kemba  & cʰempa  & verb      & comb            \\
+punta  & pʰʏn̥ta & noun      & decoration      \\
+punda  & pʰʏnta  & noun      & pound           \\
+vanta  & van̥ta  & verb      & want            \\
+vanda  & vanta   & verb      & do st carefully \\
+fínn   & fitn̥   & adjective & smart           \\
+kinn   & kʰɪnn   & noun      & cheek          \\ \hline
+\multicolumn{4}{l}{laterals}				   \\ \hline
+duld   & tʏlt     & adjective & complex  \\
+dult   & tʏl̥t    & adjective & reticent \\
+gelta  & cel̥ta   & verb      & bark     \\
+gelda  & celta    & verb      & castrate \\
+mjólka & mjoul̥ka & verb      & milk     \\
+ólga   & oulka    & verb      & foam    \\ \hline
+\multicolumn{4}{l}{trills}				   \\ \hline
+orka   & or̥ka    & noun      & energy   \\
+orga   & orka     & noun      & scream   \\ \hline
+\end{supertabular}
 
 
 \section{Procedure}
@@ -671,7 +740,7 @@ According to tests for the difference between means, the VOR in all classes of w
 \includegraphics[width=0.6\textwidth]{img/di-rho-vor-1} 
 
 \end{knitrout}
-\caption{Duration (in msec) of the Voice Onset to Release (VOR) of CVRC and CVRCV words.}
+\caption{Duration (in msec) of the Voice Onset to Release (VOR) of VRCV words.}
 \label{f:vor-rho}
 \end{figure}
 
@@ -929,6 +998,14 @@ In words without glottal spread, the closure of the plain geminate---which is pr
 At the same time, the variance of voicing in the two classes is not the same, and voicing in the aspirated condition has greater variance.
 In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
 
+\citet[70--71]{ladefoged1996} state that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argue that the timing of glottal spread is the same.
+Glottal spread, according to their description, starts at the beginning of the geminate and ends at its release, independently of the presence of pre-aspiration. 
+This remark does not fit with the results found in this study.
+Although I could not measure glottal width in a direct way, if the description given in \citet{ladefoged1996} is correct, glottal width in non-aspirated geminates can be inferred from the duration of the interval between the offset of voicing of the preceding vowel and the release of the geminate.
+Since normalisation was done with the VOR as a base, the portion of VOR subtracted by the modal vocalic portion would correspond to the geminate
+Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
+However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+
 \section{Sonorants}
 %TODO cite previous studies about the duration
 
@@ -951,6 +1028,20 @@ While with stops the VOR is longer with pre-aspirated geminates, with sonorants 
 If the speaker intention is to maintain the same VOR while warranting a longer duration of the sonorant, this can be done at detriment of the vowel.
 The vowel preceding the aspirated sonorant is thus compressed and it becomes relatively shorter than a vowel followed by a voiced sonorant.
 The timing hypothesis presented in this study, thus, seems not to be straightforwardly compatible with the data found in words containing sonorants, even if the effects predicted by it were found.
+
+\section{Linguistic aspects}
+This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
+Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
+However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.
+\citet[423]{kingston1994} point out that ``speakers and listeners employ extensive and subtle phonetic knowledge.''
+
+In classical models of phonological competence, the articulatory output of the speech stream can be predicted on phonetic grounds from the form of the phonological representation.
+This kind of conceptualisation gives the phonetic constraints predictive power.
+Knowing which phonological representation underlies a linguistic unit allows us to anticipate the phonetic realisation of that unit. 
+\citeauthor{kingston1994}, however, argue that the phonetic constraints normally called for in the literature as the cause of most phonological behaviours do not have predictive power, but rather they limit the possible phonetic outcomes of a phonological abstract unit.
+This approach leaves space for the idea that speakers can operate an implicit control over they productions.
+
+
 
 
 
@@ -1027,8 +1118,6 @@ Since the frame sentence was kept the same in every trial, words starting and/or
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
 However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
 
-
-
 \section{Further studies}
 
 Some of the limitations presented in the previous sections could be overcome with articulatory data.
@@ -1046,9 +1135,9 @@ Tracking the movements of the tongue through ultrasound and palatography can imp
 Finally, measuring the oral and the nasal airflows could allow better measurements related to nasals.
 The boundary of nasal consonants are normally difficult to discern on the spectrogram.
 Voiceless nasals are even more difficult to see, since the friction created at the nostrils is usually very low in amplitude.
-Being able to detect nasal airflow allows to clearly define at which time point the velar port has been open and when it has been closed during speech.
+Being able to detect nasal airflow allows to clearly define at which time point the velar port has been opened and when it has been closed during speech.
 
-%TODO say about intraoral pressure?
+%TODO say about intraoral pressure? for what i dont remember?
 
 
 
@@ -1071,9 +1160,6 @@ Being able to detect nasal airflow allows to clearly define at which time point 
 
 
 \appendix
-
-%<<wordlist, child='rnw/wordlist.Rnw'>>=
-%@
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@
