@@ -93,14 +93,20 @@ In classical models of phonological competence, the articulatory output of the s
 This kind of conceptualisation gives the phonetic constraints predictive power.
 Knowing which phonological representation underlies a linguistic unit allows us to anticipate the phonetic realisation of that unit. 
 \citeauthor{kingston1994}, however, argue that the phonetic constraints normally called for in the literature as the cause of most phonological behaviours do not have predictive power, but rather they limit the possible phonetic outcomes of a phonological abstract unit.
-This approach leaves space for the idea that speakers can operate an implicit control over they productions.
+This approach leaves space for the idea that speakers can operate an implicit control over their productions.
 The authors call ``phonetic knowledge'' the knowledge underlying such ability.
 
 There are two classes of phonetic knowledge.
 The speaker-oriented knowledge deals with the possibilities speakers have to minimise the articulatory effort necessary to produce a particular sequence of gestures (and sounds).
-The other type of knowledge, the listener-oriented knowledge, 
+The other type of knowledge, the listener-oriented knowledge, is instead related to the ways speakers can maximise the distinctive cues of contrastive sounds.
+Such two kinds of phonetic knowledge work together to create an optimal solution between minimum articulatory effort and maximum contrast.
+Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world.
+%TODO citation of competing motivations
 
-
+We have seen that pre-aspirated stops in Icelandic are preceded by shorter vowels, if we consider the vowel to be the modally voiced open gesture preceding the aspiration.
+The magnitude of the difference in duration between vowels followed by pre-aspirated or plain consonants was around 30--40 milliseconds, enough for the auditory system to perceive it.
+It is reasonable, thus, to assume that such difference is deliberately used by Icelandic speakers to enhance the contrast between words containing a plain geminate and words with a pre-aspirated geminate.
+Even if the original cause of the aspiration effect caused by stops in present day Icelandic could have been related to the phasing of the laryngeal spreading gesture, the synchronic situation we can observe now could instead well be the product of the controlled use of such differences on the part of the speaker.
 
 
 
@@ -108,7 +114,7 @@ The other type of knowledge, the listener-oriented knowledge,
 
 
 \section{Diachrony and aspiration effects}
-
+In the previous section I argued that the origin of the effect could be ascribed to timing of laryngeal but that does not mean that synchronically is the case.
 
 \section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
@@ -196,7 +202,7 @@ The boundary of nasal consonants are normally difficult to discern on the spectr
 Voiceless nasals are even more difficult to see, since the friction created at the nostrils is usually very low in amplitude.
 Being able to detect nasal airflow allows to clearly define at which time point the velar port has been opened and when it has been closed during speech.
 
-%TODO say about intraoral pressure? for what i dont remember?
+%TODO say about intraoral pressure? for what i dont remember? maybe for saying if voicing is terminated before?
 
 
 
