@@ -82,10 +82,10 @@ for file to files_no
                 begin_mann = Get starting point: mann, int_mann
                 end_mann = Get end point: mann, int_mann
                 duration_mann = (end_mann - begin_mann) * 1000
-            else
-                begin_mann$ = ""
-                end_mann$ = ""
-                duration_mann$ = ""
+#            else
+#                begin_mann$ = ""
+#                end_mann$ = ""
+#                duration_mann$ = ""
             endif
 
             ind_rels = Get nearest index from time: rels, end_word
@@ -113,8 +113,9 @@ for file to files_no
 
             else
                 duration_closure = (time_rels - end_voic) * 1000
+                duration_spread$ = ""
+                norm_duration_spread$ = ""
             endif
-
             if label$ <> ""
                 norm_duration_voice = duration_voic / v_to_rel
                 norm_duration_mann = duration_mann / v_to_rel
@@ -135,7 +136,7 @@ for file to files_no
                     result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel','duration_spread$','norm_duration_spread$''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,,'duration_spread$','norm_duration_spread$'''newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,,'duration_spread$','norm_duration_spread$''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif

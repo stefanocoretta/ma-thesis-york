@@ -156,22 +156,22 @@ Get interval index and label on the mann tier at time = end - 0.00001 of the int
 @
 
 If the interval is non-empty, get begin and end, and calculate duration.
-If it's empty, record nulls.
+#If it's empty, record nulls.
 
 <<*>>=
             if  label$ <> ""
                 begin_mann = Get starting point: mann, int_mann
                 end_mann = Get end point: mann, int_mann
                 duration_mann = (end_mann - begin_mann) * 1000
-            else
-                begin_mann$ = ""
-                end_mann$ = ""
-                duration_mann$ = ""
+#            else
+#                begin_mann$ = ""
+#                end_mann$ = ""
+#                duration_mann$ = ""
             endif
 
 @
 
-Get nearest boundary on tier 5 to end of word.
+Get nearest boundary on tier rels to the end of the word.
 Calculate the interval Vonset-to-release for normalisation.
 
 <<*>>=
@@ -209,8 +209,9 @@ In words with sonorants it is the duration of the interval between the offset of
 
             else
                 duration_closure = (time_rels - end_voic) * 1000
+                duration_spread$ = ""
+                norm_duration_spread$ = ""
             endif
-
 @
 
 Write output.
@@ -238,7 +239,7 @@ If the release time is not within the time boundaries of the word, input empty d
                     result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel','duration_spread$','norm_duration_spread$''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 else
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,,'duration_spread$','norm_duration_spread$'''newline$'"
+                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,,'duration_spread$','norm_duration_spread$''newline$'"
                     fileappend "'result_file$'" 'result_line$'
                 endif
             endif
