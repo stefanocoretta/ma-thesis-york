@@ -274,9 +274,12 @@ t.test(results_mono_asp_stop$norm_abs_voic, results_bi_asp_stop$norm_abs_voic)
 #### Closure measure ####
 boxplot(norm_clos ~ asp, data = mono_stop)
 
-
-
-
+#### Barplot ####
+mean(mono_stop_asp$norm_abs_voic)
+mean(mono_stop_asp$norm_clos)
+mean(mono_stop_asp$norm_spread)
+mean(mono_stop_nasp$norm_abs_voic)
+mean(mono_stop_nasp$norm_clos)
 
 
 

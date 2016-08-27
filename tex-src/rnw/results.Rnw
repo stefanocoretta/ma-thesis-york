@@ -31,13 +31,13 @@ test <- wilcox.test(norm_abs_voic ~ syl_no, data = results)
 
 shapiro.test(mono$vor)
 shapiro.test(mono$vor)
-test <- wilcox.test(vor ~ syl_no, data = results)
+wilcox.test(vor ~ syl_no, data = results)
 @
 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The ratio duration of the vowel was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
-According to a two-sample Wilcoxon test, the mean duration of the vowel in monosyllabic words () does not differ significantly from the mean duration in disyllabic words () [V = ].
+According to a two-sample Wilcoxon test, the mean duration of the vowel in monosyllabic words (\Sexpr{round(mean(mono$abs_voic),2)}) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$abs_voic),2)}) [V = 35302, p < 0.001].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -98,6 +98,13 @@ The Voice onset to Release (VOR) measures the interval between the voice onset o
 According to tests for the difference between means, the VOR in all classes of words, except for -VCC words, did not have a significant difference in mean duration in both the non-aspirated and aspirated condition.
 
 %TODO table with mean and sd
+
+%\ctable[caption = Means and standard deviations of VOR in each word class.,
+%label = t:vor
+%]{lrr}{}{
+%\FL
+
+%}
 
 
 \begin{figure}
@@ -198,7 +205,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 
 The mean duration of vowels in milliseconds was \Sexpr{round(mean(mono_stop_nasp$abs_voic),2)} in monosyllabic words ending in a non-aspirated geminate stop, while it was \Sexpr{round(mean(mono_stop_asp$abs_voic),2)} if followed by a pre-aspirated geminate stop.
 \Cref{f:monostop} shows the ratio duration of the vowel in the two conditions.
-The difference in the mean of the vowel ratio between the non-aspirated and the aspirated class of words was significant [].
+The difference in the mean of the vowel ratio between the non-aspirated (\Sexpr{round(mean(mono_stop_nasp$norm_abs_voic),2)}) and the aspirated class of words (\Sexpr{round(mean(mono_stop_asp$norm_abs_voic),2)}) was significant [W = 7793, p-value < 0.001].
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -294,7 +301,7 @@ t.test(norm_abs_voic ~ asp, data = di_stop)
 
 In disyllabic words, the voiced vocalic portion is \Sexpr{round(mean(di_stop_nasp$abs_voic),2)} msec long if followed by a non-aspirated geminate, and \Sexpr{round(mean(di_stop_asp$abs_voic),2)} msec long if followed by a pre-aspirated geminate.
 In ratio terms, the voiced part makes up the \Sexpr{round(mean(di_stop_nasp$norm_abs_voic)*100,2)}\% of the VOR in word with plain geminates, and the \Sexpr{round(mean(di_stop_asp$norm_abs_voic)*100,2)}\% in words with pre-aspirated geminates.
-According to a independent two-sample \textit{t}-test, the difference in ratio is significant.
+According to a independent two-sample \textit{t}-test, the difference in ratio is significant [t = 4.39, df = 50.46, p < 0.001].
 
 \subsection{Nasals}
 <<mono-nas-test, include=F>>=
@@ -305,7 +312,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_nas)
 
 Words of the form (C)VNC showed a mean voiced portion duration of \Sexpr{round(mean(mono_nas_nasp$abs_voic),2)} msec if the nasal is voiced and \Sexpr{round(mean(mono_nas_asp$abs_voic),2)} msec if voiceless.
 The normalised duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_abs_voic),2)} and \Sexpr{round(mean(mono_nas_asp$norm_abs_voic),2)}.
-
+The difference in ratio duration was significant [W = 836, p < 0.001].
 
 <<di-nas-test, include=F>>=
 shapiro.test(di_nas_asp$norm_abs_voic)
@@ -315,7 +322,7 @@ t.test(norm_abs_voic ~ asp, data = di_nas)
 
 CVNCV words have a mean voiced vocalic portion duration of \Sexpr{round(mean(di_nas_nasp$abs_voic),2)} msec if the nasal is voiced and \Sexpr{round(mean(di_nas_asp$abs_voic),2)} msec if it is voiceless.
 As percentages, the vocalic portion is \Sexpr{round(mean(di_nas_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced nasal, and \Sexpr{round(mean(di_nas_asp$norm_abs_voic)*100,2)}\% when the nasal is voiceless.
-A \textit{t}-test showed that this difference is significant.
+A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119.99, p < 0.001].
 
 
 \subsection{Laterals}
@@ -327,7 +334,7 @@ t.test(norm_abs_voic ~ asp, data = mono_lat)
 
 In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were \Sexpr{round(mean(mono_lat_nasp$abs_voic),2)} and \Sexpr{round(mean(mono_lat_asp$abs_voic),2)} msec when followed, respectively by a voiced and voiceless lateral.
 These correspond to the \Sexpr{round(mean(mono_lat_nasp$norm_abs_voic)*100,2)}\% and the \Sexpr{round(mean(mono_lat_asp$norm_abs_voic)*100,2)}\% of the VOR.
-A Wilcoxon test shows that the difference is significant [].
+A t-test shows that the difference is significant [t = 4.1, df = 20.43, p < 0.001].
 
 
 <<di-lat-test, include=F>>=
@@ -338,6 +345,7 @@ t.test(norm_abs_voic ~ asp, data = di_lat)
 
 The voiced vocalic portion in CVLCV words is on average \Sexpr{round(mean(di_lat_nasp$abs_voic),2)} msec long when the lateral is voiced and \Sexpr{round(mean(di_lat_asp$abs_voic),2)} msec when it is voiceless.
 The voiced portion takes the \Sexpr{round(mean(di_lat_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced lateral, and \Sexpr{round(mean(di_lat_asp$norm_abs_voic)*100,2)}\% when the lateral is voiceless.
+A t-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.001].
 
 \subsection{Rhotics}
 
@@ -349,7 +357,7 @@ t.test(norm_abs_voic ~ asp, data = di_rho)
 
 With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is \Sexpr{round(mean(di_rho_nasp$abs_voic),2)} msec long when the rhotic is voiced and \Sexpr{round(mean(di_rho_asp$abs_voic),2)} msec when it is voiceless.
 The voiced portion takes the \Sexpr{round(mean(di_rho_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced rhotic, and \Sexpr{round(mean(di_rho_asp$norm_abs_voic)*100,2)}\% when the rhotic is voiceless.
-
+A t-test gave a significant result [t = 3.4, df = 27.98, p < 0.001].
 
 \section{Duration of stop closure}
 <<closure-test, include=FALSE>>=
@@ -374,7 +382,7 @@ shapiro.test(di_rho_asp$norm_clos)
 t.test(norm_clos ~ asp, data = di_rho) # p < 0.001
 @
 
-The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with an /lC/ [] and /rC/ cluster [].
+The ratio duration of stop closure in words containing a sonorant + stop cluster was not significantly different in the non-aspirated and aspirated condition, except in disyllabic words with an /lC/ [t = 2.51, df = 54.7, p < 0.001] and /rC/ cluster [t = 5.62, df = 27.82, p < 0.001].
 Unsurprisingly, the duration of stop closure in words with geminate stops was significantly different in the two conditions, since pre-aspirated stops have a later closure.
 
 \begin{figure}

@@ -108,6 +108,9 @@ The magnitude of the difference in duration between vowels followed by pre-aspir
 It is reasonable, thus, to assume that such difference is deliberately used by Icelandic speakers to enhance the contrast between words containing a plain geminate and words with a pre-aspirated geminate.
 Even if the original cause of the aspiration effect caused by stops in present day Icelandic could have been related to the phasing of the laryngeal spreading gesture, the synchronic situation we can observe now could instead well be the product of the controlled use of such differences on the part of the speaker.
 
+In the case of sonorants, even if the same shortening effect is seen in vowels followed by aspirated nasals, we cannot claim that the effect is caused by how laryngeal gestures are timed, as explained above.
+Instead, the aspiration effect could be attributed here to the fact that voiceless sonorants are generally longer than voiced sonorants so as to enhance cuing.
+To maximise even more the difference between voiced and voiceless sonorants, speakers could decrease the duration of the vowel to magnify the longer duration of the sonorant.
 
 
 %\section{Individual differences}
