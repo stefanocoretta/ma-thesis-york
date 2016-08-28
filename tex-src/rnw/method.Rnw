@@ -55,6 +55,7 @@ Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-a
 
 %TODO tokens! I talk about types but should talk about tokens as well
 
+\vspace{5em}
 
 \tablefirsthead{
     \hline

@@ -119,6 +119,8 @@ To maximise even more the difference between voiced and voiceless sonorants, spe
 \section{Diachrony and aspiration effects}
 In the previous section I argued that the origin of the effect could be ascribed to timing of laryngeal but that does not mean that synchronically is the case.
 
+%\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
+
 \section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
 % material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
