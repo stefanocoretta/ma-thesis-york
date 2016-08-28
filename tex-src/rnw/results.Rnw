@@ -415,10 +415,9 @@ boxplot(dur_clos ~ asp,
 
 \section{Duration of glottal spread}
 \label{s:gs}
-<<>>=
+<<glottal-test, include=FALSE>>=
 kruskal.test(spread ~ manner, data = results)
-# the following requires userfriendlyscience package, big install
-# oneway(results_asp$manner, y = results_asp$spread, posthoc = 'games-howell')
+games.howell(results_asp$manner, results_asp$spread)
 @
 
 The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.

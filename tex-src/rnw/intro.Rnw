@@ -4,10 +4,22 @@
 
 \section{Significance of the research}
 
+
+
+
 \section{Reproducibility}
+The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
+The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
+Instead, such outcome should also include the environment in which the analysis that gave the results was performed.
+Such an environment consists of the data sets and of the computational operations (in the form of code) used in the analysis.
+A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
+While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
 
+One way to satisfy the reproducibility criterion is to implement the analysis code within the document which is communicating the results.
 
+% it is sought for in linguistics
 
+The need for reproducible research can be seen in % say about Yokut vowels
 
 \section{Dissertation structure}
 The dissertation is thus organised.
@@ -20,5 +32,12 @@ I will first discuss about the participants recruited for this study, the materi
 I will then give particular attention to the annotation scheme that was applied to the data and to the criteria used to extract the measurements.
 In \Cref{c:results} I will present the results of the statistical analysis run on the extracted measurements.
 Separate sections will deal with the duration of the words, the Voice Onset to Release (VOR), the vowels, the stop closure, the glottal spread gesture and of the sonorants.
-\Cref{c:discussion} 
+\Cref{c:discussion} examines the results on the light of the research hypothesis.
+This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
+Finally, concludes the dissertation with a summary of this work.
+
+
+
+
+
 

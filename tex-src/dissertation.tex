@@ -106,8 +106,50 @@
 
 \mainmatter
 
-%<<intro, child='rnw/intro.Rnw'>>=
-%@
+
+\chapter{Introduction}
+
+
+
+\section{Significance of the research}
+
+
+
+
+\section{Reproducibility}
+The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
+The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
+Instead, such outcome should also include the environment in which the analysis that gave the results was performed.
+Such an environment consists of the data sets and of the computational operations (in the form of code) used in the analysis.
+A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
+While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
+
+One way to satisfy the reproducibility criterion is to implement the analysis code within the document which is communicating the results.
+
+% it is sought for in linguistics
+
+The need for reproducible research can be seen in % say about Yokut vowels
+
+\section{Dissertation structure}
+The dissertation is thus organised.
+\Cref{c:review} contains a review of the literature relevant for the present study.
+I will first introduce some background terminology and concept of the phonetics of laryngeal activity, followed by an overview of the relation between presence \textit{vs.} absence of aspiration and vowel duration.
+Then, I will provide a brief description of the phonological system of Icelandic with a focus on the laryngeal contrasts in stops and sonorants.
+The chapter closes with the statement of the research hypothesis.
+\Cref{c:methodology} deals with the methodology of the experiment.
+I will first discuss about the participants recruited for this study, the materials and the procedure used in the experimental task.
+I will then give particular attention to the annotation scheme that was applied to the data and to the criteria used to extract the measurements.
+In \Cref{c:results} I will present the results of the statistical analysis run on the extracted measurements.
+Separate sections will deal with the duration of the words, the Voice Onset to Release (VOR), the vowels, the stop closure, the glottal spread gesture and of the sonorants.
+\Cref{c:discussion} examines the results on the light of the research hypothesis.
+This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
+Finally, concludes the dissertation with a summary of this work.
+
+
+
+
+
+
 
 
 \chapter{Literature review}
@@ -212,6 +254,8 @@ In contrast, a promising line of enquiry emerges from the proposal by \citet{cho
 
 \section{Icelandic}
 \label{s:icelandic}
+%TODO contexts of laryngeal contrast
+
 Icelandic [\textsc{glotto}: \texttt{icel1247}\footnote{Entry for ``Icelandic'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/icel1247}.}] is nowadays spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}\footnote{Entry for ``Faroese'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/faro1244}.}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
@@ -336,7 +380,7 @@ The corresponding null hypothesis is:
 Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
 \end{exe}
 
-
+%TODO section on prosodic approach and articulatory phonology?
 
 
 
@@ -344,7 +388,7 @@ Vowels followed by aspirated consonants are of the same duration as vowels follo
 
 
 \chapter{Methodology}
-\label{s:methodology}
+\label{c:methodology}
 %TODO prosodic approach
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
@@ -910,17 +954,7 @@ Unsurprisingly, the duration of stop closure in words with geminate stops was si
 
 \section{Duration of glottal spread}
 \label{s:gs}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## 
-## 	Kruskal-Wallis rank sum test
-## 
-## data:  spread by manner
-## Kruskal-Wallis chi-squared = 44.115, df = 3, p-value = 1.427e-09
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+
 
 The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
 According to a Kruskal-Wallis rank sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [Kruskal-Wallis $\chi^2$ = 44.11, df = 3, p < 0.001].
@@ -989,7 +1023,7 @@ Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombi
 
 
 \chapter{Discussion}
-
+\label{c:discussion}
 %TODO say that of course voicing does not stop, what about breathy voicing!
 
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.

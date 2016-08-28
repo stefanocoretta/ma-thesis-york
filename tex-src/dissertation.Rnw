@@ -88,6 +88,7 @@ di_rho_asp <- subset(di_rho, asp == "yes")
 di_rho_nasp <- subset(di_rho, asp == "no")
 asp <- rbind(mono_stop_asp, di_stop_asp, mono_nas_asp, di_nas_asp, mono_lat_asp, di_lat_asp, di_rho_asp)
 asp <- droplevels(asp)
+source("./analysis/games-howell.R")
 @
 
 
