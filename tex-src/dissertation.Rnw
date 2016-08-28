@@ -108,8 +108,8 @@ asp <- droplevels(asp)
 
 \mainmatter
 
-%<<intro, child='rnw/intro.Rnw'>>=
-%@
+<<intro, child='rnw/intro.Rnw'>>=
+@
 
 <<review, child='rnw/review.Rnw'>>=
 @

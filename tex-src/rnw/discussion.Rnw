@@ -1,5 +1,5 @@
 \chapter{Discussion}
-
+\label{c:discussion}
 %TODO say that of course voicing does not stop, what about breathy voicing!
 
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.

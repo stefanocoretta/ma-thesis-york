@@ -100,6 +100,8 @@ In contrast, a promising line of enquiry emerges from the proposal by \citet{cho
 
 \section{Icelandic}
 \label{s:icelandic}
+%TODO contexts of laryngeal contrast
+
 Icelandic [\textsc{glotto}: \texttt{icel1247}\footnote{Entry for ``Icelandic'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/icel1247}.}] is nowadays spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}\footnote{Entry for ``Faroese'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/faro1244}.}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
@@ -224,7 +226,7 @@ The corresponding null hypothesis is:
 Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
 \end{exe}
 
-
+%TODO section on prosodic approach and articulatory phonology?
 
 
 

@@ -1,5 +1,5 @@
 \chapter{Methodology}
-\label{s:methodology}
+\label{c:methodology}
 %TODO prosodic approach
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.

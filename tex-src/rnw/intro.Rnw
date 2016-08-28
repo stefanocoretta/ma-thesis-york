@@ -1,1 +1,24 @@
 \chapter{Introduction}
+
+
+
+\section{Significance of the research}
+
+\section{Reproducibility}
+
+
+
+
+\section{Dissertation structure}
+The dissertation is thus organised.
+\Cref{c:review} contains a review of the literature relevant for the present study.
+I will first introduce some background terminology and concept of the phonetics of laryngeal activity, followed by an overview of the relation between presence \textit{vs.} absence of aspiration and vowel duration.
+Then, I will provide a brief description of the phonological system of Icelandic with a focus on the laryngeal contrasts in stops and sonorants.
+The chapter closes with the statement of the research hypothesis.
+\Cref{c:methodology} deals with the methodology of the experiment.
+I will first discuss about the participants recruited for this study, the materials and the procedure used in the experimental task.
+I will then give particular attention to the annotation scheme that was applied to the data and to the criteria used to extract the measurements.
+In \Cref{c:results} I will present the results of the statistical analysis run on the extracted measurements.
+Separate sections will deal with the duration of the words, the Voice Onset to Release (VOR), the vowels, the stop closure, the glottal spread gesture and of the sonorants.
+\Cref{c:discussion} 
+

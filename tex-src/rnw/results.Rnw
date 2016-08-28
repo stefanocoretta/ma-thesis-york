@@ -417,7 +417,8 @@ boxplot(dur_clos ~ asp,
 \label{s:gs}
 <<>>=
 kruskal.test(spread ~ manner, data = results)
-oneway(results_asp$manner, y = results_asp$spread, posthoc = 'games-howell')
+# the following requires userfriendlyscience package, big install
+# oneway(results_asp$manner, y = results_asp$spread, posthoc = 'games-howell')
 @
 
 The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
@@ -429,11 +430,12 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 <<gs-box, out.width="\\textwidth">>=
 boxplot(spread ~ manner,
         data = results_asp,
+        names = c("lateral", "nasal", "trill", "stop"),
         ylab = "duration (msec)"
         )
 @
 \caption{Duration (in msec) of the glottal spread gesture in sonorants and stops.}
-\label{}
+\label{f:spread-box}
 \end{figure}
 
 \section{Duration of sonorant consonants}
@@ -459,6 +461,7 @@ shapiro.test(di_rho_asp$norm_mann)
 shapiro.test(di_rho_nasp$norm_mann)
 t.test(norm_mann ~ asp, data = di_rho) # ***
 
+summary(lm(dur_mann ~ manner * asp + vor, data = results_son))
 @
 
 %\begin{figure}
@@ -469,6 +472,16 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 %\caption{Duration of sonorant consonants (in msec).}
 %\label{f:dur_man}
 %\end{figure}
+
+\ctable[caption = Mean duration and standard deviation of sonorants (msec).,
+label = t:sonduration
+]{lllll}{}{
+& \multicolumn{2}{c}{voiced} & \multicolumn{2}{c}{voiceless} \ML
+& mean & sd & mean & sd \ML
+nasals & \Sexpr{round(mean(results_nas$dur_mann[results_nas$asp == "no"]),2)} & \Sexpr{round(sd(results_nas$dur_mann[results_nas$asp == "no"]),2)} & \Sexpr{round(mean(results_nas$dur_mann[results_nas$asp == "yes"]),2)} & \Sexpr{round(sd(results_nas$dur_mann[results_nas$asp == "yes"]),2)} \NN
+laterals & \Sexpr{round(mean(results_lat$dur_mann[results_lat$asp == "no"]),2)} & \Sexpr{round(sd(results_lat$dur_mann[results_lat$asp == "no"]),2)} & \Sexpr{round(mean(results_lat$dur_mann[results_lat$asp == "yes"]),2)} & \Sexpr{round(sd(results_lat$dur_mann[results_lat$asp == "yes"]),2)} \NN
+trills & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "yes"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "yes"]),2)} \LL
+}
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
@@ -486,10 +499,11 @@ In a second type of phasing, the laryngeal abduction is truncated in a similar w
 \citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
 %TODO maybe more on this?
 The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
 %TODO why trills have less variance
 
-Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
+
 
 
 

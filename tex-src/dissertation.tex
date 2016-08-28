@@ -769,9 +769,9 @@ According to tests for the difference between means, the VOR in all classes of w
 \subsection{Geminate stops}
 
 
-The mean duration of vowels in milliseconds was 98 in monosyllabic words ending in a non-aspirated geminate stop, while it was 84.47 if followed by a pre-aspirated geminate stop.
+The mean duration of vowels in milliseconds was 98 (SD = 19.1) in monosyllabic words ending in a non-aspirated geminate stop, while it was 84.47 (SD = 22.71) if followed by a pre-aspirated geminate stop.
 \Cref{f:monostop} shows the ratio duration of the vowel in the two conditions.
-The difference in the mean of the vowel ratio between the non-aspirated (0.37) and the aspirated class of words (0.28) was significant [W = 7793, p-value < 0.001].
+The difference in the mean of the vowel ratio between the non-aspirated (0.37, SD = 0.07) and the aspirated class of words (0.28, SD = 0.05) was significant [W = 7793, p-value < 0.001].
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -840,20 +840,20 @@ The difference in the mean of the vowel ratio between the non-aspirated (0.37) a
 
 
 
-In disyllabic words, the voiced vocalic portion is 86.97 msec long if followed by a non-aspirated geminate, and 78.04 msec long if followed by a pre-aspirated geminate.
-In ratio terms, the voiced part makes up the 33.61\% of the VOR in word with plain geminates, and the 28.27\% in words with pre-aspirated geminates.
+In disyllabic words, the voiced vocalic portion is 86.97 (SD = 13.28) msec long if followed by a non-aspirated geminate, and 78.04 (SD = 20.53)msec long if followed by a pre-aspirated geminate.
+In ratio terms, the voiced part makes up the 33.61\% (SD = 0.05) of the VOR in word with plain geminates, and the 28.27\% (SD = 20.53) in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant [t = 4.39, df = 50.46, p < 0.001].
 
 \subsection{Nasals}
 
 
 Words of the form (C)VNC showed a mean voiced portion duration of 89.96 msec if the nasal is voiced and 77.73 msec if voiceless.
-The normalised duration was, respectively, 0.31 and 0.26.
+The normalised duration was, respectively, 0.31 (SD = 0.05) and 0.26 (SD = 0.03).
 The difference in ratio duration was significant [W = 836, p < 0.001].
 
 
 
-CVNCV words have a mean voiced vocalic portion duration of 81.72 msec if the nasal is voiced and 67.48 msec if it is voiceless.
+CVNCV words have a mean voiced vocalic portion duration of 81.72 msec (SD = 17.66) if the nasal is voiced and 67.48 msec  (SD = 0.03) if it is voiceless.
 As percentages, the vocalic portion is 29.47\% of the VOR if followed by a voiced nasal, and 24.16\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119.99, p < 0.001].
 
@@ -861,14 +861,14 @@ A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119
 \subsection{Laterals}
 
 
-In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 102.05 and 80.7 msec when followed, respectively by a voiced and voiceless lateral.
+In the case of words ending in a /lC/ cluster, the mean duration of the vocalic portion were 102.05 (SD = 11.77) and 80.7 msec (SD = 13.02) when followed, respectively by a voiced and voiceless lateral.
 These correspond to the 29.69\% and the 24.98\% of the VOR.
 A t-test shows that the difference is significant [t = 4.1, df = 20.43, p < 0.001].
 
 
 
 
-The voiced vocalic portion in CVLCV words is on average 107.68 msec long when the lateral is voiced and 66.66 msec when it is voiceless.
+The voiced vocalic portion in CVLCV words is on average 107.68 msec long (SD = 22.78) when the lateral is voiced and 66.66 msec (SD = 0.07) when it is voiceless.
 The voiced portion takes the 36.2\% of the VOR if followed by a voiced lateral, and 23.26\% when the lateral is voiceless.
 A t-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.001].
 
@@ -876,7 +876,7 @@ A t-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.0
 
 
 
-With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 121.07 msec long when the rhotic is voiced and 104.78 msec when it is voiceless.
+With words containing an /rC/ cluster, the mean duration of the voiced vocalic portion is 121.07 msec long (SD = 0.05) when the rhotic is voiced and 104.78 msec (SD = 0.05) when it is voiceless.
 The voiced portion takes the 39.83\% of the VOR if followed by a voiced rhotic, and 33.43\% when the rhotic is voiceless.
 A t-test gave a significant result [t = 3.4, df = 27.98, p < 0.001].
 
@@ -910,9 +910,21 @@ Unsurprisingly, the duration of stop closure in words with geminate stops was si
 
 \section{Duration of glottal spread}
 \label{s:gs}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## 
+## 	Kruskal-Wallis rank sum test
+## 
+## data:  spread by manner
+## Kruskal-Wallis chi-squared = 44.115, df = 3, p-value = 1.427e-09
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
 The duration of glottal spread was measured as the duration of vocal folds abduction in stops and as the duration of the voiceless portion in sonorants.
-According to a Kruskal-Wallis rank sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [].
-A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ within the sonorant classes, the duration of glottal abduction in stops was significantly different from that one in lateral and nasals (but not from the one in trills).
+According to a Kruskal-Wallis rank sum test, the duration of glottal spread in the stop, nasal, lateral and trill classes are different as the level of significance [Kruskal-Wallis $\chi^2$ = 44.11, df = 3, p < 0.001].
+A post-hoc Games-Howell test for unequal variances showed that, while the duration of the spreading gesture did not differ between laterals, trilss and stops, the duration of glottal abduction in nasals was significantly different from that one in laterals [t = 3.79, df = 75.99, p = 0.002] and stops [t = 6.53, df = 137.2, p < 0.001] (but not from the one in trills).
 
 \begin{figure}
 \centering
@@ -922,7 +934,7 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 
 \end{knitrout}
 \caption{Duration (in msec) of the glottal spread gesture in sonorants and stops.}
-\label{}
+\label{f:spread-box}
 \end{figure}
 
 \section{Duration of sonorant consonants}
@@ -937,6 +949,16 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 %\caption{Duration of sonorant consonants (in msec).}
 %\label{f:dur_man}
 %\end{figure}
+
+\ctable[caption = Mean duration and standard deviation of sonorants (msec).,
+label = t:sonduration
+]{lllll}{}{
+& \multicolumn{2}{c}{voiced} & \multicolumn{2}{c}{voiceless} \ML
+& mean & sd & mean & sd \ML
+nasals & 120.41 & 27.19 & 135.09 & 32.03 \NN
+laterals & 106.13 & 26.78 & 142.78 & 31.24 \NN
+trills & 75.86 & 21 & 125.57 & 32.54 \LL
+}
 
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
@@ -954,10 +976,11 @@ In a second type of phasing, the laryngeal abduction is truncated in a similar w
 \citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
 %TODO maybe more on this?
 The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
 
 %TODO why trills have less variance
 
-Moreover, these results overlap with those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
+
 
 
 
