@@ -58,7 +58,35 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{subcaption}
-
+    
+\usepackage{calc,color}
+\newif\ifNoChapNumber
+\newcommand\Vlines{%
+    \def\VL{\rule[-2cm]{1pt}{5cm}\hspace{1mm}\relax}
+  \VL\VL\VL\VL\VL\VL\VL}
+\makeatletter
+\setlength\midchapskip{0pt}
+\makechapterstyle{VZ43}{
+  \renewcommand\chapternamenum{}
+  \renewcommand\printchaptername{}
+  \renewcommand\printchapternum{}
+\renewcommand\chapnumfont{\Huge\bfseries\centering}
+  \renewcommand\chaptitlefont{\Huge\bfseries\raggedright}
+  \renewcommand\printchaptertitle[1]{%
+    \Vlines\hspace*{-2em}%
+    \begin{tabular}{@{}p{1cm} p{\textwidth-3cm}}%
+      \ifNoChapNumber\relax\else%
+      \colorbox{black}{\color{white}%
+        \makebox[.8cm]{\chapnumfont\strut \thechapter}}
+      \fi
+      & \chaptitlefont ##1
+    \end{tabular}
+    \NoChapNumberfalse
+}
+  \renewcommand\printchapternonum{\NoChapNumbertrue}
+}
+\makeatother
+\chapterstyle{VZ43}
 
 \usepackage{polyglossia}
     \setmainlanguage{english}
@@ -67,6 +95,7 @@
     \setmainfont{FreeSerif}
     \frenchspacing
     \OnehalfSpacing
+\usepackage{metalogo}
 
 \usepackage{ctable,multirow,multicol,paralist,supertabular}
 
@@ -108,7 +137,37 @@
 
 
 \chapter{Introduction}
+\label{c:introduction}
 
+This study deals with the relationship between the presence \textit{vs.} the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
+\citet{maddieson1976,maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
+This phenomenon has been subsequently called the ``aspiration effect'' by \citet{durvasula2012}, who further confirmed that the duration of vowel was related to aspiration.
+Even if the effect has been shown to exist, no explanation has been given for it.
+Moreover, these studies only dealt with post-aspiration.
+To fully understand the phenomenon is necessary to extend the enquiry to pre-aspiration.
+
+Such step has been taken in conducting this research.
+Icelandic has been chosen as the language under study since its consonantal system can be interpreted as thoroughly based on aspiration contrasts.
+In particular, aspiration in Icelandic involves both stops and sonorants consonants.
+In certain contexts, non-aspirated geminate stops (/CC/) contrast with pre-aspirated stops (/ʰC/).
+Similarly, voiced sonorants followed by a stop (/NC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/N̥C/).
+Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect the presence of aspiration has on the duration of the preceding vowel.
+
+The studies on aspiration and vowel duration cited above showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops.
+In the simplest case, aspiration should consistently lengthen the vowel preceding the relevant consonant, independently of whether it is timed before or after the stop closure.
+In a case where aspiration behaves symmetrically in relation to its timing, pre-aspiration should show a pattern opposite to that of post-aspiration, where the vowel preceding the pre-aspirated stop should be shorter.
+If the second case is true, it could be asserted that the aspiration effect arises from the pattern of timing of the laryngeal spreading gesture in relation to the oral gestures.
+I call this view the ``timing hypothesis,'' which will be the focus of this study.
+
+\section{Research design}
+
+The Icelandic phonological system thus constitutes an ideal locus of enquiry on the effects of aspiration on vowel duration in a more systematic way and in novel contexts than previously possible.
+To access the existence of the aspiration effect in Icelandic, I collected data from native speakers.
+They were recorded while reading a frame sentence which contained the target words.
+The list of target words was selected so as to include aspirated and plain geminate stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
+
+% To test the validity of the laryngeal timing hypothesis
 
 
 \section{Significance of the research}
@@ -124,9 +183,28 @@ Such an environment consists of the data sets and of the computational operation
 A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
 While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
 
-One way to satisfy the reproducibility criterion is to implement the analysis code within the document which is communicating the results.
+One way to satisfy the reproducibility criterion is using literate programming.
+In literate programming, the computer code used to generate the results of the research is embedded within the research document.
+The idea of literate programming has been developed by Donald Knuth \citep{knuth1984} as a way of simplifying the documentation process of computer programs.
+This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
+Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible.
+%TODO cite here 2 maxwell and maybe a third?
+
+An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts.
+%TODO lingusitic info and citation of Yokuts
+As ... and ... pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
+What is worse is that those constructed word forms were incorrect.
+More than thirty years of debate has been founded on false data.
+The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
+According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
+%TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
+The source code of the dissertation can be found at [...].
+The dataset is downloadable at [...].
 
 % it is sought for in linguistics
+
+
+
 
 The need for reproducible research can be seen in % say about Yokut vowels
 
@@ -145,7 +223,7 @@ Separate sections will deal with the duration of the words, the Voice Onset to R
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
 Finally, concludes the dissertation with a summary of this work.
 
-
+%TODO say about conventions? especially glottocodes, maybe even just in note
 
 
 
@@ -299,7 +377,7 @@ Voicing is reported to be totally absent in Icelandic stops, and does not appear
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
 
 \subsection{Laryngeal contrasts in sonorants}
-The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological database \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
+The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological data\-base \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
 The contrastive use of laryngeal distinctions in sonorants can thus be considered cross-linguistically rare (only 8.7\% of languages in LAPSyD have this property).
 Unsurprisingly, sonorants produced with modal voicing are the most common type.
 If more than one phonation type is used in sonorants to accomplish phonological contrasts, at least one of those is always modal voicing.
@@ -361,7 +439,7 @@ The hypothesis I propose in this study rests on the idea that the aspiration eff
 Depending on how the spreading of the glottis is timed in relation to the tongue gestures in the oral cavity, modal voicing can be maintained for a certain amount of time or it is terminated earlier.
 An early timing of glottal spreading (like in pre-aspiration) would prevent voicing in the last portion of the preceding vocalic gesture, making the vowel shorter.
 On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
-In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voincing.
+In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voicing.
 
 In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
 As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.

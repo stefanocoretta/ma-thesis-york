@@ -1,5 +1,35 @@
 \chapter{Introduction}
+\label{c:introduction}
 
+This study deals with the relationship between the presence \textit{vs.} the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
+\citet{maddieson1976,maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
+This phenomenon has been subsequently called the ``aspiration effect'' by \citet{durvasula2012}, who further confirmed that the duration of vowel was related to aspiration.
+Even if the effect has been shown to exist, no explanation has been given for it.
+Moreover, these studies only dealt with post-aspiration.
+To fully understand the phenomenon is necessary to extend the enquiry to pre-aspiration.
+
+Such step has been taken in conducting this research.
+Icelandic has been chosen as the language under study since its consonantal system can be interpreted as thoroughly based on aspiration contrasts.
+In particular, aspiration in Icelandic involves both stops and sonorants consonants.
+In certain contexts, non-aspirated geminate stops (/CC/) contrast with pre-aspirated stops (/ʰC/).
+Similarly, voiced sonorants followed by a stop (/NC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/N̥C/).
+Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect the presence of aspiration has on the duration of the preceding vowel.
+
+The studies on aspiration and vowel duration cited above showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops.
+In the simplest case, aspiration should consistently lengthen the vowel preceding the relevant consonant, independently of whether it is timed before or after the stop closure.
+In a case where aspiration behaves symmetrically in relation to its timing, pre-aspiration should show a pattern opposite to that of post-aspiration, where the vowel preceding the pre-aspirated stop should be shorter.
+If the second case is true, it could be asserted that the aspiration effect arises from the pattern of timing of the laryngeal spreading gesture in relation to the oral gestures.
+I call this view the ``timing hypothesis,'' which will be the focus of this study.
+
+\section{Research design}
+
+The Icelandic phonological system thus constitutes an ideal locus of enquiry on the effects of aspiration on vowel duration in a more systematic way and in novel contexts than previously possible.
+To access the existence of the aspiration effect in Icelandic, I collected data from native speakers.
+They were recorded while reading a frame sentence which contained the target words.
+The list of target words was selected so as to include aspirated and plain geminate stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
+
+%TODO To test the validity of the laryngeal timing hypothesis
 
 
 \section{Significance of the research}
@@ -15,11 +45,23 @@ Such an environment consists of the data sets and of the computational operation
 A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
 While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
 
-One way to satisfy the reproducibility criterion is to implement the analysis code within the document which is communicating the results.
+One way to satisfy the reproducibility criterion is using literate programming.
+In literate programming, the computer code used to generate the results of the research is embedded within the research document.
+The idea of literate programming has been developed by Donald Knuth \citep{knuth1984} as a way of simplifying the documentation process of computer programs.
+This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
+Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible.
+%TODO cite here 2 maxwell and maybe a third?
 
-% it is sought for in linguistics
+An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].
+As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
+What is worse is that those constructed word forms were incorrect.
+More than thirty years of debate has been founded on false data.
+The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
+According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
+%TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
+The source code of the dissertation can be found at [...].
+The dataset is downloadable at [...].
 
-The need for reproducible research can be seen in % say about Yokut vowels
 
 \section{Dissertation structure}
 The dissertation is thus organised.
@@ -36,7 +78,7 @@ Separate sections will deal with the duration of the words, the Voice Onset to R
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
 Finally, concludes the dissertation with a summary of this work.
 
-
+%TODO say about conventions? especially glottocodes, maybe even just in note
 
 
 
