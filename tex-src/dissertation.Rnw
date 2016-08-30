@@ -70,7 +70,7 @@
 library(knitr)
 library(highlight)
 opts_knit$set(root.dir=normalizePath('../'))
-opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.6\\textwidth", echo=FALSE, cache=FALSE)
+opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.8\\textwidth", echo=FALSE, cache=FALSE)
 @
 
 <<start>>=

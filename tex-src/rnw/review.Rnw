@@ -15,7 +15,7 @@ The larynx, with the vocal folds, thus plays a major role in human communication
 
 \citet{halle2002} review which configurations the vocal folds can assume.
 Such configurations are known as the states of the glottis.
-The four principal state of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, (4) slack vocal folds.
+The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, (4) slack vocal folds.
 A spread glottis corresponds to abducted vocal folds.
 This state is the one naturally used during normal breathing.
 If the vocal folds are adducted so as they tightly press against each other, the glottis assumes a constricted configuration.
@@ -27,7 +27,7 @@ The first two states of the glottis can combine with the other two to create sev
 \citet{ladefoged1973} discusses the four main phonation types that are employed to create phonological contrast in the languages of the world.
 These are voicelessness, modal voice, breathy voice and creaky voice \citep{halle2002}.
 A voiceless sound is produced with a laryngeal configuration that prevents vibration of the vocal folds.
-The vocal folds can either be stiffened so as to prevent them to vibrate, or abducted just enough to not allow enough pressure to build up and set off the vibration.
+The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to not allow enough pressure to build up and set off the vibration.
 Modal voicing, instead, is produced with slack vocal folds and/or with adducted vocal folds.
 When the transglottal pressure is sufficiently weak, the pressure of the airflow coming from the lungs can set the vocal folds to vibrate and produce a periodic sound, which is voicing.
 Such mechanism of generating voicing is not the only one.
@@ -49,7 +49,7 @@ In the following paragraphs, I will briefly introduce the system of laryngeal op
 I will then review some of the findings concerning the aspiration effect and the major theories regarding the cause of this phenomenon.
 
 The consonantal system of Hindi is based on a four-way opposition of laryngeal contrasts \citep{ohala1983}.
-For each place of articulation, there are a voiceless unaspirated, a voiced unaspirated, a voiceless aspirated and (breathy) voiced aspirated stop: for example, [t], [d], [tʰ], [dʱ].
+For each place of articulation, there is a voiceless unaspirated, a voiced unaspirated, a voiceless aspirated and (breathy) voiced aspirated stop: for example, [t], [d], [tʰ], [dʱ].
 The voiceless aspirated stops (like [tʰ]) are similar to the aspirated stops of English: a relatively long VOT follows the release of the occlusion.
 The voiced counterpart (like [dʱ]) is normally voiced throughout the closure and the aspiration is characterised by breathy voicing.
 \citet{maddieson1976} found that vowels followed by voiced and voiceless aspirated stops (like in [kaːd] `embroider' and [kaːtʰ] `wood') were of equal length but longer than vowels followed by voiceless stops (like in [kaːt] `cut').
@@ -58,21 +58,25 @@ Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance'
 
 %ADD in note that phonemic is different
 %ADD that no sd was given
-\ctable[caption = Mean duration of vowels in Hindi before stops.,
+\ctable[caption = Mean duration of vowels in Hindi when followed by dental and velar stops.\tmark,
 label = t:hindi
-]{llll}{}{
+]{llll}{
+\tnote{The value of the standard deviation was not reported in the studies, so it is not included here.}
+}{
 \FL
 \multicolumn{2}{l}{\citet{maddieson1976}} & \multicolumn{2}{l}{\citet{lampp2004}} \ML
 consonant & vowel duration (msec) & consonant & vowel duration (msec) \ML
-/t/       & 160    & /k/  & 188 \NN 
-/d/       & 184.5  & /g/  & 187 \NN
-/tʰ/      & 184.75 & /kʰ/ & 217 \NN
-/dʰ/      & 196    & /gʱ/ & 221 \LL
+t       & 160    & k  & 188 \NN 
+d       & 184.5  & g  & 187 \NN
+tʰ      & 184.75 & kʰ & 217 \NN
+dʱ      & 196    & gʱ & 221 \LL
 }
 
 \citet{lampp2004} could not replicate the findings in \citet{maddieson1976}.
-\citet{durvasula2012}, however, performed a more controlled task and found clear evidence that aspiration lengthens the preceding vowel.
-He also noted that an increase in closure duration of the stop following the vowel correlated with an increase of duration of the vowel, when controlling for other factors like voicing and aspiration.
+\citet{durvasula2012}, however, performed a more controlled task and found clear evidence that aspiration lengthens the preceding vowel.\footnote{Voicing also played a role in the lengthening of vowels, where vowels followed by voiced stops were longer than vowels followed by voiceless stops, independently from aspiration.
+Voicing and aspiration interacted so that a vowel followed by a voiced aspirated consonant was roughly two times longer than a vowel followed by a non-aspirated voiceless stop.
+On the relation between vowel duration and voicing, see the following paragraphs.}
+They also noted that an increase in closure duration of the stop following the vowel correlated with an increase of duration of the vowel, when controlling for other factors like voicing and aspiration.
 The positive correlation between vowel duration and closure duration found in this study is the opposite of what has been found by \citet{maddieson1976} and \citet{lampp2004}.
 Aspirated consonants in Hindi have a shorter closure duration than non-aspirated consonants.
 Since vowels followed by aspirated consonants are longer, it is logical to assume that the shorter closure duration allows for the vowel to be longer, and, vice versa, the longer closure duration of non-aspirated stops makes the preceding vowel shorter.
@@ -84,7 +88,9 @@ The voicing effect states that vowels followed by voiced consonants are longer t
 The voicing effect has been found in several languages, including English, Swedish, French, Arabic and Hindi \citep[191]{soskuthy2013}.
 However, the strength and consistency of such effect vary depending on the language and on different contexts within one language.
 While English has been reported to have a strong and consistent voicing effect, other languages, like Spanish, show a weaker effect \citep{hussein1994}.
-On the other hand, yet other languages, such as Italian, have been shown to have no voicing effect at all \citep{esposito2002}.
+On the other hand, yet other languages, such as Italian, have been shown to have no voicing effect at all \citep{esposito2002}.\footnote{\citet{laeufer1992}, however, argues that the differences in the strength of the effect are due to discrepancies in the experimental design.
+Since this is not directly relevant to the present study, I refer the reader to \citet{laeufer1992} and references therein.
+} 
 
 Several explanations for the voicing effect have been proposed in the literature.
 \citet{soskuthy2013} listed them into two categories.
@@ -94,45 +100,59 @@ Since, according to him, articulatory force is kept constant, vowels before voic
 A second line of reasoning, instead, relates it to auditory principles \citep{javkin1976,kluender1988}.
 Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citep{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
 In fact, \citet{maddieson1976} and \citet{durvasula2012} argue that none of the suggested explanations is satisfactory.
-In fact, most of the studies make incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
+The majority of the studies makes incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
 In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attribute the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
+%TODO probably need to expand on this
 
 
 \section{Icelandic}
 \label{s:icelandic}
 %TODO contexts of laryngeal contrast
 
-Icelandic [\textsc{glotto}: \texttt{icel1247}\footnote{Entry for ``Icelandic'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/icel1247}.}] is nowadays spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
-Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}\footnote{Entry for ``Faroese'' at Glottolog: \url{http://glottolog.org/resource/languoid/id/faro1244}.}], constitutes the Insular branch of the North Germanic group.
+Icelandic [\textsc{glotto}: \texttt{icel1247}] is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
 %ADD say more about this
 
 The modern phonological inventory of Icelandic has been subject to different analyses and it is still a matter of controversy \citep{thraisson1978,jessen1998,arnason2011}.
-\Cref{t:consonants} reports the major consonantal segments of Icelandic, as normally employed in the literature \citep[98]{arnason2011}.
-They do not represent necessarily the phonemic consonants of Icelandic and are rather surface allophones.
-The vocalic phonemes are given in \Cref{t:vowels} \citep[60]{arnason2011}.
+\Cref{t:consonants} reports the major consonantal allophones of Icelandic, as normally described in the literature \citep[98]{arnason2011}.
+They do not necessarily represent the phonemic consonants of Icelandic and are rather surface segments.\footnote{
+On the quarrel about the phonemic status of pre-aspiration and voiceless sonorants, see \citet{thraisson1978,jessen1998,berg2001,hansson2003,bombien2006}.
+}
+The consonantal system of Icelandic includes stops, fricatives, nasals, laterals and trills.
+The places of articulation encompass labial, coronal (alveolar), palatal, velar and glottal.
+Stops and fricatives have members in each place, nasals are labial, coronal, palatal and velar, while laterals and trills are coronal.
+For each combination of manner and place of articulation there are two segments, one voiceless and one (voiceless) aspirated or voiced depending on the manner.
+
+The vocalic phonemes of Icelandic are given in \Cref{t:vowels} \citep[60]{arnason2011}.
+On the antero-posterior axis, two places of articulation are distinctive: front and back.
+On the vertical axis, vowels can be high, high-mid, low-mid and low.
+Vowels can be either unrounded or rounded, even if a real contrast is present only in front-mid vowels.
 
 \ctable[caption = Major consonantal allophones of Icelandic.,
 label = t:consonants
-]{lccccc}{}{
+]{lccccc}{
+\tnote{Note that some of the segments in the table are debated in the literature as to whether they are phonemic or just allophones.}
+}{
 \FL
-& labial  & coronal & palatal & velar & glottal   \ML
-stops      & p pʰ    & t tʰ    & c cʰ  & k kʰ    & ʔ \NN
-fricatives & f v     & θ ð     & ç ʝ   & x ɣ     & h \NN
-nasals     & m m̥    & n n̥    & ɲ ɲ̥  & ŋ ŋ̥    &   \NN
-laterals   &         & l l̥    &       &         &   \NN
-trills     &         & r r̥    &       &         &  \LL
+& \textbf{labial}  & \textbf{coronal} & \textbf{palatal} & \textbf{velar} & \textbf{glottal}   \ML
+\textbf{stops}      & p pʰ    & t tʰ    & c cʰ  & k kʰ    & ʔ \NN
+\textbf{fricatives} & f v     & θ ð     & ç ʝ   & x ɣ     & h \NN
+\textbf{nasals}     & m m̥    & n n̥    & ɲ ɲ̥  & ŋ ŋ̥    &   \NN
+\textbf{laterals}   &         & l l̥    &       &         &   \NN
+\textbf{trills}     &         & r r̥    &       &         &  \LL
 }
 
-\ctable[caption = Vowels of Icelandic.,
+\ctable[caption = Vocalic phonemes of Icelandic (monophthongs).,
 label = t:vowels
-]{ccc}{}{
+]{lcccc}{}{
 \FL
-& front    & back   \ML
-high     & i    & u \NN
-high-mid & ɪ ʏ  &   \NN
-low-mid  & ɛ œ  & ɔ \NN
-low      &      & a \LL
+& \multicolumn{2}{c}{\textbf{front}}    & \multicolumn{2}{c}{\textbf{back}}   \NN
+& \textit{plain} & \textit{rounded} & \textit{plain} & \textit{rounded} \ML
+\textbf{high}     & i &   & & u \NN
+\textbf{high-mid} & ɪ & ʏ  & &  \NN
+\textbf{low-mid}  & ɛ & œ  & & ɔ \NN
+\textbf{low}      &   &   & a & \LL
 }
 
 Relevant to this study is the exploitation of phonation types in stop and sonorant consonants in Icelandic.

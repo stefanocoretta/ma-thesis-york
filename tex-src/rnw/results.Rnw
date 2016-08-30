@@ -44,8 +44,8 @@ According to a two-sample Wilcoxon test, the mean duration of the vowel in monos
 
 \begin{figure}
 \centering
-<<voic-syll-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ syl_no,
+<<voic-syll-box>>=
+boxplot(abs_voic ~ syl_no,
         data = results,
         names = c("disyllabic", "monosyllabic"),
         ylab = "duration (msec)"
@@ -180,7 +180,7 @@ boxplot(vor ~ asp,
 
 \begin{figure}
 \centering
-<<di-rho-vor, out.width="0.6\\textwidth">>=
+<<di-rho-vor>>=
 boxplot(vor ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -281,7 +281,7 @@ boxplot(norm_abs_voic ~ asp,
 
 \begin{figure}
 \centering
-<<di-rho-box, out.width="\\textwidth">>=
+<<di-rho-box>>=
 boxplot(norm_abs_voic ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),

@@ -78,7 +78,7 @@ Separate sections will deal with the duration of the words, the Voice Onset to R
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
 Finally, concludes the dissertation with a summary of this work.
 
-%TODO say about conventions? especially glottocodes, maybe even just in note
+%TODO say about conventions? especially glottocodes, maybe even just in note, \citet{hammarstrom2016}
 
 
 
