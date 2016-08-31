@@ -16,13 +16,13 @@ For this study, I recruited six Icelandic speakers who were living in York (UK) 
 The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
-The informants received a compensation for their time in the form of Amazon vouchers or chocolates for the value of £5 pounds.
+The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5 pounds.
 
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
 The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
-All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic.
+All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic (see \Cref{s:icelandic}).
 
 
 \ctable[caption = Information on participants.,
@@ -31,9 +31,9 @@ label = t:participants,
 \FL
 \textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
 TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
-BRS & female & 25 & Hofn      & Danish, English, Spanish & Yes \NN
+BRS & female & 25 & Höfn      & Danish, English, Spanish & Yes \NN
 BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
-JJ & female & 46 & Reykjavik (Kopavogur) & English, Danish          & Yes \NN
+JJ & female & 46 & Reykjavik (Kópavogur) & English, Danish          & Yes \NN
 SHG & male   & 25 & Selfoss   & English                  & No  \NN
 JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 }
@@ -126,22 +126,36 @@ orka   & or̥ka    & noun      & energy   \\
 orga   & orka     & noun      & scream   \\ \hline
 \end{supertabular}
 
+In the rest of the dissertation, I will use the following conventions:
+\begin{itemize}
+\item V = any vowel
+\item C = any consonant
+\item KK = any geminate stop consonant
+\item TT = any non-aspirated geminate
+\item ʰT = any (pre-)aspirated geminate
+\item S = any sonorant
+\item N = any nasal
+\item L = any lateral
+\item R = any trill
+\item -VCC = any monosyllabic word (either beginning with a vowel or a consonant)
+\item -VCCV = any bisyllabic word (either beginning with a vowel or a consonant)
+\end{itemize}
 
 \section{Procedure}
 \label{s:procedure}
 The target words were embedded in the frame sentence \textit{Segðu \_\_ aftur}, `Say \_\_ again.'
 This sentence was chosen with the aid of one of the participants so as to control for naturalness, number of syllables and phonetic contexts preceding and following the target word, and phrase stress.
-The decision to use a single frame sentence for all the test words was justified by the will of keeping the task as simple as possible.
+The decision to use a single frame sentence for all the test words was justified by the wish to ensure that the metrical and intonational patterns were fixed.
 The participants were asked to read aloud the sentences with the target words shown on a computer screen.
 They were advised to speak as naturally as possible, while keeping the same volume and pace.
-They did not familiarised themselves with the word list before starting the task.
+They did not familiarise themselves with the word list before starting the task.
 The decision of not showing the words beforehand was made to reduce the speakers' control over their speech.
 
 The task was presented through the software PyschoPy \citep{peirce2009}, on a Apple MacBook Pro.
 Each sentences was shown three times consecutively and the order of appearance was randomised across subjects.
 The reading task was self-paced; the participant read a sentence shown on the screen and moved to the next sentence when ready by pressing the space bar.
 Four speakers were recorded in York in a meeting room at the travel agency they worked for, while one was recorded at the University of York.
-One speaker did not agree at coming to the University Campus, so he was recorder in his living room, at his house in York.
+One speaker did not agree at coming to the University Campus, so he was recorded in his living room, at his house in York.
 The only subject who performed the task at the University of York was recorded in a sound-proof studio, using a Beyerdynamic OPUS 54 headset microphone (condenser, cardioid), plugged into a recording station.
 The software used for the recording was Adobe Audition, running on a Windows computer.
 The other speakers were recorded using the same headset microphone plugged into a Zoom H4n Handy Recorder.
@@ -158,13 +172,14 @@ Even if the recording conditions differed between participants, the quality of t
 \label{f:textgrid}
 \end{figure}
 
-The analysis of the audio file consisted of three phases:
+The analysis of the audio files consisted of three phases:
 \begin{inparaenum}[(1)]
 	\item conversion from stereo to mono,
 	\item annotation, and
 	\item extraction of the relevant measurements.
 \end{inparaenum}
-I first converted the audio files from stereo to mono, but I did not apply any filter.
+I first converted the audio files from stereo to mono, without applying any sort of filtering.
+Since only one audio input was connected to the recorder, the two channels were actually a duplicate of one single channel, so that problems of differential phasing did not arise.
 During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
 The annotation files have four tiers.
 The tiers contain, respectively: 
@@ -272,12 +287,12 @@ To control for differences in speech rate, I opted to normalise the measurements
 Normalisation was achieved by dividing the relevant measure by the VOR.
 This operation results in a transformation from durations in milliseconds to ratios in percentages.
 I chose to use the VOR as the base for normalisation since this can be measured consistently across different word forms.
-Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (VCC, VʰC, VRC, where ``R'' is any sonorant).\footnote{Pre-aspirated stops are phonologically geminates.}
+Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (-VTT-, -VʰT-, -VRC-).\footnote{Remember that pre-aspirated stops are phonologically geminates: \textit{detta} /tettʰa/ `to fall' [teʰta], \textit{gedda} /ketta/ `pike.\textsc{acc}' [cɛtta].}
 
 \section{Statistical analysis}
 \label{s:stats}
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
-I performed independent sample two-tailed \textit{t}-tests on parametric data and Wilcoxon tests on non-parametric data.
+I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
 The R code used in the analysis is available at this address [...].
 %TODO add address!

@@ -281,9 +281,22 @@ mean(mono_stop_asp$norm_spread)
 mean(mono_stop_nasp$norm_abs_voic)
 mean(mono_stop_nasp$norm_clos)
 
+#### Geminate duration ####
+boxplot(results_stop$voffr[results_stop$asp == "no"],
+        results_stop$mor[results_stop$asp == "yes"]
+        )
 
+t.test(results_stop$voffr[results_stop$asp == "no"],
+            results_stop$mor[results_stop$asp == "yes"]
+            )
 
+results$syl_no = factor(results$syl_no,c("mono","di"))
 
+boxplot(abs_voic ~ syl_no,
+        data = results,
+        names = c("disyllabic", "monosyllabic"),
+        ylab = "duration (msec)"
+)
 
 
 
