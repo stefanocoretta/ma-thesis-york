@@ -62,7 +62,11 @@
 
 \graphicspath{{./img/}}
 
+\pagestyle{ruled}
 
+%%%%%%%%%%%%%%%%
+%%% DOCUMENT %%%
+%%%%%%%%%%%%%%%%
 
 \begin{document}
 

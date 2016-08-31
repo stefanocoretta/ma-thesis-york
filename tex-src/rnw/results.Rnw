@@ -115,7 +115,8 @@ boxplot(vor ~ asp,
         data = mono_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (msec)",
-        main = "-VCC"
+        main = "-VCC",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
@@ -126,7 +127,8 @@ boxplot(vor ~ asp,
         data = di_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (msec)",
-        main = "-VCCV"
+        main = "-VCCV",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
@@ -137,7 +139,8 @@ boxplot(vor ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
-        main = "-VNC"
+        main = "-VNC",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
@@ -148,7 +151,8 @@ boxplot(vor ~ asp,
         data = di_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
-        main = "-VNCV"
+        main = "-VNCV",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
@@ -159,7 +163,8 @@ boxplot(vor ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
-        main = "-VLC"
+        main = "-VLC",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
@@ -170,7 +175,8 @@ boxplot(vor ~ asp,
         data = di_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
-        main = "-VLCV"
+        main = "-VLCV",
+        ylim = c(150,450)
         )
 @
 \end{subfigure}
