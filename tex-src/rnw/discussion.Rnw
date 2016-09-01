@@ -10,45 +10,17 @@ This finding seems to support the timing hypothesis.
 
 \section{Geminate stops}
 %ADD many figures
-%TODO compare with Ladefoged: he says glottal opening is timed the same and its same apmplitude but is it true here?
-We have seen that the absolute duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+%TODO compare with Ladefoged: he says glottal opening is timed the same and its same amplitude but is it true here?
+We have seen that the ratio duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
 It is worth noting that the VOR of the two classes is different, as said in .
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
-This is because the VOR is \textit{longer} in words with aspiration while the absolute duration of the vowel is \textit{smaller}.
-Other things being equal, we would expect the interval between voice onset and the onset of glottal abduction in words with pre-aspiration to take the same ratio of the VOR as the voiced interval in words with plain geminates.
-Instead, laryngeal spreading starts quite early in the word, while voicing is still active even after glottal spread is initiated.
+This is because the VOR is \textit{longer} in words with aspiration while the ratio duration of the vowel is \textit{smaller}.
+Other things being equal, we would expect vowels---i.e. the interval between voice onset and the onset of glottal abduction---in words with pre-aspiration to take the same ratio of the VOR as the vowels in words with plain geminates.
+Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated.
 
-It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
-This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
-Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
-This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
-
-However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
-What I found, instead, points to a longer voicing portion in words with pre-aspirated stops.
-The duration of voicing is, in fact, greater in words with pre-aspirated stops than in words with plain geminates.
-This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be maintained longer.
-A plain geminate is produced by keeping the closure for a longer time and voicing during closure is more difficult to maintain.
-Thus it is natural to expect that, other things being equal, voicing duration would be greater if glottal spread is involved.
-This fact does not fit well with the idea that voicing should cease earlier due to glottal spread.
-Even if the physiological explanation seems not to hold, the relative timing on itself can be provisionally considered to be right.
-
-\begin{figure}
-\centering
-<<voic-stop>>=
-boxplot(norm_voic ~ asp,
-        data = results_stop,
-        names = c("non-asp", "pre-asp"),
-        ylab = "duration (ratio)"
-        )
-@
-\caption{Ratio duration of the voicing interval depending on presence or absence of glottal spread.}
-\label{f:voicdur}
-\end{figure}
-
-Contrary to what stated in \Cref{s:hypothesis}, glottal abduction does not prevent voicing.
-On the contrary, longer voicing can be found in words with glottal spread.
 A possible explanation of this phenomenon is that the absence of a closure at the VC transition allows for voicing to continue.
-In words without glottal spread, the closure of the plain geminate---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
+In words with non-aspirated geminates, the closure of the consonant---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
+In pre-aspirated geminates, instead, since the stop closure is executed later, there is no pressure build-up and vocal folds vibration can be maintained.
 At the same time, the variance of voicing in the two classes is not the same, and voicing in the aspirated condition has greater variance.
 In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
 
@@ -59,6 +31,45 @@ Although I could not measure glottal width in a direct way, if the description g
 Since normalisation was done with the VOR as a base, the portion of VOR subtracted by the modal vocalic portion would correspond to the geminate
 Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
 However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+
+It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
+This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
+Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
+This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{reality}
+\caption{yo}
+\label{f:reality}
+\end{figure}
+
+However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
+What I found, instead, points to a longer voicing portion in words with pre-aspirated stops (\Cref{f:voicdur}).
+The duration of voicing is, in fact, greater in words with pre-aspirated geminates than in words with plain geminates.
+\Cref{f:reality} schematically shows this finding.
+This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be sustained longer.
+This fact does not fit well with the idea that voicing should cease earlier due to glottal spread.
+However, the assumption that glottal spread is timed earlier in pre-aspirated geminates than in non-aspirated geminates relative to the onset of voicing was correct (at least for Icelandic).
+Given than glottal spread starts earlier, modal voicing is indeed shorter in words with pre-aspirated stops.
+We could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
+
+\begin{figure}
+\centering
+<<voic-stop>>=
+boxplot(dur_voic ~ asp,
+        data = results_stop,
+        names = c("non-asp", "pre-asp"),
+        ylab = "duration (msec)"
+        )
+@
+\caption{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
+The duration of voicing in words with pre-aspirated geminates is, on average, longer than the duration in words with non-aspirated stops, and it also has greater variance.
+}
+\label{f:voicdur}
+\end{figure}
+
+
 
 \section{Sonorants}
 %TODO cite previous studies about the duration
@@ -82,6 +93,27 @@ While with stops the VOR is longer with pre-aspirated geminates, with sonorants 
 If the speaker intention is to maintain the same VOR while warranting a longer duration of the sonorant, this can be done at detriment of the vowel.
 The vowel preceding the aspirated sonorant is thus compressed and it becomes relatively shorter than a vowel followed by a voiced sonorant.
 The timing hypothesis presented in this study, thus, seems not to be straightforwardly compatible with the data found in words containing sonorants, even if the effects predicted by it were found.
+
+\section{Duration of sonorant consonants}
+
+As reported in \Cref{s:sonorantdur}, voiceless sonorant consonants were significantly longer than voiceless sonorants.
+This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
+\citet{silverman1997} argues that, in terms of perceptual optimality, the phasing of non modal voicing in sonorants should involve what he calls truncation of the contrastive laryngeal gesture in respect to the oral ones.
+This solution involves the sequencing of non-modal phonation before modal phonation.
+According to this principle, an optimal phasing of voicelessness in nasals is achieved when the glottal abduction gesture is terminated before the oral occlusion is released.
+In the case the abduction gesture is sequenced before modal voicing, the first portion of the nasal consonant is voiceless (with nareal friction noise), then modal voicing follows.
+If, on the contrary, glottal spread follows modal voicing, the last portion of the nasal is characterised by breathy voice.
+
+With laterals, instead, there are two possible optimal phasings of glottal spreading.
+In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
+A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
+In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
+\citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
+%TODO maybe more on this?
+The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
+
+%TODO why trills have less variance
 
 \section{Linguistic aspects}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.

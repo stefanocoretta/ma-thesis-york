@@ -59,8 +59,8 @@ More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
 According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
 %TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
-The source code of the dissertation can be found at [...].
-The dataset is downloadable at [...].
+The source code of the dissertation can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
+The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
 
 
 \section{Dissertation structure}

@@ -241,12 +241,12 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 
 \ctable[caption= Possible phonation and gemination contrasts in Icelandic ordered by context.,
 label= t:contrasts
-]{cccccccc}{}{
+]{llllllll}{}{
 \FL
-                                    & \#\_  & \multicolumn{2}{c}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{c}{\_\#}  \ML
+                                    & \#\_  & \multicolumn{2}{l}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{l}{\_\#}  \ML
 \multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
                                     &       &    & pp &    &    &   & pp  \NN
-                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \NN
+                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \ML
 \multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
                                     & n̥     &    &    &    & n̥  &   &    \LL
 }

@@ -212,7 +212,7 @@ The following sections report the results of the statistical analysis of the dur
 I deal first with the duration of vowels before geminate stops, followed by vowels before nasals, laterals and trills.
 \Cref{f:vowelduration} and \Cref{f:voweldurrho} show boxplots of the duration of vowels in various conditions as ratios of the VOR (in percentages).
 
-\subsection{Before geminate stops}
+\subsection{Duration of vowels before geminate stops /KK/}
 <<mono-stop-test,include=F>>=
 shapiro.test(mono_stop_asp$norm_abs_voic)
 shapiro.test(mono_stop_nasp$norm_abs_voic)
@@ -331,7 +331,7 @@ In disyllabic words, vowels are \Sexpr{round(mean(di_stop_nasp$abs_voic),2)} (SD
 In ratio terms, the vowel makes up the \Sexpr{round(mean(di_stop_nasp$norm_abs_voic)*100,2)}\% (SD = \Sexpr{round(sd(di_stop_nasp$norm_abs_voic),2)}) of the VOR in word with plain geminates, and the \Sexpr{round(mean(di_stop_asp$norm_abs_voic)*100,2)}\% (SD = \Sexpr{round(sd(di_stop_asp$abs_voic),2)}) in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant [t = 4.39, df = 50.46, p < 0.001].
 
-\subsection{Before nasals}
+\subsection{Duration of vowels before /NC/ clusters}
 <<mono-nas-test, include=F>>=
 shapiro.test(mono_nas_asp$norm_abs_voic)
 shapiro.test(mono_nas_nasp$norm_abs_voic)
@@ -353,7 +353,7 @@ As percentages, vowels are \Sexpr{round(mean(di_nas_nasp$norm_abs_voic)*100,2)}\
 A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119.99, p < 0.001].
 
 
-\subsection{Before laterals}
+\subsection{Duration of vowels before /lC/ clusters}
 <<mono-la\textit{t}-test, include=F>>=
 shapiro.test(mono_lat_asp$norm_abs_voic)
 shapiro.test(mono_lat_nasp$norm_abs_voic)
@@ -375,7 +375,7 @@ The duration of vowels in -VLCV words is on average \Sexpr{round(mean(di_lat_nas
 The vowel takes the \Sexpr{round(mean(di_lat_nasp$norm_abs_voic)*100,2)}\% of the VOR if followed by a voiced lateral, and \Sexpr{round(mean(di_lat_asp$norm_abs_voic)*100,2)}\% when the lateral is voiceless.
 A \textit{t}-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.001].
 
-\subsection{Before trills}
+\subsection{Duration of vowels before /rC/ clusters}
 
 <<di-rho-test, include=F>>=
 shapiro.test(di_rho_asp$norm_abs_voic)
@@ -472,7 +472,7 @@ boxplot(spread ~ manner,
 \end{figure}
 
 \section{Duration of sonorant consonants}
-
+\label{s:sonorantdur}
 <<mann-dur-test, include=FALSE>>=
 shapiro.test(mono_nas_asp$norm_mann)
 shapiro.test(mono_nas_nasp$norm_mann)
@@ -516,25 +516,9 @@ laterals & \Sexpr{round(mean(results_lat$dur_mann[results_lat$asp == "no"]),2)} 
 trills & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "yes"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "yes"]),2)} \LL
 }
 
+%TODO EXPAND
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
-This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
-\citet{silverman1997} argues that, in terms of perceptual optimality, the phasing of non modal voicing in sonorants should involve what he calls truncation of the contrastive laryngeal gesture in respect to the oral ones.
-This solution involves the sequencing of non-modal phonation before modal phonation.
-According to this principle, an optimal phasing of voicelessness in nasals is achieved when the glottal abduction gesture is terminated before the oral occlusion is released.
-In the case the abduction gesture is sequenced before modal voicing, the first portion of the nasal consonant is voiceless (with nareal friction noise), then modal voicing follows.
-If, on the contrary, glottal spread follows modal voicing, the last portion of the nasal is characterised by breathy voice.
-
-With laterals, instead, there are two possible optimal phasings of glottal spreading.
-In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
-A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
-In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
-\citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
-%TODO maybe more on this?
-The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
-Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
-
-%TODO why trills have less variance
 
 
 

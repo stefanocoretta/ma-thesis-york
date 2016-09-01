@@ -46,7 +46,7 @@ end = 224.8
 
 Select inner viewport: 1, 5.5, 1.5, 3
 selectObject: "Spectrogram kamb"
-Paint: start, end, 0, 0, 100, "yes", 45, 6, 0, "no"
+Paint: 0, 0.45988662131519276, 0, 0, 100, "yes", 45, 6, 0, "no"
 Draw inner box
 
 Select inner viewport: 1, 5.5, 1, 4.5
@@ -83,7 +83,7 @@ end = 301.39
 
 Select inner viewport: 1, 5.5, 1.5, 3
 selectObject: "Spectrogram kamp"
-Paint: start, end, 0, 0, 100, "yes", 45, 6, 0, "no"
+Paint: 0, 0.4397732426303855, 0, 0, 100, "yes", 45, 6, 0, "no"
 Draw inner box
 
 Select inner viewport: 1, 5.5, 1, 4.5
@@ -120,7 +120,7 @@ end = 376.62
 
 Select inner viewport: 1, 5.5, 1.5, 3
 selectObject: "Spectrogram duld"
-Paint: start, end, 0, 0, 100, "yes", 45, 6, 0, "no"
+Paint: 0, 0.4390249433106576, 0, 0, 100, "yes", 45, 6, 0, "no"
 Draw inner box
 
 Select inner viewport: 1, 5.5, 1, 4.5
@@ -157,7 +157,7 @@ end = 101.12
 
 Select inner viewport: 1, 5.5, 1.5, 3
 selectObject: "Spectrogram dult"
-Paint: start, end, 0, 0, 100, "yes", 45, 6, 0, "no"
+Paint: 0, 0.5273696145124717, 0, 0, 100, "yes", 45, 6, 0, "no"
 Draw inner box
 
 Select inner viewport: 1, 5.5, 1, 4.5
@@ -194,7 +194,7 @@ end = 55.05
 
 Select inner viewport: 1, 5.5, 1.5, 3
 selectObject: "Spectrogram kopp"
-Paint: start, end, 0, 0, 100, "yes", 45, 6, 0, "no"
+Paint: 0, 0.24514739229024943, 0, 0, 100, "yes", 45, 6, 0, "no"
 Draw inner box
 
 Select inner viewport: 1, 5.5, 1, 4.5
@@ -219,6 +219,3 @@ Text bottom: "yes", "Times (s)"
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
 Save as PDF file: "/Users/Stefano/Documents/Projects/mathesis-is/tex-src/img/kopp.pdf"
-
-
-

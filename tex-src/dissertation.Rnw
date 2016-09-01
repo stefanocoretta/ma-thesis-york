@@ -9,7 +9,8 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{subcaption}
-    
+\captionnamefont{\bfseries}
+
 \usepackage{calc,color}
 \newif\ifNoChapNumber
 \newcommand\Vlines{%

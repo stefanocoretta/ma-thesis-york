@@ -52,6 +52,7 @@
 \setsecnumdepth{subsection}
 \maxtocdepth{subsection}
 \raggedbottom
+\captionnamefont{\bfseries}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage[left=4cm, right=4cm]{geometry}
@@ -472,12 +473,12 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 
 \ctable[caption= Possible phonation and gemination contrasts in Icelandic ordered by context.,
 label= t:contrasts
-]{cccccccc}{}{
+]{llllllll}{}{
 \FL
-                                    & \#\_  & \multicolumn{2}{c}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{c}{\_\#}  \ML
+                                    & \#\_  & \multicolumn{2}{l}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{l}{\_\#}  \ML
 \multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
                                     &       &    & pp &    &    &   & pp  \NN
-                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \NN
+                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \ML
 \multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
                                     & n̥     &    &    &    & n̥  &   &    \LL
 }
@@ -977,7 +978,7 @@ The following sections report the results of the statistical analysis of the dur
 I deal first with the duration of vowels before geminate stops, followed by vowels before nasals, laterals and trills.
 \Cref{f:vowelduration} and \Cref{f:voweldurrho} show boxplots of the duration of vowels in various conditions as ratios of the VOR (in percentages).
 
-\subsection{Before geminate stops}
+\subsection{Duration of vowels before geminate stops /KK/}
 
 
 The mean duration of vowels in milliseconds was 98 (SD = 19.1) in monosyllabic words ending in a non-aspirated geminate stop, while it was 84.47 (SD = 22.71) if followed by a pre-aspirated geminate stop.
@@ -1060,7 +1061,7 @@ In disyllabic words, vowels are 86.97 (SD = 13.28) msec long if followed by a no
 In ratio terms, the vowel makes up the 33.61\% (SD = 0.05) of the VOR in word with plain geminates, and the 28.27\% (SD = 20.53) in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant [t = 4.39, df = 50.46, p < 0.001].
 
-\subsection{Before nasals}
+\subsection{Duration of vowels before /NC/ clusters}
 
 
 Words of the form (C)VNC showed a mean vowel duration of 89.96 msec if the nasal is voiced and 77.73 msec if voiceless.
@@ -1074,7 +1075,7 @@ As percentages, vowels are 29.47\% of the VOR if followed by a voiced nasal, and
 A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119.99, p < 0.001].
 
 
-\subsection{Before laterals}
+\subsection{Duration of vowels before /lC/ clusters}
 
 
 In the case of monosyllabic words ending in a /lC/ cluster, the mean duration of the vowels were 102.05 (SD = 11.77) and 80.7 msec (SD = 13.02) when followed, respectively by a voiced and voiceless lateral.
@@ -1088,7 +1089,7 @@ The duration of vowels in -VLCV words is on average 107.68 msec long (SD = 22.78
 The vowel takes the 36.2\% of the VOR if followed by a voiced lateral, and 23.26\% when the lateral is voiceless.
 A \textit{t}-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.001].
 
-\subsection{Before trills}
+\subsection{Duration of vowels before /rC/ clusters}
 
 
 
@@ -1148,7 +1149,7 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 \end{figure}
 
 \section{Duration of sonorant consonants}
-
+\label{s:sonorantdur}
 
 
 %\begin{figure}
@@ -1170,25 +1171,9 @@ laterals & 106.13 & 26.78 & 142.78 & 31.24 \NN
 trills & 75.86 & 21 & 125.57 & 32.54 \LL
 }
 
+%TODO EXPAND
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
 As a trend, the voiceless sonorants are longer in duration than the voiced ones.
-This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
-\citet{silverman1997} argues that, in terms of perceptual optimality, the phasing of non modal voicing in sonorants should involve what he calls truncation of the contrastive laryngeal gesture in respect to the oral ones.
-This solution involves the sequencing of non-modal phonation before modal phonation.
-According to this principle, an optimal phasing of voicelessness in nasals is achieved when the glottal abduction gesture is terminated before the oral occlusion is released.
-In the case the abduction gesture is sequenced before modal voicing, the first portion of the nasal consonant is voiceless (with nareal friction noise), then modal voicing follows.
-If, on the contrary, glottal spread follows modal voicing, the last portion of the nasal is characterised by breathy voice.
-
-With laterals, instead, there are two possible optimal phasings of glottal spreading.
-In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
-A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
-In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
-\citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
-%TODO maybe more on this?
-The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
-Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
-
-%TODO why trills have less variance
 
 
 
@@ -1224,7 +1209,7 @@ Moreover, when breathy voicing (which is voicing with concomitant abducted vocal
 This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
 
 However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
-What I found, instead, points to a longer voicing portion in words with pre-aspirated stops.
+What I found, instead, points to a longer voicing portion in words with pre-aspirated stops (\Cref{f:voicdur}).
 The duration of voicing is, in fact, greater in words with pre-aspirated stops than in words with plain geminates.
 This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be maintained longer.
 A plain geminate is produced by keeping the closure for a longer time and voicing during closure is more difficult to maintain.
@@ -1239,7 +1224,9 @@ Even if the physiological explanation seems not to hold, the relative timing on 
 \includegraphics[width=0.8\textwidth]{img/voic-stop-1} 
 
 \end{knitrout}
-\caption{Ratio duration of the voicing interval depending on presence or absence of glottal spread.}
+\caption{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
+The duration of voicing in words with pre-aspirated geminates is, on average, longer than the duration in words with non-aspirated stops, and it also has greater variance.
+}
 \label{f:voicdur}
 \end{figure}
 
@@ -1257,6 +1244,8 @@ Although I could not measure glottal width in a direct way, if the description g
 Since normalisation was done with the VOR as a base, the portion of VOR subtracted by the modal vocalic portion would correspond to the geminate
 Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
 However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+
+
 
 \section{Sonorants}
 %TODO cite previous studies about the duration
@@ -1280,6 +1269,27 @@ While with stops the VOR is longer with pre-aspirated geminates, with sonorants 
 If the speaker intention is to maintain the same VOR while warranting a longer duration of the sonorant, this can be done at detriment of the vowel.
 The vowel preceding the aspirated sonorant is thus compressed and it becomes relatively shorter than a vowel followed by a voiced sonorant.
 The timing hypothesis presented in this study, thus, seems not to be straightforwardly compatible with the data found in words containing sonorants, even if the effects predicted by it were found.
+
+\section{Duration of sonorant consonants}
+
+As reported in \Cref{s:sonorantdur}, voiceless sonorant consonants were significantly longer than voiceless sonorants.
+This is not surprising, since voiceless sonorants are less salient from a perceptual point of view.
+\citet{silverman1997} argues that, in terms of perceptual optimality, the phasing of non modal voicing in sonorants should involve what he calls truncation of the contrastive laryngeal gesture in respect to the oral ones.
+This solution involves the sequencing of non-modal phonation before modal phonation.
+According to this principle, an optimal phasing of voicelessness in nasals is achieved when the glottal abduction gesture is terminated before the oral occlusion is released.
+In the case the abduction gesture is sequenced before modal voicing, the first portion of the nasal consonant is voiceless (with nareal friction noise), then modal voicing follows.
+If, on the contrary, glottal spread follows modal voicing, the last portion of the nasal is characterised by breathy voice.
+
+With laterals, instead, there are two possible optimal phasings of glottal spreading.
+In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
+A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
+In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
+\citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
+%TODO maybe more on this?
+The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
+
+%TODO why trills have less variance
 
 \section{Linguistic aspects}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
