@@ -22,6 +22,8 @@ boxplot(results_stop$dur_voic~results_stop$asp)
 
 plot(density(results_stop_asp$dur_voic))
 boxplot(results_stop_asp$dur_voic~results_stop_asp$asp)
+plot(density(results_stop_nasp$dur_voic))
+
 
 plot(density(results_stop_nasp$dur_int))
 boxplot(results_stop_nasp$dur_int~results_stop_nasp$asp)
@@ -298,5 +300,25 @@ boxplot(abs_voic ~ syl_no,
         ylab = "duration (msec)"
 )
 
+#### Duration of voicing in -VKK(V) words ####
+
+
+shapiro.test(results_stop$dur_voic[results_stop$asp == "yes"])
+shapiro.test(results_stop$dur_voic[results_stop$asp == "no"])
+var.test(results_stop$dur_voic[results_stop$asp == "yes"], 
+         results_stop$dur_voic[results_stop$asp == "no"])
+boxplot(results_stop$dur_voic ~ results_stop$asp)
+wilcox.test(results_stop$dur_voic ~ results_stop$asp)
+
+#### Duration of glottal spread in stops aspirated vs. non ####
+
+results_stop_asp <- subset(results_stop, asp == "yes")
+results_stop_nasp <- subset(results_stop, asp == "no")
+
+shapiro.test(results_stop_asp$dur_clos)
+shapiro.test(results_stop_nasp$dur_clos)
+
+boxplot(abs_clos ~ asp, data = results_stop)
+t.test(abs_clos ~ asp, data = results_stop)
 
 

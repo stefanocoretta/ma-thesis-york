@@ -37,7 +37,7 @@ wilcox.test(vor ~ syl_no, data = results)
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The ratio duration of the vowel was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
-According to a two-sample Wilcoxon test, the mean duration of the vowel in monosyllabic words (\Sexpr{round(mean(mono$abs_voic),2)}) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$abs_voic),2)}) [V = 35302, p < 0.001].
+According to a two-sample Mann-Whitney U-test, the mean duration of the vowel in monosyllabic words (\Sexpr{round(mean(mono$abs_voic),2)}) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$abs_voic),2)}) [U = 35302, p < 0.001].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -56,6 +56,7 @@ boxplot(abs_voic ~ syl_no,
 \end{figure}
 
 \section{Voice onset to release (VOR)}
+\label{s:vor}
 
 <<vor, include=FALSE>>=
 shapiro.test(mono_stop_asp$vor)
@@ -221,7 +222,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 
 The mean duration of vowels in milliseconds was \Sexpr{round(mean(mono_stop_nasp$abs_voic),2)} (SD = \Sexpr{round(sd(mono_stop_nasp$abs_voic),2)}) in monosyllabic words ending in a non-aspirated geminate stop, while it was \Sexpr{round(mean(mono_stop_asp$abs_voic),2)} (SD = \Sexpr{round(sd(mono_stop_asp$abs_voic),2)}) if followed by a pre-aspirated geminate stop.
 \Cref{f:vowelduration} shows the ratio duration of the vowel in the two conditions.
-The difference in the mean of the vowel ratio between the non-aspirated (\Sexpr{round(mean(mono_stop_nasp$norm_abs_voic),2)}, SD = \Sexpr{round(sd(mono_stop_nasp$norm_abs_voic),2)}) and the aspirated class of words (\Sexpr{round(mean(mono_stop_asp$norm_abs_voic),2)}, SD = \Sexpr{round(sd(mono_stop_asp$norm_abs_voic),2)}) was significant [W = 7793, p-value < 0.001].
+The difference in the mean of the vowel ratio between the non-aspirated (\Sexpr{round(mean(mono_stop_nasp$norm_abs_voic),2)}, SD = \Sexpr{round(sd(mono_stop_nasp$norm_abs_voic),2)}) and the aspirated class of words (\Sexpr{round(mean(mono_stop_asp$norm_abs_voic),2)}, SD = \Sexpr{round(sd(mono_stop_asp$norm_abs_voic),2)}) was significant [U = 7793, p < 0.001].
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -340,7 +341,7 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_nas)
 
 Words of the form (C)VNC showed a mean vowel duration of \Sexpr{round(mean(mono_nas_nasp$abs_voic),2)} msec if the nasal is voiced and \Sexpr{round(mean(mono_nas_asp$abs_voic),2)} msec if voiceless.
 The ratio duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_abs_voic),2)} (SD = \Sexpr{round(sd(mono_nas_nasp$norm_abs_voic),2)}) and \Sexpr{round(mean(mono_nas_asp$norm_abs_voic),2)} (SD = \Sexpr{round(sd(mono_nas_asp$norm_abs_voic),2)}).
-The difference in ratio duration was significant [W = 836, p < 0.001].
+The difference in ratio duration was significant [U = 836, p < 0.001].
 
 <<di-nas-test, include=F>>=
 shapiro.test(di_nas_asp$norm_abs_voic)

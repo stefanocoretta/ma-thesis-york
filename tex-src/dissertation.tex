@@ -52,14 +52,14 @@
 \setsecnumdepth{subsection}
 \maxtocdepth{subsection}
 \raggedbottom
-\captionnamefont{\bfseries}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{subcaption}
-    
+\captionnamefont{\bfseries}
+
 \usepackage{calc,color}
 \newif\ifNoChapNumber
 \newcommand\Vlines{%
@@ -204,8 +204,8 @@ More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
 According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
 %TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
-The source code of the dissertation can be found at [...].
-The dataset is downloadable at [...].
+The source code of the dissertation can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
+The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
 
 
 \section{Dissertation structure}
@@ -558,7 +558,7 @@ All the speakers were from the Southern parts of Iceland so they are assumed to 
 
 \ctable[caption = Information on participants.,
 label = t:participants,
-]{cccclc}{}{
+]{cccllc}{}{
 \FL
 \textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
 TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
@@ -572,7 +572,7 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 %TODO say that geminates or simply stops are equivalent in this thesis due to the phnotactics and the design; maybe use TT for stops only!
-The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).}
 The list of target words is given in \Cref{t:wordlist}.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
 Control over these parameters was prioritised according to the order in which they were presented here.
@@ -587,7 +587,7 @@ Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-a
 
 %TODO tokens! I talk about types but should talk about tokens as well
 
-\vspace{5em}
+\vspace{2em}
 
 \tablefirsthead{
     \hline
@@ -657,20 +657,6 @@ orka   & or̥ka    & noun      & energy   \\
 orga   & orka     & noun      & scream   \\ \hline
 \end{supertabular}
 
-In the rest of the dissertation, I will use the following conventions:
-\begin{itemize}
-\item V = any vowel
-\item C = any consonant
-\item KK = any geminate stop consonant
-\item TT = any non-aspirated geminate
-\item ʰT = any (pre-)aspirated geminate
-\item S = any sonorant
-\item N = any nasal
-\item L = any lateral
-\item R = any trill
-\item -VCC = any monosyllabic word (either beginning with a vowel or a consonant)
-\item -VCCV = any bisyllabic word (either beginning with a vowel or a consonant)
-\end{itemize}
 
 \section{Procedure}
 \label{s:procedure}
@@ -745,15 +731,19 @@ The right boundary was in both cases the offset of voicing.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{glottal}
-\caption{The word \textit{kokk} `cook' as an example of the annotation of glottal spread.}
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
 \label{f:glottal}
 \end{figure}
 
 
 A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
 Marking the beginning of glottal spread proved to be particularly difficult.
-The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows: the first portion of the vowel is accompanied by modal voicing; the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice); then, vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel).
+The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
+The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal}, the vowel is initially realised as [œ].
+Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
+Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
+
 As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
 I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
 At times, however, the interpretation of the waveform was not straightforward.
@@ -767,14 +757,21 @@ The right boundary was assumed to fall at the end of visible frication noise.
 Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
 I applied the same principle to laterals and trills.
 I placed the right boundary of these intervals (nasal, lateral, trill) depending on the voicing of the segment.
-The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively).
+The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively, see \Cref{f:kamp} for an example of voiceless nasals).
 The end of friction in these consonants was used as the end of the interval.
-In the voiced counterparts of these, the end of voicing coincided with the right boundary.
+In the voiced counterparts of these, the end of voicing coincided with the right boundary (\Cref{f:kamb}).
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{mann}
-\caption{The word \textit{kempa} `hero' as an example of the annotation in the manner tier.}
+\includegraphics[width=\textwidth]{kamp}
+\caption{The word \textit{kamp} `' as an example of the annotation in the manner tier.}
+\label{f:kamp}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{kamb}
+\caption{The word \textit{kamb} `' as an example of the annotation in the manner tier.}
 \label{f:mann}
 \end{figure}
 
@@ -867,7 +864,7 @@ CVCCV words have a mean duration of 487.25 msec (SD = 59.94), while VCCV are on 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The ratio duration of the vowel was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
-According to a two-sample Wilcoxon test, the mean duration of the vowel in monosyllabic words (88.67) does not differ significantly from the mean duration in disyllabic words (84.21) [V = 35302, p < 0.001].
+According to a two-sample Mann-Whitney U-test, the mean duration of the vowel in monosyllabic words (88.67) does not differ significantly from the mean duration in disyllabic words (84.21) [U = 35302, p < 0.001].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -884,6 +881,7 @@ According to a two-sample Wilcoxon test, the mean duration of the vowel in monos
 \end{figure}
 
 \section{Voice onset to release (VOR)}
+\label{s:vor}
 
 
 
@@ -983,7 +981,7 @@ I deal first with the duration of vowels before geminate stops, followed by vowe
 
 The mean duration of vowels in milliseconds was 98 (SD = 19.1) in monosyllabic words ending in a non-aspirated geminate stop, while it was 84.47 (SD = 22.71) if followed by a pre-aspirated geminate stop.
 \Cref{f:vowelduration} shows the ratio duration of the vowel in the two conditions.
-The difference in the mean of the vowel ratio between the non-aspirated (0.37, SD = 0.07) and the aspirated class of words (0.28, SD = 0.05) was significant [W = 7793, p-value < 0.001].
+The difference in the mean of the vowel ratio between the non-aspirated (0.37, SD = 0.07) and the aspirated class of words (0.28, SD = 0.05) was significant [U = 7793, p < 0.001].
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
@@ -1066,7 +1064,7 @@ According to a independent two-sample \textit{t}-test, the difference in ratio i
 
 Words of the form (C)VNC showed a mean vowel duration of 89.96 msec if the nasal is voiced and 77.73 msec if voiceless.
 The ratio duration was, respectively, 0.31 (SD = 0.05) and 0.26 (SD = 0.03).
-The difference in ratio duration was significant [W = 836, p < 0.001].
+The difference in ratio duration was significant [U = 836, p < 0.001].
 
 
 
@@ -1193,35 +1191,43 @@ In particular, the hypothesis states that, in Icelandic, vowels followed by aspi
 As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the vowel in words with aspirated consonants and its duration in words with non-aspirated consonants.
 This finding seems to support the timing hypothesis.
 
-\section{Geminate stops}
-%ADD many figures
-%TODO compare with Ladefoged: he says glottal opening is timed the same and its same apmplitude but is it true here?
-We have seen that the absolute duration of vowels is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
-It is worth noting that the VOR of the two classes is different, as said in .
+\section{Duration of vowels before geminates and duration of geminates}
+
+We have seen that the duration of vowels as a ration of the VOR is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+It is worth noting that the VOR of the two classes is different, as said in \Cref{s:vor}.
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
-This is because the VOR is \textit{longer} in words with aspiration while the absolute duration of the vowel is \textit{smaller}.
-Other things being equal, we would expect the interval between voice onset and the onset of glottal abduction in words with pre-aspiration to take the same ratio of the VOR as the voiced interval in words with plain geminates.
-Instead, laryngeal spreading starts quite early in the word, while voicing is still active even after glottal spread is initiated.
+This is because the VOR is \textit{longer} in words with aspiration while the ratio duration of the vowel is \textit{smaller}.
+Other things being equal, we would expect vowels---i.e. the interval between voice onset and the onset of glottal abduction---in words with pre-aspiration to take the same ratio of the VOR as the vowels in words with plain geminates.
+Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated.
+Instead, vowels are the 28\% of the VOR if followed by pre-aspirated geminates and the 36\%.
 
-It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
-This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
-Moreover, when breathy voicing (which is voicing with concomitant abducted vocal folds) is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
-This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
 
-However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shortened vowel.
-What I found, instead, points to a longer voicing portion in words with pre-aspirated stops (\Cref{f:voicdur}).
-The duration of voicing is, in fact, greater in words with pre-aspirated stops than in words with plain geminates.
-This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be maintained longer.
-A plain geminate is produced by keeping the closure for a longer time and voicing during closure is more difficult to maintain.
-Thus it is natural to expect that, other things being equal, voicing duration would be greater if glottal spread is involved.
-This fact does not fit well with the idea that voicing should cease earlier due to glottal spread.
-Even if the physiological explanation seems not to hold, the relative timing on itself can be provisionally considered to be right.
+
+
+Even if we look at absolute durations, vowels followed by aspirated stops are shorter, as \Cref{f:absvow} shows.
+However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shorter vowel.
+What I found rather points to a longer voicing portion in words with pre-aspirated stops (\Cref{f:voicdur}).
+The duration of voicing is, in fact, greater in words with pre-aspirated geminates than in words with plain geminates [Mann-Whitney U = 5160, p < 0.001].
+\Cref{f:reality} schematically shows this finding.
+This is not surprising, since glottal spread is not incompatible with voicing and could actually allow voicing to be sustained longer.
 
 \begin{figure}
 \centering
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=0.8\textwidth]{img/voic-stop-1} 
+\includegraphics[width=0.8\textwidth]{img/vow-stop-1} 
+
+\end{knitrout}
+\caption{Duration of vowels in milliseconds before non-aspirated and pre-aspirated geminate stops.
+}
+\label{f:absvow}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.8\textwidth]{img/voicing-stop-1} 
 
 \end{knitrout}
 \caption{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
@@ -1230,21 +1236,54 @@ The duration of voicing in words with pre-aspirated geminates is, on average, lo
 \label{f:voicdur}
 \end{figure}
 
-Contrary to what stated in \Cref{s:hypothesis}, glottal abduction does not prevent voicing.
-On the contrary, longer voicing can be found in words with glottal spread.
-A possible explanation of this phenomenon is that the absence of a closure at the VC transition allows for voicing to continue.
-In words without glottal spread, the closure of the plain geminate---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
-At the same time, the variance of voicing in the two classes is not the same, and voicing in the aspirated condition has greater variance.
-In some aspirated tokens, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{reality}
+\caption{yo}
+\label{f:reality}
+\end{figure}
 
-\citet[70--71]{ladefoged1996} state that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argue that the timing of glottal spread is the same.
+A possible explanation for the longer duration of voicing is that, simply put, the absence of a closure at the VC transition allows for voicing to continue.
+In words with non-aspirated geminates, the closure of the consonant---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
+In pre-aspirated geminates, instead, since the stop closure is executed later, there is no pressure build-up and vocal folds vibration can be maintained.
+At the same time, though, the variance of the duration of voicing in the two classes is not the same.
+As it can be seen from \Cref{f:voicdur}, the duration of the voicing portion in words with pre-aspirated geminates has greater variance.
+Indeed, in some of the tokens from the pre-aspirated condition, the duration of voicing is as short---or in a few cases even shorter---than the duration in non-aspirated tokens.
+
+
+
+\citet[70--71]{ladefoged1996} stated that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argued that the timing of glottal spread is the same.
 Glottal spread, according to their description, starts at the beginning of the geminate and ends at its release, independently of the presence of pre-aspiration. 
 This remark does not fit with the results found in this study.
 Although I could not measure glottal width in a direct way, if the description given in \citet{ladefoged1996} is correct, glottal width in non-aspirated geminates can be inferred from the duration of the interval between the offset of voicing of the preceding vowel and the release of the geminate.
-Since normalisation was done with the VOR as a base, the portion of VOR subtracted by the modal vocalic portion would correspond to the geminate
-Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
-However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+In the data available, the duration of the pre-aspirated geminates was on average longer (212.17) than the duration of the non-aspirated counterparts (172.17).
+The difference was significant as per an unpaired-samples \textit{t}-test [t = -8.9048, df = 279.04, p < 0.001].
+\Cref{f:geminatedur} shows the duration of pre-aspirated \textit{vs.} non-aspirated geminates.
 
+
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.8\textwidth]{img/geminates-duration-1} 
+
+\end{knitrout}
+\caption{
+}
+\label{f:geminatedur}
+\end{figure}
+
+%Thus, if the ratio duration of glottal spread which should correspond to the duration of the geminate were to be the same both in pre-aspirated and plain stops, the ratio duration of the vowel should have been the same as well.
+%However, I found that the ratio duration of the vowel was shorter if followed by a pre-aspirated stop.
+
+These facts do not fit well with the idea that voicing should cease earlier due to glottal spread.
+However, the assumption that glottal spread is timed earlier in pre-aspirated geminates than in non-aspirated geminates relative to the onset of voicing was correct (at least for Icelandic).
+Given than glottal spread starts earlier, modal voicing is indeed shorter in words with pre-aspirated stops.
+It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
+This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
+Moreover, when breathy voicing is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
+This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
+In conclusion, we could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
 
 
 \section{Sonorants}

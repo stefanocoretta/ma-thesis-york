@@ -27,7 +27,7 @@ All the speakers were from the Southern parts of Iceland so they are assumed to 
 
 \ctable[caption = Information on participants.,
 label = t:participants,
-]{cccclc}{}{
+]{cccllc}{}{
 \FL
 \textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
 TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
@@ -41,7 +41,7 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 %TODO say that geminates or simply stops are equivalent in this thesis due to the phnotactics and the design; maybe use TT for stops only!
-The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).}
 The list of target words is given in \Cref{t:wordlist}.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
 Control over these parameters was prioritised according to the order in which they were presented here.
@@ -56,7 +56,7 @@ Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-a
 
 %TODO tokens! I talk about types but should talk about tokens as well
 
-\vspace{5em}
+\vspace{2em}
 
 \tablefirsthead{
     \hline
@@ -126,20 +126,6 @@ orka   & or̥ka    & noun      & energy   \\
 orga   & orka     & noun      & scream   \\ \hline
 \end{supertabular}
 
-In the rest of the dissertation, I will use the following conventions:
-\begin{itemize}
-\item V = any vowel
-\item C = any consonant
-\item KK = any geminate stop consonant
-\item TT = any non-aspirated geminate
-\item ʰT = any (pre-)aspirated geminate
-\item S = any sonorant
-\item N = any nasal
-\item L = any lateral
-\item R = any trill
-\item -VCC = any monosyllabic word (either beginning with a vowel or a consonant)
-\item -VCCV = any bisyllabic word (either beginning with a vowel or a consonant)
-\end{itemize}
 
 \section{Procedure}
 \label{s:procedure}
@@ -214,15 +200,19 @@ The right boundary was in both cases the offset of voicing.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{glottal}
-\caption{The word \textit{kokk} `cook' as an example of the annotation of glottal spread.}
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
 \label{f:glottal}
 \end{figure}
 
 
 A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
 Marking the beginning of glottal spread proved to be particularly difficult.
-The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows: the first portion of the vowel is accompanied by modal voicing; the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice); then, vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel).
+The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
+The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal}, the vowel is initially realised as [œ].
+Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
+Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
+
 As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
 I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
 At times, however, the interpretation of the waveform was not straightforward.
@@ -236,15 +226,22 @@ The right boundary was assumed to fall at the end of visible frication noise.
 Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
 I applied the same principle to laterals and trills.
 I placed the right boundary of these intervals (nasal, lateral, trill) depending on the voicing of the segment.
-The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively).
+The voiceless nasal, lateral and trill consonants terminate with voiceless friction (nareal, lateral or central, respectively, see \Cref{f:kamp} for an example of voiceless nasals).
 The end of friction in these consonants was used as the end of the interval.
-In the voiced counterparts of these, the end of voicing coincided with the right boundary.
+In the voiced counterparts of these, the end of voicing coincided with the right boundary (\Cref{f:kamb}).
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{mann}
-\caption{The word \textit{kempa} `hero' as an example of the annotation in the manner tier.}
-\label{f:mann}
+\includegraphics[width=\textwidth]{kamp}
+\caption{The word \textit{kamp} `' as an example of the annotation in the manner tier.}
+\label{f:kamp}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{kamb}
+\caption{The word \textit{kamb} `' as an example of the annotation in the manner tier.}
+\label{f:kamb}
 \end{figure}
 
 \subsection{Stop release}
