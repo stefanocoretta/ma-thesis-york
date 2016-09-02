@@ -121,6 +121,7 @@ In conclusion, we could say that, even if some adjustments are required, the Ice
 
 \section{Sonorants}
 %TODO cite previous studies about the duration
+%TODO say about welsh voiceless nasals, say that Icelandic and welsh are similar and that it is the mirror image of Burmese
 
 The class of sonorant consonants (nasals, laterals and rhotics) seem to pattern together for what concerns durational properties.
 As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.

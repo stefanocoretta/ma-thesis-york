@@ -574,13 +574,17 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 %TODO say that geminates or simply stops are equivalent in this thesis due to the phnotactics and the design; maybe use TT for stops only!
 The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).}
 The list of target words is given in \Cref{t:wordlist}.
+I have chosen to use only real words to avoid the artificiality of constructed speech.
+The justification for such decision goes beyond the scope of this dissertation, but suffice it to say that under an exemplar model of speech production and perception \citep{johnson1997,pierrehumbert2001,bybee2002,johnson2007} a word never experienced before would initially constitute an oddity in the cloud of exemplars and it would thus not be wise to include it in a study of phonetic nature.
 The target words were selected so as to control for as many of the following aspects as possible: phonation, manner and place of articulation of consonants following the target vowel; height and frontness of the target vowel; phonation, manner and place of articulation of consonants preceding the target vowel; and height and frontness of the eventual word-final vowel.
+
 Control over these parameters was prioritised according to the order in which they were presented here.
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
+Respecting as many of the constraints as possible required the use of inflected forms.
 %TODO CITE holes and humps papers!
-
-The wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
+Thus, the final wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
 These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
+
 The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words.
 Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
@@ -738,6 +742,9 @@ The right boundary was in both cases the offset of voicing.
 
 
 A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
+I opted for this solution since the intervals of each of the above classes, as defined below, were never overlapping.
+Of course, nasality, laterality and rhoticity never co-occur, and glottal spread can be inferred in these three classes by subtracting the voiced portion of the nasal, lateral or rhotic from the total duration of the consonant.
+
 Marking the beginning of glottal spread proved to be particularly difficult.
 The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
 The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal}, the vowel is initially realised as [œ].
@@ -772,7 +779,7 @@ In the voiced counterparts of these, the end of voicing coincided with the right
 \centering
 \includegraphics[width=\textwidth]{kamb}
 \caption{The word \textit{kamb} `' as an example of the annotation in the manner tier.}
-\label{f:mann}
+\label{f:kamb}
 \end{figure}
 
 \subsection{Stop release}
@@ -790,11 +797,21 @@ If the burst was not identifiable from the waveform nor from the spectrogram, no
 
 \section{Measurements}
 \label{s:measurements}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{../img/measures}
+\caption[yo]{Schematic illustration of the various measurements.}
+\label{f:measures}
+\end{figure}
+
+
 After the annotation was complete, I extracted the durational properties of the annotated intervals using an automated routine.
 The routine was performed in PRAAT with a script, specifically written for this study.
 The script with its documentation can be found in \Cref{a:getmeasure}.
 The output of the extraction procedure is a \texttt{.csv} file which contains the relevant measurements.
-The following measures were taken in milliseconds:
+The following measures were taken in milliseconds.
+\Cref{f:measures} illustrates the measurements using the word \textit{kamp} `moustache' as an example.
 
 \begin{itemize}
 \item \textit{Word duration}: the duration of the whole word as annotated on the word tier.
