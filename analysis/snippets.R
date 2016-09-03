@@ -315,8 +315,8 @@ wilcox.test(results_stop$dur_voic ~ results_stop$asp)
 results_stop_asp <- subset(results_stop, asp == "yes")
 results_stop_nasp <- subset(results_stop, asp == "no")
 
-shapiro.test(results_stop_asp$dur_clos)
-shapiro.test(results_stop_nasp$dur_clos)
+shapiro.test(results_stop_asp$abs_clos)
+shapiro.test(results_stop_nasp$abs_clos)
 
 boxplot(abs_clos ~ asp, data = results_stop)
 t.test(abs_clos ~ asp, data = results_stop)
