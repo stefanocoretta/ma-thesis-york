@@ -209,7 +209,7 @@ If we want to truthfully explain the aspiration effect, it is thus necessary to 
 %TODO cite cristofaro and company
 
 \citet{helgason2002} proposes to reconstruct pre-aspiration as an established phonetic possibility of Proto Nordic, from which Icelandic derived.
-
+% he says preasp was already there but it is nice to think that voicelessness in sonorants and preaspirateion are connected! that's why I should also say about voiceless sonorants
 
 %\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 

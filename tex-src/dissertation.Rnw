@@ -159,7 +159,8 @@ source("./analysis/games-howell.R")
 <<discussion, child='rnw/discussion.Rnw'>>=
 @
 
-%\input{./tex/conclusion.tex}
+<<conclusion, child='rnw/conclusion.Rnw'>>=
+@
 
 
 

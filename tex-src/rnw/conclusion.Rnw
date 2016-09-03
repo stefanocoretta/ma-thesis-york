@@ -1,1 +1,9 @@
-\chapter{Conclusion}
+\chapter{Conclusions}
+
+This dissertation dealt with the phenomenon known as the ``aspiration effect,'' according to which vowels followed by aspirated consonants are longer than vowels followed by plain consonants \citep{maddieson1976,maddieson1976a}.
+Such relation between the presence of aspiration and lengthening in vowels is paralleled by the so called ``voicing effect.''
+The voicing effect consists in the shortening of vowels when they are followed by voiceless stops.
+Even if several explanations have been proposed in the literature for the voicing effect, no one has been given for the aspiration effect.
+In fact, none of the explanations for the voicing effect is compatible with the aspiration effect, since they predict exactly the opposite effect to what has been empirically found.
+Moreover, the studies about the aspiration effect only dealt with post-aspiration.
+To fully understand the phenomenon is necessary to extend the enquiry to pre-aspiration.
