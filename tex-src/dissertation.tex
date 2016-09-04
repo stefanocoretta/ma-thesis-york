@@ -177,11 +177,6 @@ The list of target words was selected so as to include aspirated and plain gemin
 To test the validity of the laryngeal timing hypothesis, I performed a statistical analysis to verify the following research hypothesis: vowels followed by aspirated consonants (pre-aspirated stops and voiceless sonorants) are shorter than vowels followed by non-aspirated consonants (plain stops and voiced sonorants).
 
 
-
-
-
-
-
 \section{Reproducibility}
 The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
 The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
@@ -194,8 +189,7 @@ One way to satisfy the reproducibility criterion is using literate programming.
 In literate programming, the computer code used to generate the results of the research is embedded within the research document.
 The idea of literate programming has been developed by Donald Knuth \citep{knuth1984} as a way of simplifying the documentation process of computer programs.
 This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
-Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible.
-%TODO cite here 2 maxwell and maybe a third?
+Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible \citep{maxwell2005,maxwell2013}.
 
 An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].
 As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
@@ -222,11 +216,6 @@ Separate sections will deal with the duration of the words, the Voice Onset to R
 \Cref{c:discussion} examines the results on the light of the research hypothesis.
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
 Finally, concludes the dissertation with a summary of this work.
-
-%TODO say about conventions? especially glottocodes, maybe even just in note, \citet{hammarstrom2016}
-
-
-
 
 
 
@@ -329,6 +318,7 @@ Several explanations for the voicing effect have been proposed in the literature
 One school of thought ascribes the voicing effect to articulatory properties of the consonant following the vowel \citep{belasco1953,chen1970}.
 For example, \citep{belasco1953} argues that the voicing effect depends on the articulatory force needed to produce voiceless consonants.
 Since, according to him, articulatory force is kept constant, vowels before voiceless stops are shortened to compensate for the higher articulatory force needed to produce them.
+
 A second line of reasoning, instead, relates it to auditory principles \citep{javkin1976,kluender1988}.
 Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citep{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
 In fact, \citet{maddieson1976} and \citet{durvasula2012} argue that none of the suggested explanations is satisfactory.
@@ -339,7 +329,6 @@ In contrast, a promising line of enquiry emerges from the proposal by \citet{cho
 
 \section{Icelandic}
 \label{s:icelandic}
-%TODO contexts of laryngeal contrast
 
 \ctable[caption = Major consonantal allophones of Icelandic.,
 label = t:consonants
@@ -355,10 +344,10 @@ label = t:consonants
 \textbf{trills}     &         & r r̥    &       &         &  \LL
 }
 
-Icelandic [\textsc{glotto}: \texttt{icel1247}] is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic [\textsc{glotto}: \texttt{icel1247}]\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO code.} is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
-%TODO say more about this
+%%TODO say more about this
 
 The modern phonological inventory of Icelandic has been subject to different analyses and it is still a matter of controversy \citep{thraisson1978,jessen1998,arnason2011}.
 \Cref{t:consonants} reports the major consonantal allophones of Icelandic, as normally described in the literature \citep[98]{arnason2011}.
@@ -369,7 +358,8 @@ The consonantal system of Icelandic includes stops, fricatives, nasals, laterals
 The places of articulation encompass labial, coronal (alveolar), palatal, velar and glottal.
 Stops and fricatives have members in each place, nasals are labial, coronal, palatal and velar, while laterals and trills are coronal.
 For each combination of manner and place of articulation there are two segments, one voiceless and one (voiceless) aspirated or voiced depending on the manner.
-%TODO add about geminates -.-
+Length is distinctive in consonants, word-medially and word-finally.
+Of interest for the present study is that aspirated stops are pre-aspirated when they are geminates, while plain geminates are voiceless unaspirated, like the corresponding singletons: /tʰakkʰa/ `key' [tʰaʰka]; /kʰakka/ `barrel' [kʰakka].
 
 The vocalic phonemes of Icelandic are given in \Cref{t:vowels} \citep[60]{arnason2011}.
 On the antero-posterior axis, two places of articulation are distinctive: front and back.
@@ -857,7 +847,13 @@ The R code used in the analysis is available at this address [...].
 \chapter{Results}
 \label{c:results}
 
+This chapter presents the results of the analysis on the durational data extracted from the recordings of the Icelandic informants.
+\Cref{s:wordduration} and \Cref{s:vor} deal with the duration of words and of the duration of the Voice Onset to Release (VOR) interval respectively.
+\Cref{s:vow-dur} treats the duration of vowels in the different contexts under study (geminate stops, nasals, laterals and trills).
+
+
 \section{Word duration}
+\label{s:wordduration}
 
 The word list used in the reading task contains both mono- and disyllabic words.
 Both classes are further divided between consonant- and vowel-initial words.
@@ -881,7 +877,7 @@ CVCCV words have a mean duration of 487.25 msec (SD = 59.94), while VCCV are on 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The ratio duration of the vowel was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
-According to a two-sample Mann-Whitney U-test, the mean duration of the vowel in monosyllabic words (88.67) does not differ significantly from the mean duration in disyllabic words (84.21) [U = 35302, p < 0.001].
+According to a two-sample Mann-Whitney U-test, the mean duration of vowels in monosyllabic words (88.67) does not differ significantly from the mean duration in disyllabic words (84.21) [U = 35302, p < 0.001].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -1113,6 +1109,8 @@ The vowel takes the 39.83\% of the VOR if followed by a voiced rhotic, and 33.43
 A \textit{t}-test gave a significant result [t = 3.4, df = 27.98, p < 0.001].
 
 \section{Duration of stop closure}
+\label{s:durstopclos}
+
 
 
 Stop closure was measured from the closure of the stop (with an intervening sonorant or not) to the release.
@@ -1303,7 +1301,7 @@ This would imply that the gestured might have started even earlier, strengthenin
 In conclusion, we could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
 
 
-\section{Sonorants}
+\section{Duration of vowels followed by sonorants}
 %TODO cite previous studies about the duration
 %TODO say about welsh voiceless nasals, say that Icelandic and welsh are similar and that it is the mirror image of Burmese
 
@@ -1349,6 +1347,7 @@ Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombi
 %TODO why trills have less variance
 
 \section{Linguistic aspects}
+\label{s:lingusitic}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
 Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
 However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.
@@ -1390,10 +1389,22 @@ This idea is initially supported by the fact that an earlier phasing of spreadin
 This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
 In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
 If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic.
+The next paragraphs will briefly deal with this task.
 %TODO cite cristofaro and company
 
-\citet{helgason2002} proposes to reconstruct pre-aspiration as an established phonetic possibility of Proto Nordic, from which Icelandic derived.
+\citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
+If this is the case, Icelandic would just be a language that retained pre-aspiration.
+If Proto Nordic had pre-aspiration, it is then possible that differences in vowel duration were already present.
+It is interesting to note that indeed such duration differences have been found for Norwegian \citep{fintoft1961} and Swedish \citep{elert1970}.
+In these two Nordic languages, both derived from Proto Nordic and thus related to Icelandic, pre-aspiration is not a standard phonetic realisation of the fortis series of consonants, but it is precisely before these consonants that vowels are shorter.
+
+The fact that the aspiration effect could have already be observable in Proto Nordic strengthens the idea that the characteristics of the effect in present day Icelandic are the product of the intentional control of speakers over their production, given the time scale implied (around 2000 years).
+%TODO citation of 2000 years
 % he says preasp was already there but it is nice to think that voicelessness in sonorants and preaspirateion are connected! that's why I should also say about voiceless sonorants
+Anyhow, \citeauthor{helgason2002} attempts at giving a physiological explanation for the phonetic effect.
+He argues that, even if the data from Nordic languages seem to point to the contrary, ``it is [still] quite possible that preaspiration (\textit{sic}) is facilitated by a certain type of larynx, and that this has a small but perceptually salient effect on the propensity for anticipatory voicelessness'' \citeyear[231]{helgason2002}.
+
+This idea, however, is not supported by the present study since voicing is actually maintained longer in pre-aspirated stops.
 
 %\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 
@@ -1503,6 +1514,7 @@ Being able to detect nasal airflow allows to clearly define at which time point 
 
 
 \chapter{Conclusions}
+\label{c:conclusions}
 
 This dissertation dealt with the phenomenon known as the ``aspiration effect,'' according to which vowels followed by aspirated consonants are longer than vowels followed by plain consonants \citep{maddieson1976,maddieson1976a}.
 Such relation between the presence of aspiration and lengthening in vowels is paralleled by the so called ``voicing effect.''
@@ -1515,7 +1527,26 @@ In this study, I proposed that the aspiration effect has its origin in the way t
 I called this the ``timing hypothesis.''
 To verify the validity of this hypothesis I extended the focus of enquiry to pre-aspiration in Icelandic.
 In fact, the timing hypothesis predicts that vowels in Icelandic should be shorter when followed by a pre-aspirated consonant.
-As discussed in \Cref{c:results}, the data collected from five speakers of Icelandic shows that indeed vowels followed by pre-aspirated geminates or voiceless sonorants are shorter than vowels followed by plain geminates or voiced sonorants.
+As discussed in \Cref{c:results}, the data collected from five speakers of Icelandic confirmed that vowels followed by pre-aspirated geminates or voiceless sonorants are shorter than vowels followed by plain geminates or voiced sonorants.
+Such finding seems to confirm the timing hypothesis.
+
+In \Cref{c:discussion}, I revised the central hypothesis of this thesis on the light of the present findings.
+Even though the prediction of shorter vowels before aspirated consonants is supported by the data, the underlying idea that voicing should cease earlier when aspirated consonants follow could not be confirmed.
+On the contrary, the duration of voicing in words with pre-aspirated stops was significantly longer than its duration in words with plain geminates.
+This indicates that pre-aspiration in the collected data was normally realised phonetically as a portion of breathy voicing followed by voiceless aspiration, before a closure is created in the oral cavity.
+
+In the case of sonorants, the first portion of the sonorant was voiced, followed by voiceless friction in the oral cavity (in laterals and trills) or at the nostrils (in nasals).
+In sonorants voicing does not cease before the oral gesture of the sonorant is achieved.
+However, I showed that voiceless sonorants are longer than their voiced counterparts, due to perceptual enhancement (cf ...).
+I thus argued that the shorter duration of vowels followed by voiceless sonorants could be attributed to perceptual reasons.
+Decreasing the duration of vowels when followed by voiceless sonorants makes the difference in duration of the former even more salient, if compared with the durations in words with voiced sonorants (that are shorter than the voiceless ones).
+
+Although this study focussed more on the phonetics of the aspiration effect, in \Cref{s:linguistic} I briefly discussed of its linguistic aspects.
+In this section, I argued that, even if the effects of aspiration on vowel duration can have a physiological cause, it is possible that the speakers of Icelandic ``actively'' exploited and inflated those effects to enhance the phonological contrast.
+
+%TODO last paragraph of conclusions
+
+To sum up, 
 
 
 

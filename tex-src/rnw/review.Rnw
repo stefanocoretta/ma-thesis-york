@@ -97,17 +97,16 @@ Several explanations for the voicing effect have been proposed in the literature
 One school of thought ascribes the voicing effect to articulatory properties of the consonant following the vowel \citep{belasco1953,chen1970}.
 For example, \citep{belasco1953} argues that the voicing effect depends on the articulatory force needed to produce voiceless consonants.
 Since, according to him, articulatory force is kept constant, vowels before voiceless stops are shortened to compensate for the higher articulatory force needed to produce them.
+
 A second line of reasoning, instead, relates it to auditory principles \citep{javkin1976,kluender1988}.
 Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citep{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
 In fact, \citet{maddieson1976} and \citet{durvasula2012} argue that none of the suggested explanations is satisfactory.
 The majority of the studies makes incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
-In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attribute the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
-%TODO probably need to expand on this
-
+In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attributed the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
+In this work, I will take such an articulatory approach in defining a research hypothesis (see \Cref{s:hypothesis}).
 
 \section{Icelandic}
 \label{s:icelandic}
-%TODO contexts of laryngeal contrast
 
 \ctable[caption = Major consonantal allophones of Icelandic.,
 label = t:consonants
@@ -123,10 +122,10 @@ label = t:consonants
 \textbf{trills}     &         & r r̥    &       &         &  \LL
 }
 
-Icelandic [\textsc{glotto}: \texttt{icel1247}] is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic [\textsc{glotto}: \texttt{icel1247}]\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO code.} is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
-%TODO say more about this
+%%TODO say more about this
 
 The modern phonological inventory of Icelandic has been subject to different analyses and it is still a matter of controversy \citep{thraisson1978,jessen1998,arnason2011}.
 \Cref{t:consonants} reports the major consonantal allophones of Icelandic, as normally described in the literature \citep[98]{arnason2011}.
@@ -137,7 +136,8 @@ The consonantal system of Icelandic includes stops, fricatives, nasals, laterals
 The places of articulation encompass labial, coronal (alveolar), palatal, velar and glottal.
 Stops and fricatives have members in each place, nasals are labial, coronal, palatal and velar, while laterals and trills are coronal.
 For each combination of manner and place of articulation there are two segments, one voiceless and one (voiceless) aspirated or voiced depending on the manner.
-%TODO add about geminates -.-
+Length is distinctive in consonants, word-medially and word-finally.
+Of interest for the present study is that aspirated stops are pre-aspirated when they are geminates, while plain geminates are voiceless unaspirated, like the corresponding singletons: /tʰakkʰa/ `key' [tʰaʰka]; /kʰakka/ `barrel' [kʰakka].
 
 The vocalic phonemes of Icelandic are given in \Cref{t:vowels} \citep[60]{arnason2011}.
 On the antero-posterior axis, two places of articulation are distinctive: front and back.
@@ -150,32 +150,31 @@ For example: \textit{bað} /pað/ `bath' [paːð], \textit{kinn} /cɪnn/ `cheek'
 For a review on the theoretical interpretations of the lengthening rule, see \citet{booij1986,pind1999}, and \citet[160--173, 203--208]{arnason2011}.
 }
 
-%TODO maybe add diphthgons as well!
-\ctable[caption = Vocalic phonemes of Icelandic (monophthongs).,
+\ctable[caption = Vocalic phonemes of Icelandic.,
 label = t:vowels
 ]{lcccc}{}{
 \FL
-& \multicolumn{2}{c}{\textbf{front}}    & \multicolumn{2}{c}{\textbf{back}}   \NN
+\textbf{Monophthongs} & \multicolumn{2}{c}{\textbf{front}}    & \multicolumn{2}{c}{\textbf{back}}   \NN
 & \textit{plain} & \textit{rounded} & \textit{plain} & \textit{rounded} \ML
 \textbf{high}     & i &   & & u \NN
 \textbf{high-mid} & ɪ & ʏ  & &  \NN
 \textbf{low-mid}  & ɛ & œ  & & ɔ \NN
-\textbf{low}      &   &   & a & \LL
+\textbf{low}      &   &   & a & \ML
+\multicolumn{5}{l}{\textbf{Diphthongs}: /ai/, /ɛi/, /œi/, /ou/, /au/} \LL
 }
 
 \subsection{Laryngeal contrasts in stops}
-%TODO add examples
 As mentioned in \Cref{s:aspiration}, the contrastive system of Hindi consonants is built on the cross-cutting interaction between aspiration and voicing.
 Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceless aspirated stops.
 Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
-In the so called ``soft'' variety of Icelandic (spoken everywhere in the island with the exception of the northern part), which is also the most widespread, aspiration is neutralised word-medially and word-finally, so that only non-aspirated stops can be found in those contexts.
-For example: 
-In the ``hard'' variety, spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
-In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word.
+In the so called ``soft'' variety (\textit{linmæli}) of Icelandic (spoken everywhere in the island with the exception of the northern part), which is also the most widespread, aspiration is neutralised word-medially and word-finally, so that only non-aspirated stops can be found in those contexts.
+For example: /tʰapʰa/ `to lose' [tʰaːpa], /pʰatʰa/ `to gesticulate' [pʰaːta] \citep[104]{arnason2011}.
+In the ``hard'' variety (\textbf{harðmæli}), spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
+In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word: /tʰapʰa/ `to lose' [tʰaːpʰa], /pʰatʰa/ `to gesticulate' [pʰaːtʰa].
 
 Moreover, aspirated geminate stops, both word-medially and word-finally, are realised as pre-aspirated stops.
-For example: .
+For example: /kʰoppi/ `young seal' [kʰɔppɪ], /koppi/ `chamber.pot:\textsc{dat}' [kʰɔʰpɪ].
 
 \subsection{Laryngeal contrasts in sonorants}
 The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological data\-base \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.

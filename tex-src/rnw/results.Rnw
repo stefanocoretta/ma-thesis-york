@@ -1,7 +1,13 @@
 \chapter{Results}
 \label{c:results}
 
+This chapter presents the results of the analysis on the durational data extracted from the recordings of the Icelandic informants.
+\Cref{s:wordduration} and \Cref{s:vor} deal with the duration of words and of the duration of the Voice Onset to Release (VOR) interval respectively.
+\Cref{s:vow-dur} treats the duration of vowels in the different contexts under study (geminate stops, nasals, laterals and trills).
+
+
 \section{Word duration}
+\label{s:wordduration}
 
 The word list used in the reading task contains both mono- and disyllabic words.
 Both classes are further divided between consonant- and vowel-initial words.
@@ -37,7 +43,7 @@ wilcox.test(vor ~ syl_no, data = results)
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The ratio duration of the vowel was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel in milliseconds.
-According to a two-sample Mann-Whitney U-test, the mean duration of the vowel in monosyllabic words (\Sexpr{round(mean(mono$abs_voic),2)}) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$abs_voic),2)}) [U = 35302, p < 0.001].
+According to a two-sample Mann-Whitney U-test, the mean duration of vowels in monosyllabic words (\Sexpr{round(mean(mono$abs_voic),2)}) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$abs_voic),2)}) [U = 35302, p < 0.001].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -389,6 +395,8 @@ The vowel takes the \Sexpr{round(mean(di_rho_nasp$norm_abs_voic)*100,2)}\% of th
 A \textit{t}-test gave a significant result [t = 3.4, df = 27.98, p < 0.001].
 
 \section{Duration of stop closure}
+\label{s:durstopclos}
+
 <<closure-test, include=FALSE>>=
 shapiro.test(mono_nas_asp$norm_clos)
 shapiro.test(mono_nas_asp$norm_clos)

@@ -1,4 +1,5 @@
 \chapter{Conclusions}
+\label{c:conclusions}
 
 This dissertation dealt with the phenomenon known as the ``aspiration effect,'' according to which vowels followed by aspirated consonants are longer than vowels followed by plain consonants \citep{maddieson1976,maddieson1976a}.
 Such relation between the presence of aspiration and lengthening in vowels is paralleled by the so called ``voicing effect.''
@@ -17,8 +18,22 @@ Such finding seems to confirm the timing hypothesis.
 In \Cref{c:discussion}, I revised the central hypothesis of this thesis on the light of the present findings.
 Even though the prediction of shorter vowels before aspirated consonants is supported by the data, the underlying idea that voicing should cease earlier when aspirated consonants follow could not be confirmed.
 On the contrary, the duration of voicing in words with pre-aspirated stops was significantly longer than its duration in words with plain geminates.
-This indicated that pre-aspiration in the data was normally realised phonetically as a portion of breathy voicing followed by voiceless aspiration.
-In the case of sonorant, the
+This indicates that pre-aspiration in the collected data was normally realised phonetically as a portion of breathy voicing followed by voiceless aspiration, before a closure is created in the oral cavity.
+
+In the case of sonorants, the first portion of the sonorant was voiced, followed by voiceless friction in the oral cavity (in laterals and trills) or at the nostrils (in nasals).
+In sonorants voicing does not cease before the oral gesture of the sonorant is achieved.
+However, I showed that voiceless sonorants are longer than their voiced counterparts, due to perceptual enhancement (cf ...).
+I thus argued that the shorter duration of vowels followed by voiceless sonorants could be attributed to perceptual reasons.
+Decreasing the duration of vowels when followed by voiceless sonorants makes the difference in duration of the former even more salient, if compared with the durations in words with voiced sonorants (that are shorter than the voiceless ones).
+
+Although this study focussed more on the phonetics of the aspiration effect, in \Cref{s:linguistic} I briefly discussed of its linguistic aspects.
+In this section, I argued that, even if the effects of aspiration on vowel duration can have a physiological cause, it is possible that the speakers of Icelandic ``actively'' exploited and inflated those effects to enhance the phonological contrast.
+
+%TODO last paragraph of conclusions
+
+To sum up, 
+
+
 
 
 

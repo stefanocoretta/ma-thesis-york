@@ -32,11 +32,6 @@ The list of target words was selected so as to include aspirated and plain gemin
 To test the validity of the laryngeal timing hypothesis, I performed a statistical analysis to verify the following research hypothesis: vowels followed by aspirated consonants (pre-aspirated stops and voiceless sonorants) are shorter than vowels followed by non-aspirated consonants (plain stops and voiced sonorants).
 
 
-
-
-
-
-
 \section{Reproducibility}
 The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
 The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
@@ -49,19 +44,17 @@ One way to satisfy the reproducibility criterion is using literate programming.
 In literate programming, the computer code used to generate the results of the research is embedded within the research document.
 The idea of literate programming has been developed by Donald Knuth \citep{knuth1984} as a way of simplifying the documentation process of computer programs.
 This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
-Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible.
-%TODO cite here 2 maxwell and maybe a third?
+Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible \citep{maxwell2005,maxwell2013}.
 
 An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].
 As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
 What is worse is that those constructed word forms were incorrect.
 More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
-According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
-%TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
-The source code of the dissertation can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
+According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis conducted using the R language \citep{r-core-team2015}. 
+The code generating the analysis has been embedded in the dissertation source code using \texttt{knitr}, a package that enables literate programming support in R.
+The analysis source code can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
 The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
-
 
 \section{Dissertation structure}
 The dissertation is thus organised.
@@ -77,9 +70,4 @@ Separate sections will deal with the duration of the words, the Voice Onset to R
 \Cref{c:discussion} examines the results on the light of the research hypothesis.
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
 Finally, concludes the dissertation with a summary of this work.
-
-%TODO say about conventions? especially glottocodes, maybe even just in note, \citet{hammarstrom2016}
-
-
-
 

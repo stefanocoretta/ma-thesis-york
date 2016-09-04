@@ -165,6 +165,7 @@ Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombi
 %TODO why trills have less variance
 
 \section{Linguistic aspects}
+\label{s:lingusitic}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
 Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
 However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.
@@ -206,10 +207,22 @@ This idea is initially supported by the fact that an earlier phasing of spreadin
 This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
 In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
 If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic.
+The next paragraphs will briefly deal with this task.
 %TODO cite cristofaro and company
 
-\citet{helgason2002} proposes to reconstruct pre-aspiration as an established phonetic possibility of Proto Nordic, from which Icelandic derived.
+\citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
+If this is the case, Icelandic would just be a language that retained pre-aspiration.
+If Proto Nordic had pre-aspiration, it is then possible that differences in vowel duration were already present.
+It is interesting to note that indeed such duration differences have been found for Norwegian \citep{fintoft1961} and Swedish \citep{elert1970}.
+In these two Nordic languages, both derived from Proto Nordic and thus related to Icelandic, pre-aspiration is not a standard phonetic realisation of the fortis series of consonants, but it is precisely before these consonants that vowels are shorter.
+
+The fact that the aspiration effect could have already be observable in Proto Nordic strengthens the idea that the characteristics of the effect in present day Icelandic are the product of the intentional control of speakers over their production, given the time scale implied (around 2000 years).
+%TODO citation of 2000 years
 % he says preasp was already there but it is nice to think that voicelessness in sonorants and preaspirateion are connected! that's why I should also say about voiceless sonorants
+Anyhow, \citeauthor{helgason2002} attempts at giving a physiological explanation for the phonetic effect.
+He argues that, even if the data from Nordic languages seem to point to the contrary, ``it is [still] quite possible that preaspiration (\textit{sic}) is facilitated by a certain type of larynx, and that this has a small but perceptually salient effect on the propensity for anticipatory voicelessness'' \citeyear[231]{helgason2002}.
+
+This idea, however, is not supported by the present study since voicing is actually maintained longer in pre-aspirated stops.
 
 %\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 
