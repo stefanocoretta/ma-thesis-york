@@ -119,7 +119,7 @@ This would imply that the gestured might have started even earlier, strengthenin
 In conclusion, we could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
 
 
-\section{Sonorants}
+\section{Duration of vowels followed by sonorants}
 %TODO cite previous studies about the duration
 %TODO say about welsh voiceless nasals, say that Icelandic and welsh are similar and that it is the mirror image of Burmese
 
@@ -279,6 +279,8 @@ A second aspect of the annotation procedure that presented some difficulties was
 Since the frame sentence was kept the same in every trial, words starting and/or ending in a vowel posed problems in identifying the word boundaries.
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
 However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
+
+\section{Significance of the research}
 
 \section{Further studies}
 

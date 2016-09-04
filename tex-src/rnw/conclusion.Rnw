@@ -4,6 +4,23 @@ This dissertation dealt with the phenomenon known as the ``aspiration effect,'' 
 Such relation between the presence of aspiration and lengthening in vowels is paralleled by the so called ``voicing effect.''
 The voicing effect consists in the shortening of vowels when they are followed by voiceless stops.
 Even if several explanations have been proposed in the literature for the voicing effect, no one has been given for the aspiration effect.
-In fact, none of the explanations for the voicing effect is compatible with the aspiration effect, since they predict exactly the opposite effect to what has been empirically found.
+In fact, none of the explanations for the voicing effect is compatible with the aspiration effect, since they usually predict the opposite of what has been empirically found.
 Moreover, the studies about the aspiration effect only dealt with post-aspiration.
-To fully understand the phenomenon is necessary to extend the enquiry to pre-aspiration.
+
+In this study, I proposed that the aspiration effect has its origin in the way the laryngeal spreading gesture (that causes aspiration) is timed relative to oral gestures.
+I called this the ``timing hypothesis.''
+To verify the validity of this hypothesis I extended the focus of enquiry to pre-aspiration in Icelandic.
+In fact, the timing hypothesis predicts that vowels in Icelandic should be shorter when followed by a pre-aspirated consonant.
+As discussed in \Cref{c:results}, the data collected from five speakers of Icelandic confirmed that vowels followed by pre-aspirated geminates or voiceless sonorants are shorter than vowels followed by plain geminates or voiced sonorants.
+Such finding seems to confirm the timing hypothesis.
+
+In \Cref{c:discussion}, I revised the central hypothesis of this thesis on the light of the present findings.
+Even though the prediction of shorter vowels before aspirated consonants is supported by the data, the underlying idea that voicing should cease earlier when aspirated consonants follow could not be confirmed.
+On the contrary, the duration of voicing in words with pre-aspirated stops was significantly longer than its duration in words with plain geminates.
+This indicated that pre-aspiration in the data was normally realised phonetically as a portion of breathy voicing followed by voiceless aspiration.
+In the case of sonorant, the
+
+
+
+
+

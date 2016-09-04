@@ -32,7 +32,7 @@ The list of target words was selected so as to include aspirated and plain gemin
 To test the validity of the laryngeal timing hypothesis, I performed a statistical analysis to verify the following research hypothesis: vowels followed by aspirated consonants (pre-aspirated stops and voiceless sonorants) are shorter than vowels followed by non-aspirated consonants (plain stops and voiced sonorants).
 
 
-\section{Significance of the research}
+
 
 
 
