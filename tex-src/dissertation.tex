@@ -117,6 +117,8 @@
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
 %%%%%%%%%%%%%%%%
+
+%TODO declaration page
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -196,11 +198,10 @@ As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds
 What is worse is that those constructed word forms were incorrect.
 More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
-According to this spirit, this dissertation has been written in \XeLaTeX{} and \texttt{knitr}, a package that enables literate programming support in R \citep{r-core-team2015}.
-%TODO explain better: say that it's in xelatex and that the analysis was in r because with knitr you can combine the two
-The source code of the dissertation can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
+According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis conducted using the R language \citep{r-core-team2015}. 
+The code generating the analysis has been embedded in the dissertation source code using \texttt{knitr}, a package that enables literate programming support in R.
+The analysis source code can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
 The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
-
 
 \section{Dissertation structure}
 The dissertation is thus organised.
@@ -323,14 +324,13 @@ A second line of reasoning, instead, relates it to auditory principles \citep{ja
 Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citep{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
 In fact, \citet{maddieson1976} and \citet{durvasula2012} argue that none of the suggested explanations is satisfactory.
 The majority of the studies makes incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
-In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attribute the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
-%TODO probably need to expand on this
-
+In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attributed the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
+In this work, I will take such an articulatory approach in defining a research hypothesis (see \Cref{s:hypothesis}).
 
 \section{Icelandic}
 \label{s:icelandic}
 
-\ctable[caption = Major consonantal allophones of Icelandic.,
+\ctable[caption = Major consonantal allophones of Icelandic.\tmark,
 label = t:consonants
 ]{lccccc}{
 \tnote{Note that some of the segments in the table are debated in the literature as to whether they are phonemic or just allophones.}
@@ -372,32 +372,31 @@ For example: \textit{bað} /pað/ `bath' [paːð], \textit{kinn} /cɪnn/ `cheek'
 For a review on the theoretical interpretations of the lengthening rule, see \citet{booij1986,pind1999}, and \citet[160--173, 203--208]{arnason2011}.
 }
 
-%TODO maybe add diphthgons as well!
-\ctable[caption = Vocalic phonemes of Icelandic (monophthongs).,
+\ctable[caption = Vocalic phonemes of Icelandic.,
 label = t:vowels
 ]{lcccc}{}{
 \FL
-& \multicolumn{2}{c}{\textbf{front}}    & \multicolumn{2}{c}{\textbf{back}}   \NN
+\textbf{Monophthongs} & \multicolumn{2}{c}{\textbf{front}}    & \multicolumn{2}{c}{\textbf{back}}   \NN
 & \textit{plain} & \textit{rounded} & \textit{plain} & \textit{rounded} \ML
 \textbf{high}     & i &   & & u \NN
 \textbf{high-mid} & ɪ & ʏ  & &  \NN
 \textbf{low-mid}  & ɛ & œ  & & ɔ \NN
-\textbf{low}      &   &   & a & \LL
+\textbf{low}      &   &   & a & \ML
+\multicolumn{5}{l}{\textbf{Diphthongs}: /ai/, /ɛi/, /œi/, /ou/, /au/} \LL
 }
 
 \subsection{Laryngeal contrasts in stops}
-%TODO add examples
 As mentioned in \Cref{s:aspiration}, the contrastive system of Hindi consonants is built on the cross-cutting interaction between aspiration and voicing.
 Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceless aspirated stops.
 Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
-In the so called ``soft'' variety of Icelandic (spoken everywhere in the island with the exception of the northern part), which is also the most widespread, aspiration is neutralised word-medially and word-finally, so that only non-aspirated stops can be found in those contexts.
-For example: 
-In the ``hard'' variety, spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
-In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word.
+In the so called ``soft'' variety (\textit{linmæli}) of Icelandic (spoken everywhere in the island with the exception of the northern part), which is also the most widespread, aspiration is neutralised word-medially and word-finally, so that only non-aspirated stops can be found in those contexts.
+For example: /tʰapʰa/ `to lose' [tʰaːpa], /pʰatʰa/ `to gesticulate' [pʰaːta] \citep[104]{arnason2011}.
+In the ``hard'' variety (\textbf{harðmæli}), spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
+In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word: /tʰapʰa/ `to lose' [tʰaːpʰa], /pʰatʰa/ `to gesticulate' [pʰaːtʰa].
 
 Moreover, aspirated geminate stops, both word-medially and word-finally, are realised as pre-aspirated stops.
-For example: .
+For example: /kʰoppi/ `young seal' [kʰɔppɪ], /koppi/ `chamber.pot:\textsc{dat}' [kʰɔʰpɪ].
 
 \subsection{Laryngeal contrasts in sonorants}
 The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological data\-base \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
@@ -455,23 +454,28 @@ Such similarity in the relative timing of oral and laryngeal gestures strengthen
 
 \subsection{Phonotactics}
 
+\ctable[caption= {Possible phonation and gemination contrasts in Icelandic, ordered by context.
+These are, from left to right, word-initial, intervocalic, between a vowel and /l, r/, between a vowel and a stop, word-final.}
+,
+label= t:contrasts
+]{l|l|ll|l|l|ll}{
+\tnote{These units are phonological geminates. All other units are singletons.}
+\tnote[b]{[ʰp] is the phonetic realisation of the aspirated geminate /ppʰ/.}
+}{
+\FL
+                                    & \#\_  & \multicolumn{2}{c|}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{|c}{\_\#}  \ML
+\multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
+                                    &       &    & pp\tmark &    &    &   & pp\tmark  \NN
+                                    & pʰ    &    & ʰp\tmark\tmark[b] & pʰ &    &   & ʰp\tmark\tmark[b] \ML
+\multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
+                                    & n̥     &    &    &    & n̥  &   &    \LL
+}
+
 Relevant to this study is the way phonation types are exploited to create contrast in stop and sonorant consonants in Icelandic.
 Even if the phonemic oppositions are ideally straightforward---non aspirated consonants contrast with non-aspirated ones---the actual phonotactic distribution of contrastive consonantal segments is quite complex.
 There are restrictions on possible contrasts depending on the position within the word and the preceding or following segments. Except word-initially, both plain and aspirated stops can be geminated.
 \Cref{t:contrasts} shows the distributions of contrasts in stops and sonorants in various contexts within the word.
 The labial stops and the alveolar nasals are used as an exemplification, respectively, of the distribution of stops and sonorants.
-
-\ctable[caption= Possible phonation and gemination contrasts in Icelandic ordered by context.,
-label= t:contrasts
-]{llllllll}{}{
-\FL
-                                    & \#\_  & \multicolumn{2}{l}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{l}{\_\#}  \ML
-\multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
-                                    &       &    & pp &    &    &   & pp  \NN
-                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \ML
-\multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
-                                    & n̥     &    &    &    & n̥  &   &    \LL
-}
 
 
 \section{Research hypothesis}
@@ -521,7 +525,7 @@ Vowels followed by aspirated consonants are of the same duration as vowels follo
 
 \chapter{Methodology}
 \label{c:methodology}
-%TODO prosodic approach
+%TODO prosodic approach and articulatory?
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
 In \Cref{s:materials}, I detail the materials used in the task, which is outlined in \Cref{s:procedure}.
@@ -561,8 +565,11 @@ JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
 
 \section{Materials}
 \label{s:materials}
-%TODO say that geminates or simply stops are equivalent in this thesis due to the phnotactics and the design; maybe use TT for stops only!
-The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).}
+
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
+The terms ``aspirated stop'' will be a shortcut for ``aspirated geminate stop.''
+In case of ambiguities, the former label will be used.
+}
 The list of target words is given in \Cref{t:wordlist}.
 I have chosen to use only real words to avoid the artificiality of constructed speech.
 The justification for such decision goes beyond the scope of this dissertation, but suffice it to say that under an exemplar model of speech production and perception \citep{johnson1997,pierrehumbert2001,bybee2002,johnson2007} a word never experienced before would initially constitute an oddity in the cloud of exemplars and it would thus not be wise to include it in a study of phonetic nature.
@@ -579,23 +586,35 @@ The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words
 Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
-%TODO tokens! I talk about types but should talk about tokens as well
+
+
+\ctable[caption= Number of tokens per class included in the analysis (discarded tokens not included).,
+label= t:tokens
+]{lcccc}{}{
+\FL
+ & \multicolumn{2}{c}{monosyllabic} & \multicolumn{2}{c}{disyllabic} \ML
+manner  & non-asp & asp & non-asp & asp \ML
+stop    & 84      & 109 & 60      & 30 \NN
+nasal   & 29      & 37  & 68      & 54 \NN
+lateral & 12      & 15  & 30      & 27 \NN
+trill   & -       & -   & 15      & 15 \LL
+}
 
 \vspace{2em}
 
 \tablefirsthead{
     \hline
-	word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+	\textbf{word}\hspace{2cm}    & \textbf{IPA}\hspace{2cm}          & \textbf{pos}\hspace{2cm} & \textbf{gloss} \hspace{2cm}  \\
 	\hline}
 \tablehead{
     \hline
-    word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+    \textbf{word}\hspace{2cm}    & \textbf{IPA}\hspace{2cm}          & \textbf{pos}\hspace{2cm} & \textbf{gloss} \hspace{2cm}  \\
     \hline}
 \tablecaption{List of target words.}
 \label{t:wordlist}
 
 \begin{supertabular}[t]{llll}
-\multicolumn{4}{l}{stops}				   \\ \hline
+\multicolumn{4}{l}{\textsc{stops}}				   \\ \hline
 kokk  & kʰoʰk  & noun      & cook          \\
 gogg  & kokk   & noun      & beak          \\
 dökk  & tœʰk   & adjective & dark          \\
@@ -622,7 +641,7 @@ takka & tʰaʰka & noun      & key           \\
 kagga & kʰakka & noun      & barrel        \\
 detta & teʰta  & verb      & fall          \\
 gedda & cetta  & noun      & pike          \\ \hline
-\multicolumn{4}{l}{nasals}				   \\ \hline
+\multicolumn{4}{l}{\textsc{nasals}}				   \\ \hline
 kamp   & kʰam̥p  & noun      & moustache       \\
 kamb   & kʰamp   & noun      & comb            \\
 punt   & pʰʏn̥t  & noun      & decoration      \\
@@ -639,14 +658,14 @@ vanta  & van̥ta  & verb      & want            \\
 vanda  & vanta   & verb      & do st carefully \\
 fínn   & fitn̥   & adjective & smart           \\
 kinn   & kʰɪnn   & noun      & cheek          \\ \hline
-\multicolumn{4}{l}{laterals}				   \\ \hline
+\multicolumn{4}{l}{\textsc{laterals}}				   \\ \hline
 duld   & tʏlt     & adjective & complex  \\
 dult   & tʏl̥t    & adjective & reticent \\
 gelta  & cel̥ta   & verb      & bark     \\
 gelda  & celta    & verb      & castrate \\
 mjólka & mjoul̥ka & verb      & milk     \\
 ólga   & oulka    & verb      & foam    \\ \hline
-\multicolumn{4}{l}{trills}				   \\ \hline
+\multicolumn{4}{l}{\textsc{trills}}				   \\ \hline
 orka   & or̥ka    & noun      & energy   \\
 orga   & orka     & noun      & scream   \\ \hline
 \end{supertabular}
@@ -829,8 +848,7 @@ Since the word list contained monosyllabic and disyllabic words, and both classe
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address [...].
-%TODO add address!
+The R code used in the analysis is available at this address \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
 
 
 
@@ -1364,8 +1382,7 @@ There are two classes of phonetic knowledge.
 The speaker-oriented knowledge deals with the possibilities speakers have to minimise the articulatory effort necessary to produce a particular sequence of gestures (and sounds).
 The other type of knowledge, the listener-oriented knowledge, is instead related to the ways speakers can maximise the distinctive cues of contrastive sounds.
 Such two kinds of phonetic knowledge work together to create an optimal solution between minimum articulatory effort and maximum contrast.
-Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world.
-%TODO citation of competing motivations
+Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world \citep{haiman1983,croft2002}.
 
 We have seen that pre-aspirated stops in Icelandic are preceded by shorter vowels, if we consider the vowel to be the modally voiced open gesture preceding the aspiration.
 The magnitude of the difference in duration between vowels followed by pre-aspirated or plain consonants was around 30--40 milliseconds, enough for the auditory system to perceive it.
@@ -1388,9 +1405,8 @@ This idea is initially supported by the fact that an earlier phasing of spreadin
 
 This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
 In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
-If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic.
+If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic (cf. \citealt{hetzron1972,cristofaro2012,cristofaro2014}.
 The next paragraphs will briefly deal with this task.
-%TODO cite cristofaro and company
 
 \citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
 If this is the case, Icelandic would just be a language that retained pre-aspiration.

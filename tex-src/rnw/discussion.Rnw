@@ -182,8 +182,7 @@ There are two classes of phonetic knowledge.
 The speaker-oriented knowledge deals with the possibilities speakers have to minimise the articulatory effort necessary to produce a particular sequence of gestures (and sounds).
 The other type of knowledge, the listener-oriented knowledge, is instead related to the ways speakers can maximise the distinctive cues of contrastive sounds.
 Such two kinds of phonetic knowledge work together to create an optimal solution between minimum articulatory effort and maximum contrast.
-Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world.
-%TODO citation of competing motivations
+Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world \citep{haiman1983,croft2002}.
 
 We have seen that pre-aspirated stops in Icelandic are preceded by shorter vowels, if we consider the vowel to be the modally voiced open gesture preceding the aspiration.
 The magnitude of the difference in duration between vowels followed by pre-aspirated or plain consonants was around 30--40 milliseconds, enough for the auditory system to perceive it.
@@ -206,9 +205,8 @@ This idea is initially supported by the fact that an earlier phasing of spreadin
 
 This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
 In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
-If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic.
+If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic (cf. \citealt{hetzron1972,cristofaro2012,cristofaro2014}.
 The next paragraphs will briefly deal with this task.
-%TODO cite cristofaro and company
 
 \citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
 If this is the case, Icelandic would just be a language that retained pre-aspiration.

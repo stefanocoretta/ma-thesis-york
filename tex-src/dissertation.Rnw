@@ -69,6 +69,8 @@
 %%% DOCUMENT %%%
 %%%%%%%%%%%%%%%%
 
+%TODO declaration page
+
 \begin{document}
 
 <<setup, include=FALSE, cache=FALSE>>=

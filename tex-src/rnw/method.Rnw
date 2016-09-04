@@ -61,23 +61,37 @@ The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words
 Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
 Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
-%TODO tokens! I talk about types but should talk about tokens as well
+<<tokens, include=FALSE>>=
+table(results$manner,results$asp,results$syl_no)
+@
+
+\ctable[caption= Number of tokens per class included in the analysis (discarded tokens not included).,
+label= t:tokens
+]{lcccc}{}{
+\FL
+ & \multicolumn{2}{c}{monosyllabic} & \multicolumn{2}{c}{disyllabic} \ML
+manner  & non-asp & asp & non-asp & asp \ML
+stop    & 84      & 109 & 60      & 30 \NN
+nasal   & 29      & 37  & 68      & 54 \NN
+lateral & 12      & 15  & 30      & 27 \NN
+trill   & -       & -   & 15      & 15 \LL
+}
 
 \vspace{2em}
 
 \tablefirsthead{
     \hline
-	word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+	\textbf{word}\hspace{2cm}    & \textbf{IPA}\hspace{2cm}          & \textbf{pos}\hspace{2cm} & \textbf{gloss} \hspace{2cm}  \\
 	\hline}
 \tablehead{
     \hline
-    word\hspace{2cm}    & IPA\hspace{2cm}          & pos\hspace{2cm} & gloss \hspace{2cm}  \\
+    \textbf{word}\hspace{2cm}    & \textbf{IPA}\hspace{2cm}          & \textbf{pos}\hspace{2cm} & \textbf{gloss} \hspace{2cm}  \\
     \hline}
 \tablecaption{List of target words.}
 \label{t:wordlist}
 
 \begin{supertabular}[t]{llll}
-\multicolumn{4}{l}{stops}				   \\ \hline
+\multicolumn{4}{l}{\textsc{stops}}				   \\ \hline
 kokk  & kʰoʰk  & noun      & cook          \\
 gogg  & kokk   & noun      & beak          \\
 dökk  & tœʰk   & adjective & dark          \\
@@ -104,7 +118,7 @@ takka & tʰaʰka & noun      & key           \\
 kagga & kʰakka & noun      & barrel        \\
 detta & teʰta  & verb      & fall          \\
 gedda & cetta  & noun      & pike          \\ \hline
-\multicolumn{4}{l}{nasals}				   \\ \hline
+\multicolumn{4}{l}{\textsc{nasals}}				   \\ \hline
 kamp   & kʰam̥p  & noun      & moustache       \\
 kamb   & kʰamp   & noun      & comb            \\
 punt   & pʰʏn̥t  & noun      & decoration      \\
@@ -121,14 +135,14 @@ vanta  & van̥ta  & verb      & want            \\
 vanda  & vanta   & verb      & do st carefully \\
 fínn   & fitn̥   & adjective & smart           \\
 kinn   & kʰɪnn   & noun      & cheek          \\ \hline
-\multicolumn{4}{l}{laterals}				   \\ \hline
+\multicolumn{4}{l}{\textsc{laterals}}				   \\ \hline
 duld   & tʏlt     & adjective & complex  \\
 dult   & tʏl̥t    & adjective & reticent \\
 gelta  & cel̥ta   & verb      & bark     \\
 gelda  & celta    & verb      & castrate \\
 mjólka & mjoul̥ka & verb      & milk     \\
 ólga   & oulka    & verb      & foam    \\ \hline
-\multicolumn{4}{l}{trills}				   \\ \hline
+\multicolumn{4}{l}{\textsc{trills}}				   \\ \hline
 orka   & or̥ka    & noun      & energy   \\
 orga   & orka     & noun      & scream   \\ \hline
 \end{supertabular}
@@ -311,8 +325,7 @@ Since the word list contained monosyllabic and disyllabic words, and both classe
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address [...].
-%TODO add address!
+The R code used in the analysis is available at this address \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
 
 
 

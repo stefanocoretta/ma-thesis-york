@@ -108,7 +108,7 @@ In this work, I will take such an articulatory approach in defining a research h
 \section{Icelandic}
 \label{s:icelandic}
 
-\ctable[caption = Major consonantal allophones of Icelandic.,
+\ctable[caption = Major consonantal allophones of Icelandic.\tmark,
 label = t:consonants
 ]{lccccc}{
 \tnote{Note that some of the segments in the table are debated in the literature as to whether they are phonemic or just allophones.}
@@ -232,23 +232,28 @@ Such similarity in the relative timing of oral and laryngeal gestures strengthen
 
 \subsection{Phonotactics}
 
+\ctable[caption= {Possible phonation and gemination contrasts in Icelandic, ordered by context.
+These are, from left to right, word-initial, intervocalic, between a vowel and /l, r/, between a vowel and a stop, word-final.}
+,
+label= t:contrasts
+]{l|l|ll|l|l|ll}{
+\tnote{These units are phonological geminates. All other units are singletons.}
+\tnote[b]{[ʰp] is the phonetic realisation of the aspirated geminate /ppʰ/.}
+}{
+\FL
+                                    & \#\_  & \multicolumn{2}{c|}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{|c}{\_\#}  \ML
+\multirow{3}{*}{\textbf{stops}}     & p     & p  &    & p  &    & p &  \NN
+                                    &       &    & pp\tmark &    &    &   & pp\tmark  \NN
+                                    & pʰ    &    & ʰp\tmark,\tmark[b] & pʰ &    &   & ʰp\tmark,\tmark[b] \ML
+\multirow{2}{*}{\textbf{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
+                                    & n̥     &    &    &    & n̥  &   &    \LL
+}
+
 Relevant to this study is the way phonation types are exploited to create contrast in stop and sonorant consonants in Icelandic.
 Even if the phonemic oppositions are ideally straightforward---non aspirated consonants contrast with non-aspirated ones---the actual phonotactic distribution of contrastive consonantal segments is quite complex.
 There are restrictions on possible contrasts depending on the position within the word and the preceding or following segments. Except word-initially, both plain and aspirated stops can be geminated.
 \Cref{t:contrasts} shows the distributions of contrasts in stops and sonorants in various contexts within the word.
 The labial stops and the alveolar nasals are used as an exemplification, respectively, of the distribution of stops and sonorants.
-
-\ctable[caption= Possible phonation and gemination contrasts in Icelandic ordered by context.,
-label= t:contrasts
-]{llllllll}{}{
-\FL
-                                    & \#\_  & \multicolumn{2}{l}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{l}{\_\#}  \ML
-\multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
-                                    &       &    & pp &    &    &   & pp  \NN
-                                    & pʰ    &    & ʰp & pʰ &    &   & ʰp \ML
-\multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
-                                    & n̥     &    &    &    & n̥  &   &    \LL
-}
 
 
 \section{Research hypothesis}
@@ -257,7 +262,9 @@ label= t:contrasts
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{hypothesis}
-\caption{Example.}
+\caption{Visual representation of the research hypothesis.
+\textbf{a.} shows the events in words 
+}
 \label{f:hypothesis}
 \end{figure}
 
