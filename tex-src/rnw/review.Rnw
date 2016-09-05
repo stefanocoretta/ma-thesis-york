@@ -263,8 +263,11 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \centering
 \includegraphics[width=0.8\textwidth]{hypothesis}
 \caption{Visual representation of the research hypothesis.
-\textbf{a.} shows the events in words 
-}
+\textbf{a.} shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while \textbf{b.} for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
+Both graphs are a zoom in of the -VCC- part of a word.
+The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
+According to the research hypothesis of this study, voicing offset should be timed earlier in b. than in a. because of the earlier spreading of the vocal folds.
+Based on the design in \citet{esposito2002}.}
 \label{f:hypothesis}
 \end{figure}
 
@@ -298,6 +301,6 @@ Vowels followed by aspirated consonants are of the same duration as vowels follo
 
 %TODO section on prosodic approach and articulatory phonology?
 
-
+%TODO next section is methodology in this thesis i will test the hypthesis and try to answer the questions bla
 
 

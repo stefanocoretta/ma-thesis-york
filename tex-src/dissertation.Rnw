@@ -139,7 +139,10 @@ source("./analysis/games-howell.R")
 \end{titlingpage}
 
 \tableofcontents*
-
+\newpage
+\listoftables*
+\newpage
+\listoffigures*
 
 
 
@@ -169,6 +172,9 @@ source("./analysis/games-howell.R")
 
 
 \appendix
+
+<<figures, child='rnw/figures.Rnw'>>=
+@
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@

@@ -1,0 +1,9 @@
+\chapter{Supplementary material}
+
+\begin{figure}[p]
+%\centering
+\includegraphics[width=\textwidth]{dokk-spr}
+%\includegraphics[width=\textwidth]{dogg_spr}
+\caption{This is just an example pf a picture.}
+\label{f:spr-annotation}
+\end{figure}

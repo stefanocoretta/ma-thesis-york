@@ -137,7 +137,10 @@
 \end{titlingpage}
 
 \tableofcontents*
-
+\newpage
+\listoftables*
+\newpage
+\listoffigures*
 
 
 
@@ -464,10 +467,10 @@ label= t:contrasts
 }{
 \FL
                                     & \#\_  & \multicolumn{2}{c|}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{|c}{\_\#}  \ML
-\multirow{3}{*}{\textit{stops}}     & p     & p  &    & p  &    & p &  \NN
+\multirow{3}{*}{\textbf{stops}}     & p     & p  &    & p  &    & p &  \NN
                                     &       &    & pp\tmark &    &    &   & pp\tmark  \NN
-                                    & pʰ    &    & ʰp\tmark\tmark[b] & pʰ &    &   & ʰp\tmark\tmark[b] \ML
-\multirow{2}{*}{\textit{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
+                                    & pʰ    &    & ʰp\tmark,\tmark[b] & pʰ &    &   & ʰp\tmark,\tmark[b] \ML
+\multirow{2}{*}{\textbf{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
                                     & n̥     &    &    &    & n̥  &   &    \LL
 }
 
@@ -484,7 +487,12 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{hypothesis}
-\caption{Example.}
+\caption{Visual representation of the research hypothesis.
+\textbf{a.} shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while \textbf{b.} for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
+Both graphs are a zoom in of the -VCC- part of a word.
+The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
+According to the research hypothesis of this study, voicing offset should be timed earlier in b. than in a. because of the earlier spreading of the vocal folds.
+Based on the design in \citet{esposito2002}.}
 \label{f:hypothesis}
 \end{figure}
 
@@ -518,7 +526,7 @@ Vowels followed by aspirated consonants are of the same duration as vowels follo
 
 %TODO section on prosodic approach and articulatory phonology?
 
-
+%TODO next section is methodology in this thesis i will test the hypthesis and try to answer the questions bla
 
 
 
@@ -698,7 +706,7 @@ Even if the recording conditions differed between participants, the quality of t
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{textgrid}
-\caption{Example of the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
+\caption[Structure of annotation files]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
 \label{f:textgrid}
 \end{figure}
 
@@ -740,13 +748,21 @@ In words starting with a voiceless consonant or with a vowel, the voicing onset 
 In words starting with one or more voiced continuant consonants, the voiced portion of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
 The right boundary was in both cases the offset of voicing.
 
-\subsection{Glottal spreading}
+\subsection{Glottal spread}
 
 \begin{figure}
+\begin{subfigure}{\textwidth}
 \centering
-\includegraphics[width=\textwidth]{dokk}
-\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
-\label{f:glottal}
+\includegraphics[width=0.7\textwidth]{dokk-spr}
+\caption{/tøkkʰ/ [tøʰk]}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{dogg-spr}
+\caption{/tøkk/ [tøkk]}
+\end{subfigure}
+\caption[Annotation of glottal spread]{Example of the annotation of glottal spread in the words \textit{dökk} `dark' and \textit{dögg} `dew'.}
+\label{f:spreding}
 \end{figure}
 
 
@@ -770,6 +786,24 @@ The right boundary was assumed to fall at the end of visible frication noise.
 
 \subsection{Nasals, laterals and trills}
 
+\begin{figure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{kamp}
+\caption{/kʰamp/}
+\label{f:kamp}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{kamb}
+\caption{/kʰamb/}
+\label{f:kamb}
+\end{subfigure}
+\caption[Annotation of nasality]{Example of the annotation of nasality the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
+}
+\label{f:nasality}
+\end{figure}
+
 Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
 I applied the same principle to laterals and trills.
 I placed the right boundary of these intervals (nasal, lateral, trill) depending on the voicing of the segment.
@@ -777,30 +811,17 @@ The voiceless nasal, lateral and trill consonants terminate with voiceless frict
 The end of friction in these consonants was used as the end of the interval.
 In the voiced counterparts of these, the end of voicing coincided with the right boundary (\Cref{f:kamb}).
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{kamp}
-\caption{The word \textit{kamp} `' as an example of the annotation in the manner tier.}
-\label{f:kamp}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{kamb}
-\caption{The word \textit{kamb} `' as an example of the annotation in the manner tier.}
-\label{f:kamb}
-\end{figure}
 
 \subsection{Stop release}
 The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without an intervening sonorant).
 The release of the stop consonant was marked at the onset of the burst.
-This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction.
+This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction (\Cref{f:release}).
 If the burst was not identifiable from the waveform nor from the spectrogram, no release was marked.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{kopp}
-\caption{Release of [ʰp] in the word \textit{kopp}.}
+\includegraphics[width=0.8\textwidth]{kopp}
+\caption[Release of /ppʰ/]{Release of /ppʰ/ in the word \textit{kopp} /kʰoppʰ/ `chamber pot' [kʰɔʰp].}
 \label{f:release}
 \end{figure}
 
@@ -810,7 +831,9 @@ If the burst was not identifiable from the waveform nor from the spectrogram, no
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{../img/measures}
-\caption[yo]{Schematic illustration of the various measurements.}
+\caption[Schematic illustration of the measurements]{Schematic illustration of the measurements.
+The horizontal lines represent the interval for each of the measurements labelled on the left of the figure.
+}
 \label{f:measures}
 \end{figure}
 
@@ -1226,12 +1249,19 @@ This finding seems to support the timing hypothesis.
 
 \section{Duration of vowels before geminates and duration of geminates}
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\label{f:glottal}
+\end{figure}
+
 We have seen that the duration of vowels as a ration of the VOR is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
 It is worth noting that the VOR of the two classes is different, as said in \Cref{s:vor}.
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
 This is because the VOR is \textit{longer} in words with aspiration while the ratio duration of the vowel is \textit{smaller}.
 Other things being equal, we would expect vowels---i.e. the interval between voice onset and the onset of glottal abduction---in words with pre-aspiration to take the same ratio of the VOR as the vowels in words with plain geminates.
-Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated.
+Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated (see \Cref{f:glottal}).
 Instead, vowels are the 28\% of the VOR if followed by pre-aspirated geminates and the 36\%.
 
 
@@ -1576,6 +1606,17 @@ To sum up,
 
 
 \appendix
+
+
+\chapter{Supplementary material}
+
+\begin{figure}[p]
+%\centering
+\includegraphics[width=\textwidth]{dokk-spr}
+%\includegraphics[width=\textwidth]{dogg_spr}
+\caption{This is just an example pf a picture.}
+\label{f:spr-annotation}
+\end{figure}
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@

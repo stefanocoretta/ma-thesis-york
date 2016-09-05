@@ -10,12 +10,19 @@ This finding seems to support the timing hypothesis.
 
 \section{Duration of vowels before geminates and duration of geminates}
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\label{f:glottal}
+\end{figure}
+
 We have seen that the duration of vowels as a ration of the VOR is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
 It is worth noting that the VOR of the two classes is different, as said in \Cref{s:vor}.
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
 This is because the VOR is \textit{longer} in words with aspiration while the ratio duration of the vowel is \textit{smaller}.
 Other things being equal, we would expect vowels---i.e. the interval between voice onset and the onset of glottal abduction---in words with pre-aspiration to take the same ratio of the VOR as the vowels in words with plain geminates.
-Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated.
+Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated (see \Cref{f:glottal}).
 Instead, vowels are the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "yes"]),2) * 100}\% of the VOR if followed by pre-aspirated geminates and the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "no"]),2) * 100}\%.
 
 <<dur-voic-test, include=FALSE>>=

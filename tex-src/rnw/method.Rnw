@@ -175,7 +175,7 @@ Even if the recording conditions differed between participants, the quality of t
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{textgrid}
-\caption{Example of the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
+\caption[Structure of annotation files]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
 \label{f:textgrid}
 \end{figure}
 
@@ -217,13 +217,21 @@ In words starting with a voiceless consonant or with a vowel, the voicing onset 
 In words starting with one or more voiced continuant consonants, the voiced portion of those consonants was excluded from the interval and the left boundary was placed at the beginning of the vowel following the word-initial consonants.
 The right boundary was in both cases the offset of voicing.
 
-\subsection{Glottal spreading}
+\subsection{Glottal spread}
 
 \begin{figure}
+\begin{subfigure}{\textwidth}
 \centering
-\includegraphics[width=\textwidth]{dokk}
-\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
-\label{f:glottal}
+\includegraphics[width=0.7\textwidth]{dokk-spr}
+\caption{/tøkkʰ/ [tøʰk]}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{dogg-spr}
+\caption{/tøkk/ [tøkk]}
+\end{subfigure}
+\caption[Annotation of glottal spread]{Example of the annotation of glottal spread in the words \textit{dökk} `dark' and \textit{dögg} `dew'.}
+\label{f:spreding}
 \end{figure}
 
 
@@ -247,6 +255,24 @@ The right boundary was assumed to fall at the end of visible frication noise.
 
 \subsection{Nasals, laterals and trills}
 
+\begin{figure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{kamp}
+\caption{/kʰamp/}
+\label{f:kamp}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+\includegraphics[width=0.7\textwidth]{kamb}
+\caption{/kʰamb/}
+\label{f:kamb}
+\end{subfigure}
+\caption[Annotation of nasality]{Example of the annotation of nasality the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
+}
+\label{f:nasality}
+\end{figure}
+
 Following standard practice, I marked the beginning of nasality where a change in the shape of the waveform and in the amplitude of the spectrogram were visible.
 I applied the same principle to laterals and trills.
 I placed the right boundary of these intervals (nasal, lateral, trill) depending on the voicing of the segment.
@@ -254,30 +280,17 @@ The voiceless nasal, lateral and trill consonants terminate with voiceless frict
 The end of friction in these consonants was used as the end of the interval.
 In the voiced counterparts of these, the end of voicing coincided with the right boundary (\Cref{f:kamb}).
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{kamp}
-\caption{The word \textit{kamp} `' as an example of the annotation in the manner tier.}
-\label{f:kamp}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{kamb}
-\caption{The word \textit{kamb} `' as an example of the annotation in the manner tier.}
-\label{f:kamb}
-\end{figure}
 
 \subsection{Stop release}
 The last tier was dedicated to marking the consonant release of the stop following the target vowel (with or without an intervening sonorant).
 The release of the stop consonant was marked at the onset of the burst.
-This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction.
+This is normally visible on the waveform as one or more sudden peaks after the closure, or on the spectrogram as a short interval of low amplitude friction (\Cref{f:release}).
 If the burst was not identifiable from the waveform nor from the spectrogram, no release was marked.
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{kopp}
-\caption{Release of [ʰp] in the word \textit{kopp}.}
+\includegraphics[width=0.8\textwidth]{kopp}
+\caption[Release of /ppʰ/]{Release of /ppʰ/ in the word \textit{kopp} /kʰoppʰ/ `chamber pot' [kʰɔʰp].}
 \label{f:release}
 \end{figure}
 
@@ -287,7 +300,9 @@ If the burst was not identifiable from the waveform nor from the spectrogram, no
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{../img/measures}
-\caption[yo]{Schematic illustration of the various measurements.}
+\caption[Schematic illustration of the measurements]{Schematic illustration of the measurements.
+The horizontal lines represent the interval for each of the measurements labelled on the left of the figure.
+}
 \label{f:measures}
 \end{figure}
 
