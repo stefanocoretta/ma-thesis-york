@@ -3,20 +3,20 @@
 This chapter contains the literature review of this study.
 In \Cref{s:phonation}, I briefly introduce some basic concepts and terminology related to laryngeal activity in speech production.
 \Cref{s:aspiration} deals with the phenomenon known as ``aspiration effect,'' according to which vowels followed by aspirated consonants are longer than when they are followed by non-aspirated consonants.
-In \Cref{s:icelandic}, I discuss the major aspects of the phonology of Icelandic, focussing in particular on the laryngeal contrasts and contexts in stops and sonorants.
-Finally, in \Cref{s:hypothesis}, I describe the hypothesis of this study and the reasons behind it.
+In \Cref{s:icelandic}, I discuss the major aspects of the phonology of Icelandic, focussing in particular on the types and contexts of laryngeal contrasts in stops and sonorants.
+Finally, in \Cref{s:hypothesis}, I describe the research hypothesis of this study and the reasons behind it.
 
 \section{Phonation types and states of the glottis}
 \label{s:phonation}
-The periodic noise characteristic of the human voice is produced in the larynx.
-In particular, the vibration of the vocal folds generates oscillations of the air pressure which is translated as a percept of periodic noise, or voicing, by the auditory system.
+The human voice is the product of the periodic noise generated in the larynx, the organ situated in the neck and involved mainly in breathing and speech.
+In particular, the vibration of the vocal folds generates oscillations of the air pressure which are translated into a percept of periodic noise, or voicing, by the auditory system.
 Even silence during speech is due to a particular configuration of the glottis (the empty space between the two vocal folds).
 The larynx, with the vocal folds, thus plays a major role in human communication.
 
 \citet{halle2002} review which configurations the vocal folds can assume.
 Such configurations are known as the states of the glottis.
-The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, (4) slack vocal folds.
-A spread glottis corresponds to abducted vocal folds.
+The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, and (4) slack vocal folds.
+A spread glottis state corresponds to abducted vocal folds.
 This state is the one naturally used during normal breathing.
 If the vocal folds are adducted so as they tightly press against each other, the glottis assumes a constricted configuration.
 Independently from the first two states, the vocal folds can be either stiff or slack.
@@ -27,7 +27,7 @@ The first two states of the glottis can combine with the other two to create sev
 \citet{ladefoged1973} discusses the four main phonation types that are employed to create phonological contrast in the languages of the world.
 These are voicelessness, modal voice, breathy voice and creaky voice \citep{halle2002}.
 A voiceless sound is produced with a laryngeal configuration that prevents vibration of the vocal folds.
-The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to not allow enough pressure to build up and set off the vibration.
+The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to increase the threshold of pressure build up and favour voicing.
 Modal voicing, instead, is produced with slack vocal folds and/or with adducted vocal folds.
 When the transglottal pressure is sufficiently weak, the pressure of the airflow coming from the lungs can set the vocal folds to vibrate and produce a periodic sound, which is voicing.
 Such mechanism of generating voicing is not the only one.
@@ -43,7 +43,7 @@ In the first case we talk about post-aspirated stops, while in the second of pre
 \section{The effect of aspiration on vowel duration}
 \label{s:aspiration}
 
-Vowel duration has been reported in the literature to correlate with the presence vs. absence of aspiration in the following consonant.
+Vowel duration has been reported in the literature to correlate with the presence or absence of aspiration in the following consonant.
 In particular, \citet{maddieson1976} and \citet{durvasula2012} found that vowels followed by aspirated consonants in Hindi are longer than vowels followed by non-aspirated consonants.
 In the following paragraphs, I will briefly introduce the system of laryngeal oppositions of Hindi.
 I will then review some of the findings concerning the aspiration effect and the major theories regarding the cause of this phenomenon.
