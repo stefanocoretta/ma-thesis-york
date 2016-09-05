@@ -64,6 +64,7 @@
 \graphicspath{{./img/}}
 
 \pagestyle{ruled}
+\pagenumbering{arabic}
 
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
@@ -134,9 +135,13 @@ source("./analysis/games-howell.R")
 
 \frontmatter
 
+
 \begin{titlingpage}
 \maketitle
 \end{titlingpage}
+
+\pagenumbering{arabic}*
+\setcounter{page}{3}
 
 \tableofcontents*
 \newpage
@@ -148,6 +153,7 @@ source("./analysis/games-howell.R")
 
 
 \mainmatter
+\setcounter{page}{9}
 
 <<intro, child='rnw/intro.Rnw'>>=
 @

@@ -113,6 +113,7 @@
 \graphicspath{{./img/}}
 
 \pagestyle{ruled}
+\pagenumbering{arabic}
 
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
@@ -132,9 +133,13 @@
 
 \frontmatter
 
+
 \begin{titlingpage}
 \maketitle
 \end{titlingpage}
+
+\pagenumbering{arabic}*
+\setcounter{page}{3}
 
 \tableofcontents*
 \newpage
@@ -146,6 +151,7 @@
 
 
 \mainmatter
+\setcounter{page}{9}
 
 
 \chapter{Introduction}
@@ -284,6 +290,7 @@ Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance'
 %ADD in note that phonemic is different
 %ADD that no sd was given
 \ctable[caption = Mean duration of vowels in Hindi when followed by dental and velar stops.\tmark,
+cap= Mean duration of vowels in Hindi when followed by dental and velar stops.,
 label = t:hindi
 ]{llll}{
 \tnote{The value of the standard deviation was not reported in the studies, so it is not included here.}
@@ -334,6 +341,7 @@ In this work, I will take such an articulatory approach in defining a research h
 \label{s:icelandic}
 
 \ctable[caption = Major consonantal allophones of Icelandic.\tmark,
+cap= Major consonantal allophones of Icelandic.,
 label = t:consonants
 ]{lccccc}{
 \tnote{Note that some of the segments in the table are debated in the literature as to whether they are phonemic or just allophones.}
@@ -487,7 +495,7 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{hypothesis}
-\caption{Visual representation of the research hypothesis.
+\caption[Visual representation of the research hypothesis.]{Visual representation of the research hypothesis.
 \textbf{a.} shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while \textbf{b.} for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
 Both graphs are a zoom in of the -VCC- part of a word.
 The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
@@ -1001,7 +1009,7 @@ According to tests for the difference between means, the VOR in all classes of w
 
 \end{knitrout}
 \end{subfigure}
-\caption{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
 The plots on the left hand side show the durations of the VOR in monosyllabic words.
 On the right hand side, the durations of the VOR in disyllabic words are displayed.
 From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:vor-rho}).
@@ -1017,7 +1025,7 @@ In each plot, the duration of the VOR in the non-aspirated and aspirated conditi
 \includegraphics[width=0.8\textwidth]{img/di-rho-vor-1} 
 
 \end{knitrout}
-\caption{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
 On the left, the VOR duration of words with a voiceless trill /r̥/ (VR̥CV) is reported, while on the right the one in words with a voiced trill /r/ (VRCV).}
 \label{f:vor-rho}
 \end{figure}
@@ -1087,7 +1095,7 @@ The difference in the mean of the vowel ratio between the non-aspirated (0.37, S
 
 \end{knitrout}
 \end{subfigure}
-\caption{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
+\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
 The plots on the left hand side show the durations of vowels in monosyllabic words.
 On the right hand side, the durations in disyllabic words are displayed.
 From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:voweldurrho}).
@@ -1103,7 +1111,7 @@ In each plot, the duration of vowels in the non-aspirated and aspirated conditio
 \includegraphics[width=0.8\textwidth]{img/di-rho-box-1} 
 
 \end{knitrout}
-\caption{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
+\caption[Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV).]{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
 \label{f:voweldurrho}
 \end{figure}
 
@@ -1293,7 +1301,7 @@ This is not surprising, since glottal spread is not incompatible with voicing an
 \includegraphics[width=0.8\textwidth]{img/voicing-stop-1} 
 
 \end{knitrout}
-\caption{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
+\caption[Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops.]{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
 The duration of voicing in words with pre-aspirated geminates is, on average, longer than the duration in words with non-aspirated stops, and it also has greater variance.
 }
 \label{f:voicdur}
@@ -1302,7 +1310,10 @@ The duration of voicing in words with pre-aspirated geminates is, on average, lo
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{reality}
-\caption{yo}
+\caption[Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops.]{Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops. a. shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while b. for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
+Both graphs are zoomed in the -VCC- part of the words.
+The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
+Based on the design in Esposito (2002).}
 \label{f:reality}
 \end{figure}
 

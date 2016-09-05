@@ -64,7 +64,7 @@ boxplot(dur_voic ~ asp,
         ylab = "duration (msec)"
         )
 @
-\caption{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
+\caption[Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops.]{Duration in milliseconds of voicing in mono- and disyllabic words containing geminate stops, depending on presence or absence of glottal spread in the geminate.
 The duration of voicing in words with pre-aspirated geminates is, on average, longer than the duration in words with non-aspirated stops, and it also has greater variance.
 }
 \label{f:voicdur}
@@ -73,7 +73,10 @@ The duration of voicing in words with pre-aspirated geminates is, on average, lo
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{reality}
-\caption{yo}
+\caption[Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops.]{Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops. a. shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while b. for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
+Both graphs are zoomed in the -VCC- part of the words.
+The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
+Based on the design in Esposito (2002).}
 \label{f:reality}
 \end{figure}
 

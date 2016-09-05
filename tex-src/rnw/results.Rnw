@@ -187,7 +187,7 @@ boxplot(vor ~ asp,
         )
 @
 \end{subfigure}
-\caption{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
 The plots on the left hand side show the durations of the VOR in monosyllabic words.
 On the right hand side, the durations of the VOR in disyllabic words are displayed.
 From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:vor-rho}).
@@ -206,7 +206,7 @@ boxplot(vor ~ asp,
         main = "-VRCV"
         )
 @
-\caption{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
 On the left, the VOR duration of words with a voiceless trill /r̥/ (VR̥CV) is reported, while on the right the one in words with a voiced trill /r/ (VRCV).}
 \label{f:vor-rho}
 \end{figure}
@@ -304,7 +304,7 @@ boxplot(norm_abs_voic ~ asp,
         )
 @
 \end{subfigure}
-\caption{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
+\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
 The plots on the left hand side show the durations of vowels in monosyllabic words.
 On the right hand side, the durations in disyllabic words are displayed.
 From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:voweldurrho}).
@@ -324,7 +324,7 @@ boxplot(norm_abs_voic ~ asp,
         ylim = c(0.10,0.60)
         )
 @
-\caption{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
+\caption[Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV).]{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
 \label{f:voweldurrho}
 \end{figure}
 

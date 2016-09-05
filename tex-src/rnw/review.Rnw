@@ -59,6 +59,7 @@ Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance'
 %ADD in note that phonemic is different
 %ADD that no sd was given
 \ctable[caption = Mean duration of vowels in Hindi when followed by dental and velar stops.\tmark,
+cap= Mean duration of vowels in Hindi when followed by dental and velar stops.,
 label = t:hindi
 ]{llll}{
 \tnote{The value of the standard deviation was not reported in the studies, so it is not included here.}
@@ -109,6 +110,7 @@ In this work, I will take such an articulatory approach in defining a research h
 \label{s:icelandic}
 
 \ctable[caption = Major consonantal allophones of Icelandic.\tmark,
+cap= Major consonantal allophones of Icelandic.,
 label = t:consonants
 ]{lccccc}{
 \tnote{Note that some of the segments in the table are debated in the literature as to whether they are phonemic or just allophones.}
@@ -262,7 +264,7 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{hypothesis}
-\caption{Visual representation of the research hypothesis.
+\caption[Visual representation of the research hypothesis.]{Visual representation of the research hypothesis.
 \textbf{a.} shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while \textbf{b.} for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
 Both graphs are a zoom in of the -VCC- part of a word.
 The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
