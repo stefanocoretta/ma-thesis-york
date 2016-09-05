@@ -139,7 +139,7 @@
 \maketitle
 \end{titlingpage}
 
-\pagenumbering{arabic}*
+\pagenumbering{arabic}
 \setcounter{page}{3}
 
 \tableofcontents*
@@ -158,8 +158,8 @@
 \chapter{Introduction}
 \label{c:introduction}
 
-This study deals with the relationship between the presence \textit{vs.} the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
-\citet{maddieson1976,maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
+This study deals with the relationship between the presence versus the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
+\citet{maddieson1976} and \citet{maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
 This phenomenon has been subsequently called the ``aspiration effect'' by \citet{durvasula2012}, who further confirmed that the duration of vowel was related to aspiration.
 Even if the effect has been shown to exist, no explanation has been given for it.
 Moreover, these studies only dealt with post-aspiration.
@@ -169,7 +169,7 @@ Such step has been taken in conducting this research.
 Icelandic has been chosen as the language under study since its consonantal system can be interpreted as thoroughly based on aspiration contrasts.
 In particular, aspiration in Icelandic involves both stops and sonorants consonants.
 In certain contexts, non-aspirated geminate stops (/CC/) contrast with pre-aspirated stops (/ʰC/).
-Similarly, voiced sonorants followed by a stop (/NC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/N̥C/).
+Similarly, voiced sonorants followed by a stop (/SC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/S̥C/).
 Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect the presence of aspiration has on the duration of the preceding vowel.
 The Icelandic phonological system thus constitutes an ideal locus of enquiry on the effects of aspiration on vowel duration in a more systematic way and in novel contexts than previously possible.
 
@@ -183,19 +183,19 @@ I call this view the ``timing hypothesis,'' which will be the focus of this stud
 \section{Research design}
 
 This research has been designed so as to answer two questions: (1) does Icelandic show the aspiration effect? and (2) is the aspiration effect caused by the relative timing of laryngeal gestures in relation to oral gestures?
-To access the existence of the aspiration effect in Icelandic, I collected data from native speakers.
-They were recorded while reading a frame sentence which contained the target words.
-The list of target words was selected so as to include aspirated and plain geminate stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
+To access the existence of the aspiration effect in Icelandic, I collected data from native speakers of the language.
+They were recorded while reading a list of sentences which contained the target words.
+The list of target words was selected so as to include aspirated and non-aspirated stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
 To test the validity of the laryngeal timing hypothesis, I performed a statistical analysis to verify the following research hypothesis: vowels followed by aspirated consonants (pre-aspirated stops and voiceless sonorants) are shorter than vowels followed by non-aspirated consonants (plain stops and voiced sonorants).
 
 
 \section{Reproducibility}
 The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
-The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
+The concept of reproducible research stems from the idea the the product of scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
 Instead, such outcome should also include the environment in which the analysis that gave the results was performed.
 Such an environment consists of the data sets and of the computational operations (in the form of code) used in the analysis.
 A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
-While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
+While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated---and not reproduced---when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
 
 One way to satisfy the reproducibility criterion is using literate programming.
 In literate programming, the computer code used to generate the results of the research is embedded within the research document.
@@ -203,22 +203,22 @@ The idea of literate programming has been developed by Donald Knuth \citep{knuth
 This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
 Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible \citep{maxwell2005,maxwell2013}.
 
-An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].
+An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO 639 code.}
 As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
 What is worse is that those constructed word forms were incorrect.
 More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
-According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis conducted using the R language \citep{r-core-team2015}. 
+According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis has been conducted using the R language \citep{r-core-team2015}. 
 The code generating the analysis has been embedded in the dissertation source code using \texttt{knitr}, a package that enables literate programming support in R.
-The analysis source code can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
-The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
+The analysis source code can be found at \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
+The dataset will soon be downloadable from \url{http://dx.doi.org/10.18710/7NLJSG}.
 
 \section{Dissertation structure}
 The dissertation is thus organised.
 \Cref{c:review} contains a review of the literature relevant for the present study.
-I will first introduce some background terminology and concept of the phonetics of laryngeal activity, followed by an overview of the relation between presence \textit{vs.} absence of aspiration and vowel duration.
+I will first introduce some background terminology and concepts of the phonetics of laryngeal activity, followed by an overview of the relation between presence versus absence of aspiration and vowel duration.
 Then, I will provide a brief description of the phonological system of Icelandic with a focus on the laryngeal contrasts in stops and sonorants.
-The chapter closes with the statement of the research hypothesis.
+The chapter closes with the presentation of the research hypothesis.
 \Cref{c:methodology} deals with the methodology of the experiment.
 I will first discuss about the participants recruited for this study, the materials and the procedure used in the experimental task.
 I will then give particular attention to the annotation scheme that was applied to the data and to the criteria used to extract the measurements.
@@ -226,7 +226,7 @@ In \Cref{c:results} I will present the results of the statistical analysis run o
 Separate sections will deal with the duration of the words, the Voice Onset to Release (VOR), the vowels, the stop closure, the glottal spread gesture and of the sonorants.
 \Cref{c:discussion} examines the results on the light of the research hypothesis.
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
-Finally, concludes the dissertation with a summary of this work.
+Finally, \Cref{c:conclusions} concludes the dissertation with a summary of this work.
 
 
 
@@ -235,20 +235,20 @@ Finally, concludes the dissertation with a summary of this work.
 This chapter contains the literature review of this study.
 In \Cref{s:phonation}, I briefly introduce some basic concepts and terminology related to laryngeal activity in speech production.
 \Cref{s:aspiration} deals with the phenomenon known as ``aspiration effect,'' according to which vowels followed by aspirated consonants are longer than when they are followed by non-aspirated consonants.
-In \Cref{s:icelandic}, I discuss the major aspects of the phonology of Icelandic, focussing in particular on the laryngeal contrasts and contexts in stops and sonorants.
-Finally, in \Cref{s:hypothesis}, I describe the hypothesis of this study and the reasons behind it.
+In \Cref{s:icelandic}, I discuss the major aspects of the phonology of Icelandic, focussing in particular on the types and contexts of laryngeal contrasts in stops and sonorants.
+Finally, in \Cref{s:hypothesis}, I describe the research hypothesis of this study and the reasons behind it.
 
 \section{Phonation types and states of the glottis}
 \label{s:phonation}
-The periodic noise characteristic of the human voice is produced in the larynx.
-In particular, the vibration of the vocal folds generates oscillations of the air pressure which is translated as a percept of periodic noise, or voicing, by the auditory system.
+The human voice is the product of the periodic noise generated in the larynx, the organ situated in the neck and involved mainly in breathing and speech.
+In particular, the vibration of the vocal folds generates oscillations of the air pressure which are translated into a percept of periodic noise, or voicing, by the auditory system.
 Even silence during speech is due to a particular configuration of the glottis (the empty space between the two vocal folds).
 The larynx, with the vocal folds, thus plays a major role in human communication.
 
 \citet{halle2002} review which configurations the vocal folds can assume.
 Such configurations are known as the states of the glottis.
-The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, (4) slack vocal folds.
-A spread glottis corresponds to abducted vocal folds.
+The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, and (4) slack vocal folds.
+A spread glottis state corresponds to abducted vocal folds.
 This state is the one naturally used during normal breathing.
 If the vocal folds are adducted so as they tightly press against each other, the glottis assumes a constricted configuration.
 Independently from the first two states, the vocal folds can be either stiff or slack.
@@ -259,7 +259,7 @@ The first two states of the glottis can combine with the other two to create sev
 \citet{ladefoged1973} discusses the four main phonation types that are employed to create phonological contrast in the languages of the world.
 These are voicelessness, modal voice, breathy voice and creaky voice \citep{halle2002}.
 A voiceless sound is produced with a laryngeal configuration that prevents vibration of the vocal folds.
-The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to not allow enough pressure to build up and set off the vibration.
+The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to increase the threshold of pressure build up and favour voicing.
 Modal voicing, instead, is produced with slack vocal folds and/or with adducted vocal folds.
 When the transglottal pressure is sufficiently weak, the pressure of the airflow coming from the lungs can set the vocal folds to vibrate and produce a periodic sound, which is voicing.
 Such mechanism of generating voicing is not the only one.
@@ -275,12 +275,12 @@ In the first case we talk about post-aspirated stops, while in the second of pre
 \section{The effect of aspiration on vowel duration}
 \label{s:aspiration}
 
-Vowel duration has been reported in the literature to correlate with the presence vs. absence of aspiration in the following consonant.
+Vowel duration has been reported in the literature to correlate with the presence or absence of aspiration in the following consonant.
 In particular, \citet{maddieson1976} and \citet{durvasula2012} found that vowels followed by aspirated consonants in Hindi are longer than vowels followed by non-aspirated consonants.
 In the following paragraphs, I will briefly introduce the system of laryngeal oppositions of Hindi.
 I will then review some of the findings concerning the aspiration effect and the major theories regarding the cause of this phenomenon.
 
-The consonantal system of Hindi is based on a four-way opposition of laryngeal contrasts \citep{ohala1983}.
+The consonantal system of Hindi [\textsc{glotto}: \texttt{hind1269}] is based on a four-way opposition of laryngeal contrasts \citep{ohala1983}.
 For each place of articulation, there is a voiceless unaspirated, a voiced unaspirated, a voiceless aspirated and (breathy) voiced aspirated stop: for example, [t], [d], [tʰ], [dʱ].
 The voiceless aspirated stops (like [tʰ]) are similar to the aspirated stops of English: a relatively long VOT follows the release of the occlusion.
 The voiced counterpart (like [dʱ]) is normally voiced throughout the closure and the aspiration is characterised by breathy voicing.
@@ -294,7 +294,7 @@ Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance'
 cap= Mean duration of vowels in Hindi when followed by dental and velar stops.,
 label = t:hindi
 ]{llll}{
-\tnote{The value of the standard deviation was not reported in the studies, so it is not included here.}
+\tnote{The values of the standard deviations were not reported in the studies, so it is not included here.}
 }{
 \FL
 \multicolumn{2}{l}{\citet{maddieson1976}} & \multicolumn{2}{l}{\citet{lampp2004}} \ML
@@ -305,7 +305,7 @@ tʰ      & 184.75 & kʰ & 217 \NN
 dʱ      & 196    & gʱ & 221 \LL
 }
 
-\citet{lampp2004} could not replicate the findings in \citet{maddieson1976}.
+As it can be seen from \Cref{t:hindi}, \citet{lampp2004} could not replicate the findings in \citet{maddieson1976}.
 \citet{durvasula2012}, however, performed a more controlled task and found clear evidence that aspiration lengthens the preceding vowel.\footnote{Voicing also played a role in the lengthening of vowels, where vowels followed by voiced stops were longer than vowels followed by voiceless stops, independently from aspiration.
 Voicing and aspiration interacted so that a vowel followed by a voiced aspirated consonant was roughly two times longer than a vowel followed by a non-aspirated voiceless stop.
 On the relation between vowel duration and voicing, see the following paragraphs.}
@@ -313,28 +313,28 @@ They also noted that an increase in closure duration of the stop following the v
 The positive correlation between vowel duration and closure duration found in this study is the opposite of what has been found by \citet{maddieson1976} and \citet{lampp2004}.
 Aspirated consonants in Hindi have a shorter closure duration than non-aspirated consonants.
 Since vowels followed by aspirated consonants are longer, it is logical to assume that the shorter closure duration allows for the vowel to be longer, and, vice versa, the longer closure duration of non-aspirated stops makes the preceding vowel shorter.
-However, since after controlling for confounds the duration of the vowel is positively correlated with closure duration, such explanation is not compatible.
+However, since---after controlling for confounds---the duration of the vowel was positively correlated with closure duration, such explanation must be discarded.
 
 \citet{maddieson1976} and \citet{durvasula2012} do not provide an explanation for the effect of aspiration on vowel duration.
 Instead, they review proposals from other studies that dealt with a homologous phenomenon, the voicing effect.
 The voicing effect states that vowels followed by voiced consonants are longer than vowels followed by voiceless consonants \citep{house1953,chen1970,hussein1994,durvasula2012}.
-The voicing effect has been found in several languages, including English, Swedish, French, Arabic and Hindi \citep[191]{soskuthy2013}.
+The voicing effect has been found in several languages, including English, Swedish, French, Arabic and Hindi \citep[p. 191]{soskuthy2013}.
 However, the strength and consistency of such effect vary depending on the language and on different contexts within one language.
 While English has been reported to have a strong and consistent voicing effect, other languages, like Spanish, show a weaker effect \citep{hussein1994}.
-On the other hand, yet other languages, such as Italian, have been shown to have no voicing effect at all \citep{esposito2002}.\footnote{\citet{laeufer1992}, however, argues that the differences in the strength of the effect are due to discrepancies in the experimental design.
-Since this is not directly relevant to the present study, I refer the reader to \citet{laeufer1992} and references therein.
+On the other hand, yet other languages, such as Italian, have been shown to have no voicing effect at all \citep{esposito2002}.\footnote{\citet{laeufer1992}, however, argues that the differences in the strength of the effect are due to discrepancies in the materials and experimental design used in the various studies.
+Since this is not directly relevant to the present research, I refer the reader to \citet{laeufer1992} and references therein.
 } 
 
 Several explanations for the voicing effect have been proposed in the literature.
 \citet{soskuthy2013} listed them into two categories.
 One school of thought ascribes the voicing effect to articulatory properties of the consonant following the vowel \citep{belasco1953,chen1970}.
-For example, \citep{belasco1953} argues that the voicing effect depends on the articulatory force needed to produce voiceless consonants.
+For example, \citet{belasco1953} argues that the voicing effect depends on the articulatory force needed to produce voiceless consonants.
 Since, according to him, articulatory force is kept constant, vowels before voiceless stops are shortened to compensate for the higher articulatory force needed to produce them.
 
 A second line of reasoning, instead, relates it to auditory principles \citep{javkin1976,kluender1988}.
-Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citep{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
+Since the transition between vowels and voiced stops is gradual and does not have a clear boundary as with vowels followed by voiceless stops, \citet{javkin1976} argues that the voiced portion of the consonant is perceived to be part of the previous vowel.
 In fact, \citet{maddieson1976} and \citet{durvasula2012} argue that none of the suggested explanations is satisfactory.
-The majority of the studies makes incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
+The majority of the studies make incorrect predictions for vowel length followed by aspirated consonants, as found in Hindi.
 In contrast, a promising line of enquiry emerges from the proposal by \citet{chomsky1968}, who attributed the voicing effect to adjustments of the larynx when moving from a vowel to a consonant.
 In this work, I will take such an articulatory approach in defining a research hypothesis (see \Cref{s:hypothesis}).
 
@@ -356,13 +356,13 @@ label = t:consonants
 \textbf{trills}     &         & r r̥    &       &         &  \LL
 }
 
-Icelandic [\textsc{glotto}: \texttt{icel1247}]\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO code.} is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic [\textsc{glotto}: \texttt{icel1247}] is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
 %%TODO say more about this
 
 The modern phonological inventory of Icelandic has been subject to different analyses and it is still a matter of controversy \citep{thraisson1978,jessen1998,arnason2011}.
-\Cref{t:consonants} reports the major consonantal allophones of Icelandic, as normally described in the literature \citep[98]{arnason2011}.
+\Cref{t:consonants} reports the major consonantal allophones of Icelandic, as normally described in the literature \citep[p. 98]{arnason2011}.
 They do not necessarily represent the phonemic consonants of Icelandic and are rather surface segments.\footnote{
 On the quarrel about the phonemic status of pre-aspiration and voiceless sonorants, see \citet{thraisson1978,jessen1998,berg2001,hansson2003,bombien2006}.
 }
@@ -381,7 +381,7 @@ Icelandic has the following diphthongs: the /i/-diphthongs /ai/, /ɛi/, /œi/, a
 The vocalic system of this language does not exploit phonological length distinctively.
 Instead, vowels (both monophthongs and diphthongs) are predictably long when followed by two or more consonants, while they are short if one or no consonant follows.
 For example: \textit{bað} /pað/ `bath' [paːð], \textit{kinn} /cɪnn/ `cheek' [cɪnn], \textit{baka} /pakʰa/  `to bake' [paːkʰa] and \textit{bagga} /pakka/ `burden.\textsc{acc}' [pakka]; \textit{álnir} /aulnɪr/ `wealth' [aulnɪr̥] ‘wealth’, \textit{ál} /aul/ `eel.\textsc{acc}' [auːl̥], \textit{álar} /aular/ `eels' [auːlar̥].\footnote{The actual distribution of long and short vowels is, unsurprisingly, debated.
-For a review on the theoretical interpretations of the lengthening rule, see \citet{booij1986,pind1999}, and \citet[160--173, 203--208]{arnason2011}.
+For a review on the theoretical interpretations of the lengthening rule, see \citet{booij1986,pind1999}, and \citet[pp. 160--173, 203--208]{arnason2011}.
 }
 
 \ctable[caption = Vocalic phonemes of Icelandic.,
@@ -403,15 +403,15 @@ Icelandic, on the other hand, contrasts only voiceless unaspirated with voiceles
 Voicing is reported to be totally absent in Icelandic stops, and does not appear even as passive voicing in intervocalic position \citep{arnason2011}.
 The actual phonetic realisation of the aspirated series though varies depending on the variety it is spoken and on the phonological context.
 In the so called ``soft'' variety (\textit{linmæli}) of Icelandic (spoken everywhere in the island with the exception of the northern part), which is also the most widespread, aspiration is neutralised word-medially and word-finally, so that only non-aspirated stops can be found in those contexts.
-For example: /tʰapʰa/ `to lose' [tʰaːpa], /pʰatʰa/ `to gesticulate' [pʰaːta] \citep[104]{arnason2011}.
-In the ``hard'' variety (\textbf{harðmæli}), spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
+For example: /tʰapʰa/ `to lose' [tʰaːpa], /pʰatʰa/ `to gesticulate' [pʰaːta] \citep[p. 104]{arnason2011}.
+In the ``hard'' variety (\textit{harðmæli}), spoken in the northern area of the island, the same neutralisation pattern occurs, but the unmarked member in the neutralisation---the one that emerges phonetically---is the aspirated one.
 In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word: /tʰapʰa/ `to lose' [tʰaːpʰa], /pʰatʰa/ `to gesticulate' [pʰaːtʰa].
 
 Moreover, aspirated geminate stops, both word-medially and word-finally, are realised as pre-aspirated stops.
-For example: /kʰoppi/ `young seal' [kʰɔppɪ], /koppi/ `chamber.pot:\textsc{dat}' [kʰɔʰpɪ].
+For example: /kʰɔppɪ/ `young seal' [kʰɔppɪ], but /kɔppɪ/ `chamber pot (dative)' [kʰɔʰpɪ].
 
 \subsection{Laryngeal contrasts in sonorants}
-The Lyon-Albuquerque Phonological Systems Database (LAPSyD) phonological data\-base \citep{Maddieson2012} states that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
+The Lyon-Albuquerque Phonological Systems Database \citep{Maddieson2012} reports that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
 The contrastive use of laryngeal distinctions in sonorants can thus be considered cross-linguistically rare (only 8.7\% of languages in LAPSyD have this property).
 Unsurprisingly, sonorants produced with modal voicing are the most common type.
 If more than one phonation type is used in sonorants to accomplish phonological contrasts, at least one of those is always modal voicing.
@@ -424,36 +424,36 @@ Such move will prove to be useful for the development of the hypothesis in the p
 Apart from modal voicing, three other types of phonations are found among nasals in the languages of the world: breathy voice, creaky voice and voicelessness.
 Breathy and creaky voice will not be dealt with here, since they are not immediately relevant for this study.
 \citet{bhaskararao1991} state that voicelessness in nasals is implemented in two possible ways.
-The type known as the ``Burmese type,'' which is also the most common, is constituted by an initial portion of voicelessness followed by a portion characterised by modal voicing (bilabial [N̥͡mV], and alveolar [N̥͡nV]).\footnote{Since place cues are not recoverable during the voiceless part of the nasal, the capital letter ⟨N⟩ is used to indicate placelessness.
+The type known as the ``Burmese type,'' which is also the most common, is constituted by an initial portion of voicelessness followed by a portion characterised by modal voicing (for example,bilabial [N̥͡m], and alveolar [N̥͡n]).\footnote{Since place cues are not recoverable during the voiceless part of the nasal, the capital letter ⟨N⟩ is used to indicate placelessness.
 This solution is used by \citet{silverman2012}.
 }
 In the second type of voiceless nasals, the segment is voiceless through out its duration.
 However, when oral occlusion is released, the velum is still open, so that the nasal port is unobstructed.
 Since the velum is open, air can freely escape through the nasal cavity.
-The small burst produced by releasing the occlusion mimics the auditory features of an epenthetic stop \citep[84]{bhaskararao1991}.
-Such configuration could be represented as [N̥ᵖV] for the bilabial nasal and [N̥ᵗV] for the alveolar one.
+The small burst produced by releasing the occlusion mimics the auditory features of an epenthetic stop \citep[p. 84]{bhaskararao1991}.
+Such configuration could be represented as [N̥ᵖ] for the bilabial nasal and [N̥ᵗ] for the alveolar one.
 
-\citet[111]{ladefoged1996} say that the nasal airflow of the voiceless nasals of Burmese is very high.
+\citet[p. 111]{ladefoged1996} say that the nasal airflow of the voiceless nasals of Burmese is very high.
 Since air comes from the lungs and the oral cavity is closed by the tongue, the airflow rate is correlated with the amount of glottal width.
 A high nasal airflow seems thus to suggest that voiceless nasals are produced with abducted vocal folds.
 Due to this property, the researchers argue that voiceless nasals in general are perhaps better described as ``aspirated.''
-\citet[82]{kehrein2002}, based on \citet{ladefoged1996}, interprets voiceless nasals as phonologically aspirated.
+\citet[p. 82]{kehrein2002}, based on \citet{ladefoged1996}, interprets voiceless nasals as phonologically aspirated.
 
 % They are reported to be usually longer in comparison to their voiced counterparts \citep[111]{ladefoged1996sounds}.
 
 As with nasals, laterals and trills can use phonation types contrastively, included voicelessness.
-Voiceless laterals can be realised as either approximants or fricatives \citet{ladefoged1996}.
-These two way of implementing voiceleness in laterals can be distinguished according to a variety of acoustic parameters.
-Given that in approximants the vocal tract is open while in fricatives it is more constricted, approximants are normally characterised by ``a lower amplitude of noise, a greater tendency to anticipate the voicing of a following vowel, and a concentration of energy lower in the spectrum than voiceless fricative laterals'' \citep[198]{ladefoged1996}.
+Voiceless laterals can be realised as either approximants or fricatives \citep{ladefoged1996}.
+These two ways of implementing voiceleness in laterals can be distinguished according to a variety of acoustic parameters.
+Given that in approximants the vocal tract is open while in fricatives it is more constricted, approximants are normally characterised by ``a lower amplitude of noise, a greater tendency to anticipate the voicing of a following vowel, and a concentration of energy lower in the spectrum than voiceless fricative laterals'' \citep[p. 198]{ladefoged1996}.
 
 Trills are made up by a sequence of quickly repeated closures produced in the oral cavity.
 Voiced trills are characterised by the presence of voicing during the intervals between each closure.
-In voiceless trills, instead, voicing is absent during and between the closures that constitute the trill \citep[236]{ladefoged1996}.
+In voiceless trills, instead, voicing is absent during and between the closures that constitute the trill \citep[p. 236]{ladefoged1996}.
 %For
 
-\citet{helgason2002} notes how the phasing of the laryngeal gestures in pre-aspirated stops resembles the one in voiceless sonorants.
+\citet{helgason2002} notes, about Icelandic, how the phasing of the laryngeal gestures in pre-aspirated stops resembles the one in voiceless sonorants.
 In both cases, the peak of glottal spread is achieved before the stop closure.
-Moreover, the voice offset is simultaneous with stop closure in plain geminates and voiced sonorants, while it occurs before the stop closure in both pre-aspirated geminates and voiceless sonorants.
+Moreover, the voice offset is simultaneous with the stop closure in plain geminates and voiced sonorants, while it occurs before the stop closure in both pre-aspirated geminates and voiceless sonorants.
 Such similarity in the relative timing of oral and laryngeal gestures strengthens the idea that pre-aspirated geminates and voiceless sonorants in Icelandic could be treated as members of a single class of aspirated or spread glottis consonants.
 
 
@@ -470,14 +470,14 @@ label= t:contrasts
 \FL
                                     & \#\_  & \multicolumn{2}{c|}{V\_V} & V\_(l/n) & V\_C & \multicolumn{2}{|c}{\_\#}  \ML
 \multirow{3}{*}{\textbf{stops}}     & p     & p  &    & p  &    & p &  \NN
-                                    &       &    & pp\tmark &    &    &   & pp\tmark  \NN
-                                    & pʰ    &    & ʰp\tmark,\tmark[b] & pʰ &    &   & ʰp\tmark,\tmark[b] \ML
+                                    &       &    & pp \tmark &    &    &   & pp \tmark  \NN
+                                    & pʰ    &    & ʰp \tmark\textsuperscript{,}\tmark[b] & pʰ &    &   & ʰp \tmark\textsuperscript{,}\tmark[b] \ML
 \multirow{2}{*}{\textbf{sonorants}} & n     & n  &    &    & n  & n̥ &   \NN
                                     & n̥     &    &    &    & n̥  &   &    \LL
 }
 
 Relevant to this study is the way phonation types are exploited to create contrast in stop and sonorant consonants in Icelandic.
-Even if the phonemic oppositions are ideally straightforward---non aspirated consonants contrast with non-aspirated ones---the actual phonotactic distribution of contrastive consonantal segments is quite complex.
+Even if the phonemic oppositions are ideally straightforward---aspirated consonants contrast with non-aspirated ones---the actual phonotactic distribution of contrastive consonantal segments is quite complex.
 There are restrictions on possible contrasts depending on the position within the word and the preceding or following segments. Except word-initially, both plain and aspirated stops can be geminated.
 \Cref{t:contrasts} shows the distributions of contrasts in stops and sonorants in various contexts within the word.
 The labial stops and the alveolar nasals are used as an exemplification, respectively, of the distribution of stops and sonorants.
@@ -485,6 +485,33 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 
 \section{Research hypothesis}
 \label{s:hypothesis}
+
+The studes by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
+%ADD about sonorants!
+
+The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative alignment of the glottal spreading gesture and the oral gesture.
+Depending on how the spreading of the glottis is timed in relation to the tongue gestures in the oral cavity, modal voicing can be maintained for a certain amount of time or it is terminated earlier.
+An early timing of glottal spreading (like in pre-aspiration) would prevent voicing in the last portion of the preceding vocalic gesture, making the vowel shorter.
+On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
+In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration would allow longer voicing.
+
+In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
+As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
+If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
+Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), the two separate statements can be merged into a single hypothesis:
+
+\begin{exe}
+\ex\label{h1} \textbf{Alternative hypothesis} (H\textsubscript{1}) \\
+Vowels followed by aspirated consonants are shorter than vowels followed by non-aspirated consonants.
+\end{exe}
+
+The corresponding null hypothesis is:
+
+\begin{exe}
+\ex\label{h0} \textbf{Null hypothesis} (H\textsubscript{0}) \\
+Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
+\end{exe}
 
 \begin{figure}
 \centering
@@ -498,37 +525,10 @@ Based on the design in \citet{esposito2002}.}
 \label{f:hypothesis}
 \end{figure}
 
-
-The studes by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
-These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
-%ADD about sonorants!
-
-The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative alignment of the glottal spreading gesture and the oral gesture.
-Depending on how the spreading of the glottis is timed in relation to the tongue gestures in the oral cavity, modal voicing can be maintained for a certain amount of time or it is terminated earlier.
-An early timing of glottal spreading (like in pre-aspiration) would prevent voicing in the last portion of the preceding vocalic gesture, making the vowel shorter.
-On the contrary, if the spreading gesture is timed later relative to the oral gesture (like in post-aspiration), the voicing in the preceding vowel can be sustained, leading to a longer vowel.
-In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration should allow more voicing.
-
-In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
-As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
-If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
-Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), these two separate statements can be merged into a single hypothesis:
-
-\begin{exe}
-\ex\label{h1} \textbf{Alternative hypothesis} (H\textsubscript{1}) \\
-Vowels followed by aspirated consonants are shorter than vowels followed by unaspirated consonants.
-\end{exe}
-
-The corresponding null hypothesis is:
-
-\begin{exe}
-\ex\label{h0} \textbf{Null hypothesis} (H\textsubscript{0}) \\
-Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
-\end{exe}
-
 %%TODO section on prosodic approach and articulatory phonology?
 
-The next chapters will describe the experimental design and the annotation scheme employed to test the research hypothesis (\Cref{c:method}), followed by the results of the analysis and a general discussion of these (\Cref{c:discussion}).
+The research hypothesis is illustrated schematically in \Cref{f:hypothesis}.
+The next chapters will describe the experimental design and the annotation scheme employed to test the research hypothesis (\Cref{c:methodology}), followed by the results of the analysis (\Cref{c:results}) and a general discussion of these (\Cref{c:discussion}).
 
 
 
@@ -548,15 +548,15 @@ Finally, \Cref{s:stats} briefly mentions the features of the statistical analysi
 \label{s:participants}
 
 For this study, I recruited six Icelandic speakers who were living in York (UK) at the time the recordings were made.
-The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
+The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and they signed a consent form.
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
-The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5 pounds.
+The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5.
 
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
-The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
+The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to technical fault in the recording equipment.
 All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic (see \Cref{s:icelandic}).
 
 
@@ -576,7 +576,7 @@ JR & M   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 
-The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (disyllabic).\footnote{I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
 The terms ``aspirated stop'' will be a shortcut for ``aspirated geminate stop.''
 In case of ambiguities, the former label will be used.
 }
@@ -589,12 +589,12 @@ Control over these parameters was prioritised according to the order in which th
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
 Respecting as many of the constraints as possible required the use of inflected forms.
 %%TODO CITE holes and humps papers!
-Thus, the final wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
-These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
+Thus, the final wordlist contained a total of 57 inflected Icelandic words (only real word forms were used).
+These were a mixture of nouns (25), verbs (22), adjectives (8) and adverbs (2).
 
-The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words.
-Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
-Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
+The 57 words were equally divided in monosyllabic (28) and disyllabic (29) words.
+Of the monosyllabic words, 21 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless).
+Of the disyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
 
 
@@ -705,13 +705,6 @@ Even if the recording conditions differed between participants, the quality of t
 \section{Annotation}
 \label{s:annotation}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{textgrid}
-\caption[Structure of annotation files]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
-\label{f:textgrid}
-\end{figure}
-
 The analysis of the audio files consisted of three phases:
 \begin{inparaenum}[(1)]
 	\item conversion from stereo to mono,
@@ -719,7 +712,7 @@ The analysis of the audio files consisted of three phases:
 	\item extraction of the relevant measurements.
 \end{inparaenum}
 I first converted the audio files from stereo to mono, without applying any sort of filtering.
-Since only one audio input was connected to the recorder, the two channels were actually a duplicate of one single channel, so that problems of differential phasing did not arise.
+Since only one audio input was connected to the recorder, the two channels were actually a duplicate of one single channel, so that problems of differential phasing did not arise while converting the files.
 During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
 The annotation files have four tiers.
 The tiers contain, respectively: 
@@ -731,14 +724,21 @@ The tiers contain, respectively:
 \end{inparaenum}
 \Cref{f:textgrid} shows an example of the TextGrid set-up.
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{textgrid}
+\caption[Structure of annotation files.]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, glottal spread and manner; 4. \texttt{rels}, release.}
+\label{f:textgrid}
+\end{figure}
+
 \subsection{Word boundaries}
 
 The first tier was segmented by target words.
-The left boundary of the word was considered to be the off-set of voicing of the final vowel of \textit{segðu}, which preceded the target word.
+The left boundary of the word was considered to be the offset of voicing of the final vowel of \textit{segðu}, which preceded the target word.
 The right boundary differed between consonant-final and vowel-final words.
 In consonant-final words, the right boundary coincided with the end of the friction following the burst of the release, as visible in the waveform and spectrogram.
 In vowel-final words, I used different criteria depending on the phonetic realisation.
-The right boundary was placed at the off-set of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the on-set of the glottal stop.
+The right boundary was placed at the offset of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the onset of the glottal stop.
 In some cases, instead of a glottal stop, creaky voice was visible and the criterion of the transition mid-point was applied.
 
 \subsection{Voicing}
@@ -751,6 +751,31 @@ In words starting with one or more voiced continuant consonants, the voiced port
 The right boundary was in both cases the offset of voicing.
 
 \subsection{Glottal spread}
+A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
+I opted for this solution since the intervals of each of the above classes, as defined below, were never overlapping.
+Of course, nasality, laterality and rhoticity never co-occur, and glottal spread can be inferred in these three classes by subtracting the voiced portion of the nasal, lateral or rhotic from the total duration of the consonant.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\label{f:glottal-1}
+\end{figure}
+
+Marking the beginning of glottal spread proved to be particularly difficult.
+The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
+The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal-1}, the vowel is initially realised as [œ].
+Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
+Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
+
+As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
+I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
+At times, however, the interpretation of the waveform was not straightforward.
+In these cases, I relied on the visual make-up of the spectrogram.
+According to \citeauthor{jones2006} (\citeyear{jones2006}, cited in \citealt[p. 134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
+This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
+The right boundary was assumed to fall at the end of visible frication noise.
+See \Cref{f:spreding} for an example.
 
 \begin{figure}
 \begin{subfigure}{\textwidth}
@@ -767,41 +792,22 @@ The right boundary was in both cases the offset of voicing.
 \label{f:spreding}
 \end{figure}
 
-
-A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
-I opted for this solution since the intervals of each of the above classes, as defined below, were never overlapping.
-Of course, nasality, laterality and rhoticity never co-occur, and glottal spread can be inferred in these three classes by subtracting the voiced portion of the nasal, lateral or rhotic from the total duration of the consonant.
-
-Marking the beginning of glottal spread proved to be particularly difficult.
-The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
-The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal}, the vowel is initially realised as [œ].
-Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
-Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
-
-As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
-I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
-At times, however, the interpretation of the waveform was not straightforward.
-In these cases, I relied on the visual make-up of the spectrogram.
-According to \citealt{jones2006} (cited in \citealt[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
-This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
-The right boundary was assumed to fall at the end of visible frication noise.
-
 \subsection{Nasals, laterals and trills}
 
 \begin{figure}
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamp}
-\caption{/kʰamp/}
+\caption{/kʰampʰ/}
 \label{f:kamp}
 \end{subfigure}
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamb}
-\caption{/kʰamb/}
+\caption{/kʰamp/}
 \label{f:kamb}
 \end{subfigure}
-\caption[Annotation of nasality]{Example of the annotation of nasality the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
+\caption[Annotation of nasality]{Example of the annotation of nasality in the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
 }
 \label{f:nasality}
 \end{figure}
@@ -854,26 +860,27 @@ The following measures were taken in milliseconds.
 \item \textit{Duration of the vowel}.
 This was measured depending on the phonological form of the word.
 In words containing a pre-aspirated geminate or a sonorant (nasal, lateral or trill), as the duration of the interval between the onset of voicing and the onset of the interval on the manner tier.
-In words with non-aspirated geminates, the duration of absolute voicing is equal to the duration of voicing.
-\item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the off-set of voicing, glottal spread or consonant manner, and the release.
-\item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
+In words with non-aspirated geminates, the duration of the vowel is equal to the duration of voicing.
+\item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the offset of voicing, glottal spread or consonant manner, and the release.
+\item \textit{CC duration}: the duration of geminate stops and ``sonorant + stop'' clusters.
+The interval between the onset of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
 \item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
 \item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
-\item \textit{Duration of glottal spread}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
+\item \textit{Duration of glottal abduction}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
 \end{itemize}
 
 To control for differences in speech rate, I opted to normalise the measurements.
-Normalisation was achieved by dividing the relevant measure by the VOR.
+Normalisation was achieved by dividing the relevant measure by the duration of the VOR.
 This operation results in a transformation from durations in milliseconds to ratios in percentages.
 I chose to use the VOR as the base for normalisation since this can be measured consistently across different word forms.
-Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (-VTT-, -VʰT-, -VRC-).\footnote{Remember that pre-aspirated stops are phonologically geminates: \textit{detta} /tettʰa/ `to fall' [teʰta], \textit{gedda} /ketta/ `pike.\textsc{acc}' [cɛtta].}
+Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (-VTT-, -VʰT-, -VRC-).\footnote{Remember that pre-aspirated stops are phonologically geminates: \textit{detta} /tɛttʰa/ `to fall' [tɛʰta], \textit{gedda} /cɛtta/ `pike.\textsc{acc}' [cɛtta].}
 
 \section{Statistical analysis}
 \label{s:stats}
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
+The R code used in the analysis is available at this address: \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
 
 
 

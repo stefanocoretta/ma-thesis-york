@@ -13,15 +13,15 @@ Finally, \Cref{s:stats} briefly mentions the features of the statistical analysi
 \label{s:participants}
 
 For this study, I recruited six Icelandic speakers who were living in York (UK) at the time the recordings were made.
-The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and signed a consent form.
+The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and they signed a consent form.
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
-The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5 pounds.
+The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5.
 
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
-The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
+The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to technical fault in the recording equipment.
 All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic (see \Cref{s:icelandic}).
 
 
@@ -41,7 +41,7 @@ JR & M   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \section{Materials}
 \label{s:materials}
 
-The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (bisyllabic).\footnote{In the rest of the dissertation, I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
+The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (disyllabic).\footnote{I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
 The terms ``aspirated stop'' will be a shortcut for ``aspirated geminate stop.''
 In case of ambiguities, the former label will be used.
 }
@@ -54,12 +54,12 @@ Control over these parameters was prioritised according to the order in which th
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
 Respecting as many of the constraints as possible required the use of inflected forms.
 %%TODO CITE holes and humps papers!
-Thus, the final wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
-These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
+Thus, the final wordlist contained a total of 57 inflected Icelandic words (only real word forms were used).
+These were a mixture of nouns (25), verbs (22), adjectives (8) and adverbs (2).
 
-The 58 words were equally divided in monosyllabic (29) and bisyllabic (29) words.
-Of the monosyllabic words, 20 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless); one word ended with a geminate nasal.
-Of the bisyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
+The 57 words were equally divided in monosyllabic (28) and disyllabic (29) words.
+Of the monosyllabic words, 21 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless).
+Of the disyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 
 <<tokens, include=FALSE>>=
 table(results$manner,results$asp,results$syl_no)
@@ -172,13 +172,6 @@ Even if the recording conditions differed between participants, the quality of t
 \section{Annotation}
 \label{s:annotation}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{textgrid}
-\caption[Structure of annotation files]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, manner; 4. \texttt{rels}, release.}
-\label{f:textgrid}
-\end{figure}
-
 The analysis of the audio files consisted of three phases:
 \begin{inparaenum}[(1)]
 	\item conversion from stereo to mono,
@@ -186,7 +179,7 @@ The analysis of the audio files consisted of three phases:
 	\item extraction of the relevant measurements.
 \end{inparaenum}
 I first converted the audio files from stereo to mono, without applying any sort of filtering.
-Since only one audio input was connected to the recorder, the two channels were actually a duplicate of one single channel, so that problems of differential phasing did not arise.
+Since only one audio input was connected to the recorder, the two channels were actually a duplicate of one single channel, so that problems of differential phasing did not arise while converting the files.
 During the second phase, I annotated the files in PRAAT \citep{boersma2015} using TextGrid files.
 The annotation files have four tiers.
 The tiers contain, respectively: 
@@ -198,14 +191,21 @@ The tiers contain, respectively:
 \end{inparaenum}
 \Cref{f:textgrid} shows an example of the TextGrid set-up.
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{textgrid}
+\caption[Structure of annotation files.]{Screenshot of a PRAAT editor window showing the tier structure of the annotation files (PRAAT TextGrids). Tiers: 1. \texttt{word}, words; 2. \texttt{voic}, voicing; 3. \texttt{mann}, glottal spread and manner; 4. \texttt{rels}, release.}
+\label{f:textgrid}
+\end{figure}
+
 \subsection{Word boundaries}
 
 The first tier was segmented by target words.
-The left boundary of the word was considered to be the off-set of voicing of the final vowel of \textit{segðu}, which preceded the target word.
+The left boundary of the word was considered to be the offset of voicing of the final vowel of \textit{segðu}, which preceded the target word.
 The right boundary differed between consonant-final and vowel-final words.
 In consonant-final words, the right boundary coincided with the end of the friction following the burst of the release, as visible in the waveform and spectrogram.
 In vowel-final words, I used different criteria depending on the phonetic realisation.
-The right boundary was placed at the off-set of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the on-set of the glottal stop.
+The right boundary was placed at the offset of voicing of the word-final vowel if followed by a pause; if the word-final vowel differed from the following and there was no pause, I placed the boundary at the mid-point of the transition between the final vowel and the initial vowel of the following word (\textit{aftur}); if a clear glottal stop separated the target word from the following, the boundary coincided with the onset of the glottal stop.
 In some cases, instead of a glottal stop, creaky voice was visible and the criterion of the transition mid-point was applied.
 
 \subsection{Voicing}
@@ -218,6 +218,31 @@ In words starting with one or more voiced continuant consonants, the voiced port
 The right boundary was in both cases the offset of voicing.
 
 \subsection{Glottal spread}
+A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
+I opted for this solution since the intervals of each of the above classes, as defined below, were never overlapping.
+Of course, nasality, laterality and rhoticity never co-occur, and glottal spread can be inferred in these three classes by subtracting the voiced portion of the nasal, lateral or rhotic from the total duration of the consonant.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{dokk}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\label{f:glottal-1}
+\end{figure}
+
+Marking the beginning of glottal spread proved to be particularly difficult.
+The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
+The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal-1}, the vowel is initially realised as [œ].
+Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
+Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
+
+As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
+I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
+At times, however, the interpretation of the waveform was not straightforward.
+In these cases, I relied on the visual make-up of the spectrogram.
+According to \citeauthor{jones2006} (\citeyear{jones2006}, cited in \citealt[p. 134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
+This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
+The right boundary was assumed to fall at the end of visible frication noise.
+See \Cref{f:spreding} for an example.
 
 \begin{figure}
 \begin{subfigure}{\textwidth}
@@ -234,41 +259,22 @@ The right boundary was in both cases the offset of voicing.
 \label{f:spreding}
 \end{figure}
 
-
-A single tier was used to annotate glottal spread, nasal airflow, laterality and rhoticity.
-I opted for this solution since the intervals of each of the above classes, as defined below, were never overlapping.
-Of course, nasality, laterality and rhoticity never co-occur, and glottal spread can be inferred in these three classes by subtracting the voiced portion of the nasal, lateral or rhotic from the total duration of the consonant.
-
-Marking the beginning of glottal spread proved to be particularly difficult.
-The common realisation of the combination ``vowel + pre-aspiration'' is structured as follows.
-The first portion of the vowel is accompanied by modal voicing: in the word \textit{dökk}, shown in \Cref{f:glottal}, the vowel is initially realised as [œ].
-Subsequently, the vocal folds start moving apart from each other in an abduction gesture while they still vibrate (breathy voice): [œ̤].
-Finally, the vocal fold vibration stops while voiceless friction remains (at the glottis or at the oral cavity, depending on the place of articulation vowel): in this case, [œ̥].
-
-As \citet{khan2012} and \citet{nance2013} point out, breathy voice is expected to produce more round-shaped periodic waves.
-I took the onset of such more sinusoidal waves to coincide with glottal spread and I marked it as the left boundary of the spreading gesture.
-At times, however, the interpretation of the waveform was not straightforward.
-In these cases, I relied on the visual make-up of the spectrogram.
-According to \citealt{jones2006} (cited in \citealt[134]{nance2013}), breathy voice usually correlates with smeared off or totally absent higher formants.
-This is due to the presence of high-frequency noise produced by the increased amount of airflow coming from the abducted glottis.
-The right boundary was assumed to fall at the end of visible frication noise.
-
 \subsection{Nasals, laterals and trills}
 
 \begin{figure}
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamp}
-\caption{/kʰamp/}
+\caption{/kʰampʰ/}
 \label{f:kamp}
 \end{subfigure}
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamb}
-\caption{/kʰamb/}
+\caption{/kʰamp/}
 \label{f:kamb}
 \end{subfigure}
-\caption[Annotation of nasality]{Example of the annotation of nasality the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
+\caption[Annotation of nasality]{Example of the annotation of nasality in the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
 }
 \label{f:nasality}
 \end{figure}
@@ -321,26 +327,27 @@ The following measures were taken in milliseconds.
 \item \textit{Duration of the vowel}.
 This was measured depending on the phonological form of the word.
 In words containing a pre-aspirated geminate or a sonorant (nasal, lateral or trill), as the duration of the interval between the onset of voicing and the onset of the interval on the manner tier.
-In words with non-aspirated geminates, the duration of absolute voicing is equal to the duration of voicing.
-\item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the off-set of voicing, glottal spread or consonant manner, and the release.
-\item \textit{Closure duration}: the duration of the interval between the on-set of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
+In words with non-aspirated geminates, the duration of the vowel is equal to the duration of voicing.
+\item \textit{Stop closure duration}: the duration of the closure of the stop consonant, calculated as the duration of the interval between the offset of voicing, glottal spread or consonant manner, and the release.
+\item \textit{CC duration}: the duration of geminate stops and ``sonorant + stop'' clusters.
+The interval between the onset of glottal spread or consonant manner and the release; in words with non-aspirated geminates, it is equal to the stop closure duration.
 \item \textit{Voice Onset to Release} (VOR): the duration of interval between the onset of voicing and the release of the stop closure.
 \item \textit{Voice Offset to Release} (\textsc{VOffR}): the duration of the interval between the offset of voicing and the release of the stop closure.
-\item \textit{Duration of glottal spread}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
+\item \textit{Duration of glottal abduction}. The duration of the interval calculated as the duration of spreading in stops and from the offset of voicing to the offset of manner in sonorants.
 \end{itemize}
 
 To control for differences in speech rate, I opted to normalise the measurements.
-Normalisation was achieved by dividing the relevant measure by the VOR.
+Normalisation was achieved by dividing the relevant measure by the duration of the VOR.
 This operation results in a transformation from durations in milliseconds to ratios in percentages.
 I chose to use the VOR as the base for normalisation since this can be measured consistently across different word forms.
-Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (-VTT-, -VʰT-, -VRC-).\footnote{Remember that pre-aspirated stops are phonologically geminates: \textit{detta} /tettʰa/ `to fall' [teʰta], \textit{gedda} /ketta/ `pike.\textsc{acc}' [cɛtta].}
+Since the word list contained monosyllabic and disyllabic words, and both classes had either consonant-initial or vowel-initial words, the VOR is the only portion that constantly contains three segments (-VTT-, -VʰT-, -VRC-).\footnote{Remember that pre-aspirated stops are phonologically geminates: \textit{detta} /tɛttʰa/ `to fall' [tɛʰta], \textit{gedda} /cɛtta/ `pike.\textsc{acc}' [cɛtta].}
 
 \section{Statistical analysis}
 \label{s:stats}
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
+The R code used in the analysis is available at this address: \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
 
 
 
