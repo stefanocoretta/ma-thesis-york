@@ -124,7 +124,7 @@ label = t:consonants
 \textbf{trills}     &         & r r̥    &       &         &  \LL
 }
 
-Icelandic [\textsc{glotto}: \texttt{icel1247}]\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO code.} is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
+Icelandic [\textsc{glotto}: \texttt{icel1247}] is spoken by the inhabitants of the Republic of Iceland (about 320,000 according to \citealt{arnason2011}), of which it constitutes the national language.
 Icelandic is a Germanic language and, together with Faroese [\textsc{glotto}: \texttt{faro1244}], constitutes the Insular branch of the North Germanic group.
 Among the Nordic languages, Icelandic and Faroese are the most conservative \citep{harbert2006,konig2013}.
 %%TODO say more about this
@@ -224,13 +224,6 @@ In both cases, the peak of glottal spread is achieved before the stop closure.
 Moreover, the voice offset is simultaneous with stop closure in plain geminates and voiced sonorants, while it occurs before the stop closure in both pre-aspirated geminates and voiceless sonorants.
 Such similarity in the relative timing of oral and laryngeal gestures strengthens the idea that pre-aspirated geminates and voiceless sonorants in Icelandic could be treated as members of a single class of aspirated or spread glottis consonants.
 
-%TODO maybe expand on the following
-\citet{bombien2006} reports that voiceless sonorants in Icelandic have the following acoustic properties: 
-\begin{inparaenum}[(i)]
-\item voiceless sonorants are longer in duration than their voiced counterparts;
-\item they have greater H1-H2 (first and second harmonic) difference than the voiced ones (which indicates breathy phonation in the former);
-\item they show greater zero crossing rate values (which indicates higher frication compared to the voiced sonorants).\footnote{Frication has been proved to create higher frequencies compared to non-fricated sounds and hence it involves higher rate of zero crossing \citep{weigelt1990}.}
-\end{inparaenum}
 
 \subsection{Phonotactics}
 
@@ -301,8 +294,8 @@ The corresponding null hypothesis is:
 Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
 \end{exe}
 
-%TODO section on prosodic approach and articulatory phonology?
+%%TODO section on prosodic approach and articulatory phonology?
 
-%TODO next section is methodology in this thesis i will test the hypthesis and try to answer the questions bla
+The next chapters will describe the experimental design and the annotation scheme employed to test the research hypothesis (\Cref{c:methodology}), followed by the results of the analysis and a general discussion of these (\Cref{c:discussion}).
 
 

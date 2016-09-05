@@ -1,8 +1,8 @@
 \chapter{Introduction}
 \label{c:introduction}
 
-This study deals with the relationship between the presence \textit{vs.} the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
-\citet{maddieson1976,maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
+This study deals with the relationship between the presence versus the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
+\citet{maddieson1976} and \citet{maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
 This phenomenon has been subsequently called the ``aspiration effect'' by \citet{durvasula2012}, who further confirmed that the duration of vowel was related to aspiration.
 Even if the effect has been shown to exist, no explanation has been given for it.
 Moreover, these studies only dealt with post-aspiration.
@@ -12,7 +12,7 @@ Such step has been taken in conducting this research.
 Icelandic has been chosen as the language under study since its consonantal system can be interpreted as thoroughly based on aspiration contrasts.
 In particular, aspiration in Icelandic involves both stops and sonorants consonants.
 In certain contexts, non-aspirated geminate stops (/CC/) contrast with pre-aspirated stops (/ʰC/).
-Similarly, voiced sonorants followed by a stop (/NC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/N̥C/).
+Similarly, voiced sonorants followed by a stop (/SC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/S̥C/).
 Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect the presence of aspiration has on the duration of the preceding vowel.
 The Icelandic phonological system thus constitutes an ideal locus of enquiry on the effects of aspiration on vowel duration in a more systematic way and in novel contexts than previously possible.
 
@@ -26,19 +26,19 @@ I call this view the ``timing hypothesis,'' which will be the focus of this stud
 \section{Research design}
 
 This research has been designed so as to answer two questions: (1) does Icelandic show the aspiration effect? and (2) is the aspiration effect caused by the relative timing of laryngeal gestures in relation to oral gestures?
-To access the existence of the aspiration effect in Icelandic, I collected data from native speakers.
-They were recorded while reading a frame sentence which contained the target words.
-The list of target words was selected so as to include aspirated and plain geminate stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
+To access the existence of the aspiration effect in Icelandic, I collected data from native speakers of the language.
+They were recorded while reading a list of sentences which contained the target words.
+The list of target words was selected so as to include aspirated and non-aspirated stops and sonorants, both in word-final (in monosyllabic words) and word-medial position (in disyllabic words).
 To test the validity of the laryngeal timing hypothesis, I performed a statistical analysis to verify the following research hypothesis: vowels followed by aspirated consonants (pre-aspirated stops and voiceless sonorants) are shorter than vowels followed by non-aspirated consonants (plain stops and voiced sonorants).
 
 
 \section{Reproducibility}
 The term ``reproducible research'' was first coined by Prof. Jon Claerbout at Stanford University, around 2000 \citep{fomel2009}.
-The concept of reproducible research stems from the idea the the product of the scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
+The concept of reproducible research stems from the idea the the product of scientific inquiry should not only consist in the dissemination of the research results in the form of an output document (like a journal paper, a dissertation or a book).
 Instead, such outcome should also include the environment in which the analysis that gave the results was performed.
 Such an environment consists of the data sets and of the computational operations (in the form of code) used in the analysis.
 A research is said to be reproducible when other people than the original authors can reproduce step by step the analysis that was conducted on the same data collected for that research.
-While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
+While the concept of reproducibility might at first sight be similar to that of replicability, a scientific discovery is replicated---and not reproduced---when ``independent investigators, methods, data, equipment, and protocols'' are used \citep{peng2009}.
 
 One way to satisfy the reproducibility criterion is using literate programming.
 In literate programming, the computer code used to generate the results of the research is embedded within the research document.
@@ -46,22 +46,22 @@ The idea of literate programming has been developed by Donald Knuth \citep{knuth
 This solution has been subsequently applied to scientific research, as a means for ensuring reproducibility.
 Reproducibility and literate programming are new in linguistics, but some scholars are encouraging descriptive linguists to make their grammatical descriptions reproducible \citep{maxwell2005,maxwell2013}.
 
-An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].
+An interesting case in the area of phonology has been made by \citet{maxwell2013} regarding a theoretical debate based on data from Yokuts [\textsc{glotto}: \texttt{yoku1256}].\footnote{For the major languages cited in this work, I give the linguistic code from the Glottolog database \citep{hammarstrom2016} as an alternative to the more conventional ISO code.}
 As \citet{weigel2002} and \citet{blevins2004a} pointed out, more than two thirds of the Yokuts lexical forms used as an argument in favour of theoretical claims turned out to be a construction of the researcher based on descriptions of the language.
 What is worse is that those constructed word forms were incorrect.
 More than thirty years of debate has been founded on false data.
 The moral of this story is that linguistics as a whole would benefit from the application of reproducibility.
-According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis conducted using the R language \citep{r-core-team2015}. 
+According to such spirit, this dissertation has been written in \XeLaTeX{} and the analysis has been conducted using the R language \citep{r-core-team2015}. 
 The code generating the analysis has been embedded in the dissertation source code using \texttt{knitr}, a package that enables literate programming support in R.
-The analysis source code can be found at \url{https://github.com/stefanocoretta/icelandic-preaspiration}.
-The dataset will soon be downloadable at \url{http://dx.doi.org/10.18710/7NLJSG}.
+The analysis source code can be found at \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
+The dataset will soon be downloadable from \url{http://dx.doi.org/10.18710/7NLJSG}.
 
 \section{Dissertation structure}
 The dissertation is thus organised.
 \Cref{c:review} contains a review of the literature relevant for the present study.
-I will first introduce some background terminology and concept of the phonetics of laryngeal activity, followed by an overview of the relation between presence \textit{vs.} absence of aspiration and vowel duration.
+I will first introduce some background terminology and concepts of the phonetics of laryngeal activity, followed by an overview of the relation between presence versus absence of aspiration and vowel duration.
 Then, I will provide a brief description of the phonological system of Icelandic with a focus on the laryngeal contrasts in stops and sonorants.
-The chapter closes with the statement of the research hypothesis.
+The chapter closes with the presentation of the research hypothesis.
 \Cref{c:methodology} deals with the methodology of the experiment.
 I will first discuss about the participants recruited for this study, the materials and the procedure used in the experimental task.
 I will then give particular attention to the annotation scheme that was applied to the data and to the criteria used to extract the measurements.
@@ -69,5 +69,5 @@ In \Cref{c:results} I will present the results of the statistical analysis run o
 Separate sections will deal with the duration of the words, the Voice Onset to Release (VOR), the vowels, the stop closure, the glottal spread gesture and of the sonorants.
 \Cref{c:discussion} examines the results on the light of the research hypothesis.
 This chapter also deals with the linguistics aspects of the research, its limitations and challenges, and the possible future implementations of this study.
-Finally, concludes the dissertation with a summary of this work.
+Finally, \Cref{c:conclusions} concludes the dissertation with a summary of this work.
 

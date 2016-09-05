@@ -53,7 +53,7 @@
 \maxtocdepth{subsection}
 \raggedbottom
 
-\usepackage[hidelinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}
 \usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -102,10 +102,11 @@
 
 \usepackage{natbib}
 
+\usepackage{listings}
+
 \usepackage{gb4e}
 
 \usepackage{mycleveref}
-
 
 \title{Vowel duration and aspiration effects in Icelandic}
 \author{Stefano Coretta}
@@ -455,13 +456,6 @@ In both cases, the peak of glottal spread is achieved before the stop closure.
 Moreover, the voice offset is simultaneous with stop closure in plain geminates and voiced sonorants, while it occurs before the stop closure in both pre-aspirated geminates and voiceless sonorants.
 Such similarity in the relative timing of oral and laryngeal gestures strengthens the idea that pre-aspirated geminates and voiceless sonorants in Icelandic could be treated as members of a single class of aspirated or spread glottis consonants.
 
-%TODO maybe expand on the following
-\citet{bombien2006} reports that voiceless sonorants in Icelandic have the following acoustic properties: 
-\begin{inparaenum}[(i)]
-\item voiceless sonorants are longer in duration than their voiced counterparts;
-\item they have greater H1-H2 (first and second harmonic) difference than the voiced ones (which indicates breathy phonation in the former);
-\item they show greater zero crossing rate values (which indicates higher frication compared to the voiced sonorants).\footnote{Frication has been proved to create higher frequencies compared to non-fricated sounds and hence it involves higher rate of zero crossing \citep{weigelt1990}.}
-\end{inparaenum}
 
 \subsection{Phonotactics}
 
@@ -532,16 +526,16 @@ The corresponding null hypothesis is:
 Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
 \end{exe}
 
-%TODO section on prosodic approach and articulatory phonology?
+%%TODO section on prosodic approach and articulatory phonology?
 
-%TODO next section is methodology in this thesis i will test the hypthesis and try to answer the questions bla
+The next chapters will describe the experimental design and the annotation scheme employed to test the research hypothesis (\Cref{c:method}), followed by the results of the analysis and a general discussion of these (\Cref{c:discussion}).
 
 
 
 
 \chapter{Methodology}
 \label{c:methodology}
-%TODO prosodic approach and articulatory?
+%%TODO prosodic approach and articulatory?
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
 In \Cref{s:materials}, I detail the materials used in the task, which is outlined in \Cref{s:procedure}.
@@ -571,12 +565,12 @@ label = t:participants,
 ]{cccllc}{}{
 \FL
 \textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
-TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
-BRS & female & 25 & Höfn      & Danish, English, Spanish & Yes \NN
-BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
-JJ & female & 46 & Reykjavik (Kópavogur) & English, Danish          & Yes \NN
-SHG & male   & 25 & Selfoss   & English                  & No  \NN
-JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
+TT & F & 24 & Reykjavik & English, Danish, German  & Yes \NN
+BRS & F & 25 & Höfn      & Danish, English, Spanish & Yes \NN
+BTE & F & 27 & Reykjavik & English, Danish          & Yes \NN
+JJ & F & 46 & Reykjavik (Kópavogur) & English, Danish          & Yes \NN
+SHG & M   & 25 & Selfoss   & English                  & No  \NN
+JR & M   & 66 & Reykjavik (York)      & English                  & Yes \LL
 }
 
 \section{Materials}
@@ -594,7 +588,7 @@ The target words were selected so as to control for as many of the following asp
 Control over these parameters was prioritised according to the order in which they were presented here.
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
 Respecting as many of the constraints as possible required the use of inflected forms.
-%TODO CITE holes and humps papers!
+%%TODO CITE holes and humps papers!
 Thus, the final wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
 These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
 
@@ -950,7 +944,7 @@ According to a two-sample Mann-Whitney U-test, the mean duration of vowels in mo
 The Voice onset to Release (VOR) measures the interval between the voice onset of the critical syllable to the release of the next consonant.
 According to tests for the difference between means, the VOR in all classes of words, except for -VKK words (words ending with a geminate stop, either non-aspirated or pre-aspirated), did not have a significant difference in mean duration in both the non-aspirated and aspirated condition.
 
-%TODO table with mean and sd
+%%TODO table with mean and sd
 
 %\ctable[caption = Means and standard deviations of VOR in each word class.,
 %label = t:vor
@@ -993,6 +987,16 @@ According to tests for the difference between means, the VOR in all classes of w
 
 \end{knitrout}
 \end{subfigure}
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
+The plots on the left hand side show the durations of the VOR in monosyllabic words.
+On the right hand side, the durations of the VOR in disyllabic words are displayed.
+From top to bottom, respectively, there are the plots for words with geminate stops and nasals (for laterals and trills, see \Cref{f:vor-rho}).
+In each plot, the duration of the VOR in the non-aspirated and aspirated condition is reported.
+}
+\label{f:vor}
+\end{figure}
+
+\begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
 \begin{knitrout}
@@ -1009,24 +1013,16 @@ According to tests for the difference between means, the VOR in all classes of w
 
 \end{knitrout}
 \end{subfigure}
-\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
-The plots on the left hand side show the durations of the VOR in monosyllabic words.
-On the right hand side, the durations of the VOR in disyllabic words are displayed.
-From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:vor-rho}).
-In each plot, the duration of the VOR in the non-aspirated and aspirated condition is reported.
-}
-\label{f:vor}
-\end{figure}
-
-\begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=0.8\textwidth]{img/di-rho-vor-1} 
+\includegraphics[width=\textwidth]{img/di-rho-vor-1} 
 
 \end{knitrout}
-\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
-On the left, the VOR duration of words with a voiceless trill /r̥/ (VR̥CV) is reported, while on the right the one in words with a voiced trill /r/ (VRCV).}
+\end{subfigure}
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of -VLC- and VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of -VLC- (mono- and disyllabic) VRCV words (disyllabic words only).
+On the left side, the VOR duration of words with a voiceless lateral or trill is reported, while on the right the one in words with a voiced lateral or trill}
 \label{f:vor-rho}
 \end{figure}
 
@@ -1079,6 +1075,16 @@ The difference in the mean of the vowel ratio between the non-aspirated (0.37, S
 
 \end{knitrout}
 \end{subfigure}
+\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
+The plots on the left hand side show the durations of vowels in monosyllabic words.
+On the right hand side, the durations in disyllabic words are displayed.
+From top to bottom, respectively, there are the plots for words with geminate stops and nasals (for laterals and tills, see \Cref{f:voweldurrho}).
+In each plot, the duration of vowels in the non-aspirated and aspirated condition is reported.
+}
+\label{f:vowelduration}
+\end{figure}
+
+\begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
 \begin{knitrout}
@@ -1095,23 +1101,15 @@ The difference in the mean of the vowel ratio between the non-aspirated (0.37, S
 
 \end{knitrout}
 \end{subfigure}
-\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
-The plots on the left hand side show the durations of vowels in monosyllabic words.
-On the right hand side, the durations in disyllabic words are displayed.
-From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:voweldurrho}).
-In each plot, the duration of vowels in the non-aspirated and aspirated condition is reported.
-}
-\label{f:vowelduration}
-\end{figure}
-
-\begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=0.8\textwidth]{img/di-rho-box-1} 
+\includegraphics[width=\textwidth]{img/di-rho-box-1} 
 
 \end{knitrout}
-\caption[Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV).]{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
+\end{subfigure}
+\caption[Duration of vowels as a ratio of the VOR in  words with an /lC/ and /rC/ cluster.]{Duration of vowels as a ratio of the VOR in words with an /lC/ or /rC/ cluster, when followed by a voiced (on the left) or a voiceless consonant (on the right).}
 \label{f:voweldurrho}
 \end{figure}
 
@@ -1203,7 +1201,7 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 \centering
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\textwidth]{img/gs-box-1} 
+\includegraphics[width=0.8\textwidth]{img/gs-box-1} 
 
 \end{knitrout}
 \caption{Duration (in msec) of the glottal spread gesture in sonorants and stops.}
@@ -1214,14 +1212,16 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 \label{s:sonorantdur}
 
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+\begin{figure}
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.8\textwidth]{img/mann-dur-box-1} 
+
+\end{knitrout}
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur-man}
+\end{figure}
 
 \ctable[caption = Mean duration and standard deviation of sonorants (msec).,
 label = t:sonduration
@@ -1233,11 +1233,8 @@ laterals & 106.13 & 26.78 & 142.78 & 31.24 \NN
 trills & 75.86 & 21 & 125.57 & 32.54 \LL
 }
 
-%TODO EXPAND
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
-As a trend, the voiceless sonorants are longer in duration than the voiced ones.
-
-
+On average, voiceless sonorants are 24 milliseconds longer than voiced sonorants [t = 8.238, df = 297, p < 0.001].
 
 
 
@@ -1247,7 +1244,7 @@ As a trend, the voiceless sonorants are longer in duration than the voiced ones.
 
 \chapter{Discussion}
 \label{c:discussion}
-%TODO say that of course voicing does not stop, what about breathy voicing!
+%%TODO say that of course voicing does not stop, what about breathy voicing!
 
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
 An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
@@ -1401,7 +1398,14 @@ In a second type of phasing, the laryngeal abduction is truncated in a similar w
 \citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
 %TODO maybe more on this?
 The first factor explains why laryngeal distinctions in laterals are cross-linguistically rare, while the second accounts for the higher variability of realizations of laterals compared to that of nasals.
+
 Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombien2006} and \citet{silverman2012}.
+\citet{bombien2006}, in fact, reports that voiceless sonorants in Icelandic have the following acoustic properties: 
+\begin{inparaenum}[(i)]
+\item voiceless sonorants are longer in duration than their voiced counterparts;
+\item they have greater H1-H2 (first and second harmonic) difference than the voiced ones (which indicates breathy phonation in the former);
+\item they show greater zero crossing rate values (which indicates higher frication compared to the voiced sonorants).\footnote{Frication has been proved to create higher frequencies compared to non-fricated sounds and hence it involves higher rate of zero crossing \citep{weigelt1990}.}
+\end{inparaenum}
 
 %TODO why trills have less variance
 
@@ -1438,32 +1442,32 @@ To maximise even more the difference between voiced and voiceless sonorants, spe
 %\section{Individual differences}
 
 
-\section{Diachrony and aspiration effects}
-In the previous sections I argued that the portion of modal voicing in words with pre-aspirated geminates is shorter than in words with plain geminates---in other words, vowel are shorter in the former case.
-I also argued that the gesture of glottal spreading is timed earlier in the case of pre-aspirated stops, other things being equal.
-Thus, I proposed that the origin of the aspiration effect could be the relative timing of glottal spread in relation to oral gestures. 
-This idea is initially supported by the fact that an earlier phasing of spreading as in pre-aspirated stops in Icelandic was preceded by a shorter interval of vocalic modal voicing, while in Hindi, that has post-aspirated stops and hence a later timing of glottal spread, vowels are longer.
-
-This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
-In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
-If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic (cf. \citealt{hetzron1972,cristofaro2012,cristofaro2014}.
-The next paragraphs will briefly deal with this task.
-
-\citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
-If this is the case, Icelandic would just be a language that retained pre-aspiration.
-If Proto Nordic had pre-aspiration, it is then possible that differences in vowel duration were already present.
-It is interesting to note that indeed such duration differences have been found for Norwegian \citep{fintoft1961} and Swedish \citep{elert1970}.
-In these two Nordic languages, both derived from Proto Nordic and thus related to Icelandic, pre-aspiration is not a standard phonetic realisation of the fortis series of consonants, but it is precisely before these consonants that vowels are shorter.
-
-The fact that the aspiration effect could have already be observable in Proto Nordic strengthens the idea that the characteristics of the effect in present day Icelandic are the product of the intentional control of speakers over their production, given the time scale implied (around 2000 years).
-%TODO citation of 2000 years
-% he says preasp was already there but it is nice to think that voicelessness in sonorants and preaspirateion are connected! that's why I should also say about voiceless sonorants
-Anyhow, \citeauthor{helgason2002} attempts at giving a physiological explanation for the phonetic effect.
-He argues that, even if the data from Nordic languages seem to point to the contrary, ``it is [still] quite possible that preaspiration (\textit{sic}) is facilitated by a certain type of larynx, and that this has a small but perceptually salient effect on the propensity for anticipatory voicelessness'' \citeyear[231]{helgason2002}.
-
-This idea, however, is not supported by the present study since voicing is actually maintained longer in pre-aspirated stops.
-
-%\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
+%\section{Diachrony and aspiration effects}
+%In the previous sections I argued that the portion of modal voicing in words with pre-aspirated geminates is shorter than in words with plain geminates---in other words, vowel are shorter in the former case.
+%I also argued that the gesture of glottal spreading is timed earlier in the case of pre-aspirated stops, other things being equal.
+%Thus, I proposed that the origin of the aspiration effect could be the relative timing of glottal spread in relation to oral gestures. 
+%This idea is initially supported by the fact that an earlier phasing of spreading as in pre-aspirated stops in Icelandic was preceded by a shorter interval of vocalic modal voicing, while in Hindi, that has post-aspirated stops and hence a later timing of glottal spread, vowels are longer.
+%
+%This explanation, resting in the timing hypothesis, is, however, ultimately diachronic in nature.
+%In fact, even if the effects of laryngeal timing are to be seen, this does not mean that there is still a link between laryngeal phasing and vowel duration synchronically.
+%If we want to truthfully explain the aspiration effect, it is thus necessary to look into the diachronic development of pre-aspiration in Icelandic (cf. \citealt{hetzron1972,cristofaro2012,cristofaro2014}.
+%The next paragraphs will briefly deal with this task.
+%
+%\citet{helgason2002} proposes to reconstruct pre-aspiration as a phonetic possibility already present in Proto Nordic, from which Icelandic derived.
+%If this is the case, Icelandic would just be a language that retained pre-aspiration.
+%If Proto Nordic had pre-aspiration, it is then possible that differences in vowel duration were already present.
+%It is interesting to note that indeed such duration differences have been found for Norwegian \citep{fintoft1961} and Swedish \citep{elert1970}.
+%In these two Nordic languages, both derived from Proto Nordic and thus related to Icelandic, pre-aspiration is not a standard phonetic realisation of the fortis series of consonants, but it is precisely before these consonants that vowels are shorter.
+%
+%The fact that the aspiration effect could have already be observable in Proto Nordic strengthens the idea that the characteristics of the effect in present day Icelandic are the product of the intentional control of speakers over their production, given the time scale implied (around 2000 years).
+%%TODO citation of 2000 years
+%% he says preasp was already there but it is nice to think that voicelessness in sonorants and preaspirateion are connected! that's why I should also say about voiceless sonorants
+%Anyhow, \citeauthor{helgason2002} attempts at giving a physiological explanation for the phonetic effect.
+%He argues that, even if the data from Nordic languages seem to point to the contrary, ``it is [still] quite possible that preaspiration (\textit{sic}) is facilitated by a certain type of larynx, and that this has a small but perceptually salient effect on the propensity for anticipatory voicelessness'' \citeyear[231]{helgason2002}.
+%
+%This idea, however, is not supported by the present study since voicing is actually maintained longer in pre-aspirated stops.
+%
+%%\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 
 \section{Limitations and challenges}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
@@ -1508,8 +1512,8 @@ This could have been avoided, even if at the cost of less naturalistic data, by 
 
 A recurrent problem with studies of phonetic duration is that speech tempo is not stable and it is difficult to control.
 Using ratio durations can overcome some of the shortcomings of varying tempo.
-However, the compressibility of phonetic material is not homogeneous between classes of sounds and contexts.
-%TODO add citation
+%However, the compressibility of phonetic material is not homogeneous between classes of sounds and contexts.
+%%TODO add citation
 
 The sound equipment and the recording conditions varied between subjects.
 Although the quality of the audio was comparable across recordings, I expect to be minor differences in the way echoes and background noises affected them.
@@ -1532,7 +1536,7 @@ Since the frame sentence was kept the same in every trial, words starting and/or
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
 However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
 
-\section{Significance of the research}
+%\section{Significance of the research}
 
 \section{Further studies}
 
@@ -1543,7 +1547,8 @@ A laryngograph measures the impedance of the electricity running through the nec
 The amplitude of the impedance is known to be correlated with glottal abduction.
 This kind of data would give a better picture of the actions of the glottis and it would allow to retrieve the start of glottal spread with better accuracy.
 An ultrasound scanner would provide an account of the gestures of the tongue.
-Knowing about tongue movements could make it easier to test for hypothesis that rely on articulatory factors, such as those of ... and ...
+Knowing about tongue movements could make it easier to test for hypothesis that rely on articulatory factors.
+%, such as those of ... and ...
 
 Combined with electropalatography, ultrasound scanning can also improve the accuracy of closure detection.
 As mentioned above, at times closure is not clearly visible from the spectrogram, especially in cases when voicing is maintained after it.
@@ -1618,16 +1623,8 @@ To sum up,
 
 \appendix
 
-
-\chapter{Supplementary material}
-
-\begin{figure}[p]
-%\centering
-\includegraphics[width=\textwidth]{dokk-spr}
-%\includegraphics[width=\textwidth]{dogg_spr}
-\caption{This is just an example pf a picture.}
-\label{f:spr-annotation}
-\end{figure}
+%<<figures, child='rnw/figures.Rnw'>>=
+%@
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@

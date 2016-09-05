@@ -4,7 +4,7 @@
 \maxtocdepth{subsection}
 \raggedbottom
 
-\usepackage[hidelinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}
 \usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -53,10 +53,11 @@
 
 \usepackage{natbib}
 
+\usepackage{listings}
+
 \usepackage{gb4e}
 
 \usepackage{mycleveref}
-
 
 \title{Vowel duration and aspiration effects in Icelandic}
 \author{Stefano Coretta}
@@ -140,7 +141,7 @@ source("./analysis/games-howell.R")
 \maketitle
 \end{titlingpage}
 
-\pagenumbering{arabic}*
+\pagenumbering{arabic}
 \setcounter{page}{3}
 
 \tableofcontents*
@@ -179,8 +180,8 @@ source("./analysis/games-howell.R")
 
 \appendix
 
-<<figures, child='rnw/figures.Rnw'>>=
-@
+%<<figures, child='rnw/figures.Rnw'>>=
+%@
 
 %<<getmeasure, child='rnw/getmeasure.Rnw'>>=
 %@

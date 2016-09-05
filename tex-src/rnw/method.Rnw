@@ -1,6 +1,6 @@
 \chapter{Methodology}
 \label{c:methodology}
-%TODO prosodic approach and articulatory?
+%%TODO prosodic approach and articulatory?
 In this chapter I will describe the methodology employed for this study.
 \Cref{s:participants} contains information about the speakers that participated in the study.
 In \Cref{s:materials}, I detail the materials used in the task, which is outlined in \Cref{s:procedure}.
@@ -30,12 +30,12 @@ label = t:participants,
 ]{cccllc}{}{
 \FL
 \textbf{id} & \textbf{sex}    & \textbf{age} & \textbf{birthplace} & \textbf{languages} & \textbf{abroad} \ML
-TT & female & 24 & Reykjavik & English, Danish, German  & Yes \NN
-BRS & female & 25 & Höfn      & Danish, English, Spanish & Yes \NN
-BTE & female & 27 & Reykjavik & English, Danish          & Yes \NN
-JJ & female & 46 & Reykjavik (Kópavogur) & English, Danish          & Yes \NN
-SHG & male   & 25 & Selfoss   & English                  & No  \NN
-JR & male   & 66 & Reykjavik (York)      & English                  & Yes \LL
+TT & F & 24 & Reykjavik & English, Danish, German  & Yes \NN
+BRS & F & 25 & Höfn      & Danish, English, Spanish & Yes \NN
+BTE & F & 27 & Reykjavik & English, Danish          & Yes \NN
+JJ & F & 46 & Reykjavik (Kópavogur) & English, Danish          & Yes \NN
+SHG & M   & 25 & Selfoss   & English                  & No  \NN
+JR & M   & 66 & Reykjavik (York)      & English                  & Yes \LL
 }
 
 \section{Materials}
@@ -53,7 +53,7 @@ The target words were selected so as to control for as many of the following asp
 Control over these parameters was prioritised according to the order in which they were presented here.
 Unfortunately, obtaining a well controlled word list proved to be extremely difficult and several compromises have been made.
 Respecting as many of the constraints as possible required the use of inflected forms.
-%TODO CITE holes and humps papers!
+%%TODO CITE holes and humps papers!
 Thus, the final wordlist contained a total of 58 inflected Icelandic words (only real word forms were used).
 These were a mixture of nouns (26), verbs (22), adjectives (8) and adverbs (2).
 

@@ -104,7 +104,7 @@ t.test(vor ~ asp, data = di_rho)
 The Voice onset to Release (VOR) measures the interval between the voice onset of the critical syllable to the release of the next consonant.
 According to tests for the difference between means, the VOR in all classes of words, except for -VKK words (words ending with a geminate stop, either non-aspirated or pre-aspirated), did not have a significant difference in mean duration in both the non-aspirated and aspirated condition.
 
-%TODO table with mean and sd
+%%TODO table with mean and sd
 
 %\ctable[caption = Means and standard deviations of VOR in each word class.,
 %label = t:vor
@@ -163,6 +163,16 @@ boxplot(vor ~ asp,
         )
 @
 \end{subfigure}
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
+The plots on the left hand side show the durations of the VOR in monosyllabic words.
+On the right hand side, the durations of the VOR in disyllabic words are displayed.
+From top to bottom, respectively, there are the plots for words with geminate stops and nasals (for laterals and trills, see \Cref{f:vor-rho}).
+In each plot, the duration of the VOR in the non-aspirated and aspirated condition is reported.
+}
+\label{f:vor}
+\end{figure}
+
+\begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-lat-vor, out.width="\\textwidth">>=
@@ -187,18 +197,9 @@ boxplot(vor ~ asp,
         )
 @
 \end{subfigure}
-\caption[Duration in milliseconds of the Voice Onset to Release (VOR).]{\footnotesize Duration in milliseconds of the Voice Onset to Release (VOR).
-The plots on the left hand side show the durations of the VOR in monosyllabic words.
-On the right hand side, the durations of the VOR in disyllabic words are displayed.
-From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:vor-rho}).
-In each plot, the duration of the VOR in the non-aspirated and aspirated condition is reported.
-}
-\label{f:vor}
-\end{figure}
-
-\begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
-<<di-rho-vor>>=
+<<di-rho-vor, out.width="\\textwidth">>=
 boxplot(vor ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -206,8 +207,9 @@ boxplot(vor ~ asp,
         main = "-VRCV"
         )
 @
-\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of VRCV words (disyllabic words only).
-On the left, the VOR duration of words with a voiceless trill /r̥/ (VR̥CV) is reported, while on the right the one in words with a voiced trill /r/ (VRCV).}
+\end{subfigure}
+\caption[Duration in milliseconds of the Voice Onset to Release (VOR) of -VLC- and VRCV words.]{Duration in milliseconds of the Voice Onset to Release (VOR) of -VLC- (mono- and disyllabic) VRCV words (disyllabic words only).
+On the left side, the VOR duration of words with a voiceless lateral or trill is reported, while on the right the one in words with a voiced lateral or trill}
 \label{f:vor-rho}
 \end{figure}
 
@@ -280,6 +282,16 @@ boxplot(norm_abs_voic ~ asp,
         )
 @
 \end{subfigure}
+\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
+The plots on the left hand side show the durations of vowels in monosyllabic words.
+On the right hand side, the durations in disyllabic words are displayed.
+From top to bottom, respectively, there are the plots for words with geminate stops and nasals (for laterals and tills, see \Cref{f:voweldurrho}).
+In each plot, the duration of vowels in the non-aspirated and aspirated condition is reported.
+}
+\label{f:vowelduration}
+\end{figure}
+
+\begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-lat-box, out.width="\\textwidth">>=
@@ -304,18 +316,9 @@ boxplot(norm_abs_voic ~ asp,
         )
 @
 \end{subfigure}
-\caption[Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.]{\scriptsize Duration of vowels as a ratio of the VOR (in percentages) depending on the presence \textit{vs}. absence of pre-aspiration in the following consonant.
-The plots on the left hand side show the durations of vowels in monosyllabic words.
-On the right hand side, the durations in disyllabic words are displayed.
-From top to bottom, respectively, there are the plots for words with geminate stops, nasals and laterals (for trills, see \Cref{f:voweldurrho}).
-In each plot, the duration of vowels in the non-aspirated and aspirated condition is reported.
-}
-\label{f:vowelduration}
-\end{figure}
-
-\begin{figure}
+\begin{subfigure}{.5\textwidth}
 \centering
-<<di-rho-box>>=
+<<di-rho-box, out.width="\\textwidth">>=
 boxplot(norm_abs_voic ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -324,7 +327,8 @@ boxplot(norm_abs_voic ~ asp,
         ylim = c(0.10,0.60)
         )
 @
-\caption[Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV).]{Duration of vowels as a ratio of the VOR in disyllabic words with an /rC/ cluster (VRCV), when followed by a voiced (on the left) or a voiceless trill (on the right).}
+\end{subfigure}
+\caption[Duration of vowels as a ratio of the VOR in  words with an /lC/ and /rC/ cluster.]{Duration of vowels as a ratio of the VOR in words with an /lC/ or /rC/ cluster, when followed by a voiced (on the left) or a voiceless consonant (on the right).}
 \label{f:voweldurrho}
 \end{figure}
 
@@ -469,7 +473,7 @@ A post-hoc Games-Howell test for unequal variances showed that, while the durati
 
 \begin{figure}
 \centering
-<<gs-box, out.width="\\textwidth">>=
+<<gs-box>>=
 boxplot(spread ~ manner,
         data = results_asp,
         names = c("lateral", "nasal", "trill", "stop"),
@@ -506,14 +510,14 @@ t.test(norm_mann ~ asp, data = di_rho) # ***
 summary(lm(dur_mann ~ manner * asp + vor, data = results_son))
 @
 
-%\begin{figure}
-%\centering
-%<<mann-dur-box>>=
-%boxplot(dur_mann ~ asp + manner, data = results_son)
-%@
-%\caption{Duration of sonorant consonants (in msec).}
-%\label{f:dur_man}
-%\end{figure}
+\begin{figure}
+\centering
+<<mann-dur-box>>=
+boxplot(dur_mann ~ asp + manner, data = results_son)
+@
+\caption{Duration of sonorant consonants (in msec).}
+\label{f:dur-man}
+\end{figure}
 
 \ctable[caption = Mean duration and standard deviation of sonorants (msec).,
 label = t:sonduration
@@ -525,11 +529,8 @@ laterals & \Sexpr{round(mean(results_lat$dur_mann[results_lat$asp == "no"]),2)} 
 trills & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "no"]),2)} & \Sexpr{round(mean(results_rho$dur_mann[results_rho$asp == "yes"]),2)} & \Sexpr{round(sd(results_rho$dur_mann[results_rho$asp == "yes"]),2)} \LL
 }
 
-%TODO EXPAND
 The duration of voiced sonorant consonants was significantly different from the duration of voiceless sonorants.
-As a trend, the voiceless sonorants are longer in duration than the voiced ones.
-
-
+On average, voiceless sonorants are 24 milliseconds longer than voiced sonorants [t = 8.238, df = 297, p < 0.001].
 
 
 
