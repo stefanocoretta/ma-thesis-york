@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,openany]{memoir}
+\documentclass[11pt,a4paper,oneside,openany]{memoir}
 
 \setsecnumdepth{subsection}
 \maxtocdepth{subsection}
@@ -90,11 +90,10 @@ in the Department of Language and Linguistic Science
 \end{center}
 
 \vfill
-University of York \\
-York, YO10 5DD, UK \\
+University of York
 \vspace{0.5in}
 \vspace{0.25in}
-08 September 2016
+2016
 \end{center}
 }
 
@@ -103,7 +102,7 @@ York, YO10 5DD, UK \\
 %%% DOCUMENT %%%
 %%%%%%%%%%%%%%%%
 
-%TODO declaration page
+%TODO appendix with consent form and info sheet
 
 \begin{document}
 
@@ -177,7 +176,7 @@ source("./analysis/games-howell.R")
 \frontmatter
 
 \pagenumbering{arabic}
-\setcounter{page}{3}
+\setcounter{page}{2}
 
 \input{rnw/abstract.tex}
 

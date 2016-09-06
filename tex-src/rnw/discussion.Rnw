@@ -114,7 +114,7 @@ boxplot(abs_clos ~ asp,
         ylab = "duration (msec)"
         )
 @
-\caption{
+\caption{Duration in milliseconds of geminate stops.
 }
 \label{f:geminatedur}
 \end{figure}
@@ -129,21 +129,21 @@ It can then be argued that the relative earlier timing of glottal abduction redu
 This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
 Moreover, when breathy voicing is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
 This would imply that the gesture might have started even earlier, strengthening the central idea proposed in this research.
-In conclusion, we could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
+In conclusion, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
 
 
 \section{Duration of vowels followed by sonorants}
 %TODO cite previous studies about the duration
 %TODO say about welsh voiceless nasals, say that Icelandic and welsh are similar and that it is the mirror image of Burmese
 
-The class of sonorant consonants (nasals, laterals and trills) seem to pattern together for what concerns durational properties.
+The class of sonorant consonants seem to pattern together for what concerns durational properties.
 As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.
 Differently from geminate stops, the VOR in words containing sonorant consonants was constant in both the aspirated and non-aspirated classes, except in disyllabic words containing laterals.
-The duration of the stop closure after the sonorant was the same in both the aspirated and the non-aspirated condition, except with laterals and rhotics in disyllabic words.
+The duration of the closure after the sonorant was the same in both the aspirated and the non-aspirated condition, except with laterals and rhotics in disyllabic words.
 The stop consonants in words with /NC/ and /N̥C/ clusters had identical closure durations, thus the difference in vowel duration cannot be attributed to closure properties.
 Moreover, the presence versus absence of aspiration did not affect the duration of stop closure.
 
-On the contrary, the ratio duration of sonorant consonants (nasals, laterals and trills) varied between the aspirated and non-aspirated conditions.
+On the contrary, the ratio duration of sonorants (nasals, laterals and trills) varied between the aspirated and non-aspirated conditions.
 The aspirated sonorants are longer than the non-aspirated ones.
 This characteristic can be attributed to perceptual factors.
 An aspirated sonorant carries less cues for manner and place of articulation, given that most of it is produced with voiceless noise.
@@ -185,7 +185,7 @@ Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombi
 %TODO why trills have less variance
 
 \section{Phonological aspects}
-\label{s:lingusitic}
+\label{s:linguistic}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
 Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
 However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.

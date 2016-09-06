@@ -2,7 +2,7 @@
 \label{c:introduction}
 
 This study deals with the relationship between the presence versus the absence of aspiration in a post-vocalic consonant and the duration of the vowel preceding that consonant.
-\citet{maddieson1976} and \citet{maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāt} ``seven'') are longer than vowel followed by non aspirated consonants (like in \textit{sāth} ``companionship'').
+\citet{maddieson1976} and \citet{maddieson1976a} found that, in Hindi and a few other Indic languages, vowels followed by aspirated consonants (like in the word \textit{sāth} ``companionship'') are longer than vowels followed by non-aspirated consonants (like in \textit{sāt} ``seven'').
 This phenomenon has been subsequently called the ``aspiration effect'' by \citet{durvasula2012}, who further confirmed that the duration of vowel was related to aspiration.
 Even if the effect has been shown to exist, no explanation has been given for it.
 Moreover, these studies only dealt with post-aspiration.
@@ -11,9 +11,9 @@ To fully understand the phenomenon is necessary to extend the enquiry to pre-asp
 Such step has been taken in conducting this research.
 Icelandic has been chosen as the language under study since its consonantal system can be interpreted as thoroughly based on aspiration contrasts.
 In particular, aspiration in Icelandic involves both stops and sonorants consonants.
-In certain contexts, non-aspirated geminate stops (/CC/) contrast with pre-aspirated stops (/ʰC/).
-Similarly, voiced sonorants followed by a stop (/SC/) can contrast in the same contexts with voiceless sonorants followed by a stop (/S̥C/).
-Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect the presence of aspiration has on the duration of the preceding vowel.
+In certain contexts, non-aspirated geminate stops contrast with pre-aspirated stops.
+Similarly, voiced sonorants followed by a stop can contrast in the same contexts with voiceless sonorants followed by a stop.
+Since voiceless sonorants can be classed together with pre-aspirated stops, it is possible to explore the effect of the presence of aspiration on the duration of the preceding vowel.
 The Icelandic phonological system thus constitutes an ideal locus of enquiry on the effects of aspiration on vowel duration in a more systematic way and in novel contexts than previously possible.
 
 The studies on aspiration and vowel duration cited above showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.

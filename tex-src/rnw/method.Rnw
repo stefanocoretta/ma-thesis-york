@@ -13,16 +13,16 @@ Finally, \Cref{s:stats} briefly mentions the features of the statistical analysi
 \label{s:participants}
 
 For this study, I recruited six Icelandic speakers who were living in York (UK) at the time the recordings were made.
-The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and they signed a consent form.
+The methodologies of this research have gained the approval of the Ethics Committee and the subjects received an information sheet and they signed a consent form (see \ref{c:ethics}).
 Recruitment was done through University channels, the Icelandic Embassy in London and the York Anglo Scandinavian Society.
 All the participants were native speakers of Icelandic, above 18 years old and claimed to have normal hearing and speech abilities.
-The informants received compensation for their time in the form of Amazon vouchers or chocolates for the value of £5.
+The informants received compensation for their time in the form of an Amazon voucher or chocolates for the value of £5.
 
 The information on each participant is given in \Cref{t:participants}.
 The column labelled ``birthplace'' contains the city or town where the subjects were born; the eventual city or town in parenthesis is the place where they spent most of their life if different from their birthplace.
 The last column, ``abroad'', states if the subjects spent more that 6 months outside Iceland.
-The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to technical fault in the recording equipment.
-All the speakers were from the Southern parts of Iceland so they are assumed to speak the ``soft'' variety of Icelandic (see \Cref{s:icelandic}).
+The participant JR had to be excluded from the analysis since he misunderstood the task, while part of the participant SHG's task was lost due to a technical fault in the recording equipment.
+All the informants were from Southern Iceland, so they are speakers of the ``soft'' variety of Icelandic (see \Cref{s:icelandic}).
 
 
 \ctable[caption = Information on participants.,
@@ -42,7 +42,7 @@ JR & M   & 66 & Reykjavik (York)      & English                  & Yes \LL
 \label{s:materials}
 
 The material used in the task consisted of a list of Icelandic words (the ``target words'') with the following forms: (C)VCC (monosyllabic) and (C)VCCV (disyllabic).\footnote{I will use the following conventions: V = any vowel, C = any consonant, KK = any geminate stop consonant, TT = any non-aspirated geminate, ʰT = any (pre-)aspirated geminate, S = any sonorant, N = any nasal, L = any lateral, R = any trill, -VCC = any monosyllabic word (either beginning with a vowel or a consonant), -VCCV = any bisyllabic word (either beginning with a vowel or a consonant).
-The terms ``aspirated stop'' will be a shortcut for ``aspirated geminate stop.''
+The term ``aspirated stop'' will be a short cut for ``aspirated geminate stop.''
 In case of ambiguities, the former label will be used.
 }
 The list of target words is given in \Cref{t:wordlist}.
@@ -60,6 +60,7 @@ These were a mixture of nouns (25), verbs (22), adjectives (8) and adverbs (2).
 The 57 words were equally divided in monosyllabic (28) and disyllabic (29) words.
 Of the monosyllabic words, 21 ended with a geminate stop (9 plain geminates and 11 pre-aspirated geminates); 5 with an /NC/ cluster (2 voiced and 3 voiceless nasals); 2 with an /lC/ cluster (one voiced, one voiceless).
 Of the disyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
+\Cref{t:tokens} shows the count of the tokens used in the final analysis.
 
 <<tokens, include=FALSE>>=
 table(results$manner,results$asp,results$syl_no)
@@ -92,11 +93,11 @@ trill   & -       & -   & 15      & 15 \LL
 
 \begin{supertabular}[t]{llll}
 \multicolumn{4}{l}{\textsc{stops}}				   \\ \hline
-kokk  & kʰoʰk  & noun      & cook          \\
-gogg  & kokk   & noun      & beak          \\
+kokk  & kʰɔʰk  & noun      & cook          \\
+gogg  & kɔkk   & noun      & beak          \\
 dökk  & tœʰk   & adjective & dark          \\
 dögg  & tœkk   & noun      & dew           \\
-kopp  & kʰoʰp  & noun      & chamber pot   \\
+kopp  & kʰɔʰp  & noun      & chamber pot   \\
 kubb  & cʰʏpp  & noun      & block of wood \\
 vítt  & viʰt   & adverb    & far and wide  \\
 vídd  & vitt   & noun      & width         \\
@@ -107,28 +108,28 @@ fæddi & faittɪ & verb      & feed          \\
 ýtt   & iʰt    & verb      & push          \\
 ydd   & ɪtt    & verb      & sharpen       \\
 ótt   & ouʰt   & noun      & point         \\
-odd   & ott    & adverb    & fast          \\
-sets  & sess   & noun      & sediment      \\
-sett  & seʰt   & verb      & put           \\
+odd   & ɔtt    & adverb    & fast          \\
+sets  & sɛss   & noun      & sediment      \\
+sett  & sɛʰt   & verb      & put           \\
 feits & feiss  & adjective & fat           \\
 feitt & feiʰt  & adjective & fat           \\
-vots  & voss   & adjective & wet           \\
-vott  & voʰt   & adjective & wet           \\
+vots  & vɔss   & adjective & wet           \\
+vott  & vɔʰt   & adjective & wet           \\
 takka & tʰaʰka & noun      & key           \\
 kagga & kʰakka & noun      & barrel        \\
-detta & teʰta  & verb      & fall          \\
-gedda & cetta  & noun      & pike          \\ \hline
+detta & tɛʰta  & verb      & fall          \\
+gedda & cɛtta  & noun      & pike          \\ \hline
 \multicolumn{4}{l}{\textsc{nasals}}				   \\ \hline
 kamp   & kʰam̥p  & noun      & moustache       \\
 kamb   & kʰamp   & noun      & comb            \\
 punt   & pʰʏn̥t  & noun      & decoration      \\
 pund   & pʰʏnt   & noun      & pound           \\
-kembt  & cʰem̥t  & verb      & comb            \\
-kembdi & cʰemtɪ  & verb      & comb            \\
+kembt  & cʰɛm̥t  & verb      & comb            \\
+kembdi & cʰɛmtɪ  & verb      & comb            \\
 kampa  & kʰam̥pa & noun      & moustache       \\
 kamba  & kʰampa  & noun      & comb            \\
-kempa  & cʰem̥pa & noun      & hero            \\
-kemba  & cʰempa  & verb      & comb            \\
+kempa  & cʰɛm̥pa & noun      & hero            \\
+kemba  & cʰɛmpa  & verb      & comb            \\
 punta  & pʰʏn̥ta & noun      & decoration      \\
 punda  & pʰʏnta  & noun      & pound           \\
 vanta  & van̥ta  & verb      & want            \\
@@ -138,13 +139,13 @@ kinn   & kʰɪnn   & noun      & cheek          \\ \hline
 \multicolumn{4}{l}{\textsc{laterals}}				   \\ \hline
 duld   & tʏlt     & adjective & complex  \\
 dult   & tʏl̥t    & adjective & reticent \\
-gelta  & cel̥ta   & verb      & bark     \\
-gelda  & celta    & verb      & castrate \\
+gelta  & cɛl̥ta   & verb      & bark     \\
+gelda  & cɛlta    & verb      & castrate \\
 mjólka & mjoul̥ka & verb      & milk     \\
 ólga   & oulka    & verb      & foam    \\ \hline
 \multicolumn{4}{l}{\textsc{trills}}				   \\ \hline
-orka   & or̥ka    & noun      & energy   \\
-orga   & orka     & noun      & scream   \\ \hline
+orka   & ɔr̥ka    & noun      & energy   \\
+orga   & ɔrka     & noun      & scream   \\ \hline
 \end{supertabular}
 
 
@@ -225,7 +226,7 @@ Of course, nasality, laterality and rhoticity never co-occur, and glottal spread
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{dokk}
-\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the phasing of phonation types in words with pre-aspirated geminates.}
 \label{f:glottal-1}
 \end{figure}
 
@@ -265,13 +266,13 @@ See \Cref{f:spreding} for an example.
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamp}
-\caption{/kʰampʰ/}
+\caption{/kʰampʰ/ [kʰam͡N̥p]}
 \label{f:kamp}
 \end{subfigure}
 \begin{subfigure}{\textwidth}
 \centering
 \includegraphics[width=0.7\textwidth]{kamb}
-\caption{/kʰamp/}
+\caption{/kʰamp/ [kʰamp]}
 \label{f:kamb}
 \end{subfigure}
 \caption[Annotation of nasality]{Example of the annotation of nasality in the words \textit{kamp} `moustache' and \textit{kamb} `comb'.
@@ -296,7 +297,7 @@ If the burst was not identifiable from the waveform nor from the spectrogram, no
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{kopp}
-\caption[Release of /ppʰ/]{Release of /ppʰ/ in the word \textit{kopp} /kʰoppʰ/ `chamber pot' [kʰɔʰp].}
+\caption[Release of /ppʰ/]{Release of /ppʰ/ in the word \textit{kopp} /kʰɔppʰ/ `chamber pot' [kʰɔʰp].}
 \label{f:release}
 \end{figure}
 

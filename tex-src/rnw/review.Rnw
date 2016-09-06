@@ -13,21 +13,20 @@ In particular, the vibration of the vocal folds generates oscillations of the ai
 Even silence during speech is due to a particular configuration of the glottis (the empty space between the two vocal folds).
 The larynx, with the vocal folds, thus plays a major role in human communication.
 
-\citet{halle2002} review which configurations the vocal folds can assume.
-Such configurations are known as the states of the glottis.
+\citet{halle2002} review which configurations the vocal folds can assume, known as the states of the glottis.
 The four principal states of the glottis are (1) spread glottis, (2) constricted glottis, (3) stiff vocal folds, and (4) slack vocal folds.
 A spread glottis state corresponds to abducted vocal folds.
-This state is the one naturally used during normal breathing.
+This state is the one employed during breathing.
 If the vocal folds are adducted so as they tightly press against each other, the glottis assumes a constricted configuration.
 Independently from the first two states, the vocal folds can be either stiff or slack.
 When the vocal folds are stiff, the distance between the upper and the lower edges of the folds is greater.
 In the case of slack vocal folds, such distance is smaller and there is no tension in the vocal folds.
 The first two states of the glottis can combine with the other two to create several phonation types.
 
-\citet{ladefoged1973} discusses the four main phonation types that are employed to create phonological contrast in the languages of the world.
+\citet{ladefoged1973} discusses four main phonation types that are employed to create phonological contrast in the languages of the world.
 These are voicelessness, modal voice, breathy voice and creaky voice \citep{halle2002}.
 A voiceless sound is produced with a laryngeal configuration that prevents vibration of the vocal folds.
-The vocal folds can either be stiffened so as to prevent them vibrating, or abducted just enough to increase the threshold of pressure build up and favour voicing.
+The vocal folds can either be stiffened or abducted so as to prevent them from vibrating.
 Modal voicing, instead, is produced with slack vocal folds and/or with adducted vocal folds.
 When the transglottal pressure is sufficiently weak, the pressure of the airflow coming from the lungs can set the vocal folds to vibrate and produce a periodic sound, which is voicing.
 Such mechanism of generating voicing is not the only one.
@@ -50,11 +49,11 @@ I will then review some of the findings concerning the aspiration effect and the
 
 The consonantal system of Hindi [\textsc{glotto}: \texttt{hind1269}] is based on a four-way opposition of laryngeal contrasts \citep{ohala1983}.
 For each place of articulation, there is a voiceless unaspirated, a voiced unaspirated, a voiceless aspirated and (breathy) voiced aspirated stop: for example, [t], [d], [tʰ], [dʱ].
-The voiceless aspirated stops (like [tʰ]) are similar to the aspirated stops of English: a relatively long VOT follows the release of the occlusion.
+In the voiceless aspirated stops (like [tʰ]), the release of the consonant is followed by a relatively long VOT.
 The voiced counterpart (like [dʱ]) is normally voiced throughout the closure and the aspiration is characterised by breathy voicing.
 \citet{maddieson1976} found that vowels followed by voiced and voiceless aspirated stops (like in [kaːd] `embroider' and [kaːtʰ] `wood') were of equal length but longer than vowels followed by voiceless stops (like in [kaːt] `cut').
 Moreover, vowels followed by voiced aspirated stops (like in [saːdʱ] `balance') were even longer than voiced and voiceless aspirated stops.
-\Cref{t:hindi} shows the mean duration of vowels before the four alveolar stops as reported by \citet{maddieson1976} and \citet{lampp2004}.
+\Cref{t:hindi} shows the mean duration of vowels before the dental and velar stops as reported by \citet{maddieson1976} and \citet{lampp2004}.
 
 %ADD in note that phonemic is different
 %ADD that no sd was given
@@ -141,14 +140,14 @@ For each combination of manner and place of articulation there are two segments,
 Length is distinctive in consonants, word-medially and word-finally.
 Of interest for the present study is that aspirated stops are pre-aspirated when they are geminates, while plain geminates are voiceless unaspirated, like the corresponding singletons: /tʰakkʰa/ `key' [tʰaʰka]; /kʰakka/ `barrel' [kʰakka].
 
-The vocalic phonemes of Icelandic are given in \Cref{t:vowels} \citep[60]{arnason2011}.
+The vocalic phonemes of Icelandic are given in \Cref{t:vowels} \citep[p. 60]{arnason2011}.
 On the antero-posterior axis, two places of articulation are distinctive: front and back.
 On the vertical axis, vowels can be high, high-mid, low-mid and low.
 Vowels can be either unrounded or rounded, even if a true phonemic contrast is present only in front-mid vowels.
 Icelandic has the following diphthongs: the /i/-diphthongs /ai/, /ɛi/, /œi/, and the /u/-diphthongs /ou/, /au/.
 The vocalic system of this language does not exploit phonological length distinctively.
 Instead, vowels (both monophthongs and diphthongs) are predictably long when followed by two or more consonants, while they are short if one or no consonant follows.
-For example: \textit{bað} /pað/ `bath' [paːð], \textit{kinn} /cɪnn/ `cheek' [cɪnn], \textit{baka} /pakʰa/  `to bake' [paːkʰa] and \textit{bagga} /pakka/ `burden.\textsc{acc}' [pakka]; \textit{álnir} /aulnɪr/ `wealth' [aulnɪr̥] ‘wealth’, \textit{ál} /aul/ `eel.\textsc{acc}' [auːl̥], \textit{álar} /aular/ `eels' [auːlar̥].\footnote{The actual distribution of long and short vowels is, unsurprisingly, debated.
+For example: \textit{bað} /pað/ `bath' [paːð], \textit{kinn} /cɪnn/ `cheek' [cɪnn], \textit{baka} /pakʰa/  `to bake' [paːkʰa] and \textit{bagga} /pakka/ `burden (accusative)' [pakka]; \textit{álnir} /aulnɪr/ `wealth' [aulnɪr̥] ‘wealth’, \textit{ál} /aul/ `eel (accusative)' [auːl̥], \textit{álar} /aular/ `eels' [auːlar̥].\footnote{The actual distribution of long and short vowels is, unsurprisingly, debated.
 For a review on the theoretical interpretations of the lengthening rule, see \citet{booij1986,pind1999}, and \citet[pp. 160--173, 203--208]{arnason2011}.
 }
 
@@ -176,7 +175,7 @@ In the ``hard'' variety (\textit{harðmæli}), spoken in the northern area of th
 In this variety, stops are aspirated in every context, but they contrast with non-aspirated stops at the beginning of a word: /tʰapʰa/ `to lose' [tʰaːpʰa], /pʰatʰa/ `to gesticulate' [pʰaːtʰa].
 
 Moreover, aspirated geminate stops, both word-medially and word-finally, are realised as pre-aspirated stops.
-For example: /kʰɔppɪ/ `young seal' [kʰɔppɪ], but /kɔppɪ/ `chamber pot (dative)' [kʰɔʰpɪ].
+For example: /kʰɔppɪ/ `young seal' [kʰɔppɪ], but /kɔppʰɪ/ `chamber pot (dative)' [kʰɔʰpɪ].
 
 \subsection{Laryngeal contrasts in sonorants}
 The Lyon-Albuquerque Phonological Systems Database \citep{Maddieson2012} reports that 51 out of 586 languages of the world use laryngeal settings contrastively in sonorants.
@@ -184,7 +183,7 @@ The contrastive use of laryngeal distinctions in sonorants can thus be considere
 Unsurprisingly, sonorants produced with modal voicing are the most common type.
 If more than one phonation type is used in sonorants to accomplish phonological contrasts, at least one of those is always modal voicing.
 Icelandic is among those rare languages that show voicing contrasts in sonorants and it has voiced and voiceless nasals, laterals and trills.
-In the following paragraphs I will show how the voiceless sonorants of Icelandic can be though of as aspirated consonants.
+In the following paragraphs I will show how the voiceless sonorants of Icelandic can be thought of as aspirated consonants.
 This interpretation makes it possible to group both the aspirated consonants and the voiceless sonorants under a single category ``aspirated.''
 Such move will prove to be useful for the development of the hypothesis in the present study.
 
@@ -192,7 +191,7 @@ Such move will prove to be useful for the development of the hypothesis in the p
 Apart from modal voicing, three other types of phonations are found among nasals in the languages of the world: breathy voice, creaky voice and voicelessness.
 Breathy and creaky voice will not be dealt with here, since they are not immediately relevant for this study.
 \citet{bhaskararao1991} state that voicelessness in nasals is implemented in two possible ways.
-The type known as the ``Burmese type,'' which is also the most common, is constituted by an initial portion of voicelessness followed by a portion characterised by modal voicing (for example,bilabial [N̥͡m], and alveolar [N̥͡n]).\footnote{Since place cues are not recoverable during the voiceless part of the nasal, the capital letter ⟨N⟩ is used to indicate placelessness.
+The type known as the ``Burmese type,'' which is also the most common, is constituted by an initial portion of voicelessness followed by a portion characterised by modal voicing (for example, bilabial [N̥͡m], and alveolar [N̥͡n]).\footnote{Since place cues are not recoverable during the voiceless part of the nasal, the capital letter ⟨N⟩ is used to indicate placelessness.
 This solution is used by \citet{silverman2012}.
 }
 In the second type of voiceless nasals, the segment is voiceless through out its duration.
@@ -247,7 +246,7 @@ label= t:contrasts
 Relevant to this study is the way phonation types are exploited to create contrast in stop and sonorant consonants in Icelandic.
 Even if the phonemic oppositions are ideally straightforward---aspirated consonants contrast with non-aspirated ones---the actual phonotactic distribution of contrastive consonantal segments is quite complex.
 There are restrictions on possible contrasts depending on the position within the word and the preceding or following segments. Except word-initially, both plain and aspirated stops can be geminated.
-\Cref{t:contrasts} shows the distributions of contrasts in stops and sonorants in various contexts within the word.
+\Cref{t:contrasts} shows the distributions of contrasts in stops and sonorants in various contexts within a word.
 The labial stops and the alveolar nasals are used as an exemplification, respectively, of the distribution of stops and sonorants.
 
 
@@ -255,7 +254,7 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \label{s:hypothesis}
 
 The studes by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
-These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
+These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: (1) either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or (2) pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
 %ADD about sonorants!
 
 The hypothesis I propose in this study rests on the idea that the aspiration effect is the product of the relative alignment of the glottal spreading gesture and the oral gesture.
@@ -265,19 +264,19 @@ On the contrary, if the spreading gesture is timed later relative to the oral ge
 In a language like Hindi that contrasts non-aspirated with post-aspirated stops, a vowel followed by a post-aspirated stop would be relatively longer than a vowel followed by a non-aspirated stop since in the former case the spreading gesture that allows post-aspiration would allow longer voicing.
 
 In Icelandic, the contexts where a contrast involving aspiration can be found post-vocalically is with geminates stops, RC clusters (/l/ or /r/ + stop) and NC clusters (nasal + stop) in word-medial and final position.
-As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as (partial) voicelessness in sonorants.
+As mentioned above, aspiration is realised as pre-aspiration in geminate stops and as voicelessness in sonorants.
 If the timing interpretation of the aspiration effect is correct, vowels before pre-aspirated geminates and voiceless sonorants should be shorter than vowels before plain geminates and voiced sonorants.
 Given that pre-aspirated stops and voiceless sonorants can be categorised under the umbrella term ``aspirated consonants'' (for the reasons above), the two separate statements can be merged into a single hypothesis:
 
 \begin{exe}
-\ex\label{h1} \textbf{Alternative hypothesis} (H\textsubscript{1}) \\
+\ex\label{h1} \textbf{Alternative hypothesis}: Timing Hypothesis \\
 Vowels followed by aspirated consonants are shorter than vowels followed by non-aspirated consonants.
 \end{exe}
 
 The corresponding null hypothesis is:
 
 \begin{exe}
-\ex\label{h0} \textbf{Null hypothesis} (H\textsubscript{0}) \\
+\ex\label{h0} \textbf{Null hypothesis} \\
 Vowels followed by aspirated consonants are of the same duration as vowels followed by unaspirated consonants.
 \end{exe}
 
@@ -289,7 +288,7 @@ Vowels followed by aspirated consonants are of the same duration as vowels follo
 Both graphs are a zoom in of the -VCC- part of a word.
 The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
 According to the research hypothesis of this study, voicing offset should be timed earlier in b. than in a. because of the earlier spreading of the vocal folds.
-Based on the design in \citet{esposito2002}.}
+(Design based on \citealt{esposito2002})}
 \label{f:hypothesis}
 \end{figure}
 
