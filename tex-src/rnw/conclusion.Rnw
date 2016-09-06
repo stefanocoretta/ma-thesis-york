@@ -22,16 +22,17 @@ This indicates that pre-aspiration in the collected data was normally realised p
 
 In the case of sonorants, the first portion of the sonorant was voiced, followed by voiceless friction in the oral cavity (in laterals and trills) or at the nostrils (in nasals).
 In sonorants voicing does not cease before the oral gesture of the sonorant is achieved.
-However, I showed that voiceless sonorants are longer than their voiced counterparts, due to perceptual enhancement (cf ...).
+However, I showed that voiceless sonorants are longer than their voiced counterparts, due to perceptual enhancement (cf \Cref{s:linguistic}).
 I thus argued that the shorter duration of vowels followed by voiceless sonorants could be attributed to perceptual reasons.
 Decreasing the duration of vowels when followed by voiceless sonorants makes the difference in duration of the former even more salient, if compared with the durations in words with voiced sonorants (that are shorter than the voiceless ones).
 
-Although this study focussed more on the phonetics of the aspiration effect, in \Cref{s:linguistic} I briefly discussed of its linguistic aspects.
-In this section, I argued that, even if the effects of aspiration on vowel duration can have a physiological cause, it is possible that the speakers of Icelandic ``actively'' exploited and inflated those effects to enhance the phonological contrast.
+Although this research focussed more on the phonetics of the aspiration effect, in \Cref{s:linguistic} I briefly discussed of its phonological aspects.
+In that section, I argued that, even if the effects of aspiration on vowel duration can have a physiological cause, it is possible that the speakers of Icelandic ``actively'' exploited and inflated those effects to enhance the phonological contrast.
 
-%TODO last paragraph of conclusions
-
-To sum up, 
+To sum up, the results of this study indicated that vowels in Icelandic are shorter when followed by pre-aspirated geminates and voiceless sonorants, while they are longer when followed by plain geminates and voiced sonorants.
+The data on the duration of glottal spread in geminate stops supported the idea that the duration of vowels could be affected by the fact that glottal abduction is phased earlier in words with pre-aspirated stops.
+Even if the details of the timing hypothesis as presented in \Cref{s:hypothesis} need to be reworked, such hypothesis seems to be worth exploring further.
+ 
 
 
 

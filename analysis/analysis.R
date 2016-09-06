@@ -61,6 +61,8 @@ source("./analysis/games-howell.R")
 
 ## ----method, child='rnw/method.Rnw'--------------------------------------
 
+## ----tokens, include=FALSE-----------------------------------------------
+table(results$manner,results$asp,results$syl_no)
 
 
 ## ----results, child='rnw/results.Rnw'------------------------------------
@@ -71,7 +73,7 @@ boxplot(mono_c$dur_word,
         di_c$dur_word,
         di_v$dur_word,
         names = c("CVCC", "VCC", "CVCCV", "VCCV"),
-        ylab = "duration (msec)"
+        ylab = "duration of words (msec)"
         )
 
 ## ----voic-syll, include=FALSE--------------------------------------------
@@ -84,10 +86,10 @@ shapiro.test(mono$vor)
 wilcox.test(vor ~ syl_no, data = results)
 
 ## ----voic-syll-box-------------------------------------------------------
-boxplot(abs_voic ~ syl_no,
+boxplot(norm_abs_voic ~ syl_no,
         data = results,
         names = c("monosyllabic", "disyllabic"),
-        ylab = "duration (msec)"
+        ylab = "duration of vowels (ratio)"
         )
 
 ## ----vor, include=FALSE--------------------------------------------------
@@ -180,7 +182,7 @@ boxplot(vor ~ asp,
         ylim = c(150,450)
         )
 
-## ----di-rho-vor----------------------------------------------------------
+## ----di-rho-vor, out.width="\\textwidth"---------------------------------
 boxplot(vor ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -247,7 +249,7 @@ boxplot(norm_abs_voic ~ asp,
         ylim = c(0.10,0.60)
         )
 
-## ----di-rho-box----------------------------------------------------------
+## ----di-rho-box, out.width="\\textwidth"---------------------------------
 boxplot(norm_abs_voic ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
@@ -313,7 +315,7 @@ boxplot(dur_clos ~ asp,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
         main = "-VLCV",
-        ylim = c(40,140)
+        ylim = c(35,140)
         )
 
 ## ----di-rho-clos-box, out.width="\\textwidth"----------------------------
@@ -322,14 +324,14 @@ boxplot(dur_clos ~ asp,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
         main = "-VRCV",
-        ylim = c(40,140)
+        ylim = c(35,140)
         )
 
 ## ----glottal-test, include=FALSE-----------------------------------------
 kruskal.test(spread ~ manner, data = results)
 games.howell(results_asp$manner, results_asp$spread)
 
-## ----gs-box, out.width="\\textwidth"-------------------------------------
+## ----gs-box--------------------------------------------------------------
 boxplot(spread ~ manner,
         data = results_asp,
         names = c("lateral", "nasal", "trill", "stop"),
@@ -372,8 +374,8 @@ wilcox.test(results_stop$dur_voic ~ results_stop$asp)
 ## ----vow-stop------------------------------------------------------------
 boxplot(abs_voic ~ asp,
         data = results_stop,
-        names = c("non-asp", "pre-asp"),
-        ylab = "duration (msec)"
+        names = c("non-asp stop", "pre-asp stop"),
+        ylab = "duration of vowel (msec)"
         )
 
 ## ----voicing-stop--------------------------------------------------------

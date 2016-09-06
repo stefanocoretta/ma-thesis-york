@@ -321,4 +321,10 @@ shapiro.test(results_stop_nasp$abs_clos)
 boxplot(abs_clos ~ asp, data = results_stop)
 t.test(abs_clos ~ asp, data = results_stop)
 
+#### Tangle ####
+
+knit("./tex-src/dissertation.rnw", output = "./analysis/analysis.R", tangle = TRUE)
+
+
+
 

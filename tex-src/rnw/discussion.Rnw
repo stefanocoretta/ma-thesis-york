@@ -5,25 +5,29 @@
 The research hypothesis of this study is based on the idea that the aspiration effect could be the product of the relative timing of the glottal spread gesture in relation to the tongue gestures in the oral cavity.
 An early timing of glottal spread would shorten the vowel, while a later timing would lengthen it.
 In particular, the hypothesis states that, in Icelandic, vowels followed by aspirated consonants (pre-aspirated geminates and voiceless sonorants) should be shorter than vowels followed by plain consonants.
-As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of the vowel in words with aspirated consonants and its duration in words with non-aspirated consonants.
-This finding seems to support the timing hypothesis.
+As shown in the result chapter (\Cref{c:results}), I found a significant difference between the duration of vowels in words with aspirated consonants and their duration in words with non-aspirated consonants.
+This finding seems to initially support the timing hypothesis.
+The following sections will discuss the results further on the light of the hypothesis.
 
 \section{Duration of vowels before geminates and duration of geminates}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{dokk}
-\caption{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the annotation of glottal spread.}
+\caption[An example of the how phonation is coordinated in words with pre-aspirated geminates.]{The word \textit{dökk} /tœkkʰ/ `dark' [tœœ̤̤œ̥k] as an example of the how phonation is coordinated in words with pre-aspirated geminates.
+Modal voice during the vowel is followed by breathy phonation (voicing plus glottal spread).
+Voicing eventually stops, leaving voiceless aspiration.
+}
 \label{f:glottal}
 \end{figure}
 
-We have seen that the duration of vowels as a ration of the VOR is smaller when they are followed by a pre-aspirated geminate than when they are followed by a plain geminate.
+We have seen that the duration of vowels as a ratio of the VOR is smaller when they are followed by a pre-aspirated geminates than when they are followed by a plain geminate.
 It is worth noting that the VOR of the two classes is different, as said in \Cref{s:vor}.
 However, the fact that the vowel is shorter in words with pre-aspirated geminates cannot be attributed to differences in the over-all duration of the interval between the onset of voicing and the release of the stop.
 This is because the VOR is \textit{longer} in words with aspiration while the ratio duration of the vowel is \textit{smaller}.
 Other things being equal, we would expect vowels---i.e. the interval between voice onset and the onset of glottal abduction---in words with pre-aspiration to take the same ratio of the VOR as the vowels in words with plain geminates.
-Instead, laryngeal spreading starts earlier in words with pre-aspirated, while voicing is still active even after glottal spread is initiated (see \Cref{f:glottal}).
-Instead, vowels are the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "yes"]),2) * 100}\% of the VOR if followed by pre-aspirated geminates and the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "no"]),2) * 100}\%.
+Instead, laryngeal spreading starts earlier in words with pre-aspirated stops, while voicing is still active even after glottal spread is initiated (see \Cref{f:glottal}).
+Instead, vowels are the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "yes"]),2) * 100}\% of the VOR if followed by pre-aspirated geminates and the \Sexpr{round(mean(results_stop$norm_abs_voic[results_stop$asp == "no"]),2) * 100}\% if followed by non-aspirated stops.
 
 <<dur-voic-test, include=FALSE>>=
 shapiro.test(results_stop$dur_voic[results_stop$asp == "yes"])
@@ -33,6 +37,15 @@ var.test(results_stop$dur_voic[results_stop$asp == "yes"],
 wilcox.test(results_stop$dur_voic ~ results_stop$asp)
 @
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{reality}
+\caption[Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops.]{Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops. a. shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while b. for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
+Both graphs are zoomed in the -VCC- part of the words.
+The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
+Based on the design in Esposito (2002).}
+\label{f:reality}
+\end{figure}
 
 Even if we look at absolute durations, vowels followed by aspirated stops are shorter, as \Cref{f:absvow} shows.
 However, the hypothesis rested on the idea that voicing would cease earlier in vowels followed by pre-aspirated stops, resulting in a shorter vowel.
@@ -46,8 +59,8 @@ This is not surprising, since glottal spread is not incompatible with voicing an
 <<vow-stop>>=
 boxplot(abs_voic ~ asp,
         data = results_stop,
-        names = c("non-asp", "pre-asp"),
-        ylab = "duration (msec)"
+        names = c("non-asp stop", "pre-asp stop"),
+        ylab = "duration of vowel (msec)"
         )
 @
 \caption{Duration of vowels in milliseconds before non-aspirated and pre-aspirated geminate stops.
@@ -70,18 +83,8 @@ The duration of voicing in words with pre-aspirated geminates is, on average, lo
 \label{f:voicdur}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{reality}
-\caption[Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops.]{Schematic representation of the phasing of glottal spread and oral gestures in word with geminate stops. a. shows the articulatory events in words with non-aspirated geminates (like in \textit{kagga} [kʰakka] `barrel'), while b. for words with pre-aspirated geminates (\textit{takka} [tʰaʰka] `key').
-Both graphs are zoomed in the -VCC- part of the words.
-The vertical axis represents the quotient of oral closure (solid line) and glottal abduction (dashed line).
-Based on the design in Esposito (2002).}
-\label{f:reality}
-\end{figure}
-
 A possible explanation for the longer duration of voicing is that, simply put, the absence of a closure at the VC transition allows for voicing to continue.
-In words with non-aspirated geminates, the closure of the consonant---which is produced immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
+In words with non-aspirated geminates, the closure of the consonant---which is realised immediately after the vowel---quickly produces an increase in oral pressure, until the point is reached when voicing can no longer be sustained.
 In pre-aspirated geminates, instead, since the stop closure is executed later, there is no pressure build-up and vocal folds vibration can be maintained.
 At the same time, though, the variance of the duration of voicing in the two classes is not the same.
 As it can be seen from \Cref{f:voicdur}, the duration of the voicing portion in words with pre-aspirated geminates has greater variance.
@@ -93,11 +96,11 @@ shapiro.test(results_stop_nasp$abs_clos)
 t.test(abs_clos ~ asp, data = results_stop)
 @
 
-\citet[70--71]{ladefoged1996} stated that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argued that the timing of glottal spread is the same.
+\citet[pp. 70--71]{ladefoged1996} stated that the glottal width in Icelandic pre-aspirated stops is wider than in non-aspirated stops, but they argued that the timing of glottal spread is the same.
 Glottal spread, according to their description, starts at the beginning of the geminate and ends at its release, independently of the presence of pre-aspiration. 
 This remark does not fit with the results found in this study.
-Although I could not measure glottal width in a direct way, if the description given in \citet{ladefoged1996} is correct, glottal width in non-aspirated geminates can be inferred from the duration of the interval between the offset of voicing of the preceding vowel and the release of the geminate.
-In the data available, the duration of the pre-aspirated geminates was on average longer (\Sexpr{round(mean(results_stop_asp$abs_clos),2)}) than the duration of the non-aspirated counterparts (\Sexpr{round(mean(results_stop_nasp$abs_clos),2)}).
+Although I could not measure glottal width in a direct way, if the description given in \citet{ladefoged1996} is correct, glottal width in non-aspirated geminates can be inferred from the duration of the interval between the offset of voicing of the vowel preceding the geminate and the release of the geminate.
+In the data available, the duration of the pre-aspirated geminates was on average longer (\Sexpr{round(mean(results_stop_asp$abs_clos),2)} msec) than the duration of the non-aspirated counterparts (\Sexpr{round(mean(results_stop_nasp$abs_clos),2)} msec).
 The difference was significant as per an unpaired-samples \textit{t}-test [t = -8.9048, df = 279.04, p < 0.001].
 \Cref{f:geminatedur} shows the duration of pre-aspirated \textit{vs.} non-aspirated geminates.
 
@@ -122,10 +125,10 @@ boxplot(abs_clos ~ asp,
 These facts do not fit well with the idea that voicing should cease earlier due to glottal spread.
 However, the assumption that glottal spread is timed earlier in pre-aspirated geminates than in non-aspirated geminates relative to the onset of voicing was correct (at least for Icelandic).
 Given than glottal spread starts earlier, modal voicing is indeed shorter in words with pre-aspirated stops.
-It can be then argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
+It can then be argued that the relative earlier timing of glottal abduction reduces the vocalic portion where modal voicing is maintained.
 This kind of alignment results in a shorter vowel, if we consider the vowel to be the modal voiced interval of the vocalic gesture.
 Moreover, when breathy voicing is visible from the spectrogram, it should be assumed that the spreading gesture has already reached the critical point in which the abduction is enough to produce breathiness.
-This would imply that the gestured might have started even earlier, strengthening the central idea proposed in this research.
+This would imply that the gesture might have started even earlier, strengthening the central idea proposed in this research.
 In conclusion, we could say that, even if some adjustments are required, the Icelandic data seem to indicate that the timing hypothesis is the right direction for further exploration.
 
 
@@ -133,14 +136,14 @@ In conclusion, we could say that, even if some adjustments are required, the Ice
 %TODO cite previous studies about the duration
 %TODO say about welsh voiceless nasals, say that Icelandic and welsh are similar and that it is the mirror image of Burmese
 
-The class of sonorant consonants (nasals, laterals and rhotics) seem to pattern together for what concerns durational properties.
+The class of sonorant consonants (nasals, laterals and trills) seem to pattern together for what concerns durational properties.
 As discussed above, all sonorants showed to produce a difference in the ratio duration of voicing depending on whether they were aspirated or not.
 Differently from geminate stops, the VOR in words containing sonorant consonants was constant in both the aspirated and non-aspirated classes, except in disyllabic words containing laterals.
-The duration of the stop closure after the sonorant was the same in both aspirated and non-aspirated conditions, except with laterals and rhotics in disyllabic words.
-The stop consonants in words with /NC/ and /N̥C/ clusters had identical closure durations, so the difference in vowel duration cannot be attributed to closure properties.
-The presence vs. the absence of aspiration did not affect the duration of stop closure.
+The duration of the stop closure after the sonorant was the same in both the aspirated and the non-aspirated condition, except with laterals and rhotics in disyllabic words.
+The stop consonants in words with /NC/ and /N̥C/ clusters had identical closure durations, thus the difference in vowel duration cannot be attributed to closure properties.
+Moreover, the presence versus absence of aspiration did not affect the duration of stop closure.
 
-On the contrary, the ratio duration of sonorant consonants (nasal, lateral and rhotic) varied between the aspirated and non-aspirated conditions.
+On the contrary, the ratio duration of sonorant consonants (nasals, laterals and trills) varied between the aspirated and non-aspirated conditions.
 The aspirated sonorants are longer than the non-aspirated ones.
 This characteristic can be attributed to perceptual factors.
 An aspirated sonorant carries less cues for manner and place of articulation, given that most of it is produced with voiceless noise.
@@ -165,7 +168,7 @@ If, on the contrary, glottal spread follows modal voicing, the last portion of t
 
 With laterals, instead, there are two possible optimal phasings of glottal spreading.
 In the first type, the abduction of the vocal folds and the lateral tongue gesture are simultaneous.
-A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than than an approximant.
+A voiceless lateral produced in this way normally results in a voiceless lateral fricative more than an approximant.
 In a second type of phasing, the laryngeal abduction is truncated in a similar way as in nasals.
 \citet{silverman1997} ascribes such difference in the ways nasals and laterals achieve an optimal phasing of non-modal phonations to a combination of two factors: (1) all laterals are phonetically similar and (2) lateral consonants are easily distinguishable from non-laterals.
 %TODO maybe more on this?
@@ -181,32 +184,33 @@ Moreover, these results are similar to those in \citet{jessen1998}, \citet{bombi
 
 %TODO why trills have less variance
 
-\section{Linguistic aspects}
+\section{Phonological aspects}
 \label{s:lingusitic}
 This study implicitly assumed that the ultimate origin of the aspiration effect is to be sought in physiological and aerodynamic constraints.
 Such constraints could be related to the ways the timing of laryngeal spread is phased in relation to other gestures, as hinted by the results of this research.
 However, we cannot exclude the possibility that the speaker is actively varying articulatory gestures either to reduce articulatory effort, to enhance contrast, or both.
-\citet[423]{kingston1994} point out that ``speakers and listeners employ extensive and subtle phonetic knowledge.''
+\citet[p. 423]{kingston1994} point out that ``speakers and listeners employ extensive and subtle phonetic knowledge.''
 
 In classical models of phonological competence, the articulatory output of the speech stream can be predicted on phonetic grounds from the form of the phonological representation.
 This kind of conceptualisation gives the phonetic constraints predictive power.
 Knowing which phonological representation underlies a linguistic unit allows us to anticipate the phonetic realisation of that unit. 
-\citeauthor{kingston1994}, however, argue that the phonetic constraints normally called for in the literature as the cause of most phonological behaviours do not have predictive power, but rather they limit the possible phonetic outcomes of a phonological abstract unit.
+\citeauthor{kingston1994}, however, argue that the phonetic constraints normally called for in the literature as the cause of most phonological behaviours do not have predictive power
+Rather, they say they limit the possible phonetic outcomes of a phonological abstract unit.
 This approach leaves space for the idea that speakers can operate an implicit control over their productions.
 The authors call ``phonetic knowledge'' the knowledge underlying such ability.
 
-There are two classes of phonetic knowledge.
+There are two types of phonetic knowledge.
 The speaker-oriented knowledge deals with the possibilities speakers have to minimise the articulatory effort necessary to produce a particular sequence of gestures (and sounds).
 The other type of knowledge, the listener-oriented knowledge, is instead related to the ways speakers can maximise the distinctive cues of contrastive sounds.
 Such two kinds of phonetic knowledge work together to create an optimal solution between minimum articulatory effort and maximum contrast.
-Borrowing a term from linguistic typology, they can be though of as ``competing motivation'' which shape the phonological systems of the languages of the world \citep{haiman1983,croft2002}.
+Borrowing a term from linguistic typology, they can be thought of as ``competing motivation'', opposing forces that shape the phonological systems of the languages of the world \citep{haiman1983,croft2002}.
 
-We have seen that pre-aspirated stops in Icelandic are preceded by shorter vowels, if we consider the vowel to be the modally voiced open gesture preceding the aspiration.
+We have seen that pre-aspirated stops in Icelandic are preceded by shorter vowels, if we consider the vowel to be the modally voiced vocalic gesture preceding the aspiration.
 The magnitude of the difference in duration between vowels followed by pre-aspirated or plain consonants was around 30--40 milliseconds, enough for the auditory system to perceive it.
 It is reasonable, thus, to assume that such difference is deliberately used by Icelandic speakers to enhance the contrast between words containing a plain geminate and words with a pre-aspirated geminate.
 Even if the original cause of the aspiration effect caused by stops in present day Icelandic could have been related to the phasing of the laryngeal spreading gesture, the synchronic situation we can observe now could instead well be the product of the controlled use of such differences on the part of the speaker.
 
-In the case of sonorants, even if the same shortening effect is seen in vowels followed by aspirated nasals, we cannot claim that the effect is caused by how laryngeal gestures are timed, as explained above.
+In the case of sonorants, even if the same shortening effect is seen in vowels followed by aspirated sonorants, we cannot claim that the effect is caused by how laryngeal gestures are timed, as explained above.
 Instead, the aspiration effect could be attributed here to the fact that voiceless sonorants are generally longer than voiced sonorants so as to enhance cuing.
 To maximise even more the difference between voiced and voiceless sonorants, speakers could decrease the duration of the vowel to magnify the longer duration of the sonorant.
 
@@ -241,7 +245,7 @@ To maximise even more the difference between voiced and voiceless sonorants, spe
 %
 %%\citet{blevins2013} reports that usually voiceless sonorants develop from clusters including a sonorant and a voiceless consonant (in particular the fricatives /h/ and /s/, see \citealt{palmer1999voiceless} for Kokota and \citealt{Ratliff2001Voiceless} for Hmong-Mien). Other possible origins are word- and phrase-final devoicing and fricatives weakening to voiceless liquids or approximants.
 
-\section{Limitations and challenges}
+\section{Challenges and further studies}
 % participants: diffucult to find in york so the number is not sufficient; age range is quite wide, abroad
 % material: difficult to find minimal pairs; there is a contrast but the contrast is not so contrasty
 % procedure: they must familiarise with the words first; difficult to control for tempo; differences in compression; different recording equipment and conditions
@@ -250,9 +254,13 @@ To maximise even more the difference between voiced and voiceless sonorants, spe
 % boundary study, maybe continuos data is better
 %TODO limitation of calculating glottal spread
 
-Some of the limitations of this study concern the participants recruited for the reading task.
+This section discusses the challenges encountered in this study that generated limitations.
+In those cases where I applied a specific solution to overcome such limitations, I describe how this was carried out.
+The section concludes with some ideas for further studies on the relation between vowel duration and aspiration from an articulatory point of view.
+
+Some of the limitations of this study concerned the participants recruited for the reading task.
 The first difficulty was finding a sensible number of Icelandic speakers in York.
-Due to limitations of time and resources, I could not recruit people from outside York.
+Due to a restriction of time and resources, I could not recruit people from outside York.
 This significantly restrained the number of speakers and increased the possibilities that idiosyncrasies could creep into the data.
 Moreover, the age range of the participants was quite large (24-66 years old).
 The average, though, was biased towards the younger age: 4 out of 6 were within the 24-27 range.
@@ -266,7 +274,7 @@ It is reasonable to assume that this had a significant impact on their productio
 Even if the informants allegedly spoke Icelandic on a regular basis, with their family, friends and colleagues, the chances that English influenced Icelandic (and---although not of a concern for the present study---vice versa) are quite high.
 The research conducted by \citet{sancier1997} studied how strong the influence was from one language to the other in a Brazilian Portuguese and English bilingual speaker who frequently travelled between Brazil and the United States of America.
 The study showed that the speaker produced a shorter voice onset time in both Portuguese and English after spending more than 6 months in Brazil than when she was in the United States.
-Thus, it is worth stressing that the results presented here should be taken with a cautionary note.
+Thus, it is worth stressing that the results presented here should be considered preliminary.
 
 A further challenge was finding words that would satisfy all of the parameters.
 The choice to use real words came at the cost of making the experiment design less balanced.
@@ -275,15 +283,13 @@ Such gaps in the lexicon of Icelandic show that the functional load of the aspir
 Even if from a more restricted contextual point of view, aspiration contrasts can be found everywhere in the lexicon, true minimal pairs were harder to find.
 %TODO add holes and humps paper!
 
-Some design and technical problems arose in the task procedure.
+Some design and technical problems arose during the reading task.
 Since the participants did not have the chance to familiarise themselves with the words before starting the task, a few speakers read the first token of some words with uncertainty.
 In some cases, they said the wrong word altogether.
 One of the speakers (JR) did not recognise most of the inflected words which were not in the standard citation form and decided to read them as if they were English words.
 Of course, I had to exclude all of these tokens from the analysis.
-This could have been avoided, even if at the cost of less naturalistic data, by letting the speakers read the words beforehand.
+%This could have been avoided, even if at the cost of less naturalistic data, by letting the speakers read the words beforehand.
 
-A recurrent problem with studies of phonetic duration is that speech tempo is not stable and it is difficult to control.
-Using ratio durations can overcome some of the shortcomings of varying tempo.
 %However, the compressibility of phonetic material is not homogeneous between classes of sounds and contexts.
 %%TODO add citation
 
@@ -293,12 +299,12 @@ This might have perturbed some speech stretches, in principle rendering visual a
 However, as described in \Cref{s:annotation}, the criteria used during annotation have been devised so as to be consistently applicable.
 Such solution substantially reduced possible errors due to the presence of echoes and noises.
 
-Even so, the annotation scheme presented some challenges.
+The annotation scheme presented a few further challenges.
 In particular, the visual inspection of the spectrogram was, at times, not unequivocal.
 Especially with glottal abduction, I have encountered some difficult tokens where the shape of the waveform did not clearly indicate the onset of breathiness.
-In such cases I had to rely only on a change in the look of the spectrogram.
+In such cases I had to rely on a change in the look of the spectrogram.
 In particular, the results concerning the duration of the spreading gestures are to be taken with caution.
-In fact, it is possible that the difference found between stops and sonorants (where the duration of glottal abduction was higher in the former) could be due to the way the measurement was taken.
+In fact, it is possible that the difference found between stops and sonorants (where the duration of glottal abduction was higher in the former) could be due to the way the measurements was taken.
 With sonorants, identifying the beginning of glottal spread by inspecting the waveform or the spectrogram is not straightforward.
 Relying on the voiceless portion of the sonorant could potentially leave out the initial part of the spreading gesture.
 If one includes such hypothetical part to the duration of spreading, we can expect that the total duration would not be much different in sonorants and stops.
@@ -306,25 +312,27 @@ If one includes such hypothetical part to the duration of spreading, we can expe
 A second aspect of the annotation procedure that presented some difficulties was marking the left and right word boundaries.
 Since the frame sentence was kept the same in every trial, words starting and/or ending in a vowel posed problems in identifying the word boundaries.
 In such cases, it would not be safe to say that the word duration measurements are unequivocal and reliable.
-However, using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
+Moreover, a recurrent problem with studies of phonetic duration is that speech tempo is not stable and it is difficult to control.
+This is why I decided to use ratio durations to overcome the shortcomings of varying tempo.
+Using the VOR instead of the word duration as the base for normalisation guaranteed that errors in the marking of word boundaries would not affect normalisation.
 
 %\section{Significance of the research}
 
-\section{Further studies}
+%\section{Further studies}
 
-Some of the limitations presented in the previous sections could be overcome with articulatory data.
+Some of the challenges just discussed can be overcome in future studies if articulatory data are collected together with acoustic data.
 Laryngeal measures can be taken using photoglottography or a laryngograph.
 While the first tool is invasive, the second is not and its portability make its use simple and ideal even in fieldwork conditions.
 A laryngograph measures the impedance of the electricity running through the neck.
 The amplitude of the impedance is known to be correlated with glottal abduction.
 This kind of data would give a better picture of the actions of the glottis and it would allow to retrieve the start of glottal spread with better accuracy.
 An ultrasound scanner would provide an account of the gestures of the tongue.
-Knowing about tongue movements could make it easier to test for hypothesis that rely on articulatory factors.
+Knowing about tongue movements could make it easier to test for hypotheses that rely on articulatory factors.
 %, such as those of ... and ...
 
 Combined with electropalatography, ultrasound scanning can also improve the accuracy of closure detection.
-As mentioned above, at times closure is not clearly visible from the spectrogram, especially in cases when voicing is maintained after it.
-Tracking the movements of the tongue through ultrasound and palatography can improve the temporal detection of the oral occlusion.
+As mentioned above, at times closure was not clearly visible from the spectrogram, especially in cases when voicing is maintained after it.
+Tracking the movements of the tongue through ultrasound scanning and palatography can improve the temporal detection of the oral occlusion.
 Finally, measuring the oral and the nasal airflows could allow better measurements related to nasals.
 The boundary of nasal consonants are normally difficult to discern on the spectrogram.
 Voiceless nasals are even more difficult to see, since the friction created at the nostrils is usually very low in amplitude.

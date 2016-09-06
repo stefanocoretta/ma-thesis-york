@@ -59,13 +59,45 @@
 
 \usepackage{mycleveref}
 
-\title{Vowel duration and aspiration effects in Icelandic}
-\author{Stefano Coretta}
+%\title{Vowel duration and aspiration effects in Icelandic}
+%\author{Stefano Coretta}
 
 \graphicspath{{./img/}}
 
 \pagestyle{ruled}
 \pagenumbering{arabic}
+
+\newcommand{\titlePage}{
+\thispagestyle{empty}%
+\vspace{1in}%
+\begin{center}
+{\Huge \textbf{Vowel duration and aspiration effects in Icelandic}}
+\end{center}
+\vspace{0.75in}
+\begin{center}
+{\huge Y3835994} \\
+\vspace{1in}
+
+\begin{center}
+\begin{minipage}{5in}
+\begin{center}
+This thesis is submitted in partial fulfilment of the\\
+requirements for the degree of\\
+Phonetics and Phonology \\
+in the Department of Language and Linguistic Science
+\end{center}
+\end{minipage}
+\end{center}
+
+\vfill
+University of York \\
+York, YO10 5DD, UK \\
+\vspace{0.5in}
+\vspace{0.25in}
+08 September 2016
+\end{center}
+}
+
 
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
@@ -134,15 +166,20 @@ source("./analysis/games-howell.R")
 
 
 
-\frontmatter
-
-
 \begin{titlingpage}
-\maketitle
+\titlePage
 \end{titlingpage}
+
+
+
+
+
+\frontmatter
 
 \pagenumbering{arabic}
 \setcounter{page}{3}
+
+\input{rnw/abstract.tex}
 
 \tableofcontents*
 \newpage
