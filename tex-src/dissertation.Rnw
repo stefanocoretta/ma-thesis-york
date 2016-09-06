@@ -9,7 +9,8 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\captionnamefont{\bfseries}
+\usepackage{pdfpages}
+
 
 \usepackage{calc,color}
 \newif\ifNoChapNumber
@@ -90,7 +91,7 @@ in the Department of Language and Linguistic Science
 \end{center}
 
 \vfill
-University of York
+University of York \\
 \vspace{0.5in}
 \vspace{0.25in}
 2016
@@ -101,8 +102,6 @@ University of York
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
 %%%%%%%%%%%%%%%%
-
-%TODO appendix with consent form and info sheet
 
 \begin{document}
 
@@ -212,9 +211,12 @@ source("./analysis/games-howell.R")
 
 
 
-
+\bibliographystyle{york-harvard}
+\bibliography{linguistics}
 
 \appendix
+
+\input{rnw/ethics.tex}
 
 %<<figures, child='rnw/figures.Rnw'>>=
 %@
@@ -226,7 +228,6 @@ source("./analysis/games-howell.R")
 
 
 
-\bibliographystyle{york-harvard}
-\bibliography{linguistics}
+
 
 \end{document}

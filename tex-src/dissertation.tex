@@ -58,7 +58,8 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\captionnamefont{\bfseries}
+\usepackage{pdfpages}
+
 
 \usepackage{calc,color}
 \newif\ifNoChapNumber
@@ -139,7 +140,7 @@ in the Department of Language and Linguistic Science
 \end{center}
 
 \vfill
-University of York
+University of York \\
 \vspace{0.5in}
 \vspace{0.25in}
 2016
@@ -150,8 +151,6 @@ University of York
 %%%%%%%%%%%%%%%%
 %%% DOCUMENT %%%
 %%%%%%%%%%%%%%%%
-
-%TODO declaration page
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -1671,24 +1670,23 @@ Even if the details of the timing hypothesis as presented in \Cref{s:hypothesis}
 
 
 
-
+\bibliographystyle{york-harvard}
+\bibliography{linguistics}
 
 \appendix
+
+\input{rnw/ethics.tex}
 
 %<<figures, child='rnw/figures.Rnw'>>=
 %@
 
-
-\chapter{PRAAT script for the extraction of the durational data}
-\label{a:getmeasure}
-
-\lstinputlisting[language=Python]{../analysis/get-measurements.praat}
+%<<getmeasure, child='rnw/getmeasure.Rnw'>>=
+%@
 
 
 
 
 
-\bibliographystyle{york-harvard}
-\bibliography{linguistics}
+
 
 \end{document}
