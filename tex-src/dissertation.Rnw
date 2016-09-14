@@ -214,9 +214,9 @@ source("./analysis/games-howell.R")
 \bibliographystyle{york-harvard}
 \bibliography{linguistics}
 
-\appendix
-
-\input{rnw/ethics.tex}
+%\appendix
+%
+%\input{rnw/ethics.tex}
 
 %<<figures, child='rnw/figures.Rnw'>>=
 %@

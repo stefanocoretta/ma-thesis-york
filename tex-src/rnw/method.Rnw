@@ -348,7 +348,7 @@ Since the word list contained monosyllabic and disyllabic words, and both classe
 I carried out the statistical analysis using the R programming language \citep{r-core-team2015} in RStudio \citep{rstudio-team2015}.
 I performed independent sample two-tailed \textit{t}-tests on parametric data and Mann-Whitney U-tests on non-parametric data.
 Normality was checked through Shapiro tests for normality.
-The R code used in the analysis is available at this address: \url{http://github.com/stefanocoretta/icelandic-preaspiration}.
+The R code used in the analysis is available at this address: \url{http://bit.ly/2bSeewL}.
 
 
 
