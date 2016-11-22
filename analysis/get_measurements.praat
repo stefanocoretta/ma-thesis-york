@@ -23,7 +23,7 @@
 
 form Select folder with TextGrid files
     comment Directory of TextGrid files. Include final '/'
-    text textgrid_directory /Users/Stefano/Google Drive/Icelandic/audio/
+    text textgrid_directory /Users/Stefano/Documents/GitHub/icelandic-preaspiration/TextGrid/
     sentence textgrid_extension .TextGrid
     sentence result_file results.csv
 endform
@@ -36,10 +36,9 @@ if fileReadable (result_file$)
         filedelete 'result_file$'
 endif
 
-header$ = "file_name,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-...beg_mann,end_mann,dur_mann,rels,dur_v_to_m,dur_clos,abs_voic,abs_clos,norm_voic,
-...norm_mann,norm_v_to_m,norm_clos,norm_abs_voic,norm_abs_clos,vor,voffr,
-...spread,norm_spread,mor'newline$'"
+header$ = "speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_cc,dur_clos,vor,voffr,
+...mor'newline$'"
 fileappend "'result_file$'" 'header$'
 
 sent = 1
@@ -53,7 +52,8 @@ for file to files_no
     Read from file: "'textgrid_directory$''file_name$'"
 
     intervals_no = Get number of intervals: word
-
+    under_index = index(file_name$, "_")
+    speaker$ = left$(file_name$, under_index - 1)
     index = 0
     for int_word to intervals_no
         lab_word$ = Get label of interval: word, int_word
@@ -61,19 +61,19 @@ for file to files_no
         index += 1
             begin_word = Get starting point: word, int_word
             end_word = Get end point: word, int_word
-            duration_word = (end_word - begin_word) * 1000
+            dur_word = (end_word - begin_word) * 1000
 
             int_voic = Get interval at time: voic, begin_word
             label$ = Get label of interval: voic, int_voic
             if label$ <> ""
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
-                duration_voic = (end_voic - begin_voic) * 1000
+                dur_voic = (end_voic - begin_voic) * 1000
             else
                 int_voic = int_voic + 1
                 begin_voic = Get starting point: voic, int_voic
                 end_voic = Get end point: voic, int_voic
-                duration_voic = (end_voic - begin_voic) * 1000
+                dur_voic = (end_voic - begin_voic) * 1000
             endif
 
             int_mann = Get interval at time: mann, end_voic - 0.00001
@@ -81,68 +81,51 @@ for file to files_no
             if  label$ <> ""
                 begin_mann = Get starting point: mann, int_mann
                 end_mann = Get end point: mann, int_mann
-                duration_mann = (end_mann - begin_mann) * 1000
-#            else
-#                begin_mann$ = ""
-#                end_mann$ = ""
-#                duration_mann$ = ""
+                dur_mann = (end_mann - begin_mann) * 1000
+
+                begin_mann$ = string$(begin_mann)
+                end_mann$ = string$(end_mann)
+                dur_mann$ = string$(dur_mann)
+            else
+                begin_mann$ = ""
+                end_mann$ = ""
+                dur_mann$ = ""
             endif
 
             ind_rels = Get nearest index from time: rels, end_word
             time_rels = Get time of point: rels, ind_rels
-            v_to_rel = (time_rels - begin_voic) * 1000
-            voff_to_rel = (time_rels - end_voic) * 1000
-            mor = (time_rels - begin_mann) * 1000
-            norm_mor = mor / v_to_rel
-            if label$ <> ""
-                duration_v_to_m = (begin_mann - begin_voic) * 1000
-                duration_closure = (time_rels - end_mann) * 1000
-                duration_abs_closure = (time_rels - begin_mann) * 1000
-                if label$ <> "spr"
-                    duration_spread = (end_mann - end_voic) * 1000
-                    norm_duration_spread = duration_spread / v_to_rel
+            if time_rels > begin_word and time_rels < end_word
+                if label$ <> ""
+                    dur_clos = (time_rels - end_mann) * 1000
+                    son_spread = (end_mann - end_voic) * 1000
+                    son_spread$ = string$(son_spread)
                 else
-                    duration_spread = duration_mann
-                    norm_duration_spread = norm_duration_mann
+                    dur_clos = (time_rels - end_voic) * 1000
+                    son_spread$ = ""
                 endif
-                if duration_spread == 0
-                    duration_spread$ = ""
-                    norm_duration_spread$ = ""
-                else
-                    duration_spread$ = string$(duration_spread)
-                    norm_duration_spread$ = string$(norm_duration_spread)
-                endif
+                vor = (time_rels - begin_voic) * 1000
+                voffr = (time_rels - end_voic) * 1000
+                mor = (time_rels - begin_mann) * 1000
 
+                dur_clos$ = string$(dur_clos)
+                vor$ = string$(vor)
+                voffr$ = string$(voffr)
+                mor$ = string$(mor)
             else
-                duration_closure = (time_rels - end_voic) * 1000
-                duration_spread$ = ""
-                norm_duration_spread$ = ""
+                dur_clos$ = ""
+                vor$ = ""
+                voffr$ = ""
+                mor$ = ""
             endif
             if label$ <> ""
-                norm_duration_voice = duration_voic / v_to_rel
-                norm_duration_mann = duration_mann / v_to_rel
-                norm_duration_v_to_m = duration_v_to_m / v_to_rel
-                norm_abs_clos = duration_abs_closure / v_to_rel
-                if time_rels > begin_word and time_rels < end_word
-                    norm_duration_closure = duration_closure / v_to_rel
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic','begin_mann','end_mann','duration_mann','time_rels','duration_v_to_m','duration_closure','duration_v_to_m','duration_abs_closure','norm_duration_voice','norm_duration_mann','norm_duration_v_to_m','norm_duration_closure','norm_duration_v_to_m','norm_abs_clos','v_to_rel','voff_to_rel','duration_spread$','norm_duration_spread$','mor''newline$'"
-                    fileappend "'result_file$'" 'result_line$'
-                else
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,,,'norm_duration_voice',,,,,,,,'duration_spread$','norm_duration_spread$','mor''newline$'"
-                    fileappend "'result_file$'" 'result_line$'
-                endif
+                dur_vowel = (begin_mann - begin_voic) * 1000
+                dur_vowel$ = string$(dur_vowel)
             else
-                norm_duration_voice = duration_voic / v_to_rel
-                if time_rels > begin_word and time_rels < end_word
-                    norm_duration_closure = duration_closure / duration_word
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,'time_rels',,'duration_closure','duration_voic','duration_closure','norm_duration_voice',,,'norm_duration_closure','norm_duration_voice','norm_duration_closure','v_to_rel','voff_to_rel','duration_spread$','norm_duration_spread$','mor''newline$'"
-                    fileappend "'result_file$'" 'result_line$'
-                else
-                    result_line$ = "'file_name$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','duration_voic',,,,,,,'duration_voic',,'norm_duration_voice',,,,'norm_duration_voice',,,,'duration_spread$','norm_duration_spread$','mor''newline$'"
-                    fileappend "'result_file$'" 'result_line$'
-                endif
+                dur_vowel = dur_voic
+                dur_vowel$ = string$(dur_vowel)
             endif
-
+            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
+            fileappend "'result_file$'" 'result_line$'
         endif
     endfor
     selectObject: "Strings list"
