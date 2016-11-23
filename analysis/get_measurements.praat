@@ -124,7 +124,7 @@ for file to files_no
                 dur_vowel = dur_voic
                 dur_vowel$ = string$(dur_vowel)
             endif
-            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
+            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
             fileappend "'result_file$'" 'result_line$'
         endif
     endfor

@@ -224,7 +224,7 @@ If the label on the mann tier is empty, then input empty data.
 If the release time is not within the time boundaries of the word, input empty data.
 
 <<*>>=
-            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','duration_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
+            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
             fileappend "'result_file$'" 'result_line$'
 @
 

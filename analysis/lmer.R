@@ -1,8 +1,27 @@
+
 library(lme4)
+library(knitr)
+library(highlight)
+opts_knit$set(root.dir=normalizePath('../'))
+opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.8\\textwidth", echo=FALSE, cache=FALSE)
 
-nastop=results_all[results_all$manner=='stop'|results_all$manner=='nasal',]
-model <- lmer(abs_voic ~ (1|file_name)+(1|word)+ asp*manner, data = nastop)
+results_raw <- read.csv("analysis/results.csv")
+words <- read.csv("task/task-src/words.csv")
+results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
+results <- subset(results_all, comp == "c")
+results <- droplevels(results)
+results$syl = factor(results$syl,c("mono","di"))
+results_stop <- subset(results, manner == "stop")
+stops <- subset(results_stop, results_stop$vowel != "ɪ" & results_stop$vowel != "ou"
+              & results_stop$vowel != "ʏ")
+stops <- droplevels(stops)
 
+model <- lmer(dur_vowel ~ (1|speaker)+(1|word) + asp,
+              data = stops, REML = FALSE)
+model.null <- lmer(dur_vowel ~ (1|speaker)+(1|word),
+                   data = stops, REML = FALSE)
+
+anova(model.null, model)
 
 model2 <- lmer(abs_voic ~ (1|file_name)+(1|word)+ manner+spread, data = nastop, subset=asp=='yes')
 ggplot(nastop[nastop$asp=='yes',], aes(x=spread, y=abs_voic)) + geom_point() + facet_grid(~manner) + geom_smooth(method='lm')
