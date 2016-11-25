@@ -99,9 +99,11 @@ for file to files_no
                     dur_clos = (time_rels - end_mann) * 1000
                     son_spread = (end_mann - end_voic) * 1000
                     son_spread$ = string$(son_spread)
+                    dur_cc = (time_rels - begin_mann) * 1000
                 else
                     dur_clos = (time_rels - end_voic) * 1000
                     son_spread$ = ""
+                    dur_cc = dur_clos
                 endif
                 vor = (time_rels - begin_voic) * 1000
                 voffr = (time_rels - end_voic) * 1000
@@ -111,6 +113,7 @@ for file to files_no
                 vor$ = string$(vor)
                 voffr$ = string$(voffr)
                 mor$ = string$(mor)
+                dur_cc$ = string$(dur_cc)
             else
                 dur_clos$ = ""
                 vor$ = ""
@@ -124,7 +127,7 @@ for file to files_no
                 dur_vowel = dur_voic
                 dur_vowel$ = string$(dur_vowel)
             endif
-            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
+            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$','dur_cc$','dur_clos$','vor$','voffr$','mor$''newline$'"
             fileappend "'result_file$'" 'result_line$'
         endif
     endfor

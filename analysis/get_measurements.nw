@@ -187,9 +187,11 @@ Otherwise, set them to NULL.
                     dur_clos = (time_rels - end_mann) * 1000
                     son_spread = (end_mann - end_voic) * 1000
                     son_spread$ = string$(son_spread)
+                    dur_cc = (time_rels - begin_mann) * 1000
                 else
                     dur_clos = (time_rels - end_voic) * 1000
                     son_spread$ = ""
+                    dur_cc = dur_clos
                 endif
                 vor = (time_rels - begin_voic) * 1000
                 voffr = (time_rels - end_voic) * 1000
@@ -199,6 +201,7 @@ Otherwise, set them to NULL.
                 vor$ = string$(vor)
                 voffr$ = string$(voffr)
                 mor$ = string$(mor)
+                dur_cc$ = string$(dur_cc)
             else
                 dur_clos$ = ""
                 vor$ = ""
@@ -207,7 +210,7 @@ Otherwise, set them to NULL.
             endif
 @
 
-Calculate vowel duration (voice onset to manner onset)
+Calculate vowel duration (voice onset to manner onset).
 
 <<*>>=
             if label$ <> ""
@@ -224,7 +227,7 @@ If the label on the mann tier is empty, then input empty data.
 If the release time is not within the time boundaries of the word, input empty data.
 
 <<*>>=
-            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$',x,'dur_clos$','vor$','voffr$','mor$''newline$'"
+            result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word','begin_voic','end_voic','dur_voic','begin_mann$','end_mann$','dur_mann$','time_rels','dur_vowel$','dur_cc$','dur_clos$','vor$','voffr$','mor$''newline$'"
             fileappend "'result_file$'" 'result_line$'
 @
 
