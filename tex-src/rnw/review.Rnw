@@ -253,7 +253,7 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \section{Research hypothesis}
 \label{s:hypothesis}
 
-The studes by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+The studies by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
 These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: (1) either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or (2) pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
 %ADD about sonorants!
 
