@@ -48,6 +48,27 @@ height.model <- lm(dur_vowel ~ asp * height, data = stops)
 plot(allEffects(interactions.model))
 plot(allEffects(height.model))
 
+#### Sonorants ####
+
+results_nas <- subset(results, manner == "nasal")
+results_lat <- subset(results, manner == "lateral")
+results_rho <- subset(results, manner == "rhotic")
+results_son <- rbind(results_nas, results_lat, results_rho)
+results_son <- droplevels(results_son)
+
+rc.model <- lmer(dur_cc ~ asp + syl + (1 | speaker) + (1 | word),
+                  data = results_son)
+rc.model.null <- lmer(dur_cc ~ asp + (1 | speaker) + (1 | word),
+                  data = results_son)
+anova(rc.model, rc.model.null)
+plot(allEffects(rc.model))
+
+son.model <- lmer(dur_mann ~ asp + (1 | speaker) + (1 | word),
+                 data = results_son, REML = FALSE)
+rc.model.null <- lmer(dur_mann ~ (1 | speaker) + (1 | word),
+                      data = results_son, REML = FALSE)
+anova(son.model, son.model.null)
+plot(allEffects(son.model))
 
 #model2 <- lmer(abs_voic ~ (1|file_name)+(1|word)+ manner+spread, data = nastop,
 #               subset=asp=='yes')
