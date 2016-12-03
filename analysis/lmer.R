@@ -19,8 +19,18 @@ stops <- subset(results_stop, results_stop$vowel != "ɪ" & results_stop$vowel !=
 stops <- subset(stops, stops$place != "labial")
 stops <- droplevels(stops)
 
-model <- lmer(dur_vowel ~ asp + (1|speaker)+(1|word),
+model <- lmer(dur_vowel ~ (1|speaker)+(1|word),
               data = stops, REML = FALSE)
+model2 <- lmer(dur_vowel ~ asp + (1+asp|speaker)+(1|word),
+              data = stops, REML = FALSE)
+
+anova(model, model2)
+
+stops$fitted=predict(model2, stops)
+
+ggplot(stops, aes(x=asp, y=dur_vowel)) + geom_boxplot() +
+    facet_wrap(~speaker)
+
 model.null <- lmer(dur_vowel ~ (1|speaker)+(1|word),
                    data = stops, REML = FALSE)
 
