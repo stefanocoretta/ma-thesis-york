@@ -4,4 +4,4 @@ This is the `git` repository of my MA thesis (MA in Phonetics and Phonology, Uni
 
 ## License
 
-Source code is licensed under the [MIT License](ma-thesis-york/LICENSE.md), while anything else follows the academic conventions of proper referencing.
+Source code is licensed under the [MIT License](https://github.com/stefanocoretta/ma-thesis-york/blob/master/LICENSE.md), while anything else follows the academic conventions of proper referencing.
