@@ -19,7 +19,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound dokk"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -56,7 +56,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound kamb"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -93,7 +93,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound kamp"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -130,7 +130,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound duld"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -167,7 +167,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound dult"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -204,7 +204,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound kopp"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -241,7 +241,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound dokk"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
@@ -278,7 +278,7 @@ Draw: start, end, "yes", "yes", "no"
 Select inner viewport: 1, 5.5, 1, 1.5
 
 selectObject: "Sound dogg"
-Draw: 0, 0, 0, 0, "no", "Curve"
+Draw: start, end, 0, 0, "no", "Curve"
 
 Select inner viewport: 1, 5.5, 1.5, 3
 Axes: 0, end-start, 0, 8000
