@@ -33,11 +33,11 @@ boxplot(mono_c$dur_word,
 <<voic-syll, include=FALSE>>=
 shapiro.test(mono$norm_abs_voic)
 shapiro.test(di$norm_abs_voic)
-test <- wilcox.test(norm_abs_voic ~ syl_no, data = results)
+test <- wilcox.test(norm_abs_voic ~ syl, data = results)
 
 shapiro.test(mono$vor)
 shapiro.test(mono$vor)
-wilcox.test(vor ~ syl_no, data = results)
+wilcox.test(vor ~ syl, data = results)
 @
 
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
@@ -51,7 +51,7 @@ According to a two-sample Mann-Whitney U-test, the mean duration of vowels in mo
 \begin{figure}
 \centering
 <<voic-syll-box>>=
-boxplot(norm_abs_voic ~ syl_no,
+boxplot(norm_abs_voic ~ syl,
         data = results,
         names = c("monosyllabic", "disyllabic"),
         ylab = "duration of vowels (ratio)"

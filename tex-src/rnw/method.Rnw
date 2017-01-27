@@ -62,7 +62,7 @@ Of the monosyllabic words, 21 ended with a geminate stop (9 plain geminates and 
 Of the disyllabic words, 14 had a word-medial geminate stop (8 plain and 6 pre-aspirated); 9 a /NC/ cluster (5 voiced and 4 voiceless); 4 an /lC/ cluster (2 voiced and 2 voiceless); and 2 had an /rC/ cluster (one voiced, one voiceless).
 \Cref{t:tokens} shows the count of the tokens used in the final analysis.
 
-<<tokens, include=FALSE>>=
+<<tokens, eval=FALSE, include=FALSE>>=
 table(results$manner,results$asp,results$syl_no)
 @
 
