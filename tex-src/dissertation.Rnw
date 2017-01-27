@@ -55,6 +55,7 @@
 \usepackage{natbib}
 
 \usepackage{listings}
+    \lstset{basicstyle=\ttfamily,breaklines=true}
 
 \usepackage{gb4e}
 
@@ -118,7 +119,7 @@ words <- read.csv("task/task-src/words.csv")
 results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
 results <- subset(results_all, comp == "c")
 results <- droplevels(results)
-results$syl_no = factor(results$syl_no,c("mono","di"))
+results$syl_no_no = factor(results$syl, c("mono","di"))
 results_stop <- subset(results, manner == "stop")
 results_stop_asp <- subset(results_stop, asp == "yes")
 results_stop_nasp <- subset(results_stop, asp == "no")
@@ -128,8 +129,8 @@ results_rho <- subset(results, manner == "rhotic")
 results_son <- rbind(results_nas, results_lat, results_rho)
 results_son <- droplevels(results_son)
 results_asp <- subset(results, asp == "yes" & spread != "")
-mono <- subset(results, syl_no == "mono")
-di <- subset(results, syl_no == "di")
+mono <- subset(results, syl == "mono")
+di <- subset(results, syl == "di")
 mono_c <- subset(mono, cons1 != "no")
 mono_v <- subset(mono, cons1 == "no")
 di_c <- subset(di, cons1 != "no")
@@ -211,23 +212,23 @@ source("./analysis/games-howell.R")
 
 
 
+
+
+\appendix
+
+\input{rnw/ethics.tex}
+
+<<figures, child='rnw/figures.Rnw'>>=
+@
+
+<<getmeasure, child='rnw/getmeasure.Rnw'>>=
+@
+
+
+
+
+
 \bibliographystyle{york-harvard}
 \bibliography{linguistics}
-
-%\appendix
-%
-%\input{rnw/ethics.tex}
-
-%<<figures, child='rnw/figures.Rnw'>>=
-%@
-
-%<<getmeasure, child='rnw/getmeasure.Rnw'>>=
-%@
-
-
-
-
-
-
 
 \end{document}

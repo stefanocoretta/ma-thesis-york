@@ -21,6 +21,7 @@
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
 \newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
 
 \usepackage{framed}
 \makeatletter
@@ -104,6 +105,7 @@
 \usepackage{natbib}
 
 \usepackage{listings}
+    \lstset{basicstyle=\ttfamily,breaklines=true}
 
 \usepackage{gb4e}
 
@@ -520,7 +522,7 @@ The labial stops and the alveolar nasals are used as an exemplification, respect
 \section{Research hypothesis}
 \label{s:hypothesis}
 
-The studes by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
+The studies by \citet{maddieson1976} and \citet{durvasula2012} showed that syllable-final \textit{post}-aspirated stops lengthened the preceding vowel.
 These results are compatible with two opposite predictions with regard to \textit{pre}-aspirated stops: (1) either aspiration consistently appears to lengthen the preceding vowel, independently of the relative timing with the stop closure; or (2) pre-aspiration should show a pattern symmetric to that of post-aspiration, where pre-aspirated stops should be preceded by shorter vowels.
 %ADD about sonorants!
 
@@ -1670,23 +1672,29 @@ Even if the details of the timing hypothesis as presented in \Cref{s:hypothesis}
 
 
 
+
+
+\appendix
+
+\input{rnw/ethics.tex}
+
+
+\chapter{Supplementary material}
+
+This chapter contains supplementary figures.
+
+
+
+\chapter{PRAAT script for the extraction of the durational data}
+\label{a:getmeasure}
+
+\lstinputlisting[language=Python]{../analysis/get\string_measurements.praat}
+
+
+
+
+
 \bibliographystyle{york-harvard}
 \bibliography{linguistics}
-
-%\appendix
-%
-%\input{rnw/ethics.tex}
-
-%<<figures, child='rnw/figures.Rnw'>>=
-%@
-
-%<<getmeasure, child='rnw/getmeasure.Rnw'>>=
-%@
-
-
-
-
-
-
 
 \end{document}
