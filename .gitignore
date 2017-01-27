@@ -1,5 +1,19 @@
-## .DS_Store
+########
+# Misc
+########
+
+# .DS_Store
 *.DS_Store
+
+# OpenOffice lock files
+.~lock*
+
+# Data folder
+data/
+
+########
+# LaTeX
+########
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -161,6 +175,3 @@ pythontex-files-*/
 # Latexian
 TSWLatexianTemp*
 .Rproj.user
-
-# OpenOffice lock files
-.~lock*
