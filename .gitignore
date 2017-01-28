@@ -11,6 +11,11 @@
 # Data folder
 data/
 
+# RStudio
+.RData
+.Rhistory
+*.Rproj
+
 ########
 # LaTeX
 ########
