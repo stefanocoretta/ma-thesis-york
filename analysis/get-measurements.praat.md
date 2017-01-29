@@ -90,9 +90,9 @@ for int_word to intervals_no
 
         result_line$ =
         ..."'speaker$','index','lab_word$','begin_word','end_word','dur_word',
-            ...'begin_voic','end_voic','dur_voic','begin_mann$','end_mann$',
-            ...'dur_mann$','time_rels','dur_vowel$','dur_geminate$','dur_clos$',
-            ...'vor$','voffr$','mor$','norm_voic','norm_mann','norm_vowel',
+            ...'begin_voic','end_voic','dur_voic','begin_mann','end_mann',
+            ...'dur_mann','time_rels','dur_vowel','dur_geminate','dur_clos',
+            ...'vor','voffr','mor','norm_voic','norm_mann','norm_vowel',
             ...'norm_geminate','norm_clos'"
         appendFileLine: result_file$, result_line$
     endif
@@ -123,14 +123,10 @@ if  label$ <> ""
     begin_mann = Get starting point: mann, int_mann
     end_mann = Get end point: mann, int_mann
     dur_mann = (end_mann - begin_mann) * 1000
-
-    begin_mann$ = string$(begin_mann)
-    end_mann$ = string$(end_mann)
-    dur_mann$ = string$(dur_mann)
 else
-    begin_mann$ = ""
-    end_mann$ = ""
-    dur_mann$ = ""
+    begin_mann = undefined
+    end_mann = undefined
+    dur_mann = undefined
 endif
 ```
 
@@ -142,11 +138,10 @@ if time_rels > begin_word and time_rels < end_word
     if label$ <> ""
         dur_clos = (time_rels - end_mann) * 1000
         son_spread = (end_mann - end_voic) * 1000
-        son_spread$ = string$(son_spread)
         dur_geminate = (time_rels - begin_mann) * 1000
     else
         dur_clos = (time_rels - end_voic) * 1000
-        son_spread$ = ""
+        son_spread = undefined
         dur_geminate = dur_clos
     endif
 
@@ -154,25 +149,17 @@ if time_rels > begin_word and time_rels < end_word
     voffr = (time_rels - end_voic) * 1000
     mor = (time_rels - begin_mann) * 1000
 
-    dur_clos$ = string$(dur_clos)
-    vor$ = string$(vor)
-    voffr$ = string$(voffr)
-    mor$ = string$(mor)
-    dur_geminate$ = string$(dur_geminate)
-
 else
-    dur_clos$ = ""
-    vor$ = ""
-    voffr$ = ""
-    mor$ = ""
+    dur_clos = undefined
+    vor = undefined
+    voffr = undefined
+    mor = undefined
 endif
 
 if label$ <> ""
     dur_vowel = (begin_mann - begin_voic) * 1000
-    dur_vowel$ = string$(dur_vowel)
 else
     dur_vowel = dur_voic
-    dur_vowel$ = string$(dur_vowel)
 endif
 ```
 
