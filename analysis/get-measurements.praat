@@ -39,7 +39,7 @@ endif
 header$ =
 ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
     ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,voffr,
-    ...mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos"
+    ...mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
 appendFileLine: result_file$, header$
 
 sent = 1
@@ -127,7 +127,7 @@ for file to files_no
     
             norm_voic = dur_voic / vor
             norm_mann = dur_mann / vor
-            norm_vowel = dur_mann / vor
+            norm_vowel = dur_vowel / vor
             norm_geminate = dur_geminate / vor
             norm_clos = dur_clos / vor
     
@@ -136,7 +136,7 @@ for file to files_no
                 ...'begin_voic','end_voic','dur_voic','begin_mann','end_mann',
                 ...'dur_mann','time_rels','dur_vowel','dur_geminate','dur_clos',
                 ...'vor','voffr','mor','norm_voic','norm_mann','norm_vowel',
-                ...'norm_geminate','norm_clos'"
+                ...'norm_geminate','norm_clos','son_spread'"
             appendFileLine: result_file$, result_line$
         endif
     endfor
