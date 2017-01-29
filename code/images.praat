@@ -1,3 +1,14 @@
+out_directory$ = "../dissertation/img"
+
+Create Strings as file list: "list", "../data/derived/samples"
+number_strings = Get number of strings
+
+for file to number_strings
+	selectObject: "Strings list"
+    file_name$ = Get string: file
+    Read from file: "../data/derived/samples/'file_name$'"
+endfor
+
 ####
 # dokk
 ####
@@ -33,7 +44,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 4
-Save as PDF file: "./dokk.pdf"
+Save as PDF file: "'out_directory$'/dokk.pdf"
 
 ####
 # kamb
@@ -70,7 +81,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./kamb.pdf"
+Save as PDF file: "'out_directory$'/kamb.pdf"
 
 ####
 # kamp
@@ -107,7 +118,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./kamp.pdf"
+Save as PDF file: "'out_directory$'/kamp.pdf"
 
 ####
 # duld
@@ -144,7 +155,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./duld.pdf"
+Save as PDF file: "'out_directory$'/duld.pdf"
 
 ####
 # dult
@@ -181,7 +192,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./dult.pdf"
+Save as PDF file: "'out_directory$'/dult.pdf"
 
 ####
 # kopp - release
@@ -218,7 +229,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 4.5
-Save as PDF file: "./kopp.pdf"
+Save as PDF file: "'out_directory$'/kopp.pdf"
 
 ####
 # dokk spreading
@@ -255,7 +266,7 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./dokk-spr.pdf"
+Save as PDF file: "'out_directory$'/dokk-spr.pdf"
 
 ####
 # dogg spreading
@@ -292,4 +303,4 @@ Text bottom: "yes", "Times (s)"
 
 
 Select outer viewport: 0.5, 5.75, 0.75, 5
-Save as PDF file: "./dogg-spr.pdf"
+Save as PDF file: "'out_directory$'/dogg-spr.pdf"
