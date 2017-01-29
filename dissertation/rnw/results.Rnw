@@ -31,9 +31,9 @@ boxplot(mono_c$dur_word,
 \end{figure}
 
 <<voic-syll, include=FALSE>>=
-shapiro.test(mono$norm_abs_voic)
-shapiro.test(di$norm_abs_voic)
-test <- wilcox.test(norm_abs_voic ~ syl, data = results)
+shapiro.test(mono$norm_vowel)
+shapiro.test(di$norm_vowel)
+test <- wilcox.test(norm_vowel ~ syl, data = results)
 
 shapiro.test(mono$vor)
 shapiro.test(mono$vor)
@@ -43,7 +43,7 @@ wilcox.test(vor ~ syl, data = results)
 % normalised voic is not different, but absolute is!, given that VOR is different, treat them differently
 The duration of vowels was not affected by the the number of syllables of the word.
 The boxplot in \Cref{f:vvpsyll} shows the duration of the vowel as a ratio of the Voice Onset to Release interval (VOR).
-According to a two-sample Mann-Whitney U-test, the mean duration of vowels in monosyllabic words (\Sexpr{round(mean(mono$norm_abs_voic),2)*100}\%) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$norm_abs_voic),2)*100}\%) [U = 43349, p < 0.77].
+According to a two-sample Mann-Whitney U-test, the mean duration of vowels in monosyllabic words (\Sexpr{round(mean(mono$norm_vowel),2)*100}\%) does not differ significantly from the mean duration in disyllabic words (\Sexpr{round(mean(di$norm_vowel),2)*100}\%) [U = 43349, p < 0.77].
 %However, the voice on-set to release was shorter in disyllabic words () than in monosyllabic words () [].
 %% kembt behave strange, in bte
 %Since duration normalisation was based on the voice on-set to release duration, in the next sections I will discuss monosyllabic and disyllabic words separately.
@@ -51,7 +51,7 @@ According to a two-sample Mann-Whitney U-test, the mean duration of vowels in mo
 \begin{figure}
 \centering
 <<voic-syll-box>>=
-boxplot(norm_abs_voic ~ syl,
+boxplot(norm_vowel ~ syl,
         data = results,
         names = c("monosyllabic", "disyllabic"),
         ylab = "duration of vowels (ratio)"
@@ -224,20 +224,20 @@ I deal first with the duration of vowels before geminate stops, followed by vowe
 
 \subsection{Duration of vowels before geminate stops /KK/}
 <<mono-stop-test,include=F>>=
-shapiro.test(mono_stop_asp$norm_abs_voic)
-shapiro.test(mono_stop_nasp$norm_abs_voic)
-wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
+shapiro.test(mono_stop_asp$norm_vowel)
+shapiro.test(mono_stop_nasp$norm_vowel)
+wilcox.test(norm_vowel ~ asp, data = mono_stop)
 @
 
 The mean duration of vowels in milliseconds was \Sexpr{round(mean(mono_stop_nasp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(mono_stop_nasp$abs_voic),2)}) in monosyllabic words ending in a non-aspirated geminate stop, while it was \Sexpr{round(mean(mono_stop_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(mono_stop_asp$abs_voic),2)}) if followed by a pre-aspirated geminate stop.
 \Cref{f:vowelduration} shows the ratio duration of the vowel in the two conditions.
-The difference in the mean of the vowel ratio between the non-aspirated (\Sexpr{round(mean(mono_stop_nasp$norm_abs_voic)*100)}\%, s.d. = \Sexpr{round(sd(mono_stop_nasp$norm_abs_voic),2)}) and the aspirated class of words (\Sexpr{round(mean(mono_stop_asp$norm_abs_voic)*100)}\%, s.d. = \Sexpr{round(sd(mono_stop_asp$norm_abs_voic),2)}) was significant [U = 7793, p < 0.001].
+The difference in the mean of the vowel ratio between the non-aspirated (\Sexpr{round(mean(mono_stop_nasp$norm_vowel)*100)}\%, s.d. = \Sexpr{round(sd(mono_stop_nasp$norm_vowel),2)}) and the aspirated class of words (\Sexpr{round(mean(mono_stop_asp$norm_vowel)*100)}\%, s.d. = \Sexpr{round(sd(mono_stop_asp$norm_vowel),2)}) was significant [U = 7793, p < 0.001].
 
 \begin{figure}
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-stop-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = mono_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (ratio)",
@@ -250,7 +250,7 @@ boxplot(norm_abs_voic ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-stop-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = di_stop,
         names = c("non-asp", "pre-asp"),
         ylab = "duration (ratio)",
@@ -262,7 +262,7 @@ boxplot(norm_abs_voic ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-nas-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (ratio)",
@@ -274,7 +274,7 @@ boxplot(norm_abs_voic ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-nas-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = di_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (ratio)",
@@ -296,7 +296,7 @@ In each plot, the duration of vowels in the non-aspirated and aspirated conditio
 \begin{subfigure}{.5\textwidth}
 \centering
 <<mono-lat-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (ratio)",
@@ -308,7 +308,7 @@ boxplot(norm_abs_voic ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-lat-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = di_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (ratio)",
@@ -320,7 +320,7 @@ boxplot(norm_abs_voic ~ asp,
 \begin{subfigure}{.5\textwidth}
 \centering
 <<di-rho-box, out.width="\\textwidth">>=
-boxplot(norm_abs_voic ~ asp,
+boxplot(norm_vowel ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
         ylab = "duration (ratio)",
@@ -334,69 +334,69 @@ boxplot(norm_abs_voic ~ asp,
 \end{figure}
 
 <<di-stop-test,include=F>>=
-shapiro.test(di_stop_asp$norm_abs_voic)
-shapiro.test(di_stop_nasp$norm_abs_voic)
-t.test(norm_abs_voic ~ asp, data = di_stop)
+shapiro.test(di_stop_asp$norm_vowel)
+shapiro.test(di_stop_nasp$norm_vowel)
+t.test(norm_vowel ~ asp, data = di_stop)
 @
 
 In disyllabic words, vowels are \Sexpr{round(mean(di_stop_nasp$abs_voic),2)} (s.d. = \Sexpr{round(sd(di_stop_nasp$abs_voic),2)}) msec long if followed by a non-aspirated geminate, and \Sexpr{round(mean(di_stop_asp$abs_voic),2)} (s.d. = \Sexpr{round(sd(di_stop_asp$abs_voic),2)})msec long if followed by a pre-aspirated geminate.
-In ratio terms, the vowel makes up the \Sexpr{round(mean(di_stop_nasp$norm_abs_voic)*100,2)}\% (s.d. = \Sexpr{round(sd(di_stop_nasp$norm_abs_voic),2)}) of the VOR in word with plain geminates, and the \Sexpr{round(mean(di_stop_asp$norm_abs_voic)*100,2)}\% (s.d. = \Sexpr{round(sd(di_stop_asp$abs_voic),2)}) in words with pre-aspirated geminates.
+In ratio terms, the vowel makes up the \Sexpr{round(mean(di_stop_nasp$norm_vowel)*100,2)}\% (s.d. = \Sexpr{round(sd(di_stop_nasp$norm_vowel),2)}) of the VOR in word with plain geminates, and the \Sexpr{round(mean(di_stop_asp$norm_vowel)*100,2)}\% (s.d. = \Sexpr{round(sd(di_stop_asp$abs_voic),2)}) in words with pre-aspirated geminates.
 According to a independent two-sample \textit{t}-test, the difference in ratio is significant [t = 4.39, df = 50.46, p < 0.001].
 
 \subsection{Duration of vowels before /NC/ clusters}
 <<mono-nas-test, include=F>>=
-shapiro.test(mono_nas_asp$norm_abs_voic)
-shapiro.test(mono_nas_nasp$norm_abs_voic)
-wilcox.test(norm_abs_voic ~ asp, data = mono_nas)
+shapiro.test(mono_nas_asp$norm_vowel)
+shapiro.test(mono_nas_nasp$norm_vowel)
+wilcox.test(norm_vowel ~ asp, data = mono_nas)
 @
 
 Words of the form (C)VNC showed a mean vowel duration of \Sexpr{round(mean(mono_nas_nasp$abs_voic),2)} msec if the nasal is voiced and \Sexpr{round(mean(mono_nas_asp$abs_voic),2)} msec if voiceless.
-The ratio duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_abs_voic)*100)}\% (s.d. = \Sexpr{round(sd(mono_nas_nasp$norm_abs_voic),2)}) and \Sexpr{round(mean(mono_nas_asp$norm_abs_voic)*100)}\% (s.d. = \Sexpr{round(sd(mono_nas_asp$norm_abs_voic),2)}).
+The ratio duration was, respectively, \Sexpr{round(mean(mono_nas_nasp$norm_vowel)*100)}\% (s.d. = \Sexpr{round(sd(mono_nas_nasp$norm_vowel),2)}) and \Sexpr{round(mean(mono_nas_asp$norm_vowel)*100)}\% (s.d. = \Sexpr{round(sd(mono_nas_asp$norm_vowel),2)}).
 The difference in ratio duration was significant [U = 836, p < 0.001].
 
 <<di-nas-test, include=F>>=
-shapiro.test(di_nas_asp$norm_abs_voic)
-shapiro.test(di_nas_nasp$norm_abs_voic)
-t.test(norm_abs_voic ~ asp, data = di_nas)
+shapiro.test(di_nas_asp$norm_vowel)
+shapiro.test(di_nas_nasp$norm_vowel)
+t.test(norm_vowel ~ asp, data = di_nas)
 @
 
-CVNCV words have a mean vowel duration of \Sexpr{round(mean(di_nas_nasp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_nas_nasp$abs_voic),2)}) if the nasal is voiced and \Sexpr{round(mean(di_nas_asp$abs_voic),2)} msec  (s.d. = \Sexpr{round(sd(mono_nas_asp$norm_abs_voic),2)}) if it is voiceless.
-As percentages, vowels are \Sexpr{round(mean(di_nas_nasp$norm_abs_voic)*100)}\% of the VOR if followed by a voiced nasal, and \Sexpr{round(mean(di_nas_asp$norm_abs_voic)*100)}\% when the nasal is voiceless.
+CVNCV words have a mean vowel duration of \Sexpr{round(mean(di_nas_nasp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_nas_nasp$abs_voic),2)}) if the nasal is voiced and \Sexpr{round(mean(di_nas_asp$abs_voic),2)} msec  (s.d. = \Sexpr{round(sd(mono_nas_asp$norm_vowel),2)}) if it is voiceless.
+As percentages, vowels are \Sexpr{round(mean(di_nas_nasp$norm_vowel)*100)}\% of the VOR if followed by a voiced nasal, and \Sexpr{round(mean(di_nas_asp$norm_vowel)*100)}\% when the nasal is voiceless.
 A \textit{t}-test showed that this difference is significant [t = 7.04, df = 119.99, p < 0.001].
 
 
 \subsection{Duration of vowels before /lC/ clusters}
 <<mono-la\textit{t}-test, include=F>>=
-shapiro.test(mono_lat_asp$norm_abs_voic)
-shapiro.test(mono_lat_nasp$norm_abs_voic)
-t.test(norm_abs_voic ~ asp, data = mono_lat)
+shapiro.test(mono_lat_asp$norm_vowel)
+shapiro.test(mono_lat_nasp$norm_vowel)
+t.test(norm_vowel ~ asp, data = mono_lat)
 @
 
 In the case of monosyllabic words ending in a /lC/ cluster, the mean duration of the vowels were \Sexpr{round(mean(mono_lat_nasp$abs_voic),2)} (s.d. = \Sexpr{round(sd(mono_lat_nasp$abs_voic),2)}) and \Sexpr{round(mean(mono_lat_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(mono_lat_asp$abs_voic),2)}) when followed, respectively by a voiced and voiceless lateral.
-These correspond to the \Sexpr{round(mean(mono_lat_nasp$norm_abs_voic)*100)}\% and the \Sexpr{round(mean(mono_lat_asp$norm_abs_voic)*100)}\% of the VOR.
+These correspond to the \Sexpr{round(mean(mono_lat_nasp$norm_vowel)*100)}\% and the \Sexpr{round(mean(mono_lat_asp$norm_vowel)*100)}\% of the VOR.
 A \textit{t}-test shows that the difference is significant [t = 4.1, df = 20.43, p < 0.001].
 
 
 <<di-la\textit{t}-test, include=F>>=
-shapiro.test(di_lat_asp$norm_abs_voic)
-shapiro.test(di_lat_nasp$norm_abs_voic)
-t.test(norm_abs_voic ~ asp, data = di_lat)
+shapiro.test(di_lat_asp$norm_vowel)
+shapiro.test(di_lat_nasp$norm_vowel)
+t.test(norm_vowel ~ asp, data = di_lat)
 @
 
-The duration of vowels in -VLCV words is on average \Sexpr{round(mean(di_lat_nasp$abs_voic),2)} msec long (s.d. = \Sexpr{round(sd(di_lat_nasp$abs_voic),2)}) when the lateral is voiced and \Sexpr{round(mean(di_lat_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_lat_asp$norm_abs_voic),2)}) when it is voiceless.
-The vowel takes the \Sexpr{round(mean(di_lat_nasp$norm_abs_voic)*100)}\% of the VOR if followed by a voiced lateral, and \Sexpr{round(mean(di_lat_asp$norm_abs_voic)*100)}\% when the lateral is voiceless.
+The duration of vowels in -VLCV words is on average \Sexpr{round(mean(di_lat_nasp$abs_voic),2)} msec long (s.d. = \Sexpr{round(sd(di_lat_nasp$abs_voic),2)}) when the lateral is voiced and \Sexpr{round(mean(di_lat_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_lat_asp$norm_vowel),2)}) when it is voiceless.
+The vowel takes the \Sexpr{round(mean(di_lat_nasp$norm_vowel)*100)}\% of the VOR if followed by a voiced lateral, and \Sexpr{round(mean(di_lat_asp$norm_vowel)*100)}\% when the lateral is voiceless.
 A \textit{t}-test reveals the difference to be significant [t = 7.47, df = 50.72, p < 0.001].
 
 \subsection{Duration of vowels before /rC/ clusters}
 
 <<di-rho-test, include=F>>=
-shapiro.test(di_rho_asp$norm_abs_voic)
-shapiro.test(di_rho_nasp$norm_abs_voic)
-t.test(norm_abs_voic ~ asp, data = di_rho)
+shapiro.test(di_rho_asp$norm_vowel)
+shapiro.test(di_rho_nasp$norm_vowel)
+t.test(norm_vowel ~ asp, data = di_rho)
 @
 
-With words containing an /rC/ cluster, the mean duration of vowels is \Sexpr{round(mean(di_rho_nasp$abs_voic),2)} msec long (s.d. = \Sexpr{round(sd(di_rho_nasp$norm_abs_voic),2)}) when the rhotic is voiced and \Sexpr{round(mean(di_rho_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_rho_asp$norm_abs_voic),2)}) when it is voiceless.
-The vowel takes the \Sexpr{round(mean(di_rho_nasp$norm_abs_voic)*100)}\% of the VOR if followed by a voiced rhotic, and \Sexpr{round(mean(di_rho_asp$norm_abs_voic)*100)}\% when the rhotic is voiceless.
+With words containing an /rC/ cluster, the mean duration of vowels is \Sexpr{round(mean(di_rho_nasp$abs_voic),2)} msec long (s.d. = \Sexpr{round(sd(di_rho_nasp$norm_vowel),2)}) when the rhotic is voiced and \Sexpr{round(mean(di_rho_asp$abs_voic),2)} msec (s.d. = \Sexpr{round(sd(di_rho_asp$norm_vowel),2)}) when it is voiceless.
+The vowel takes the \Sexpr{round(mean(di_rho_nasp$norm_vowel)*100)}\% of the VOR if followed by a voiced rhotic, and \Sexpr{round(mean(di_rho_asp$norm_vowel)*100)}\% when the rhotic is voiceless.
 A \textit{t}-test gave a significant result [t = 3.4, df = 27.98, p < 0.001].
 
 \section{Duration of stop closure}
