@@ -37,8 +37,8 @@ Finally, let's give the indexes of each tier.
 ```praat
 header$ =
 ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_cc,dur_clos,vor,voffr,
-    ...mor,norm_voic,norm_mann,norm_vowel,norm_cc,norm_clos"
+    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,voffr,
+    ...mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos"
 appendFileLine: result_file$, header$
 
 sent = 1
@@ -91,9 +91,9 @@ for int_word to intervals_no
         result_line$ =
         ..."'speaker$','index','lab_word$','begin_word','end_word','dur_word',
             ...'begin_voic','end_voic','dur_voic','begin_mann$','end_mann$',
-            ...'dur_mann$','time_rels','dur_vowel$','dur_cc$','dur_clos$',
+            ...'dur_mann$','time_rels','dur_vowel$','dur_geminate$','dur_clos$',
             ...'vor$','voffr$','mor$','norm_voic','norm_mann','norm_vowel',
-            ...'norm_cc','norm_clos'"
+            ...'norm_geminate','norm_clos'"
         appendFileLine: result_file$, result_line$
     endif
 endfor
@@ -143,11 +143,11 @@ if time_rels > begin_word and time_rels < end_word
         dur_clos = (time_rels - end_mann) * 1000
         son_spread = (end_mann - end_voic) * 1000
         son_spread$ = string$(son_spread)
-        dur_cc = (time_rels - begin_mann) * 1000
+        dur_geminate = (time_rels - begin_mann) * 1000
     else
         dur_clos = (time_rels - end_voic) * 1000
         son_spread$ = ""
-        dur_cc = dur_clos
+        dur_geminate = dur_clos
     endif
 
     vor = (time_rels - begin_voic) * 1000
@@ -158,7 +158,7 @@ if time_rels > begin_word and time_rels < end_word
     vor$ = string$(vor)
     voffr$ = string$(voffr)
     mor$ = string$(mor)
-    dur_cc$ = string$(dur_cc)
+    dur_geminate$ = string$(dur_geminate)
 
 else
     dur_clos$ = ""
@@ -181,7 +181,7 @@ endif
 norm_voic = dur_voic / vor
 norm_mann = dur_mann / vor
 norm_vowel = dur_mann / vor
-norm_cc = dur_cc / vor
+norm_geminate = dur_geminate / vor
 norm_clos = dur_clos / vor
 ```
 
