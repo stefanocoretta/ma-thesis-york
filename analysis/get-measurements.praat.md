@@ -15,7 +15,6 @@ The script has the following componens: a header, preparation code, and a main l
 
 Now we can create a list of the TextGrid files and create the result file.
 The extension `_no` in variable names means `_number`.
-Then we check if the result file already exists and if it does, we prompt the user if she wants to overwrite it.
 
 ## "strings"
 ```praat
@@ -24,11 +23,6 @@ result_file$ = "../results/results.csv"
 
 Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
-
-if fileReadable (result_file$)
-	pause The file 'result_file$' already exists! Do you want to overwrite it?
-	filedelete 'result_file$'
-endif
 ```
 
 We prepare the header of the result file and append it to it.
@@ -38,9 +32,9 @@ Finally, let's give the indexes of each tier.
 ## "results header"
 ```praat
 header$ =
-..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,voffr,
-    ...mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
+    ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,
+    ...voffr,mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
 appendFileLine: result_file$, header$
 
 sent = 1
@@ -226,4 +220,5 @@ norm_clos = dur_clos / vor
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+######################################
 ```
