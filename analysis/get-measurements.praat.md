@@ -48,6 +48,7 @@ mann = 4
 rels = 5
 ```
 
+First, we need to get the number of intervals from the second tier.
 
 
 ## "main loop"
@@ -67,6 +68,13 @@ for file to files_no
     <<<words loop>>>
 endfor
 ```
+
+Than we can loop through those and check which are non-empty.
+The variable `int_word` contains the index (numeric) of the current interval on the word tier.
+If they are non-empty get label, beginning and end, and calculate the duration.
+Write output.
+If the label on the mann tier is empty, then input empty data.
+If the release time is not within the time boundaries of the word, input empty data.
 
 ## "words loop"
 ```praat
@@ -99,6 +107,12 @@ for int_word to intervals_no
 endfor
 ```
 
+Get index and label of interval on voic.
+If the interval on voic it's non-empty, get begin and end, and calculate duration.
+Otherwise, get index of the next interval (`int_voic + 1`) on voic tier.
+If the first interval on voic is empty, then the next will always be non-empty.
+We can just get begin and end, and calculate duration.
+
 ## "voicing"
 ```praat
 int_voic = Get interval at time: voic, begin_word
@@ -115,6 +129,10 @@ else
 endif
 ```
 
+Get interval index and label on the mann tier at time = end - 0.00001 of the interval on the voic tier.
+If the interval is non-empty, get begin and end, and calculate duration.
+If it's empty, record nulls.
+
 ## "manner"
 ```praat
 int_mann = Get interval at time: mann, end_voic - 0.00001
@@ -129,6 +147,11 @@ else
     dur_mann = undefined
 endif
 ```
+
+Get nearest boundary on tier rels to the end of the word.
+If the release is withing the words boundaries, calculate VOR, VOFFR and MOR and string$ them.
+Otherwise, set them to `undefined`.
+Calculate vowel duration (voice onset to manner onset).
 
 ## "release"
 ```praat
