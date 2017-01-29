@@ -98,7 +98,7 @@ The variable "int\textunderscore{}word" contains the index (numeric) of the curr
     for int_word to intervals_no
         lab_word$ = Get label of interval: word, int_word
         if lab_word$ <> ""
-        index += 1
+            index += 1
 @
 
 If they are non-empty get label, beginning and end, and calculate the duration.

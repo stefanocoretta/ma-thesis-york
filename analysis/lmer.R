@@ -6,7 +6,7 @@ library(highlight)
 opts_knit$set(root.dir=normalizePath('../'))
 opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.8\\textwidth", echo=FALSE, cache=FALSE)
 
-results_raw <- read.csv("analysis/results.csv")
+results_raw <- read.csv("analysis/results-backup.csv")
 words <- read.csv("task/task-src/words.csv")
 results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
 results <- subset(results_all, comp == "c")
