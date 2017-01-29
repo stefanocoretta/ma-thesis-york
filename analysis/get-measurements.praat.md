@@ -1,5 +1,7 @@
 # Get measurements (Praat script)
 
+The script has the following componens: a header, preparation code, and a main loop.
+
 ## get-measurements.praat
 ```praat
 <<<header>>>
