@@ -4,23 +4,11 @@
 ```praat
 <<<header>>>
 
-<<<form>>>
-
 <<<strings>>>
 
 <<<results header>>>
 
 <<<main loop>>>
-```
-
-## "form"
-```praat
-form Select folder with TextGrid files
-    comment Directory of TextGrid files. Include final '/'
-    text textgrid_directory /Users/Stefano/Documents/GitHub/icelandic-preaspiration/TextGrid/
-    sentence textgrid_extension .TextGrid
-    sentence result_file results.csv
-endform
 ```
 
 Now we can create a list of the TextGrid files and create the result file.
@@ -29,7 +17,10 @@ Then we check if the result file already exists and if it does, we prompt the us
 
 ## "strings"
 ```praat
-Create Strings as file list: "list", "'textgrid_directory$'*'textgrid_extension$'"
+textgrid_directory$ = "../data/derived"
+result_file$ = "results.csv"
+
+Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
 
 if fileReadable (result_file$)
@@ -65,7 +56,7 @@ for file to files_no
     selectObject: "Strings list"
 
     file_name$ = Get string: file
-    Read from file: "'textgrid_directory$''file_name$'"
+    Read from file: "'textgrid_directory$'/'file_name$'"
 
     intervals_no = Get number of intervals: word
     under_index = index(file_name$, "_")

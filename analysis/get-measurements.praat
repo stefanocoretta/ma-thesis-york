@@ -25,14 +25,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-form Select folder with TextGrid files
-    comment Directory of TextGrid files. Include final '/'
-    text textgrid_directory /Users/Stefano/Documents/GitHub/icelandic-preaspiration/TextGrid/
-    sentence textgrid_extension .TextGrid
-    sentence result_file results.csv
-endform
+textgrid_directory$ = "../data/derived"
+result_file$ = "results.csv"
 
-Create Strings as file list: "list", "'textgrid_directory$'*'textgrid_extension$'"
+Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
 
 if fileReadable (result_file$)
@@ -56,7 +52,7 @@ for file to files_no
     selectObject: "Strings list"
 
     file_name$ = Get string: file
-    Read from file: "'textgrid_directory$''file_name$'"
+    Read from file: "'textgrid_directory$'/'file_name$'"
 
     intervals_no = Get number of intervals: word
     under_index = index(file_name$, "_")
