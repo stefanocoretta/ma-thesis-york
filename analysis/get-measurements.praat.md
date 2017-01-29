@@ -44,10 +44,11 @@ Finally, let's give the indexes of each tier.
 
 ## "results header"
 ```praat
-header$ = "speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_cc,dur_clos,vor,voffr,
-...mor'newline$'"
-fileappend "'result_file$'" 'header$'
+header$ =
+..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_cc,dur_clos,vor,voffr,
+    ...mor,norm_voic,norm_mann,norm_vowel,norm_cc,norm_clos"
+appendFileLine: result_file$, header$
 
 sent = 1
 word = 2
@@ -94,11 +95,15 @@ for int_word to intervals_no
 
         <<<release>>>
 
-        result_line$ = "'speaker$','index','lab_word$','begin_word','end_word','dur_word',
+        <<<calculate normalised>>>
+
+        result_line$ =
+        ..."'speaker$','index','lab_word$','begin_word','end_word','dur_word',
             ...'begin_voic','end_voic','dur_voic','begin_mann$','end_mann$',
             ...'dur_mann$','time_rels','dur_vowel$','dur_cc$','dur_clos$',
-            ...'vor$','voffr$','mor$''newline$'"
-        fileappend "'result_file$'" 'result_line$'
+            ...'vor$','voffr$','mor$','norm_voic','norm_mann','norm_vowel',
+            ...'norm_cc','norm_clos'"
+        appendFileLine: result_file$, result_line$
     endif
 endfor
 ```
@@ -179,6 +184,16 @@ else
     dur_vowel$ = string$(dur_vowel)
 endif
 ```
+
+## "calculate normalised"
+```praat
+norm_voic = dur_voic / vor
+norm_mann = dur_mann / vor
+norm_vowel = dur_mann / vor
+norm_cc = dur_cc / vor
+norm_clos = dur_clos / vor
+```
+
 
 ## "header"
 ```praat
