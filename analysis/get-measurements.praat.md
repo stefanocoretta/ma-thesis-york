@@ -18,7 +18,7 @@ Then we check if the result file already exists and if it does, we prompt the us
 ## "strings"
 ```praat
 textgrid_directory$ = "../data/derived"
-result_file$ = "results.csv"
+result_file$ = "../results/results.csv"
 
 Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
