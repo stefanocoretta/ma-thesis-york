@@ -21,6 +21,7 @@
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
 \newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
 
 \usepackage{framed}
 \makeatletter
@@ -74,8 +75,15 @@ The following code loads the csv file with the word list used in the task and th
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{results_raw} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"analysis/results.csv"}\hlstd{)}
-\hlstd{words} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"task/task-src/words.csv"}\hlstd{)}
+\hlkwd{library}\hlstd{(readr)}
+\hlstd{results_raw} \hlkwb{<-} \hlkwd{read_csv}\hlstd{(}\hlstr{"./results/results.csv"}\hlstd{,} \hlkwc{na} \hlstd{=} \hlstr{"--undefined--"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Parsed with column specification:\\\#\# cols(\\\#\#\ \  .default = col\_double(),\\\#\#\ \  speaker = col\_character(),\\\#\#\ \  idx = col\_integer(),\\\#\#\ \  word = col\_character()\\\#\# )}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# See spec(...) for full column specifications.}}\begin{alltt}
+\hlstd{words} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"./task/task-src/words.csv"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -95,8 +103,8 @@ To check the duration of each word token as spoken by the participants, we first
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{mono} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"mono"}\hlstd{)}
-\hlstd{bi} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl_no} \hlopt{==} \hlstr{"di"}\hlstd{)}
+\hlstd{mono} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl} \hlopt{==} \hlstr{"mono"}\hlstd{)}
+\hlstd{bi} \hlkwb{<-} \hlkwd{subset}\hlstd{(results, syl} \hlopt{==} \hlstr{"di"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -105,20 +113,70 @@ We can now separately check the duration of monosyllabic and bisyllabic words.
 
 \begin{figure}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plot}\hlstd{(}
+    \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+    \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,}\hlnum{900}\hlstd{),}
+    \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{150}\hlstd{),}
+    \hlkwc{xlab} \hlstd{=} \hlstr{"duration (msec)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"frequency"}
+\hlstd{)}
+
+\hlkwd{hist}\hlstd{(}
+    \hlstd{mono}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"darkgrey"}
+\hlstd{)}
+
+\hlkwd{hist}\hlstd{(}
+    \hlstd{bi}\hlopt{$}\hlstd{dur_word,} \hlkwc{add} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"lightgrey"}
+\hlstd{)}
+
+\hlkwd{legend}\hlstd{(}\hlstr{"topright"}\hlstd{,}
+       \hlkwd{c}\hlstd{(}\hlstr{"mono"}\hlstd{,} \hlstr{"di"}\hlstd{),}
+       \hlkwc{fill} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"darkgrey"}\hlstd{,}\hlstr{"lightgrey"}\hlstd{)}
+       \hlstd{)}
+\end{alltt}
+\end{kframe}
 \includegraphics[width=\maxwidth]{img/word-duration-1} 
 
 \end{knitrout}
 \caption{Duration of mono- \textit{vs.} bisyllabic words.}
 \end{figure}
 
-The mean length of monosyllabic words is 433.54 msec [\textit{sd} = 87.6], while that of bisyllabic words is 479.41 msec [\textit{sd} = 63.93].
+The mean length of monosyllabic words is 434.01 msec [\textit{sd} = 88.01], while that of bisyllabic words is 478.63 msec [\textit{sd} = 63.21].
 
 Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
 
 \begin{figure}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{norm_vowel_mono_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono}\hlopt{$}\hlstd{norm_vowel,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{norm_vowel_di_density} \hlkwb{<-} \hlkwd{density}\hlstd{(bi}\hlopt{$}\hlstd{norm_vowel,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_mono_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_di_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_mono_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_di_density}\hlopt{$}\hlstd{y)}
+
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
+
+\hlkwd{plot}\hlstd{(}
+\hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
+\hlkwc{xlim} \hlstd{= x.limits,}
+\hlkwc{ylim} \hlstd{= y.limits,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
+\hlstd{)}
+
+\hlkwd{lines}\hlstd{(norm_vowel_mono_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_di_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{lty} \hlstd{=} \hlnum{2}\hlstd{)}
+
+\hlkwd{legend}\hlstd{(}\hlstr{"topright"}\hlstd{,}
+       \hlkwd{c}\hlstd{(}\hlstr{"mono"}\hlstd{,} \hlstr{"di"}\hlstd{),}
+       \hlkwc{lty} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{)}
+       \hlstd{)}
+\end{alltt}
+\end{kframe}
 \includegraphics[width=\maxwidth]{img/mono-bi-dens-1} 
 
 \end{knitrout}
@@ -129,42 +187,42 @@ Since I am looking at the duration of the normalised modal voicing of the vocali
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic)}
+\hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_vowel)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Shapiro-Wilk normality test
 ## 
-## data:  mono$norm_abs_voic
-## W = 0.88163, p-value < 2.2e-16
+## data:  mono$norm_vowel
+## W = 0.82764, p-value < 2.2e-16
 \end{verbatim}
 \begin{alltt}
-\hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{norm_abs_voic)}
+\hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{norm_vowel)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Shapiro-Wilk normality test
 ## 
-## data:  bi$norm_abs_voic
-## W = 0.99834, p-value = 0.9647
+## data:  bi$norm_vowel
+## W = 0.99842, p-value = 0.9736
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (0.32) than in bisyllabic words (0.31).
+A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (NA) than in bisyllabic words (NA).
 Subsequent tests will be performed for monosyllabic and bisyllabic words separately.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{wilcox.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_abs_voic, bi}\hlopt{$}\hlstd{norm_abs_voic)}
+\hlkwd{wilcox.test}\hlstd{(mono}\hlopt{$}\hlstd{norm_vowel, bi}\hlopt{$}\hlstd{norm_vowel)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
-## data:  mono$norm_abs_voic and bi$norm_abs_voic
-## W = 83317, p-value = 0.8331
+## data:  mono$norm_vowel and bi$norm_vowel
+## W = 82451, p-value = 0.309
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -184,19 +242,19 @@ These words start with either an aspirated, a non-aspirated or a sonorant conson
 
 \hlstd{di_stop} \hlkwb{<-} \hlkwd{subset}\hlstd{(bi, manner} \hlopt{==} \hlstr{"stop"}\hlstd{)}
 
-\hlstd{mono_stop_asp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_abs_voic[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{mono_stop_nasp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_abs_voic[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{mono_stop_asp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_vowel[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_stop_nasp} \hlkwb{<-} \hlstd{mono_stop}\hlopt{$}\hlstd{norm_vowel[mono_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_stop_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -205,8 +263,8 @@ These words start with either an aspirated, a non-aspirated or a sonorant conson
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/mono-stop-dens-1} 
@@ -244,7 +302,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= mono_stop,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (msec)"}\hlstd{,}
@@ -254,13 +312,13 @@ According to the test, the mean duration of modal voicing in words ending with a
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/mono-stop-box-1} 
 \begin{kframe}\begin{alltt}
-\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
+\hlkwd{wilcox.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
-## data:  norm_abs_voic by asp
+## data:  norm_vowel by asp
 ## W = 18010, p-value < 2.2e-16
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
@@ -280,19 +338,19 @@ According to the test, the mean duration of modal voicing in words ending with a
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{mono_nas_asp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_abs_voic[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{mono_nas_nasp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_abs_voic[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{mono_nas_asp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_vowel[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_nas_nasp} \hlkwb{<-} \hlstd{mono_nas}\hlopt{$}\hlstd{norm_vowel[mono_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_nas_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -301,8 +359,8 @@ According to the test, the mean duration of modal voicing in words ending with a
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/mono-nas-dens-1} 
@@ -312,7 +370,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= mono_nas,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -334,7 +392,7 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono_nas_asp
-## W = 0.95117, p-value = 0.1052
+## W = 0.94983, p-value = 0.0879
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono_nas_nasp)}
@@ -347,20 +405,20 @@ According to the test, the mean duration of modal voicing in words ending with a
 ## W = 0.94149, p-value = 0.1097
 \end{verbatim}
 \begin{alltt}
-\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_nas)}
+\hlkwd{t.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_nas)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Welch Two Sample t-test
 ## 
-## data:  norm_abs_voic by asp
-## t = 4.287, df = 48.589, p-value = 8.551e-05
+## data:  norm_vowel by asp
+## t = 4.3754, df = 48.072, p-value = 6.497e-05
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.02415635 0.06680460
+##  0.02495378 0.06738528
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##         0.3098634         0.2643830
+##         0.3098634         0.2636939
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -380,19 +438,19 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{mono_lat_asp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_abs_voic[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{mono_lat_nasp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_abs_voic[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{mono_lat_asp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_vowel[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{mono_lat_nasp} \hlkwb{<-} \hlstd{mono_lat}\hlopt{$}\hlstd{norm_vowel[mono_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(mono_lat_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -401,8 +459,8 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/mono-lat-dens-1} 
@@ -412,7 +470,7 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= mono_lat,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -447,13 +505,13 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 ## W = 0.89635, p-value = 0.1423
 \end{verbatim}
 \begin{alltt}
-\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_lat)}
+\hlkwd{t.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_lat)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Welch Two Sample t-test
 ## 
-## data:  norm_abs_voic by asp
+## data:  norm_vowel by asp
 ## t = 4.1099, df = 20.43, p-value = 0.0005241
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
@@ -492,7 +550,7 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  mono$dur_word[mono$asp == "yes"]
-## W = 0.99082, p-value = 0.1766
+## W = 0.9912, p-value = 0.2007
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(mono}\hlopt{$}\hlstd{dur_word[mono}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
@@ -517,13 +575,13 @@ It is good to check whether the duration of monosyllabic words is affected by th
 ## 	Welch Two Sample t-test
 ## 
 ## data:  dur_word by asp
-## t = -0.039303, df = 349.29, p-value = 0.9687
+## t = -0.13529, df = 351.41, p-value = 0.8925
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -17.96654  17.26255
+##  -18.88264  16.45203
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##          433.3422          433.6942
+##          433.3422          434.5575
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -538,19 +596,19 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{di_stop_asp} \hlkwb{<-} \hlstd{di_stop}\hlopt{$}\hlstd{norm_abs_voic[di_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{di_stop_nasp} \hlkwb{<-} \hlstd{di_stop}\hlopt{$}\hlstd{norm_abs_voic[di_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{di_stop_asp} \hlkwb{<-} \hlstd{di_stop}\hlopt{$}\hlstd{norm_vowel[di_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{di_stop_nasp} \hlkwb{<-} \hlstd{di_stop}\hlopt{$}\hlstd{norm_vowel[di_stop}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_stop_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_stop_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_stop_asp,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_stop_nasp,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -559,8 +617,8 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/bi-stop-dens-1} 
@@ -595,7 +653,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= di_stop,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -610,13 +668,13 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
+\hlkwd{wilcox.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= mono_stop)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
-## data:  norm_abs_voic by asp
+## data:  norm_vowel by asp
 ## W = 18010, p-value < 2.2e-16
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
@@ -636,19 +694,19 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{di_nas_asp} \hlkwb{<-} \hlstd{di_nas}\hlopt{$}\hlstd{norm_abs_voic[di_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{di_nas_nasp} \hlkwb{<-} \hlstd{di_nas}\hlopt{$}\hlstd{norm_abs_voic[di_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{di_nas_asp} \hlkwb{<-} \hlstd{di_nas}\hlopt{$}\hlstd{norm_vowel[di_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{di_nas_nasp} \hlkwb{<-} \hlstd{di_nas}\hlopt{$}\hlstd{norm_vowel[di_nas}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_nas_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_nas_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_nas_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_nas_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -657,8 +715,8 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/bi-nas-dens-1} 
@@ -668,7 +726,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= di_nas,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -690,7 +748,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  di_nas_asp
-## W = 0.94884, p-value = 0.01743
+## W = 0.9445, p-value = 0.01442
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(di_nas_nasp)}
@@ -703,14 +761,14 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## W = 0.94685, p-value = 0.005831
 \end{verbatim}
 \begin{alltt}
-\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_nas)}
+\hlkwd{wilcox.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_nas)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
-## data:  norm_abs_voic by asp
-## W = 3220, p-value = 2.121e-10
+## data:  norm_vowel by asp
+## W = 3052, p-value = 3.721e-10
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -729,19 +787,19 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{di_lat_asp} \hlkwb{<-} \hlstd{di_lat}\hlopt{$}\hlstd{norm_abs_voic[di_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{di_lat_nasp} \hlkwb{<-} \hlstd{di_lat}\hlopt{$}\hlstd{norm_abs_voic[di_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{di_lat_asp} \hlkwb{<-} \hlstd{di_lat}\hlopt{$}\hlstd{norm_vowel[di_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{di_lat_nasp} \hlkwb{<-} \hlstd{di_lat}\hlopt{$}\hlstd{norm_vowel[di_lat}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_lat_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_lat_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_lat_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_lat_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -750,8 +808,8 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/bi-lat-dens-1} 
@@ -761,7 +819,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= di_lat,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -796,13 +854,13 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## W = 0.91062, p-value = 0.01543
 \end{verbatim}
 \begin{alltt}
-\hlkwd{wilcox.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_lat)}
+\hlkwd{wilcox.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_lat)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Wilcoxon rank sum test
 ## 
-## data:  norm_abs_voic by asp
+## data:  norm_vowel by asp
 ## W = 771, p-value = 2.525e-11
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
@@ -822,19 +880,19 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{di_rho_asp} \hlkwb{<-} \hlstd{di_rho}\hlopt{$}\hlstd{norm_abs_voic[di_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
-\hlstd{di_rho_nasp} \hlkwb{<-} \hlstd{di_rho}\hlopt{$}\hlstd{norm_abs_voic[di_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
+\hlstd{di_rho_asp} \hlkwb{<-} \hlstd{di_rho}\hlopt{$}\hlstd{norm_vowel[di_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{]}
+\hlstd{di_rho_nasp} \hlkwb{<-} \hlstd{di_rho}\hlopt{$}\hlstd{norm_vowel[di_rho}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{]}
 
-\hlstd{norm_abs_voic_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_rho_asp)}
-\hlstd{norm_abs_voic_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_rho_nasp)}
+\hlstd{norm_vowel_asp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_rho_asp)}
+\hlstd{norm_vowel_nasp_density} \hlkwb{<-} \hlkwd{density}\hlstd{(di_rho_nasp)}
 
-\hlstd{norm_abs_voic_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{x,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{x)}
-\hlstd{norm_abs_voic_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_abs_voic_asp_density}\hlopt{$}\hlstd{y,}
-                                  \hlstd{norm_abs_voic_nasp_density}\hlopt{$}\hlstd{y)}
+\hlstd{norm_vowel_density_x} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{x,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{x)}
+\hlstd{norm_vowel_density_y} \hlkwb{<-} \hlkwd{c}\hlstd{(norm_vowel_asp_density}\hlopt{$}\hlstd{y,}
+                                  \hlstd{norm_vowel_nasp_density}\hlopt{$}\hlstd{y)}
 
-\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_x)}
-\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_abs_voic_density_y)}
+\hlstd{x.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_x)}
+\hlstd{y.limits} \hlkwb{<-} \hlkwd{range}\hlstd{(norm_vowel_density_y)}
 
 \hlkwd{plot}\hlstd{(}
 \hlkwd{c}\hlstd{(),} \hlkwd{c}\hlstd{(),}
@@ -843,8 +901,8 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \hlkwc{xlab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"density"}
 \hlstd{)}
 
-\hlkwd{lines}\hlstd{(norm_abs_voic_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
-\hlkwd{lines}\hlstd{(norm_abs_voic_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_asp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+\hlkwd{lines}\hlstd{(norm_vowel_nasp_density,} \hlkwc{lw} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/bi-rho-dens-1} 
@@ -854,7 +912,7 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,}
+\hlkwd{boxplot}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,}
         \hlkwc{data} \hlstd{= di_rho,}
         \hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"non-asp"}\hlstd{,} \hlstr{"asp"}\hlstd{),}
         \hlkwc{ylab} \hlstd{=} \hlstr{"duration (s)"}\hlstd{,}
@@ -889,13 +947,13 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 ## W = 0.97208, p-value = 0.8876
 \end{verbatim}
 \begin{alltt}
-\hlkwd{t.test}\hlstd{(norm_abs_voic} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_rho)}
+\hlkwd{t.test}\hlstd{(norm_vowel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= di_rho)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Welch Two Sample t-test
 ## 
-## data:  norm_abs_voic by asp
+## data:  norm_vowel by asp
 ## t = 3.4013, df = 27.988, p-value = 0.002036
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
@@ -929,7 +987,7 @@ As with monosyllabic words, we should check if the duration of bisyllabic words 
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  bi$dur_word[bi$asp == "yes"]
-## W = 0.99244, p-value = 0.4518
+## W = 0.9923, p-value = 0.4437
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(bi}\hlopt{$}\hlstd{dur_word[bi}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
@@ -954,7 +1012,7 @@ As with monosyllabic words, we should check if the duration of bisyllabic words 
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  dur_word by asp
-## W = 17288, p-value = 0.00254
+## W = 17319, p-value = 0.004711
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -983,7 +1041,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Shapiro-Wilk normality test
 ## 
 ## data:  results$dur_word[results$asp == "yes"]
-## W = 0.99527, p-value = 0.2542
+## W = 0.99506, p-value = 0.2236
 \end{verbatim}
 \begin{alltt}
 \hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{dur_word[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
@@ -1008,7 +1066,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  dur_word by asp
-## W = 79519, p-value = 0.3542
+## W = 79555, p-value = 0.3918
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \end{kframe}
@@ -1018,45 +1076,45 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(v_to_rel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
+\hlkwd{boxplot}\hlstd{(vor} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{img/unnamed-chunk-22-1} 
 \begin{kframe}\begin{alltt}
-\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{v_to_rel[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{])}
+\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{vor[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"yes"}\hlstd{])}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Shapiro-Wilk normality test
 ## 
-## data:  results$v_to_rel[results$asp == "yes"]
-## W = 0.99579, p-value = 0.3515
+## data:  results$vor[results$asp == "yes"]
+## W = 0.9958, p-value = 0.3577
 \end{verbatim}
 \begin{alltt}
-\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{v_to_rel[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
+\hlkwd{shapiro.test}\hlstd{(results}\hlopt{$}\hlstd{vor[results}\hlopt{$}\hlstd{asp} \hlopt{==} \hlstr{"no"}\hlstd{])}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Shapiro-Wilk normality test
 ## 
-## data:  results$v_to_rel[results$asp == "no"]
+## data:  results$vor[results$asp == "no"]
 ## W = 0.99719, p-value = 0.7422
 \end{verbatim}
 \begin{alltt}
-\hlkwd{t.test}\hlstd{(v_to_rel} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
+\hlkwd{t.test}\hlstd{(vor} \hlopt{~} \hlstd{asp,} \hlkwc{data} \hlstd{= results)}
 \end{alltt}
 \begin{verbatim}
 ## 
 ## 	Welch Two Sample t-test
 ## 
-## data:  v_to_rel by asp
-## t = -6.1297, df = 791.05, p-value = 1.388e-09
+## data:  vor by asp
+## t = -6.1393, df = 790.14, p-value = 1.311e-09
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -28.73820 -14.79666
+##  -28.86452 -14.87835
 ## sample estimates:
 ##  mean in group no mean in group yes 
-##          265.3115          287.0789
+##          265.3115          287.1829
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -1072,7 +1130,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test
 ## 
 ## data:  norm_clos by asp
-## W = 611, p-value = 0.3414
+## W = 643, p-value = 0.2487
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \begin{alltt}
@@ -1094,7 +1152,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  norm_clos by asp
-## W = 1914, p-value = 0.9073
+## W = 1829, p-value = 0.9733
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \begin{alltt}
@@ -1133,7 +1191,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test
 ## 
 ## data:  norm_mann by asp
-## W = 347, p-value = 0.01391
+## W = 338, p-value = 0.006585
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \begin{alltt}
@@ -1155,7 +1213,7 @@ According to a Wilcoxon-test, the duration of bisyllabic words is affected by th
 ## 	Wilcoxon rank sum test with continuity correction
 ## 
 ## data:  norm_mann by asp
-## W = 1252, p-value = 0.0006789
+## W = 1190, p-value = 0.0008771
 ## alternative hypothesis: true location shift is not equal to 0
 \end{verbatim}
 \begin{alltt}

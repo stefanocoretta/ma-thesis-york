@@ -30,8 +30,9 @@ opts_chunk$set(fig.path='img/')
 The following code loads the csv file with the word list used in the task and the result file.
 
 <<start>>=
-results_raw <- read.csv("analysis/results.csv")
-words <- read.csv("task/task-src/words.csv")
+library(readr)
+results_raw <- read_csv("./results/results.csv", na = "--undefined--")
+words <- read.csv("./task/task-src/words.csv")
 @
 
 Now we can merge the word list and result files into one single data frame.
@@ -43,14 +44,14 @@ results <- merge(results_raw, words, by.x = "word", by.y = "lex")
 To check the duration of each word token as spoken by the participants, we first split the data into two subsets: one with monosyllabic words and one with bisyllabic words.
 
 <<split>>=
-mono <- subset(results, syl_no == "mono")
-bi <- subset(results, syl_no == "di")
+mono <- subset(results, syl == "mono")
+bi <- subset(results, syl == "di")
 @
 
 We can now separately check the duration of monosyllabic and bisyllabic words.
 
 \begin{figure}
-<<word-duration, echo=F, fig=T>>=
+<<word-duration>>=
 plot(
     c(), c(),
     xlim = c(100,900),
@@ -79,17 +80,17 @@ The mean length of monosyllabic words is \Sexpr{round(mean(mono$dur_word), 2)} m
 Since I am looking at the duration of the normalised modal voicing of the vocalic gesture, we should first check if there is a significant difference in length of modal voicing between mono and bisyllabic words.
 
 \begin{figure}
-<<mono-bi-dens,echo=F,fig=T>>=
-norm_abs_voic_mono_density <- density(mono$norm_abs_voic)
-norm_abs_voic_di_density <- density(bi$norm_abs_voic)
+<<mono-bi-dens>>=
+norm_vowel_mono_density <- density(mono$norm_vowel, na.rm = TRUE)
+norm_vowel_di_density <- density(bi$norm_vowel, na.rm = TRUE)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_mono_density$x, 
-                                  norm_abs_voic_di_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_mono_density$y, 
-                                  norm_abs_voic_di_density$y)
+norm_vowel_density_x <- c(norm_vowel_mono_density$x, 
+                                  norm_vowel_di_density$x)
+norm_vowel_density_y <- c(norm_vowel_mono_density$y, 
+                                  norm_vowel_di_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -98,8 +99,8 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_mono_density, lw = 1)
-lines(norm_abs_voic_di_density, lw = 1, lty = 2)
+lines(norm_vowel_mono_density, lw = 1)
+lines(norm_vowel_di_density, lw = 1, lty = 2)
 
 legend("topright",
        c("mono", "di"),
@@ -111,15 +112,15 @@ legend("topright",
 
 
 <<>>=
-shapiro.test(mono$norm_abs_voic)
-shapiro.test(bi$norm_abs_voic)
+shapiro.test(mono$norm_vowel)
+shapiro.test(bi$norm_vowel)
 @
 
-A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (\Sexpr{round(mean(mono$norm_abs_voic), 2)}) than in bisyllabic words (\Sexpr{round(mean(bi$norm_abs_voic), 2)}).
+A Wilcox test shows that the mean length of modal voicing is significantly longer in monosyllabic words (\Sexpr{round(mean(mono$norm_vowel), 2)}) than in bisyllabic words (\Sexpr{round(mean(bi$norm_vowel), 2)}).
 Subsequent tests will be performed for monosyllabic and bisyllabic words separately.
 
 <<>>=
-wilcox.test(mono$norm_abs_voic, bi$norm_abs_voic)
+wilcox.test(mono$norm_vowel, bi$norm_vowel)
 @
 
 \section{Monosyllabic words}
@@ -129,24 +130,24 @@ wilcox.test(mono$norm_abs_voic, bi$norm_abs_voic)
 We can now have a look at monosyllabic words, starting from CVCC words (ending in a geminate stop).
 These words start with either an aspirated, a non-aspirated or a sonorant consonant.
 
-<<mono-stop-dens,fig=T>>=
+<<mono-stop-dens>>=
 mono_stop <- subset(mono, manner == "stop")
 
 di_stop <- subset(bi, manner == "stop")
 
-mono_stop_asp <- mono_stop$norm_abs_voic[mono_stop$asp == "yes"]
-mono_stop_nasp <- mono_stop$norm_abs_voic[mono_stop$asp == "no"]
+mono_stop_asp <- mono_stop$norm_vowel[mono_stop$asp == "yes"]
+mono_stop_nasp <- mono_stop$norm_vowel[mono_stop$asp == "no"]
 
-norm_abs_voic_asp_density <- density(mono_stop_asp)
-norm_abs_voic_nasp_density <- density(mono_stop_nasp)
+norm_vowel_asp_density <- density(mono_stop_asp)
+norm_vowel_nasp_density <- density(mono_stop_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -155,8 +156,8 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
 <<>>=
@@ -167,14 +168,14 @@ shapiro.test(mono_stop_nasp)
 Since the distributions of the duration of modal voicing in the two conditions (pre-aspirated and non-aspirated) are significantly different from the normal distribution, we should perform a Wilcoxon test.
 According to the test, the mean duration of modal voicing in words ending with a pre-aspirated stop is significantly shorter (\Sexpr{round(mean(mono_stop_asp), 2)} seconds) than in words ending with a non-aspirated stop (\Sexpr{round(mean(mono_stop_nasp), 2)} seconds).
 
-<<mono-stop-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<mono-stop-box>>=
+boxplot(norm_vowel ~ asp,
         data = mono_stop,
         names = c("non-asp", "asp"),
         ylab = "duration (msec)",
         main = "Duration (in seconds) of modal voicing in CVCC words"
         )
-wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
+wilcox.test(norm_vowel ~ asp, data = mono_stop)
 @
 
 \subsection{Nasals}
@@ -183,20 +184,20 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 mono_nas <- subset(mono, manner == "nasal")
 @
 
-<<mono-nas-dens,fig=T>>=
-mono_nas_asp <- mono_nas$norm_abs_voic[mono_nas$asp == "yes"]
-mono_nas_nasp <- mono_nas$norm_abs_voic[mono_nas$asp == "no"]
+<<mono-nas-dens>>=
+mono_nas_asp <- mono_nas$norm_vowel[mono_nas$asp == "yes"]
+mono_nas_nasp <- mono_nas$norm_vowel[mono_nas$asp == "no"]
 
-norm_abs_voic_asp_density <- density(mono_nas_asp)
-norm_abs_voic_nasp_density <- density(mono_nas_nasp)
+norm_vowel_asp_density <- density(mono_nas_asp)
+norm_vowel_nasp_density <- density(mono_nas_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -205,12 +206,12 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
-<<mono-nas-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<mono-nas-box>>=
+boxplot(norm_vowel ~ asp,
         data = mono_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -221,7 +222,7 @@ boxplot(norm_abs_voic ~ asp,
 <<>>=
 shapiro.test(mono_nas_asp)
 shapiro.test(mono_nas_nasp)
-t.test(norm_abs_voic ~ asp, data = mono_nas)
+t.test(norm_vowel ~ asp, data = mono_nas)
 @
 
 According to a two-sample \textit{t}-test, the duration of modal voicing in words ending with an N̥C cluster (\Sexpr{round(mean(mono_nas_asp), 2)} seconds) is shorter than in words ending with an NC cluster (\Sexpr{round(mean(mono_nas_nasp), 2)} seconds).
@@ -232,20 +233,20 @@ According to a two-sample \textit{t}-test, the duration of modal voicing in word
 mono_lat <- subset(mono, manner == "lateral")
 @
 
-<<mono-lat-dens,fig=T>>=
-mono_lat_asp <- mono_lat$norm_abs_voic[mono_lat$asp == "yes"]
-mono_lat_nasp <- mono_lat$norm_abs_voic[mono_lat$asp == "no"]
+<<mono-lat-dens>>=
+mono_lat_asp <- mono_lat$norm_vowel[mono_lat$asp == "yes"]
+mono_lat_nasp <- mono_lat$norm_vowel[mono_lat$asp == "no"]
 
-norm_abs_voic_asp_density <- density(mono_lat_asp)
-norm_abs_voic_nasp_density <- density(mono_lat_nasp)
+norm_vowel_asp_density <- density(mono_lat_asp)
+norm_vowel_nasp_density <- density(mono_lat_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -254,12 +255,12 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
-<<mono-lat-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<mono-lat-box>>=
+boxplot(norm_vowel ~ asp,
         data = mono_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -270,12 +271,12 @@ boxplot(norm_abs_voic ~ asp,
 <<>>=
 shapiro.test(mono_lat_asp)
 shapiro.test(mono_lat_nasp)
-t.test(norm_abs_voic ~ asp, data = mono_lat)
+t.test(norm_vowel ~ asp, data = mono_lat)
 @
 
 It is good to check whether the duration of monosyllabic words is affected by the presence vs. absence of preaspiration.
 
-<<mono-box, fig=T>>=
+<<mono-box>>=
 boxplot(dur_word ~ asp,
         data = mono,
         names = c("non-asp", "asp"),
@@ -300,20 +301,20 @@ Thus, the difference in the mean duration of modal voicing can't be attributed t
 
 \subsection{Stops}
 
-<<bi-stop-dens,fig=T>>=
-di_stop_asp <- di_stop$norm_abs_voic[di_stop$asp == "yes"]
-di_stop_nasp <- di_stop$norm_abs_voic[di_stop$asp == "no"]
+<<bi-stop-dens>>=
+di_stop_asp <- di_stop$norm_vowel[di_stop$asp == "yes"]
+di_stop_nasp <- di_stop$norm_vowel[di_stop$asp == "no"]
 
-norm_abs_voic_asp_density <- density(di_stop_asp)
-norm_abs_voic_nasp_density <- density(di_stop_nasp)
+norm_vowel_asp_density <- density(di_stop_asp, na.rm = TRUE)
+norm_vowel_nasp_density <- density(di_stop_nasp, na.rm = TRUE)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -322,8 +323,8 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
 <<>>=
@@ -331,8 +332,8 @@ shapiro.test(di_stop_asp)
 shapiro.test(di_stop_nasp)
 @
 
-<<bi-stop-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<bi-stop-box>>=
+boxplot(norm_vowel ~ asp,
         data = di_stop,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -341,7 +342,7 @@ boxplot(norm_abs_voic ~ asp,
 @
 
 <<>>=
-wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
+wilcox.test(norm_vowel ~ asp, data = mono_stop)
 @
 
 \subsection{Nasals}
@@ -350,20 +351,20 @@ wilcox.test(norm_abs_voic ~ asp, data = mono_stop)
 di_nas <- subset(bi, manner == "nasal")
 @
 
-<<bi-nas-dens,fig=T>>=
-di_nas_asp <- di_nas$norm_abs_voic[di_nas$asp == "yes"]
-di_nas_nasp <- di_nas$norm_abs_voic[di_nas$asp == "no"]
+<<bi-nas-dens>>=
+di_nas_asp <- di_nas$norm_vowel[di_nas$asp == "yes"]
+di_nas_nasp <- di_nas$norm_vowel[di_nas$asp == "no"]
 
-norm_abs_voic_asp_density <- density(di_nas_asp)
-norm_abs_voic_nasp_density <- density(di_nas_nasp)
+norm_vowel_asp_density <- density(di_nas_asp)
+norm_vowel_nasp_density <- density(di_nas_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -372,12 +373,12 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
-<<bi-nas-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<bi-nas-box>>=
+boxplot(norm_vowel ~ asp,
         data = di_nas,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -388,7 +389,7 @@ boxplot(norm_abs_voic ~ asp,
 <<>>=
 shapiro.test(di_nas_asp)
 shapiro.test(di_nas_nasp)
-wilcox.test(norm_abs_voic ~ asp, data = di_nas)
+wilcox.test(norm_vowel ~ asp, data = di_nas)
 @
 
 \subsection{Laterals}
@@ -397,20 +398,20 @@ wilcox.test(norm_abs_voic ~ asp, data = di_nas)
 di_lat <- subset(bi, manner == "lateral")
 @
 
-<<bi-lat-dens,fig=T>>=
-di_lat_asp <- di_lat$norm_abs_voic[di_lat$asp == "yes"]
-di_lat_nasp <- di_lat$norm_abs_voic[di_lat$asp == "no"]
+<<bi-lat-dens>>=
+di_lat_asp <- di_lat$norm_vowel[di_lat$asp == "yes"]
+di_lat_nasp <- di_lat$norm_vowel[di_lat$asp == "no"]
 
-norm_abs_voic_asp_density <- density(di_lat_asp)
-norm_abs_voic_nasp_density <- density(di_lat_nasp)
+norm_vowel_asp_density <- density(di_lat_asp)
+norm_vowel_nasp_density <- density(di_lat_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -419,12 +420,12 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
-<<bi-lat-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<bi-lat-box>>=
+boxplot(norm_vowel ~ asp,
         data = di_lat,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -435,7 +436,7 @@ boxplot(norm_abs_voic ~ asp,
 <<>>=
 shapiro.test(di_lat_asp)
 shapiro.test(di_lat_nasp)
-wilcox.test(norm_abs_voic ~ asp, data = di_lat)
+wilcox.test(norm_vowel ~ asp, data = di_lat)
 @
 
 \subsection{Rhotics}
@@ -444,20 +445,20 @@ wilcox.test(norm_abs_voic ~ asp, data = di_lat)
 di_rho <- subset(bi, manner == "rhotic")
 @
 
-<<bi-rho-dens,fig=T>>=
-di_rho_asp <- di_rho$norm_abs_voic[di_rho$asp == "yes"]
-di_rho_nasp <- di_rho$norm_abs_voic[di_rho$asp == "no"]
+<<bi-rho-dens>>=
+di_rho_asp <- di_rho$norm_vowel[di_rho$asp == "yes"]
+di_rho_nasp <- di_rho$norm_vowel[di_rho$asp == "no"]
 
-norm_abs_voic_asp_density <- density(di_rho_asp)
-norm_abs_voic_nasp_density <- density(di_rho_nasp)
+norm_vowel_asp_density <- density(di_rho_asp)
+norm_vowel_nasp_density <- density(di_rho_nasp)
 
-norm_abs_voic_density_x <- c(norm_abs_voic_asp_density$x, 
-                                  norm_abs_voic_nasp_density$x)
-norm_abs_voic_density_y <- c(norm_abs_voic_asp_density$y, 
-                                  norm_abs_voic_nasp_density$y)
+norm_vowel_density_x <- c(norm_vowel_asp_density$x, 
+                                  norm_vowel_nasp_density$x)
+norm_vowel_density_y <- c(norm_vowel_asp_density$y, 
+                                  norm_vowel_nasp_density$y)
 
-x.limits <- range(norm_abs_voic_density_x)
-y.limits <- range(norm_abs_voic_density_y)
+x.limits <- range(norm_vowel_density_x)
+y.limits <- range(norm_vowel_density_y)
 
 plot(
 c(), c(),
@@ -466,12 +467,12 @@ ylim = y.limits,
 xlab = "duration (s)", ylab = "density"
 )
 
-lines(norm_abs_voic_asp_density, lw = 1, col = "blue")
-lines(norm_abs_voic_nasp_density, lw = 1, col = "red")
+lines(norm_vowel_asp_density, lw = 1, col = "blue")
+lines(norm_vowel_nasp_density, lw = 1, col = "red")
 @
 
-<<bi-rho-box,fig=T>>=
-boxplot(norm_abs_voic ~ asp,
+<<bi-rho-box>>=
+boxplot(norm_vowel ~ asp,
         data = di_rho,
         names = c("non-asp", "asp"),
         ylab = "duration (s)",
@@ -482,12 +483,12 @@ boxplot(norm_abs_voic ~ asp,
 <<>>=
 shapiro.test(di_rho_asp)
 shapiro.test(di_rho_nasp)
-t.test(norm_abs_voic ~ asp, data = di_rho)
+t.test(norm_vowel ~ asp, data = di_rho)
 @
 
 As with monosyllabic words, we should check if the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
 
-<<bi-box,fig=T>>=
+<<bi-box>>=
 boxplot(dur_word ~ asp, data = bi)
 @
 
@@ -503,7 +504,7 @@ wilcox.test(dur_word ~ asp, data = bi)
 According to a Wilcoxon-test, the duration of bisyllabic words is affected by the presence vs. absence of preaspiration.
 
 
-<<results-box,fig=T>>=
+<<results-box>>=
 boxplot(dur_word ~ asp, data = results)
 @
 
@@ -518,10 +519,10 @@ wilcox.test(dur_word ~ asp, data = results)
 
 \section{VOR}
 <<>>=
-boxplot(v_to_rel ~ asp, data = results)
-shapiro.test(results$v_to_rel[results$asp == "yes"])
-shapiro.test(results$v_to_rel[results$asp == "no"])
-t.test(v_to_rel ~ asp, data = results)
+boxplot(vor ~ asp, data = results)
+shapiro.test(results$vor[results$asp == "yes"])
+shapiro.test(results$vor[results$asp == "no"])
+t.test(vor ~ asp, data = results)
 @
 
 \section{Closure}
