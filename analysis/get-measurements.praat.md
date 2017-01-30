@@ -1,6 +1,6 @@
 # Get measurements (Praat script)
 
-The script has the following componens: a header, preparation code, and a main loop.
+The script has the following components: a header, preparation code, and a main loop.
 
 ## get-measurements.praat
 ```praat
@@ -195,7 +195,7 @@ norm_clos = dur_clos / vor
 ## "header"
 ```praat
 ######################################
-# get_measurements.praat v0.1.0
+# get-measurements.praat v1.0.0
 ######################################
 # This script reads the TextGrid files in the specified folder and it extracts several measures from them.
 ######################################
