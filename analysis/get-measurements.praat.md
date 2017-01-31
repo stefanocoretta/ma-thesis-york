@@ -1,4 +1,8 @@
-# Get measurements (Praat script)
+---
+title: Get measurements (Praat script)
+author: Stefano Coretta
+date: \today
+---
 
 The script has the following components: a header, preparation code, and a main loop.
 
@@ -61,9 +65,7 @@ for file to files_no
 endfor
 ```
 
-The following chunk defines the code that loops through each word in the `word` tier.
-The variable `int_word` contains the numeric index of the current interval on the word tier.
-The loop calculates the following:
+The following chunk defines the code that loops through each word in the `word` tier. The variable `int_word` contains the numeric index of the current interval on the word tier. The loop calculates the following:
 
 1. duration of voicing
 1. duration of the glottal spreading, nasal, lateral, or rhotic gesture
@@ -103,11 +105,7 @@ for int_word to intervals_no
 endfor
 ```
 
-Get index and label of interval on voic.
-If the interval on voic it's non-empty, get begin and end, and calculate duration.
-Otherwise, get index of the next interval (`int_voic + 1`) on voic tier.
-If the first interval on voic is empty, then the next will always be non-empty.
-We can just get begin and end, and calculate duration.
+If the first interval on the `voic` tier is empty, then the next will always be non-empty.
 
 ## "voicing"
 ```praat
@@ -125,9 +123,7 @@ else
 endif
 ```
 
-Get interval index and label on the mann tier at time = end - 0.00001 of the interval on the voic tier.
-If the interval is non-empty, get begin and end, and calculate duration.
-If it's empty, record nulls.
+Since an interval on the `mann` tier will always be exactly below the end of the voicing interval, we can get the index of the `mann` interval with `end_voic - 0.00001` (`-0.00001` is needed since we would get the index of the following interval instead).
 
 ## "manner"
 ```praat
@@ -144,10 +140,7 @@ else
 endif
 ```
 
-Get nearest boundary on tier rels to the end of the word.
-If the release is withing the words boundaries, calculate VOR, VOFFR and MOR and string$ them.
-Otherwise, set them to `undefined`.
-Calculate vowel duration (voice onset to manner onset).
+In those cases where there was no clear release, we check that the current release time is between the beginning and the end of the current word.
 
 ## "release"
 ```praat
@@ -197,7 +190,8 @@ norm_clos = dur_clos / vor
 ######################################
 # get-measurements.praat v1.0.0
 ######################################
-# This script reads the TextGrid files in the specified folder and it extracts several measures from them.
+# This script reads the TextGrid files in the specified folder and it extracts
+# several measures from them.
 ######################################
 # MIT License
 #
