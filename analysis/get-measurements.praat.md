@@ -13,8 +13,7 @@ The script has the following components: a header, preparation code, and a main 
 <<<main loop>>>
 ```
 
-Now we can create a list of the TextGrid files and create the result file.
-The extension `_no` in variable names means `_number`.
+We first need to create a list of the TextGrid files and initialise the result file. The extension `_no` in variable names means `_number`.
 
 ## "strings"
 ```praat
@@ -25,9 +24,7 @@ Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
 ```
 
-We prepare the header of the result file and append it to it.
-The result file is created in the same folder where the script is.
-Finally, let's give the indexes of each tier.
+We prepare the header of the result file and append it to it. The result file is saved in `results/`. Finally, let's save the indexes of each tier for easier referencing.
 
 ## "results header"
 ```praat
@@ -44,8 +41,7 @@ mann = 4
 rels = 5
 ```
 
-First, we need to get the number of intervals from the second tier.
-
+In the main loop, the script loops through every TextGrid file and for each file it extracts the relevant measurements.
 
 ## "main loop"
 ```praat
@@ -65,12 +61,16 @@ for file to files_no
 endfor
 ```
 
-Than we can loop through those and check which are non-empty.
-The variable `int_word` contains the index (numeric) of the current interval on the word tier.
-If they are non-empty get label, beginning and end, and calculate the duration.
-Write output.
-If the label on the mann tier is empty, then input empty data.
-If the release time is not within the time boundaries of the word, input empty data.
+The following chunk defines the code that loops through each word in the `word` tier.
+The variable `int_word` contains the numeric index of the current interval on the word tier.
+The loop calculates the following:
+
+1. duration of voicing
+1. duration of the glottal spreading, nasal, lateral, or rhotic gesture
+1. time of release
+1. ratio durations as proporsions of the Voice Onset to Release (VOR)
+
+and it appends the results to the result file.
 
 ## "words loop"
 ```praat
