@@ -1,0 +1,32 @@
+---
+title: "Linear mixed effect model"
+author: "Stefano Coretta"
+date: "22/02/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+opts_knit$set(root.dir=normalizePath('../'))
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(lme4)
+library(effects)
+library(knitr)
+```
+
+```{r data}
+words <- read_csv("task/task-src/words.csv")
+
+icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
+    left_join(y = words) %>%
+    mutate_if(is.character, as.factor)
+```
+
+```{r}
+model <- lmer(dur_vowel ~ aspiration + place + manner + syllables + vowel +
+                  (1|speaker) + (1|word), data = icelandic
+              )
+```
+
