@@ -13,6 +13,7 @@ library(dplyr)
 library(tidyr)
 library(lme4)
 library(effects)
+library(afex)
 library(knitr)
 ```
 
@@ -25,8 +26,27 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
 ```
 
 ```{r}
-model <- lmer(dur_vowel ~ aspiration + place + manner + syllables + vowel +
-                  (1|speaker) + (1|word), data = icelandic
+model1 <- lmer(dur_vowel ~ aspiration + vor + (1|speaker) + (1|word),
+              data = icelandic
               )
+
+summary(model1)
+plot(allEffects(model1))
 ```
 
+```{r}
+mixed(dur_vowel ~ aspiration + place + manner + syllables + vowel +
+                  cons1 + vor + (1|speaker) + (1|word),
+              data = icelandic)
+```
+
+
+```{r}
+model2 <- lmer(dur_voic ~ aspiration + place + manner + syllables + vowel +
+                  cons1 + vor + (1|speaker) + (1|word),
+              data = icelandic
+              )
+
+summary(model2)
+plot(allEffects(model2))
+```
