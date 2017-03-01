@@ -25,7 +25,7 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     mutate_if(is.character, as.factor)
 ```
 
-```{r}
+```{r lmer}
 model1 <- lmer(dur_vowel ~ aspiration + vor + (1|speaker) + (1|word),
               data = icelandic
               )
@@ -34,14 +34,14 @@ summary(model1)
 plot(allEffects(model1))
 ```
 
-```{r}
+```{r mixed-all}
 mixed(dur_vowel ~ aspiration + place + manner + syllables + vowel +
                   cons1 + vor + (1|speaker) + (1|word),
               data = icelandic)
 ```
 
 
-```{r}
+```{r }
 model2 <- lmer(dur_voic ~ aspiration + place + manner + syllables + vowel +
                   cons1 + vor + (1|speaker) + (1|word),
               data = icelandic
@@ -50,3 +50,28 @@ model2 <- lmer(dur_voic ~ aspiration + place + manner + syllables + vowel +
 summary(model2)
 plot(allEffects(model2))
 ```
+
+## Stops
+
+```{r lmer-stops}
+icelandic.stops <- filter(icelandic, manner == "stop")
+model.stops <-  lmer(dur_vowel ~ aspiration + vor + (1 + aspiration|speaker) + (1|word),
+                     data = icelandic.stops, REML = FALSE
+                     )
+
+summary(model.stops)
+plot(allEffects(model.stops))
+```
+
+```{r mixed-stops}
+mixed(dur_vowel ~ aspiration + vor + (1 + aspiration|speaker) + (1|word),
+              data = icelandic.stops)
+```
+
+```{r likelihood-stops}
+model.stops.null <- lmer(dur_vowel + vor ~ (1|speaker) + (1|word),
+              data = icelandic.stops, REML = FALSE)
+
+anova(model.stops.null, model.stops)
+```
+
