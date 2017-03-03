@@ -15,6 +15,8 @@ library(lme4)
 library(effects)
 library(afex)
 library(knitr)
+library(ggplot2)
+library(car)
 ```
 
 ```{r data}
@@ -53,9 +55,50 @@ plot(allEffects(model2))
 
 ## Stops
 
-```{r lmer-stops}
+```{r stops}
 icelandic.stops <- filter(icelandic, manner == "stop")
-model.stops <-  lmer(dur_vowel ~ aspiration + vor + (1 + aspiration|speaker) + (1|word),
+```
+
+```{r lmer-stops-vor}
+model.stops.vor <-  lmer(vor ~ aspiration + syllables +
+                              (1 + aspiration|speaker) + (1|word),
+                     data = icelandic.stops, REML = FALSE
+                     )
+
+summary(model.stops.vor)
+plot(allEffects(model.stops.vor))
+```
+
+```{r lmer-geminate}
+model.geminate <-  lmer(dur_vowel ~ dur_geminate + dur_word + aspiration +
+                         (1|speaker) + (1|word),
+                     data = icelandic.stops, REML = FALSE
+                     )
+
+summary(model.geminate)
+plot(allEffects(model.geminate))
+
+model.vowels.geminates <- lm(cbind(dur_vowel, dur_geminate) ~ dur_word,
+                             data = icelandic.stops
+                             )
+
+summary(Anova(model.vowels.geminates))
+```
+
+```{r lmer-geminate-duration}
+model.geminate.duration <-  lmer(dur_geminate ~ aspiration + vor +
+                         (1|speaker) + (1|word),
+                     data = icelandic.stops, REML = FALSE
+                     )
+
+summary(model.geminate.duration)
+plot(allEffects(model.geminate.duration))
+```
+
+
+```{r lmer-stops}
+model.stops <-  lmer(dur_vowel ~ aspiration + vor +
+                         (1 + aspiration|speaker) + (1|word),
                      data = icelandic.stops, REML = FALSE
                      )
 
@@ -75,3 +118,58 @@ model.stops.null <- lmer(dur_vowel + vor ~ (1|speaker) + (1|word),
 anova(model.stops.null, model.stops)
 ```
 
+# Nasals
+
+```{r nasals}
+icelandic.nasals <- filter(icelandic, manner == "nasal") %>%
+    droplevels()
+```
+
+```{r lmer-nasals-vor}
+model.nasals.vor <-  lmer(vor ~ aspiration + syllables +
+                              (1 + aspiration|speaker) + (1|word),
+                     data = icelandic.nasals, REML = FALSE
+                     )
+
+summary(model.nasals.vor)
+plot(allEffects(model.nasals.vor))
+```
+
+```{r lmer-nasals-closure}
+model.nasals.closure <-  lmer(dur_clos ~ aspiration + syllables +
+                              (1 + aspiration|speaker) + (1|word),
+                     data = icelandic.nasals, REML = FALSE
+                     )
+
+summary(model.nasals.closure)
+plot(allEffects(model.nasals.closure))
+```
+
+```{r plot-nasals-vowels}
+ggplot(icelandic.nasals, aes(dur_vowel, dur_mann, colour = syllables)) +
+    facet_grid(. ~ speaker) +
+    geom_point()
+```
+
+```{r lmer-nasals-vowels}
+model.vowels.nasals <- lmer(dur_vowel ~ dur_mann + vor + syllables +
+                          (1|speaker) +
+                          (1|word),
+                     data = icelandic.nasals, REML = FALSE
+                     )
+
+summary(model.vowels.nasals)
+
+plot(allEffects(model.vowels.nasals))
+```
+
+```{r lmer-nasals}
+model.nasals <-  lmer(dur_vowel ~ aspiration + vor + syllables +
+                          (1 + aspiration|speaker) +
+                          (1|word),
+                     data = icelandic.nasals, REML = FALSE
+                     )
+
+summary(model.nasals)
+plot(allEffects(model.nasals))
+```
