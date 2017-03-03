@@ -6,6 +6,7 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
 opts_knit$set(root.dir=normalizePath('../'))
 knitr::opts_chunk$set(echo = TRUE)
 library(readr)
@@ -14,7 +15,6 @@ library(tidyr)
 library(lme4)
 library(effects)
 library(afex)
-library(knitr)
 library(ggplot2)
 library(car)
 ```
@@ -26,6 +26,8 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     left_join(y = words) %>%
     mutate_if(is.character, as.factor)
 ```
+
+# Duration of vowels vs. aspiration
 
 ```{r lmer}
 model1 <- lmer(dur_vowel ~ aspiration + vor + (1|speaker) + (1|word),
@@ -43,7 +45,7 @@ mixed(dur_vowel ~ aspiration + place + manner + syllables + vowel +
 ```
 
 
-```{r }
+```{r lmer2}
 model2 <- lmer(dur_voic ~ aspiration + place + manner + syllables + vowel +
                   cons1 + vor + (1|speaker) + (1|word),
               data = icelandic
@@ -53,14 +55,14 @@ summary(model2)
 plot(allEffects(model2))
 ```
 
-## Stops
+# Stops
 
 ```{r stops}
 icelandic.stops <- filter(icelandic, manner == "stop")
 ```
 
 ```{r lmer-stops-word}
-model.stops.words <-  lmer(dur_word ~ aspiration + syllables +
+model.stops.words <- lmer(dur_word ~ aspiration + syllables +
                               (1 + aspiration|speaker) + (1|word),
                      data = icelandic.stops, REML = FALSE
                      )
@@ -68,7 +70,6 @@ model.stops.words <-  lmer(dur_word ~ aspiration + syllables +
 summary(model.stops.words)
 plot(allEffects(model.stops.words))
 ```
-
 
 ```{r lmer-stops-vor}
 model.stops.vor <-  lmer(vor ~ aspiration + syllables +
@@ -184,3 +185,29 @@ model.nasals <-  lmer(dur_vowel ~ aspiration + vor + syllables +
 summary(model.nasals)
 plot(allEffects(model.nasals))
 ```
+
+# Voicing duration and spreading duration
+
+```{r spread}
+icelandic.aspirated.stops <- filter(icelandic, manner == "stop",
+                                    aspiration == "yes"
+                                    )
+```
+
+```{r lmer-spread}
+model.aspirated <- lmer(dur_voic ~ spread + syllables + vor + vowel +
+                            (1|speaker) + (1|word),
+                        data = icelandic.aspirated.stops
+                        )
+
+summary(model.aspirated)
+plot(allEffects(model.aspirated))
+```
+
+```{r mixed-spread}
+mixed(dur_voic ~ spread + syllables + vor + vowel +
+                            (1|speaker) + (1|word),
+                        data = icelandic.aspirated.stops
+                        )
+```
+
