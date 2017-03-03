@@ -59,6 +59,17 @@ plot(allEffects(model2))
 icelandic.stops <- filter(icelandic, manner == "stop")
 ```
 
+```{r lmer-stops-word}
+model.stops.words <-  lmer(dur_word ~ aspiration + syllables +
+                              (1 + aspiration|speaker) + (1|word),
+                     data = icelandic.stops, REML = FALSE
+                     )
+
+summary(model.stops.words)
+plot(allEffects(model.stops.words))
+```
+
+
 ```{r lmer-stops-vor}
 model.stops.vor <-  lmer(vor ~ aspiration + syllables +
                               (1 + aspiration|speaker) + (1|word),
