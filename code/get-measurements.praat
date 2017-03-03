@@ -1,7 +1,8 @@
 ######################################
-# get_measurements.praat v0.1.0
+# get-measurements.praat v1.0.0
 ######################################
-# This script reads the TextGrid files in the specified folder and it extracts several measures from them.
+# This script reads the TextGrid files in the specified folder and it extracts
+# several measures from them.
 ######################################
 # MIT License
 #
@@ -24,23 +25,19 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+######################################
 
 textgrid_directory$ = "../data/derived"
-result_file$ = "results.csv"
+result_file$ = "../results/results.csv"
 
 Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
 
-if fileReadable (result_file$)
-	pause The file 'result_file$' already exists! Do you want to overwrite it?
-	filedelete 'result_file$'
-endif
-
 header$ =
-..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,voffr,
-    ...mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
-appendFileLine: result_file$, header$
+    ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
+    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,
+    ...voffr,mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
+writeFileLine: result_file$, header$
 
 sent = 1
 word = 2

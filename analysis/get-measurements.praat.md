@@ -36,7 +36,7 @@ header$ =
     ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
     ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,
     ...voffr,mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
-appendFileLine: result_file$, header$
+writeFileLine: result_file$, header$
 
 sent = 1
 word = 2
