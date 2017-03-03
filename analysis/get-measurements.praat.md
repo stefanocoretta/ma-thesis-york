@@ -6,7 +6,7 @@ date: \today
 
 The script has the following components: a header, preparation code, and a main loop.
 
-## get-measurements.praat
+## ../code/get-measurements.praat
 ```praat
 <<<header>>>
 
