@@ -81,7 +81,7 @@ plot(allEffects(model.stops.vor))
 ```
 
 ```{r lmer-geminate}
-model.geminate <-  lmer(dur_vowel ~ dur_geminate + dur_word + aspiration +
+model.geminate <-  lmer(dur_vowel ~ dur_geminate*aspiration*syllables + dur_word +
                          (1|speaker) + (1|word),
                      data = icelandic.stops, REML = FALSE
                      )
