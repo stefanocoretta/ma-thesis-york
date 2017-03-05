@@ -255,13 +255,53 @@ mixed(voicing.dur ~ spreading.dur + syllables + vor + vowel +
 # Proportions
 
 ```{r proportions}
-icelandic %>%
+stops.proportions1 <- icelandic %>%
+    filter(manner == "stop", aspiration == "yes") %>%
+    group_by(aspiration) %>%
+    summarise(total = mean(vowel.dur, na.rm = TRUE) + mean(spreading.dur, na.rm = TRUE) +
+                  mean(closure.dur, na.rm = TRUE),
+              vowel = mean(vowel.dur, na.rm = TRUE) / total,
+              spreading = mean(spreading.dur, na.rm = TRUE) / total,
+              closure = mean(closure.dur, na.rm = TRUE) / total
+              ) %>%
+    gather(segment, duration, vowel:closure) %>%
+    mutate(segment = factor(segment, c("closure","spreading","vowel")))
+
+stops.proportions2 <- icelandic %>%
+    filter(manner == "stop", aspiration == "no") %>%
+    group_by(aspiration) %>%
+    summarise(total = mean(vowel.dur, na.rm = TRUE) +
+                  mean(closure.dur, na.rm = TRUE),
+              vowel = mean(vowel.dur, na.rm = TRUE) / total,
+              closure = mean(closure.dur, na.rm = TRUE) / total
+              ) %>%
+    gather(segment, duration, vowel:closure) %>%
+    mutate(segment = factor(segment, c("closure","vowel")))
+
+stops.proportions <- rbind(stops.proportions1, stops.proportions2)
+
+sonorants.proportions <- icelandic %>%
+    filter(manner %in% c("lateral", "nasal", "rhotic")) %>%
     group_by(manner, aspiration) %>%
     summarise(total = mean(vowel.dur) + mean(sonorant.dur) +
                   mean(closure.dur),
               vowel = mean(vowel.dur) / total,
               c1 = mean(sonorant.dur) / total,
               c2 = mean(closure.dur) / total
-              )
+              ) %>%
+    gather(segment, duration, vowel:c2) %>%
+    mutate(segment = factor(segment, c("c2","c1","vowel"))) %>%
+    unite(type, manner, aspiration)
 ```
 
+```{r}
+ggplot(sonorants.proportions, aes(type, duration, fill = segment)) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    guides(fill = guide_legend(reverse = TRUE))
+
+ggplot(stops.proportions, aes(aspiration, duration, fill = segment)) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    guides(fill = guide_legend(reverse = TRUE))
+```
