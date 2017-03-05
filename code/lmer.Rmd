@@ -23,14 +23,15 @@ library(car)
 words <- read_csv("task/task-src/words.csv")
 
 icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
-    left_join(y = words) %>%
+    right_join(y = words) %>%
+    mutate(syllables = factor(syllables, c("mono","di"))) %>%
     mutate_if(is.character, as.factor)
 ```
 
 # Duration of vowels vs. aspiration
 
 ```{r lmer}
-model1 <- lmer(dur_vowel ~ aspiration + vor + (1|speaker) + (1|word),
+model1 <- lmer(vowel.dur ~ aspiration + vor + (1|speaker) + (1|word),
               data = icelandic
               )
 
@@ -39,14 +40,14 @@ plot(allEffects(model1))
 ```
 
 ```{r mixed-all}
-mixed(dur_vowel ~ aspiration + place + manner + syllables + vowel +
+mixed(vowel.dur ~ aspiration + place + manner + syllables + vowel +
                   cons1 + vor + (1|speaker) + (1|word),
               data = icelandic)
 ```
 
 
 ```{r lmer2}
-model2 <- lmer(dur_voic ~ aspiration + place + manner + syllables + vowel +
+model2 <- lmer(voicing.dur ~ aspiration + place + manner + syllables + vowel +
                   cons1 + vor + (1|speaker) + (1|word),
               data = icelandic
               )
@@ -58,49 +59,89 @@ plot(allEffects(model2))
 # Stops
 
 ```{r stops}
-icelandic.stops <- filter(icelandic, manner == "stop")
+stops <- filter(icelandic, manner == "stop")
 ```
 
-```{r lmer-stops-word}
-model.stops.words <- lmer(dur_word ~ aspiration + syllables +
-                              (1 + aspiration|speaker) + (1|word),
-                     data = icelandic.stops, REML = FALSE
+```{r stops-word-dur}
+model.stops.words <- lmer(word.dur ~ aspiration +
+                              syllables +
+                              (1 + aspiration|speaker) +
+                              (1|word),
+                     data = stops,
+                     REML = FALSE
                      )
 
 summary(model.stops.words)
 plot(allEffects(model.stops.words))
+
+mixed(word.dur ~ aspiration +
+          syllables +
+          (1 + aspiration|speaker) +
+          (1|word),
+      data = stops,
+      REML = FALSE
+      )
 ```
 
-```{r lmer-stops-vor}
-model.stops.vor <-  lmer(vor ~ aspiration + syllables +
-                              (1 + aspiration|speaker) + (1|word),
-                     data = icelandic.stops, REML = FALSE
+```{r stops-vor}
+model.stops.vor <-  lmer(vor ~ aspiration *
+                             syllables +
+                             (1 + aspiration|speaker) +
+                             (1|word),
+                     data = stops,
+                     REML = FALSE
                      )
 
 summary(model.stops.vor)
 plot(allEffects(model.stops.vor))
+
+mixed(
+    vor ~ aspiration *
+    syllables +
+    (1 + aspiration | speaker) +
+    (1 | word),
+    data = stops,
+    REML = FALSE
+    )
 ```
 
+```{r lmer-vor-closure}
+model.vor.closure <- lmer(vor ~ closure.dur +
+                              syllables +
+                              (1|speaker) +
+                              (1|word),
+                          data = stops,
+                          REML = FALSE
+                              )
+
+summary(model.vor.closure)
+plot(allEffects(model.vor.closure))
+```
+
+
 ```{r lmer-geminate}
-model.geminate <-  lmer(dur_vowel ~ dur_geminate*aspiration*syllables + dur_word +
-                         (1|speaker) + (1|word),
-                     data = icelandic.stops, REML = FALSE
-                     )
+model.geminate <-  lmer(vowel.dur ~ closure.dur*aspiration*syllables +
+                            word.dur +
+                            (1|speaker) +
+                            (1|word),
+                        data = stops, REML = FALSE
+                        )
 
 summary(model.geminate)
 plot(allEffects(model.geminate))
 
-model.vowels.geminates <- lm(cbind(dur_vowel, dur_geminate) ~ dur_word,
-                             data = icelandic.stops
-                             )
-
-summary(Anova(model.vowels.geminates))
+mixed(vowel.dur ~ closure.dur*aspiration*syllables +
+                            word.dur +
+                            (1|speaker) +
+                            (1|word),
+                        data = stops, REML = FALSE
+      )
 ```
 
 ```{r lmer-geminate-duration}
-model.geminate.duration <-  lmer(dur_geminate ~ aspiration + vor +
+model.geminate.duration <-  lmer(cluster.dur ~ aspiration + vor +
                          (1|speaker) + (1|word),
-                     data = icelandic.stops, REML = FALSE
+                     data = stops, REML = FALSE
                      )
 
 summary(model.geminate.duration)
@@ -109,9 +150,9 @@ plot(allEffects(model.geminate.duration))
 
 
 ```{r lmer-stops}
-model.stops <-  lmer(dur_vowel ~ aspiration + vor +
+model.stops <-  lmer(vowel.dur ~ aspiration + vor +
                          (1 + aspiration|speaker) + (1|word),
-                     data = icelandic.stops, REML = FALSE
+                     data = stops, REML = FALSE
                      )
 
 summary(model.stops)
@@ -119,13 +160,13 @@ plot(allEffects(model.stops))
 ```
 
 ```{r mixed-stops}
-mixed(dur_vowel ~ aspiration + vor + (1 + aspiration|speaker) + (1|word),
-              data = icelandic.stops)
+mixed(vowel.dur ~ aspiration + vor + (1 + aspiration|speaker) + (1|word),
+              data = stops)
 ```
 
 ```{r likelihood-stops}
-model.stops.null <- lmer(dur_vowel + vor ~ (1|speaker) + (1|word),
-              data = icelandic.stops, REML = FALSE)
+model.stops.null <- lmer(vowel.dur + vor ~ (1|speaker) + (1|word),
+              data = stops, REML = FALSE)
 
 anova(model.stops.null, model.stops)
 ```
@@ -148,7 +189,7 @@ plot(allEffects(model.nasals.vor))
 ```
 
 ```{r lmer-nasals-closure}
-model.nasals.closure <-  lmer(dur_clos ~ aspiration + syllables +
+model.nasals.closure <-  lmer(closure.dur ~ aspiration + syllables +
                               (1 + aspiration|speaker) + (1|word),
                      data = icelandic.nasals, REML = FALSE
                      )
@@ -158,13 +199,13 @@ plot(allEffects(model.nasals.closure))
 ```
 
 ```{r plot-nasals-vowels}
-ggplot(icelandic.nasals, aes(dur_vowel, dur_mann, colour = syllables)) +
+ggplot(icelandic.nasals, aes(vowel.dur, dur_mann, colour = syllables)) +
     facet_grid(. ~ speaker) +
     geom_point()
 ```
 
 ```{r lmer-nasals-vowels}
-model.vowels.nasals <- lmer(dur_vowel ~ dur_mann + vor + syllables +
+model.vowels.nasals <- lmer(vowel.dur ~ dur_mann + vor + syllables +
                           (1|speaker) +
                           (1|word),
                      data = icelandic.nasals, REML = FALSE
@@ -176,7 +217,7 @@ plot(allEffects(model.vowels.nasals))
 ```
 
 ```{r lmer-nasals}
-model.nasals <-  lmer(dur_vowel ~ aspiration + vor + syllables +
+model.nasals <-  lmer(vowel.dur ~ aspiration + vor + syllables +
                           (1 + aspiration|speaker) +
                           (1|word),
                      data = icelandic.nasals, REML = FALSE
@@ -188,14 +229,14 @@ plot(allEffects(model.nasals))
 
 # Voicing duration and spreading duration
 
-```{r spread}
+```{r spreading.dur}
 icelandic.aspirated.stops <- filter(icelandic, manner == "stop",
                                     aspiration == "yes"
                                     )
 ```
 
-```{r lmer-spread}
-model.aspirated <- lmer(dur_voic ~ spread + syllables + vor + vowel +
+```{r lmer-spreading.dur}
+model.aspirated <- lmer(voicing.dur ~ spreading.dur + syllables + vor + vowel +
                             (1|speaker) + (1|word),
                         data = icelandic.aspirated.stops
                         )
@@ -204,10 +245,23 @@ summary(model.aspirated)
 plot(allEffects(model.aspirated))
 ```
 
-```{r mixed-spread}
-mixed(dur_voic ~ spread + syllables + vor + vowel +
+```{r mixed-spreading.dur}
+mixed(voicing.dur ~ spreading.dur + syllables + vor + vowel +
                             (1|speaker) + (1|word),
                         data = icelandic.aspirated.stops
                         )
+```
+
+# Proportions
+
+```{r proportions}
+icelandic %>%
+    group_by(manner, aspiration) %>%
+    summarise(total = mean(vowel.dur) + mean(sonorant.dur) +
+                  mean(closure.dur),
+              vowel = mean(vowel.dur) / total,
+              c1 = mean(sonorant.dur) / total,
+              c2 = mean(closure.dur) / total
+              )
 ```
 
