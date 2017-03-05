@@ -34,9 +34,8 @@ Create Strings as file list: "list", "'textgrid_directory$'/*.TextGrid"
 files_no = Get number of strings
 
 header$ =
-    ..."speaker,idx,word,beg_word,end_word,dur_word,beg_voic,end_voic,dur_voic,
-    ...beg_mann,end_mann,dur_mann,rels,dur_vowel,dur_geminate,dur_clos,vor,
-    ...voffr,mor,norm_voic,norm_mann,norm_vowel,norm_geminate,norm_clos,spread"
+    ..."speaker,index,word,time,word.dur,voicing.dur,vowel.dur,cluster.dur,
+    ...spreading.dur,sonorant.dur,closure.dur,vor,voffr,mor"
 writeFileLine: result_file$, header$
 
 sent = 1
@@ -122,18 +121,10 @@ for file to files_no
                 dur_vowel = dur_voic
             endif
     
-            norm_voic = dur_voic / vor
-            norm_mann = dur_mann / vor
-            norm_vowel = dur_vowel / vor
-            norm_geminate = dur_geminate / vor
-            norm_clos = dur_clos / vor
-    
             result_line$ =
-            ..."'speaker$','index','lab_word$','begin_word','end_word','dur_word',
-                ...'begin_voic','end_voic','dur_voic','begin_mann','end_mann',
-                ...'dur_mann','time_rels','dur_vowel','dur_geminate','dur_clos',
-                ...'vor','voffr','mor','norm_voic','norm_mann','norm_vowel',
-                ...'norm_geminate','norm_clos','son_spread'"
+            ..."'speaker$','index','lab_word$','begin_word','dur_word',
+                ...'dur_voic','dur_vowel','dur_geminate','son_spread','dur_mann',
+                ...'dur_clos','vor','voffr','mor'"
             appendFileLine: result_file$, result_line$
         endif
     endfor
