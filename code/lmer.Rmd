@@ -16,6 +16,7 @@ library(lme4)
 library(effects)
 library(afex)
 library(ggplot2)
+theme_set(theme_bw())
 library(car)
 ```
 
