@@ -233,26 +233,45 @@ plot(allEffects(model.nasals))
 
 ```{r spreading.dur}
 icelandic.aspirated.stops <- filter(icelandic, manner == "stop",
-                                    aspiration == "yes"
+                                    aspiration == "yes",
+                                    spreading.dur > 25
                                     )
 ```
 
 ```{r lmer-spreading.dur}
-model.aspirated <- lmer(voicing.dur ~ spreading.dur + syllables + vor + vowel +
-                            (1|speaker) + (1|word),
-                        data = icelandic.aspirated.stops
-                        )
+model.aspirated <- lmer(
+    voicing.dur ~
+        spreading.dur +
+        syllables +
+        vor +
+        vowel +
+        (1|speaker) +
+        (1|word),
+    data = icelandic.aspirated.stops
+)
 
 summary(model.aspirated)
 plot(allEffects(model.aspirated))
 ```
 
 ```{r mixed-spreading.dur}
-mixed(voicing.dur ~ spreading.dur + syllables + vor + vowel +
-                            (1|speaker) + (1|word),
-                        data = icelandic.aspirated.stops
-                        )
+mixed(voicing.dur ~
+          spreading.dur +
+          syllables +
+          vor +
+          vowel +
+          (1|speaker) +
+          (1|word),
+      data = icelandic.aspirated.stops
+)
 ```
+
+```{r voicing-spreading-plot}
+ggplot(icelandic.aspirated.stops, aes(spreading.dur, voicing.dur)) +
+    geom_point(shape = 1) +
+    geom_smooth(method = "lm")
+```
+
 
 # Proportions
 
