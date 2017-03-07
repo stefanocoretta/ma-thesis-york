@@ -20,6 +20,8 @@ theme_set(theme_bw())
 library(car)
 ```
 
+# Import data
+
 ```{r data}
 words <- read_csv("task/task-src/words.csv")
 
@@ -30,21 +32,61 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     mutate_if(is.character, as.factor) 
 ```
 
+# Word duration
+
+```{r word-duration}
+word.duration.lmer <- lmer(
+    word.dur ~
+        aspiration +
+        syllables +
+        place +
+        vowel +
+        manner +
+        (1|speaker) +
+        (1|word),
+    data = icelandic
+)
+
+summary(word.duration.lmer)
+plot(allEffects(word.duration.lmer))
+
+mixed(
+    word.dur ~
+        aspiration +
+        syllables +
+        place +
+        vowel +
+        manner +
+        (1|speaker) +
+        (1|word),
+    data = icelandic
+)
+```
+
+
 # Duration of vowels vs. aspiration
 
-```{r lmer}
-model1 <- lmer(vowel.dur ~ aspiration + vor + (1|speaker) + (1|word),
-              data = icelandic
-              )
+```{r vowel-duration}
+model1 <- lmer(
+    vowel.dur ~
+        aspiration + 
+        vor + 
+        (1|speaker) + 
+        (1|word),
+    data = icelandic
+)
 
 summary(model1)
 plot(allEffects(model1))
-```
 
-```{r mixed-all}
-mixed(vowel.dur ~ aspiration + place + manner + syllables + vowel +
-                  cons1 + vor + (1|speaker) + (1|word),
-              data = icelandic)
+mixed(
+    vowel.dur ~
+        aspiration + 
+        vor + 
+        (1|speaker) + 
+        (1|word),
+    data = icelandic
+)
 ```
 
 
@@ -107,6 +149,8 @@ mixed(
     )
 ```
 
+There is a difference in VOR between words with pre-aspirated stops and words with unaspirated stops.
+
 ```{r lmer-vor-closure}
 model.vor.closure <- lmer(vor ~ closure.dur +
                               syllables +
@@ -140,6 +184,9 @@ mixed(vowel.dur ~ closure.dur*aspiration*syllables +
       )
 ```
 
+
+Closure duration, aspiration, number of syllables, and word duration have an effect on vowel duration. Why closure duration and aspiration have both an effect?
+
 ```{r lmer-geminate-duration}
 model.geminate.duration <-  lmer(cluster.dur ~ aspiration + vor +
                          (1|speaker) + (1|word),
@@ -150,6 +197,7 @@ summary(model.geminate.duration)
 plot(allEffects(model.geminate.duration))
 ```
 
+Pre-aspirated stops are longer than unaspirated stops.
 
 ```{r lmer-stops}
 model.stops <-  lmer(vowel.dur ~ aspiration + vor +
@@ -232,7 +280,8 @@ plot(allEffects(model.nasals))
 # Voicing duration and spreading duration
 
 ```{r spreading.dur}
-icelandic.aspirated.stops <- filter(icelandic, manner == "stop",
+icelandic.aspirated.stops <- filter(icelandic,
+                                    manner == "stop",
                                     aspiration == "yes",
                                     spreading.dur > 25
                                     )
@@ -270,6 +319,25 @@ mixed(voicing.dur ~
 ggplot(icelandic.aspirated.stops, aes(spreading.dur, voicing.dur)) +
     geom_point(shape = 1) +
     geom_smooth(method = "lm")
+```
+
+```{r voicing-aspiration}
+voicing.aspiration.lmer <- lmer(
+    voicing.dur ~
+        aspiration +
+        syllables +
+        vowel +
+        vor +
+        (1|speaker) +
+        (1|word),
+    data = stops
+)
+
+summary(voicing.aspiration.lmer)
+```
+
+```{r voicing-aspiration-plot}
+plot(allEffects(voicing.aspiration.lmer))
 ```
 
 
