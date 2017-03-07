@@ -26,7 +26,8 @@ words <- read_csv("task/task-src/words.csv")
 icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     right_join(y = words) %>%
     mutate(syllables = factor(syllables, c("mono","di"))) %>%
-    mutate_if(is.character, as.factor)
+    mutate(vowel = factor(vowel, c("i", "ɪ", "ʏ", "e", "œ", "a", "o", "ei", "ai", "ou"))) %>%
+    mutate_if(is.character, as.factor) 
 ```
 
 # Duration of vowels vs. aspiration
