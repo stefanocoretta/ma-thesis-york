@@ -1,0 +1,59 @@
+cond_no,lex,ph,cons1,vowel,height,cons,manner,place,asp,syl,syl_str,eng,pos,comp,contx
+1,kokk,kʰoʰk,asp,o,mid,ʰk,stop,velar,yes,mono,cvcc,cook,n,c,cc
+2,gogg,kokk,nasp,o,mid,kk,stop,velar,no,mono,cvcc,beak,n,c,cc
+3,dökk,tœʰk,nasp,œ,mid,ʰk,stop,velar,yes,mono,cvcc,dark,adj,c,cc
+4,dögg,tœkk,nasp,œ,mid,kk,stop,velar,no,mono,cvcc,dew,n,c,cc
+5,kopp,kʰoʰp,asp,o,mid,ʰp,stop,labial,yes,mono,cvcc,chamber pot,n,c,cc
+6,kubb,cʰʏpp,asp,ʏ,high,pp,stop,labial,no,mono,cvcc,block of wood,n,c,cc
+7,vítt,viʰt,voi,i,high,ʰt,stop,coronal,yes,mono,cvcc,far and wide,adv,c,cc
+8,vídd,vitt,voi,i,high,tt,stop,coronal,no,mono,cvcc,width,n,c,cc
+9,þítt,θiʰt,vls,i,high,ʰt,stop,coronal,yes,mono,cvcc,thaw,v,c,cc
+10,þíddi,θittɪ,vls,i,high,tt,stop,coronal,no,di,cvccv,thaw,v,c,cc
+11,fætt,faiʰt,vls,ai,diph,ʰt,stop,coronal,yes,mono,cvcc,feed,v,c,cc
+12,fæddi,faittɪ,vls,ai,diph,tt,stop,coronal,no,di,cvccv,feed,v,c,cc
+13,ýtt,iʰt,no,i,high,ʰt,stop,coronal,yes,mono,vcc,push,v,c,cc
+14,ydd,ɪtt,no,ɪ,high,tt,stop,coronal,no,mono,vcc,sharpen,v,c,cc
+15,ótt,ouʰt,no,ou,diph,ʰt,stop,coronal,yes,mono,vvcc,point,n,c,cc
+16,odd,ott,no,o,mid,tt,stop,coronal,no,mono,vcc,fast,adv,c,cc
+19,sets,sets,vls,e,mid,s,stop,coronal,no,mono,cvcc,sediment,n,x,cx
+20,sett,seʰt,vls,e,mid,ʰt,stop,coronal,yes,mono,cvcc,put,v,x,cc
+21,feits,feits,vls,ei,diph,s,stop,coronal,no,mono,cvvcc,fat,adj,x,cx
+22,feitt,feiʰt,vls,ei,diph,ʰt,stop,coronal,yes,mono,cvvcc,fat,adj,x,cc
+23,vots,vots,voi,o,mid,s,stop,coronal,no,mono,cvvcc,wet,adj,x,cx
+24,vott,voʰt,vls,o,mid,ʰt,stop,coronal,yes,mono,cvvcc,wet,adj,x,cc
+25,takka,tʰaʰka,asp,a,low,ʰk,stop,velar,yes,di,cvccv,key,n,c,cc
+26,kagga,kʰakka,asp,a,low,kk,stop,velar,no,di,cvccv,barrel,n,c,cc
+27,detta,teʰta,nasp,e,mid,ʰt,stop,coronal,yes,di,cvccv,fall,v,c,cc
+28,gedda,cetta,nasp,e,mid,tt,stop,coronal,no,di,cvccv,pike,n,c,cc
+29,kamp,kʰam̥p,asp,a,low,m̥,nasal,labial,yes,mono,cvnc,moustache,n,c,cc
+30,kamb,kʰamp,asp,a,low,m,nasal,labial,no,mono,cvnc,comb,n,c,cc
+31,punt,pʰʏn̥t,asp,ʏ,high,n̥,nasal,coronal,yes,mono,cvnc,decoration,n,c,cc
+32,pund,pʰʏnt,asp,ʏ,high,n,nasal,coronal,no,mono,cvnc,pound,n,c,cc
+33,kembt,cʰem̥t,asp,e,mid,m̥,nasal,labial,yes,mono,cvcc,comb,v,c,cc
+34,kembdi,cʰemtɪ,asp,e,mid,m,nasal,labial,no,di,cvccv,comb,v,c,cc
+35,kampa,kʰam̥pa,asp,a,low,m̥,nasal,labial,yes,di,cvncv,moustache,n,c,cc
+36,kamba,kʰampa,asp,a,low,m,nasal,labial,no,di,cvncv,comb,n,c,cc
+37,kempa,cʰem̥pa,asp,e,mid,m̥,nasal,labial,yes,di,cvncv,hero,n,c,cc
+38,kemba,cʰempa,asp,e,mid,m,nasal,labial,no,di,cvncv,comb,v,c,cc
+39,punta,pʰʏn̥ta,asp,ʏ,high,n̥,nasal,coronal,yes,di,cvncv,decoration,n,c,cc
+40,punda,pʰʏnta,asp,ʏ,high,n,nasal,coronal,no,di,cvncv,pound,n,c,cc
+41,vanta,van̥ta,voi,a,low,n̥,nasal,coronal,yes,di,cvccv,want,v,c,cc
+42,vanda,vanta,voi,a,low,n,nasal,coronal,no,di,cvncv,do st carefully,v,c,cc
+43,fínn,fitn̥,vls,i,high,t,stop,coronal,yes,mono,cvcc,smart,adj,x,cx
+44,kinn,cʰɪnn,asp,i,high,nn,geminate,coronal,no,mono,cvcc,cheek,n,x,cx
+45,duld,tʏlt,nasp,ʏ,high,l,lateral,coronal,no,mono,cvlc,complex,adj,c,cc
+46,dult,tʏl̥t,nasp,ʏ,high,l̥,lateral,coronal,yes,mono,cvlc,reticent,adj,c,cc
+47,gelta,cel̥ta,nasp,e,mid,l̥,lateral,coronal,yes,di,cvlcv,bark,v,c,cc
+48,gelda,celta,nasp,e,mid,l,lateral,coronal,no,di,cvlcv,castrate,v,c,cc
+49,orka,or̥ka,no,o,mid,r̥,rhotic,coronal,yes,di,vrcv,energy,n,c,cc
+50,orga,orka,no,o,mid,r,rhotic,coronal,no,di,vrcv,scream,n,c,cc
+51,mjólka,mjoul̥ka,voi,ou,diph,l̥,lateral,coronal,yes,di,ccvvccv,milk,v,c,cc
+52,ólga,oulka,no,ou,diph,l,lateral,coronal,no,di,vlccv,foam,v,c,cc
+53,hefna,hepna,fri,e,mid,p,stop,labial,no,di,cvccv,avenge,v,x,cx
+54,vopna,voʰpna,voi,o,mid,ʰp,stop,labial,yes,di,cvccv,arm,v,x,cx
+55,nafla,napla,voi,a,low,p,stop,labial,no,di,cvccv,navel,n,x,cx
+56,japla,jaʰpla,voi,a,low,ʰp,stop,labial,yes,di,cvccv,munch,v,x,cx
+57,kafli,kʰaplɪ,asp,a,low,p,stop,labial,no,di,cvccv,part,n,x,cx
+58,kapli,kʰaʰplɪ,asp,a,low,ʰp,stop,labial,yes,di,cvccv,cable,n,x,cx
+59,tefla,tʰepla,asp,e,mid,p,stop,labial,no,di,cvccv,play chess,v,x,cx
+60,tipla,tʰɪʰpla,asp,ɪ,high,ʰp,stop,labial,yes,di,cvccv,tiptoe,v,x,cx

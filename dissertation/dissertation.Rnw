@@ -116,8 +116,8 @@ opts_chunk$set(fig.path='img/', fig=TRUE, out.width="0.8\\textwidth", echo=FALSE
 
 <<start, include=FALSE>>=
 library(readr)
-results_raw <- read_csv("./results/results.csv", na = "--undefined--")
-words <- read.csv("task/task-src/words.csv")
+results_raw <- read_csv("./results/results_cache.csv", na = "--undefined--")
+words <- read.csv("task/task-src/words_cache.csv")
 results_all <- merge(results_raw, words, by.x = "word", by.y = "lex")
 results <- subset(results_all, comp == "c")
 results <- droplevels(results)
