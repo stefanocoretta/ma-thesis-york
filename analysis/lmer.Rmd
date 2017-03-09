@@ -379,12 +379,14 @@ sonorants.proportions <- icelandic %>%
     unite(type, manner, aspiration)
 ```
 
-```{r}
+```{r sonorants-proportion-plot}
 ggplot(sonorants.proportions, aes(type, duration, fill = segment)) +
     geom_bar(stat = "identity") +
     coord_flip() +
     guides(fill = guide_legend(reverse = TRUE))
+```
 
+```{r stops-proportions-plot}
 ggplot(stops.proportions, aes(aspiration, duration, fill = segment)) +
     geom_bar(stat = "identity") +
     coord_flip() +
