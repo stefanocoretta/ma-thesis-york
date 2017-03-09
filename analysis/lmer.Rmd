@@ -29,7 +29,12 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     right_join(y = words) %>%
     mutate(syllables = factor(syllables, c("mono","di"))) %>%
     mutate(vowel = factor(vowel, c("i", "ɪ", "ʏ", "e", "œ", "a", "o", "ei", "ai", "ou"))) %>%
-    mutate_if(is.character, as.factor) 
+    mutate_if(is.character, as.factor)
+
+stops <- filter(icelandic, manner == "stop") %>%
+    droplevels()
+icelandic.nasals <- filter(icelandic, manner == "nasal") %>%
+    droplevels()
 ```
 
 # Word duration
@@ -101,10 +106,6 @@ plot(allEffects(model2))
 ```
 
 # Stops
-
-```{r stops}
-stops <- filter(icelandic, manner == "stop")
-```
 
 ```{r stops-word-dur}
 model.stops.words <- lmer(word.dur ~ aspiration +
@@ -222,11 +223,6 @@ anova(model.stops.null, model.stops)
 ```
 
 # Nasals
-
-```{r nasals}
-icelandic.nasals <- filter(icelandic, manner == "nasal") %>%
-    droplevels()
-```
 
 ```{r lmer-nasals-vor}
 model.nasals.vor <-  lmer(vor ~ aspiration + syllables +
