@@ -330,6 +330,17 @@ voicing.aspiration.lmer <- lmer(
 )
 
 summary(voicing.aspiration.lmer)
+
+mixed(
+    voicing.dur ~
+        aspiration +
+        syllables +
+        vowel +
+        vor +
+        (1|speaker) +
+        (1|word),
+    data = stops
+)
 ```
 
 ```{r voicing-aspiration-plot}
