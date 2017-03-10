@@ -33,7 +33,7 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
 
 stops <- filter(icelandic, manner == "stop") %>%
     droplevels()
-icelandic.nasals <- filter(icelandic, manner == "nasal") %>%
+nasals <- filter(icelandic, manner == "nasal") %>%
     droplevels()
 ```
 
@@ -227,7 +227,7 @@ anova(model.stops.null, model.stops)
 ```{r lmer-nasals-vor}
 model.nasals.vor <-  lmer(vor ~ aspiration + syllables +
                               (1 + aspiration|speaker) + (1|word),
-                     data = icelandic.nasals, REML = FALSE
+                     data = nasals, REML = FALSE
                      )
 
 summary(model.nasals.vor)
@@ -237,24 +237,54 @@ plot(allEffects(model.nasals.vor))
 ```{r lmer-nasals-closure}
 model.nasals.closure <-  lmer(closure.dur ~ aspiration + syllables +
                               (1 + aspiration|speaker) + (1|word),
-                     data = icelandic.nasals, REML = FALSE
+                     data = nasals, REML = FALSE
                      )
 
 summary(model.nasals.closure)
 plot(allEffects(model.nasals.closure))
 ```
 
+```{r nasals-duration-lmer}
+model.nasals.duration <-  lmer(
+    sonorant.dur ~
+        aspiration +
+        syllables +
+        vor +
+        (1 + aspiration|speaker) +
+        (1|word),
+    data = nasals, REML = FALSE
+)
+
+summary(model.nasals.duration)
+
+mixed(
+    sonorant.dur ~
+        aspiration +
+        syllables +
+        vor +
+        (1 + aspiration|speaker) +
+        (1|word),
+    data = nasals, REML = FALSE
+)
+```
+
+```{r nasal-duration-plot}
+plot(allEffects(model.nasals.duration))
+```
+
+
 ```{r plot-nasals-vowels}
-ggplot(icelandic.nasals, aes(vowel.dur, dur_mann, colour = syllables)) +
+ggplot(nasals, aes(vowel.dur, sonorant.dur, colour = syllables)) +
     facet_grid(. ~ speaker) +
     geom_point()
 ```
 
 ```{r lmer-nasals-vowels}
-model.vowels.nasals <- lmer(vowel.dur ~ dur_mann + vor + syllables +
+model.vowels.nasals <- lmer(vowel.dur ~ sonorant.dur + vor + syllables +
+                                aspiration +
                           (1|speaker) +
                           (1|word),
-                     data = icelandic.nasals, REML = FALSE
+                     data = nasals, REML = FALSE
                      )
 
 summary(model.vowels.nasals)
@@ -266,7 +296,7 @@ plot(allEffects(model.vowels.nasals))
 model.nasals <-  lmer(vowel.dur ~ aspiration + vor + syllables +
                           (1 + aspiration|speaker) +
                           (1|word),
-                     data = icelandic.nasals, REML = FALSE
+                     data = nasals, REML = FALSE
                      )
 
 summary(model.nasals)
