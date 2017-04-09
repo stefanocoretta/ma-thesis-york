@@ -1,5 +1,5 @@
 ---
-title: "Linear mixed effect model"
+title: "Linear mixed effect models"
 author: "Stefano Coretta"
 date: "22/02/2017"
 output: pdf_document
@@ -72,36 +72,79 @@ mixed(
 # Duration of vowels vs. aspiration
 
 ```{r vowel-duration}
-model1 <- lmer(
+model2 <- lmer(
     vowel.dur ~
-        aspiration + 
-        vor + 
-        (1|speaker) + 
+        aspiration +
+#        place +
+        manner +
+        syllables +
+#        vowel +
+#        cons1 +
+        vor +
+        (1+aspiration|speaker) +
         (1|word),
-    data = icelandic
+    data = icelandic,
+    REML = FALSE
 )
 
-summary(model1)
-plot(allEffects(model1))
+summary(model2)
 
-mixed(
+model2.null <- lmer(
     vowel.dur ~
-        aspiration + 
-        vor + 
-        (1|speaker) + 
+#        aspiration +
+#        place +
+        manner +
+        syllables +
+#        vowel +
+#        cons1 +
+        vor +
+        (1+aspiration|speaker) +
         (1|word),
-    data = icelandic
+    data = icelandic,
+    REML = FALSE
 )
+
+anova(model2.null, model2)
 ```
 
 
 ```{r lmer2}
-model2 <- lmer(voicing.dur ~ aspiration + place + manner + syllables + vowel +
-                  cons1 + vor + (1|speaker) + (1|word),
-              data = icelandic
-              )
+model2 <- lmer(
+    voicing.dur ~
+        aspiration +
+#        place +
+        manner +
+        syllables +
+#        vowel +
+#        cons1 +
+        vor +
+        (1+aspiration|speaker) +
+        (1|word),
+    data = icelandic,
+    REML = FALSE
+)
 
 summary(model2)
+
+model2.null <- lmer(
+    voicing.dur ~
+        aspiration +
+#        place +
+        manner +
+        syllables +
+#        vowel +
+#        cons1 +
+        vor +
+        (1+aspiration|speaker) +
+        (1|word),
+    data = icelandic,
+    REML = FALSE
+)
+
+anova(model2.null, model2)
+```
+
+```{r}
 plot(allEffects(model2))
 ```
 
