@@ -31,7 +31,7 @@ icelandic <- read_csv("results/results.csv", na = "--undefined--") %>%
     mutate(vowel = factor(vowel, c("i", "ɪ", "ʏ", "e", "œ", "a", "o", "ei", "ai", "ou"))) %>%
     mutate_if(is.character, as.factor)
 
-stops <- filter(icelandic, manner == "stop") %>%
+stops <- filter(icelandic, manner == "stop", contx == "cc") %>%
     droplevels()
 nasals <- filter(icelandic, manner == "nasal") %>%
     droplevels()
