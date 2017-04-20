@@ -1,0 +1,166 @@
+---
+title: "Vowel duration and geminate stops in Icelandic"
+author: "Stefano Coretta"
+date: "19/04/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir=normalizePath('../'))
+library(tidyverse)
+theme_set(theme_light())
+library(lme4)
+library(effects)
+```
+
+# Read data
+
+```{r data}
+words <- read_csv("task/task-src/words.csv")
+
+stops <- read_csv(
+    "results/results.csv",
+    na = "--undefined--"
+    ) %>%
+    right_join(y = words) %>%
+    mutate(
+        syllables = factor(syllables, c("mono","di")),
+        vowel = factor(vowel, c("i", "ɪ", "ʏ", "e", "œ", "a", "o", "ei", "ai", "ou")),
+        syl_structure = factor(syl_structure, c("cvcc", "vcc", "cvvcc", "vvcc", "cvccv", "cvvccv"))
+        ) %>%
+    filter(syl_structure %in% c("cvcc", "cvccv")) %>%
+    mutate_if(is.character, as.factor) %>%
+    filter(manner == "stop", contx == "cc") %>%
+    droplevels()
+```
+
+# Exploratory analysis
+
+```{r}
+stops %>%
+    ggplot(aes(word)) + geom_bar()
+```
+
+```{r}
+stops %>%
+    ggplot(aes(syllables, fill = aspiration)) + geom_bar()
+```
+
+```{r}
+stops %>%
+    ggplot(aes(syl_structure, fill = aspiration)) + geom_bar()
+```
+
+```{r}
+stops %>%
+    ggplot(aes(word.dur, colour = aspiration)) +
+    geom_density() +
+    facet_grid(. ~ syl_structure)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, word.dur)) +
+    geom_boxplot() +
+    facet_grid(. ~ syl_structure)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, vor)) +
+    geom_boxplot() +
+    facet_grid(. ~ syl_structure)
+```
+
+## Vowel duration
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, vowel.dur)) +
+    geom_boxplot() +
+    facet_grid(. ~ syl_structure)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, vowel.dur)) +
+    geom_boxplot() +
+    facet_grid(syl_structure ~ vowel)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, vowel.dur)) +
+    geom_boxplot() +
+    facet_wrap(~ vowel)
+```
+
+## Voicing duration
+
+
+
+# LMER
+
+## Vowel duration
+
+```{r vowel-lmer}
+vowel.lmer <- lmer(
+    vowel.dur ~
+        aspiration +
+        vowel +
+        syl_structure +
+        c1phonation +
+        vor +
+        (1|word) +
+        (1+aspiration|speaker),
+    data = stops,
+    REML = FALSE
+)
+
+summary(vowel.lmer)
+
+vowel.lmer.null <- lmer(
+    vowel.dur ~
+        vowel +
+        syl_structure +
+        c1phonation +
+        vor +
+        (1|word) +
+        (1|speaker),
+    data = stops,
+    REML = FALSE
+)
+
+summary(vowel.lmer.null)
+
+vowel.lmer.null.2 <- lmer(
+    vowel.dur ~
+        aspiration +
+        vowel +
+        syl_structure +
+        c1phonation +
+        vor +
+        (1|word) +
+        (1|speaker),
+    data = stops,
+    REML = FALSE
+)
+```
+
+```{r vowel-lmer-anova}
+anova(vowel.lmer.null, vowel.lmer)
+
+anova(vowel.lmer.null.2, vowel.lmer)
+```
+
+The best model is `vowel.lmer`.
+
+```{r vowel-lmer-plot}
+plot(allEffects(vowel.lmer))
+```
+
+```{r}
+plot(fitted(vowel.lmer), resid(vowel.lmer))
+```
+
