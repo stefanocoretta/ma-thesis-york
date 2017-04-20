@@ -9,14 +9,11 @@ output: pdf_document
 library(knitr)
 opts_knit$set(root.dir=normalizePath('../'))
 knitr::opts_chunk$set(echo = TRUE)
-library(readr)
-library(dplyr)
-library(tidyr)
+library(tidyverse)
+theme_set(theme_bw())
 library(lme4)
 library(effects)
 library(afex)
-library(ggplot2)
-theme_set(theme_bw())
 library(car)
 ```
 
@@ -351,6 +348,7 @@ plot(allEffects(model.nasals))
 ```{r spreading.dur}
 icelandic.aspirated.stops <- filter(icelandic,
                                     manner == "stop",
+                                    contx == "cc",
                                     aspiration == "yes",
                                     spreading.dur > 25
                                     )
