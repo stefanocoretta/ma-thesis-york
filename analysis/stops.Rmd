@@ -91,6 +91,14 @@ stops %>%
 
 ```{r}
 stops %>%
+    ggplot(aes(syl_structure, vowel.dur)) +
+    geom_violin() +
+    geom_boxplot(width = 0.2)
+```
+
+
+```{r}
+stops %>%
     ggplot(aes(aspiration, vowel.dur)) +
     geom_boxplot() +
     facet_grid(syl_structure ~ vowel)
