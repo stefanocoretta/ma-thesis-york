@@ -59,11 +59,18 @@ stops %>%
     facet_grid(. ~ syl_structure)
 ```
 
-```{r}
+```{r word-duration}
 stops %>%
     ggplot(aes(aspiration, word.dur)) +
     geom_boxplot() +
     facet_grid(. ~ syl_structure)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, word.dur)) +
+    geom_boxplot() +
+    facet_grid(syl_structure ~ vowel)
 ```
 
 ```{r}
@@ -98,7 +105,12 @@ stops %>%
 
 ## Voicing duration
 
-
+```{r}
+stops %>%
+    ggplot(aes(aspiration, voicing.dur)) +
+    geom_boxplot() +
+    facet_wrap(~ vowel)
+```
 
 # LMER
 
@@ -107,9 +119,10 @@ stops %>%
 ```{r vowel-lmer}
 vowel.lmer <- lmer(
     vowel.dur ~
-        aspiration +
-        vowel +
+        aspiration *
         syl_structure +
+        vowel +
+
         c1phonation +
         vor +
         (1|word) +
@@ -154,7 +167,7 @@ anova(vowel.lmer.null, vowel.lmer)
 anova(vowel.lmer.null.2, vowel.lmer)
 ```
 
-The best model is `vowel.lmer`.
+The best model is `vowel.lmer`. There is an iteraction between aspiration and syllable structure: the effect of aspiration is stronger in CVCC words then in CVCCV words.
 
 ```{r vowel-lmer-plot}
 plot(allEffects(vowel.lmer))
@@ -164,3 +177,27 @@ plot(allEffects(vowel.lmer))
 plot(fitted(vowel.lmer), resid(vowel.lmer))
 ```
 
+## Word duration
+
+```{r word-lmer}
+word.lmer <- lmer(
+    word.dur ~
+        aspiration *
+        syl_structure +
+        vowel +
+        c1phonation +
+        vor +
+        (1|word) +
+        (1|speaker),
+    data = stops
+)
+
+summary(word.lmer)
+```
+
+```{r word-lmer-plot}
+plot(allEffects(word.lmer))
+```
+
+CVCC words are shorter if CC is pre-aspirated, while this does not happen with CVCCV words.
+However, CVCCV words show a bimodal distribution I don't know how to explain.
