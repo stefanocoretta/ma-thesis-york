@@ -111,6 +111,14 @@ stops %>%
     facet_wrap(~ vowel)
 ```
 
+```{r}
+stops %>%
+    ggplot(aes(closure.dur, vowel.dur, colour = aspiration)) +
+    geom_point(alpha = 0.5) +
+    geom_smooth(method = "lm")
+```
+
+
 ## Voicing duration
 
 ```{r}
