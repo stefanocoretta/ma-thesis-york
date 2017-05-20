@@ -118,6 +118,19 @@ stops %>%
     geom_smooth(method = "lm")
 ```
 
+```{r}
+stops %>%
+    ggplot(aes(cluster.dur, vowel.dur, colour = aspiration)) +
+    geom_point(alpha = 0.5) +
+    geom_smooth(method = "lm")
+```
+
+```{r}
+stops %>%
+    ggplot(aes(cluster.dur, voicing.dur, colour = aspiration)) +
+    geom_point(alpha = 0.5) +
+    geom_smooth(method = "lm")
+```
 
 ## Voicing duration
 
@@ -138,55 +151,31 @@ vowel.lmer <- lmer(
         aspiration *
         syl_structure +
         vowel +
-
         c1phonation +
         vor +
         (1|word) +
         (1+aspiration|speaker),
-    data = stops,
-    REML = FALSE
-)
+    data = stops)
 
 summary(vowel.lmer)
-
-vowel.lmer.null <- lmer(
-    vowel.dur ~
-        vowel +
-        syl_structure +
-        c1phonation +
-        vor +
-        (1|word) +
-        (1|speaker),
-    data = stops,
-    REML = FALSE
-)
-
-summary(vowel.lmer.null)
-
-vowel.lmer.null.2 <- lmer(
-    vowel.dur ~
-        aspiration +
-        vowel +
-        syl_structure +
-        c1phonation +
-        vor +
-        (1|word) +
-        (1|speaker),
-    data = stops,
-    REML = FALSE
-)
 ```
 
-```{r vowel-lmer-anova}
-anova(vowel.lmer.null, vowel.lmer)
-
-anova(vowel.lmer.null.2, vowel.lmer)
+```{r}
+step(vowel.lmer)
 ```
 
-The best model is `vowel.lmer`. There is an iteraction between aspiration and syllable structure: the effect of aspiration is stronger in CVCC words then in CVCCV words.
+```{r}
+vowel.lmer.2 <- lme4::lmer(formula = vowel.dur ~ aspiration + vor + (1 | word) + 
+    (1 + aspiration | speaker), data = stops, contrasts = list(
+    aspiration = "contr.SAS"))
+
+summary(vowel.lmer.2)
+```
+
+There is an iteraction between aspiration and syllable structure: the effect of aspiration is stronger in CVCC words then in CVCCV words.
 
 ```{r vowel-lmer-plot}
-plot(allEffects(vowel.lmer))
+plot(allEffects(vowel.lmer.2))
 ```
 
 ```{r}
@@ -217,3 +206,29 @@ plot(allEffects(word.lmer))
 
 CVCC words are shorter if CC is pre-aspirated, while this does not happen with CVCCV words.
 However, CVCCV words show a bimodal distribution I don't know how to explain.
+
+## Voicing duration
+
+```{r voicing-lmer}
+voicing.lmer <- lmer(
+    voicing.dur ~
+        aspiration +
+#        syl_structure +
+#        vowel +
+        c1phonation +
+        vor +
+        (1|word) +
+        (1|speaker),
+    data = stops
+)
+
+summary(voicing.lmer)
+```
+
+```{r voicing-lmer-plot}
+plot(allEffects(voicing.lmer))
+```
+
+```{r}
+plot(fitted(voicing.lmer), resid(voicing.lmer))
+```
