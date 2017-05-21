@@ -132,6 +132,20 @@ stops %>%
     geom_smooth(method = "lm")
 ```
 
+```{r}
+stops %>%
+    ggplot(aes(aspiration, vowel.dur)) +
+    geom_boxplot() +
+    facet_wrap(~ speaker)
+```
+
+```{r}
+stops %>%
+    ggplot(aes(aspiration, voicing.dur)) +
+    geom_boxplot() +
+    facet_wrap(~ speaker)
+```
+
 ## Voicing duration
 
 ```{r}
