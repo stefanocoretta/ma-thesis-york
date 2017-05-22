@@ -246,3 +246,53 @@ plot(allEffects(voicing.lmer))
 ```{r}
 plot(fitted(voicing.lmer), resid(voicing.lmer))
 ```
+
+# Main effects and interaction plots
+
+```{r}
+vowel.ef <- as.data.frame(
+    effect("aspiration:syl_structure", vowel.lmer)
+) %>%
+    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")),
+           syl_structure = plyr::revalue(syl_structure, c("cvcc" = "CVCC", "cvccv" = "CVCCV"))
+    )
+
+vowel.ef %>%
+    ggplot(aes(aspiration, fit)) +
+    geom_errorbar(aes(ymin=fit-se, ymax=fit+se), width=0.2, colour = "#754F9B") +
+    geom_point(size = 3) +
+    facet_grid(. ~ syl_structure) +
+    labs(y = "vowel duration (msec)") +
+    theme(strip.background = element_rect(colour = "#754F9B", fill = "#754F9B"))
+```
+
+```{r}
+word.ef <- as.data.frame(
+    effect("aspiration:syl_structure", word.lmer)
+) %>%
+    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")),
+           syl_structure = plyr::revalue(syl_structure, c("cvcc" = "CVCC", "cvccv" = "CVCCV"))
+    )
+
+word.ef %>%
+    ggplot(aes(aspiration, fit)) +
+    geom_errorbar(aes(ymin=fit-se, ymax=fit+se), width=0.2, colour = "#754F9B") +
+    geom_point(size = 3) +
+    facet_grid(. ~ syl_structure) +
+    labs(y = "word duration (msec)") +
+    theme(strip.background = element_rect(colour = "#754F9B", fill = "#754F9B"))
+```
+
+```{r}
+voicing.ef <- as.data.frame(
+    effect("aspiration", voicing.lmer)
+) %>%
+    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")))
+
+voicing.ef %>%
+    ggplot(aes(aspiration, fit)) +
+    geom_errorbar(aes(ymin=fit-se, ymax=fit+se), width=0.1, colour = "#754F9B") +
+    geom_point(size = 3.5) +
+    labs(y = "voicing duration (msec)")
+```
+
