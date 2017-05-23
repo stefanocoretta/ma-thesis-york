@@ -2,8 +2,9 @@
 title: "Vowel duration and geminate stops in Icelandic"
 author: "Stefano Coretta"
 date: "19/04/2017"
-output: 
-  pdf_document: 
+output:
+  html_document: default
+  pdf_document:
     fig_caption: yes
     fig_height: 3
     fig_width: 5
