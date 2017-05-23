@@ -253,8 +253,8 @@ plot(fitted(voicing.lmer), resid(voicing.lmer))
 vowel.ef <- as.data.frame(
     effect("aspiration:syl_structure", vowel.lmer)
 ) %>%
-    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")),
-           syl_structure = plyr::revalue(syl_structure, c("cvcc" = "CVCC", "cvccv" = "CVCCV"))
+    mutate(aspiration = recode(aspiration, no = "unaspirated", yes = "preaspirated"),
+           syl_structure = recode(syl_structure, cvcc = "CVCC", "cvccv" = "CVCCV")
     )
 
 vowel.ef %>%
@@ -270,8 +270,8 @@ vowel.ef %>%
 word.ef <- as.data.frame(
     effect("aspiration:syl_structure", word.lmer)
 ) %>%
-    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")),
-           syl_structure = plyr::revalue(syl_structure, c("cvcc" = "CVCC", "cvccv" = "CVCCV"))
+    mutate(aspiration = recode(aspiration, no = "unaspirated", yes = "preaspirated"),
+           syl_structure = recode(syl_structure, cvcc = "CVCC", cvccv = "CVCCV")
     )
 
 word.ef %>%
@@ -287,7 +287,7 @@ word.ef %>%
 voicing.ef <- as.data.frame(
     effect("aspiration", voicing.lmer)
 ) %>%
-    mutate(aspiration = plyr::revalue(aspiration, c("no" = "unaspirated", "yes" = "preaspirated")))
+    mutate(aspiration = recode(aspiration, no = "unaspirated", yes = "preaspirated"))
 
 voicing.ef %>%
     ggplot(aes(aspiration, fit)) +
