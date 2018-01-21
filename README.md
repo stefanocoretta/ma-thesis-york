@@ -1,5 +1,7 @@
 # Vowel duration and aspiration effects in Icelandic (University of York)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1156214.svg)](https://doi.org/10.5281/zenodo.1156214)
+
 This is the [research compendium](https://github.com/ropensci/rrrpkg) of my MA thesis: *Vowel duration and aspiration effects in Icelandic* (MA in Phonetics and Phonology, University of York).
 
 ## License
