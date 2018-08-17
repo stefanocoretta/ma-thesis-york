@@ -1,19 +1,19 @@
 ## Push to external hard drive
 
 rsync -anv --no-whole-file --exclude '*.DS_Store' --delete \
-    ~/Documents/GitHub/ma-thesis-york \
-    /Volumes/Multimedia/
+    ~/GitHub/ma-thesis-york/data \
+    /Volumes/Seagate/language-data/ma-thesis-york/data
 
-rsync -avz --no-whole-file --delete --exclude '*.DS_Store' \
-    ~/Documents/GitHub/ma-thesis-york \
-    /Volumes/Multimedia/
+rsync -avz --no-whole-file --exclude '*.DS_Store' --delete \
+    ~/GitHub/ma-thesis-york/data \
+    /Volumes/Seagate/language-data/ma-thesis-york/data
 
 ## Pull data from external hard drive
 
 rsync -anv --no-whole-file --exclude '*.DS_Store' \
-    /Volumes/Multimedia/ma-thesis-york/data \
-    ~/Documents/GitHub/ma-thesis-york/
+    /Volumes/Seagate/language-data/ma-thesis-york/data \
+    ~/GitHub/ma-thesis-york/data
 
 rsync -avz --no-whole-file --exclude '*.DS_Store' \
-    /Volumes/Multimedia/ma-thesis-york/data \
-    ~/Documents/GitHub/ma-thesis-york/
+    /Volumes/Seagate/language-data/ma-thesis-york/data \
+    ~/GitHub/ma-thesis-york/data
